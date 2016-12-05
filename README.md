@@ -13,7 +13,7 @@ DEVELOPMENT README
 ## Design Docs
   * [Wireframes](docs/wireframes)
   * [React Components](docs/component-hierarchy.md)
-  * [API endpoints](docs/api_endpoints.md)
+  * [API endpoints](docs/api-endpoints.md)
   * [DB schema](docs/schema.md)
   * [Sample State](docs/sample-state.md)
 
