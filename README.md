@@ -24,13 +24,13 @@ DEVELOPMENT README
 
 **Objective:** Functioning rails project with front-end authentication
 
-## Phase 2: Messages Model, API, and components
+## Phase 2: Channels messaging
+
+**Objective:** Channels can be created, read, edited, and destroyed through the API.
+
+## Phase 3: Messages Model, API, and components
 
 **Objective:** Messages can be created, read, edited, and destroyed through the API.
-
-## Phase 3: Channels messaging
-
-**Objective:** Messages that belong to Channels can be created, read, edited, and destroyed through the API.
 
 ## Phase 4: Direct messaging
 
