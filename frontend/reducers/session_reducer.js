@@ -1,17 +1,26 @@
-import { RECEIVE_CURRENT_USER } from '../actions/sessions_actions';
-import { receiveCurrentUser } from '../actions/sessions_actions';
+import { receiveCurrentUser, receiveErrors } from '../actions/sessions_actions';
+import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS } from '../actions/sessions_actions';
+
 
 const defaultState = {
-  currentUser: null
+  currentUser: null,
+  errors: []
 };
-
 
 function SessionReducer(state = defaultState, action) {
   Object.freeze(state);
 
   switch(action.type) {
     case RECEIVE_CURRENT_USER:
-      return action.currentUser;
+      return {
+        currentUser: action.currentUser,
+        errors: [],
+       };
+    case RECEIVE_ERRORS:
+      return {
+        currentUser: null,
+        errors: action.errors.responseJSON,
+      };
     default:
       return state;
   }
@@ -19,4 +28,21 @@ function SessionReducer(state = defaultState, action) {
 
 export default SessionReducer;
 
-//separate reducer for errors
+// LOGGED OUT
+// {
+//   session: {
+//     currentUser: null,
+//     errors: ["Invalid credentials"]
+//   }
+// }
+
+// LOGGED IN
+// {
+//   session: {
+//     currentUser: {
+//       id: 1,
+//       username: wangytangy
+//     },
+//     errors: ["Invalid credentials"]
+//   }
+// }

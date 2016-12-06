@@ -5,15 +5,23 @@ import App from './app';
 import SessionFormContainer from './sessions/sessions_form_container';
 
 
-const Root = ({ store }) => (
-  <Provider store={store}>
-    <Router history={hashHistory}>
-      <Route path="/" component={ App }>
-        <Route path="login" component={ SessionFormContainer } />
-        <Route path="signup" component={ SessionFormContainer } />
-      </Route>
-    </Router>
-  </Provider>
-);
+const Root = (props) => {
 
+  function _redirectIfLoggedIn(nextState, replace) {
+    if (props.store.getState().session.currentUser) {
+      replace("/");
+    }
+  }
+
+  return(
+    <Provider store={ props.store }>
+      <Router history={ hashHistory }>
+        <Route path="/" component={ App }>
+          <Route path="login" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
+          <Route path="signup" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
+        </Route>
+      </Router>
+    </Provider>
+  );
+};
 export default Root;

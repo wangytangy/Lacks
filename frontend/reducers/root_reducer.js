@@ -1,10 +1,31 @@
 import { combineReducers } from 'redux';
 import SessionReducer from './session_reducer';
-import ErrorsReducer from './errors_reducer';
+
 
 const rootReducer = combineReducers({
-  session: SessionReducer,
-  forms: ErrorsReducer
+  session: SessionReducer
 });
 
 export default rootReducer;
+
+
+// LOGGED OUT
+// {
+//   session: {
+//     currentUser: null,
+//     errors: ["Invalid credentials"]
+//   }
+// }
+
+
+// LOGGED IN
+// {
+//   currentUser: {
+//     id: 1,
+//     username: "wangytangy"
+//   },
+//   forms: {
+//     signUp: {errors: []},
+//     logIn: {errors: []}
+//   },
+// }
