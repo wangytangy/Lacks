@@ -11,10 +11,13 @@ class Greeting extends React.Component {
 
   handleLogout() {
     this.props.logout();
+    window.currentUser = null;
+    if (this.props.currentUser) {
+      this.props.router.push("/");
+    }
   }
 
   render() {
-
     if (this.props.currentUser) {
       return (
         <div>
@@ -33,6 +36,7 @@ class Greeting extends React.Component {
       );
     }
   }
+
 }
 
 export default Greeting;
