@@ -3,7 +3,7 @@ import rootReducer from '../reducers/root_reducer';
 import { thunk } from '../middleware/thunk';
 
 export function configureStore(preloadedState = {}) {
-  createStore(
+  return createStore(
     rootReducer,
     preloadedState,
     applyMiddleware(thunk)
