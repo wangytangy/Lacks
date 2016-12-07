@@ -33,6 +33,10 @@ body {
   text-decoration: none;
 }
 
+ul {
+  list-style: none;
+}
+
 .group:after {
   content: "";
   display: block;
@@ -57,9 +61,10 @@ div .splash {
   background-color: #eee;
   background-image: url("https://s-media-cache-ak0.pinimg.com/originals/67/fc/45/67fc45bbe318641ce5a22871f81c54fe.jpg");
   background-size: cover;
-
   position: relative;
 }
+
+
 
 // *********************************
 
@@ -129,7 +134,7 @@ div .splash {
   display: block;
   width: 700px;
   height: 210px;
-  background-color: #636363;
+  background-color: #424242;
   top: 500px;
   left: 505px;
   opacity: 0.6;
@@ -208,3 +213,22 @@ label {
   background-color: #38BCE0;
 
 }
+
+//****** ERRORS ******
+.auth-errors {
+  display: block;
+  background-color: #eee;
+  padding: 5px;
+  font-size: 14px;
+  margin: 30px auto;
+  text-align: center;
+  width: 250px;
+  border-radius: 5px;
+
+
+}
+
+
+
+
+// *******************
