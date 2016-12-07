@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
+import SessionForm from '../sessions/sessions_form';
 
 
 class Greeting extends React.Component {
@@ -27,12 +28,23 @@ class Greeting extends React.Component {
       );
     } else {
       return (
-        <div>
-          <ul>
-            <li><Link to="signup">Sign Up</Link></li>
-            <li><Link to="login">Log In</Link></li>
-          </ul>
+      <div className="splash group">
+        <div className="bg">
+
         </div>
+        <h1 className="header-title">
+          A messaging app for teams who like not working
+        </h1>
+
+        <button className="signin-corner">
+          <Link to="login">Sign in</Link>
+        </button>
+
+        <button className="signup-button">
+          <Link to="signup">Sign up for free</Link>
+        </button>
+      </div>
+
       );
     }
   }

@@ -40,29 +40,30 @@ class SessionForm extends React.Component {
   renderLogIn(errorsArr) {
 
     return (
-      <div className="login-form">
-        <div className="login-header">
-          <h1>Log In</h1>
-        </div>
+      <div className="form">
 
-        <form className="login-form-field" onSubmit={this.handleSubmit}>
-          <label>Username
+        <h1 className="header">Sign in to your team</h1>
+
+        <form className="form-field" onSubmit={this.handleSubmit}>
+          <label>
             <input
               type="text"
+              placeholder="username"
               value={this.state.username}
               onChange={this.handleChange}>
             </input>
           </label>
 
-          <label>Password
+          <label>
             <input
               type="password"
+              placeholder="password"
               value={this.state.password}
               onChange={this.handleChange}>
             </input>
           </label>
 
-          <button>Log In</button>
+          <button className="submit">Log In</button>
         </form>
         <ul>{errorsArr}</ul>
       </div>
@@ -71,38 +72,32 @@ class SessionForm extends React.Component {
 
   renderSignUp(errorsArr) {
     return (
-      <div className="signup-form">
+      <div className="form">
 
-        <h1 className="signup-header">Sign Up</h1>
-        <h2 className="signup-instruction">enter a username, email, and password</h2>
-        
-        <form className="signup-form-field" onSubmit={this.handleSubmit}>
+        <h1 className="header">Sign Up for Lacks</h1>
+        <h2 className="signup-instruction">enter a username and password</h2>
 
-           <label htmlFor="form-username">Username</label>
+        <form className="form-field" onSubmit={this.handleSubmit}>
+
+           <label htmlFor="form-username"></label>
             <input
               id="form-username"
+              placeholder="username"
               type="text"
               value={this.state.username}
               onChange={this.handleChange}>
             </input>
 
-          <label htmlFor="form-password">Password</label>
+          <label htmlFor="form-password"></label>
             <input
               id="form-password"
+              placeholder="password"
               type="password"
               value={this.state.password}
               onChange={this.handleChange}>
             </input>
 
-          <label htmlFor="form-email">Email</label>
-            <input
-              id="form-email"
-              type="email"
-              value={this.state.email}
-              onChange={this.handleChange}>
-            </input>
-
-          <button>Sign Up</button>
+          <button className="submit">Sign Up</button>
         </form>
         <ul>{errorsArr}</ul>
       </div>
