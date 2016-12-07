@@ -1,5 +1,5 @@
-import { receiveCurrentUser, receiveErrors } from '../actions/sessions_actions';
-import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS } from '../actions/sessions_actions';
+import { receiveCurrentUser, receiveErrors, clearErrors } from '../actions/sessions_actions';
+import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS, CLEAR_ERRORS } from '../actions/sessions_actions';
 
 
 const defaultState = {
@@ -20,6 +20,10 @@ function SessionReducer(state = defaultState, action) {
       return {
         currentUser: null,
         errors: action.errors.responseJSON,
+      };
+    case CLEAR_ERRORS:
+      return {
+        errors: []
       };
     default:
       return state;

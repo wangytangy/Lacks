@@ -43,102 +43,96 @@ ul {
   clear: both;
 }
 
-// ****** MAIN ELEMENTS ******
+// ****** HEADER ******
 
-div .form {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  width: 640px;
-  height: 400px;
-  margin: 0 auto;
+.greeting {
+	position: absolute;
+	top: 0;
+	display: block;
+	z-index: 100;
+	width: 100%;
+	padding: 20px;
 
-  padding: 30px;
-  box-sizing: border-box;
+	box-sizing: border-box;
+	// background: gray;
+
 }
 
-div .splash {
-  height: 1000px;
-  background-color: #eee;
-  background-image: url("https://s-media-cache-ak0.pinimg.com/originals/67/fc/45/67fc45bbe318641ce5a22871f81c54fe.jpg");
-  background-size: cover;
-  position: relative;
+.logo {
+	float: left;
+	font-weight: 700;
+	// border: 2px solid red;
 }
 
+.logo a {
+	padding: 12px 22px;
+	display:block;
+	color: #E6E6E6;
 
+}
 
-// *********************************
+.logo a:hover {
+	color: #ffffff;
+}
 
-
-// ****** BUTTONS ******
 .signin-corner {
-  display: block;
-  background: transparent;
+	display: block;
+	background: transparent;
 
-  border: 2px solid #E6E6E6;
-  margin: 20px;
-  border-radius: 5px;
-  float: right;
+	border: 2px solid #E6E6E6;
+	box-sizing: border-box;
+	border-radius: 5px;
+	float: right;
 }
 
 .signin-corner a {
-  padding: 10px 20px;
-  display: block;
-  color: #E6E6E6
+	padding: 10px 20px;
+	display: block;
+	color: #E6E6E6;
+	font-weight: 700;
 }
 
 .signin-corner:hover {
-  border: 2px solid #ffffff;
-  color: #ffffff;
+	border: 2px solid #ffffff;
+	color: #ffffff;
 }
 
-// .signup-bg {
-//
-//   background-color: #000;
-//   width: 300px;
-//   height: 70px;
-//   opacity: 0.8;
-//
-//   position: absolute;
-//   top: 674px;
-//   left: 760px;
-// }
+// ****** SPLASH ******
 
-.signup-button {
-  display: block;
-  background-color: #52B78D;
-  margin: 20px auto;
-  border-radius: 5px;
+div .splash {
+  height: 1000px;
+  background-image: url("https://s-media-cache-ak0.pinimg.com/originals/67/fc/45/67fc45bbe318641ce5a22871f81c54fe.jpg");
+  background-size: cover;
 
-  width: 185px;
-  height: 50px;
-  position: absolute;
-  left: 755px;
-  top: 611px;
+  position: relative;
 }
 
-.signup-button a {
-  padding: 10px 20px;
-  display: block;
-  color: #E6E6E6;
-  font-size: 18px;
-  font-weight: bold;
+.signup-bg {
+	display: block;
+	height: 168px;
+	width: 700px;
+	position: absolute;
+	top: 444px;
+	left: 50%;
+	margin-left: -350px;
+	padding: 20px;
+
+	z-index: 0;
 }
 
-.signup-button:hover {
-  background-color: #58C799;
-  color: #ffffff;
-}
+.signup-bg:before {
+	content: "";
+	background-color: #424242;
+	display:block;
+	opacity: 0.7;
+	z-index: -1;
+	border-radius: 5px;
 
-// *************************
-.bg {
-  display: block;
-  width: 700px;
-  height: 210px;
-  background-color: #424242;
-  top: 500px;
-  left: 505px;
-  opacity: 0.6;
-  position: absolute;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
 }
 
 h1.header-title {
@@ -147,12 +141,57 @@ h1.header-title {
   color: #ffffff;
   font-weight: 700;
   font-size: 42px;
-  padding: 20px;
-  position: absolute;
-  top: 498px;
-  left: 505px;
+
+
   width: 675px;
   text-align: center;
+}
+
+
+.signup-button {
+	display: block;
+	background-color: #52B78D;
+	margin: 15px auto;
+	border-radius: 5px;
+
+	width: 185px;
+	height: 50px;
+
+}
+
+.signup-button a {
+	padding: 10px 20px;
+	display: block;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.signup-button:hover {
+	background-color: #58C799;
+	color: #ffffff;
+}
+
+// *********************************
+
+// ****** LOGIN/SIGNUP ******
+
+div .form {
+  background-color: #fff;
+  border: 2px solid #ccc;
+	border-radius: 5px;
+  width: 640px;
+  height: 400px;
+  margin: 0 auto;
+
+  padding: 30px;
+  box-sizing: border-box;
+
+	position: absolute;
+	left: 50%;
+	top: 135px;
+	margin-left: -320px;
+
 }
 
 .header {
@@ -214,6 +253,21 @@ label {
 
 }
 
+.guest-login {
+	text-align: center;
+
+	margin: 20px;
+
+	font-size: 14px;
+}
+
+.guest-login a {
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+// *************************
+
 //****** ERRORS ******
 .auth-errors {
   display: block;
@@ -224,11 +278,14 @@ label {
   text-align: center;
   width: 250px;
   border-radius: 5px;
-
-
 }
 
-
-
+.errors-list {
+	list-style: none;
+	position: absolute;
+	top: 60px;
+	left: 50%;
+	margin-left: -130px;
+}
 
 // *******************
