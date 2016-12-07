@@ -1,14 +1,18 @@
-import { combineReducers } from 'redux';
-import SessionReducer from './session_reducer';
-import ChannelsReducer from './channels_reducer';
+import { receiveChannels } from '../actions/channels_actions';
+import { RECEIVE_ALL_CHANNELS } from '../actions/channels_actions';
 
 
-const rootReducer = combineReducers({
-  session: SessionReducer,
-  channels: ChannelsReducer
-});
+function ChannelsReducer(state = {}, action) {
+  Object.freeze(state);
+  switch(action.type) {
+    case RECEIVE_ALL_CHANNELS:
+      return action.channels;
+    default:
+      return state;
+  }
+}
 
-export default rootReducer;
+export default ChannelsReducer;
 
 
 // {

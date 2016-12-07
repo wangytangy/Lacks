@@ -1,12 +1,12 @@
 ```js
 {
-  currentUser: {
-    id: 1,
-    username: "wangytangy"
-  },
-  forms: {
-    signUp: {errors: []},
-    logIn: {errors: []}
+  session: {
+      currentUser: {
+        id: 1,
+        username: wangytangy
+      },
+      errors: ["Invalid credentials"]
+    }
   },
   channels: {
     1: {
