@@ -131,6 +131,7 @@ class SessionForm extends React.Component {
     let errorsArr;
     if (this.props.errors.length > 0) {
       errorsArr = this.props.errors.map((error, i) => {
+        console.log(error);
         return <li key={i} className="auth-errors">{error}</li>;
       });
     }
