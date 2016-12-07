@@ -19,7 +19,6 @@ class Home extends React.Component {
   }
 
   render() {
-    console.log(this.props.channels);
     let channelsindex = Object.values(this.props.channels).map((channel, i) => {
       return <li key={i}>{channel.title}</li>;
     });

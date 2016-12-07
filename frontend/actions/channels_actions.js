@@ -13,7 +13,6 @@ export const fetchAllChannels = () => {
 
   return (dispatch) => {
     return APIUtil.fetchChannels().then((channels) => {
-      // debugger
       dispatch(receiveChannels(channels));
     });
   };
