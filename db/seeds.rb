@@ -9,7 +9,13 @@
 
 User.destroy_all
 
-User.create!(username: "user1", email: "user1@email.com", password: "password1")
-User.create!(username: "user2", email: "user2@email.com", password: "password2")
-User.create!(username: "user3", email: "user3@email.com", password: "password3")
-User.create!(username: "guest", email: "guest@gmail.com", password: "guestpassword")
+user1 = User.create!(username: "user1", email: "user1@email.com", password: "password1")
+user2 = User.create!(username: "user2", email: "user2@email.com", password: "password2")
+user3 = User.create!(username: "user3", email: "user3@email.com", password: "password3")
+guest = User.create!(username: "guest", email: "guest@gmail.com", password: "guestpassword")
+
+
+Channel.destroy_all
+Channel.create!(title: "first channel", description: "all convos", user_id: user1.id)
+Channel.create!(title: "second channel", description: "family convos", user_id: user2.id)
+Channel.create!(title: "third channel", description: "work convos", user_id: user3.id)

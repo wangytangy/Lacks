@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
 
     return (
       <div className="splash">
-        <ul className="errors-list">{errorsArr}</ul>
+
         <div className="form">
 
           <h1 className="header">Sign in to your team</h1>
@@ -79,8 +79,8 @@ class SessionForm extends React.Component {
 
             <button className="submit">Log In</button>
           </form>
-
           <div className="guest-login">Don't have an account. Sign up <Link to="signup">here</Link></div>
+          <ul className="errors-list">{errorsArr}</ul>
 
 
         </div>
@@ -91,7 +91,7 @@ class SessionForm extends React.Component {
   renderSignUp(errorsArr) {
     return (
       <div className="splash">
-        <ul className="errors-list">{errorsArr}</ul>
+
         <div className="form">
 
           <h1 className="header">Sign Up for Lacks</h1>
@@ -120,7 +120,7 @@ class SessionForm extends React.Component {
             <button className="submit">Sign Up</button>
             <div className="guest-login">Sign up as a <a onClick={this.guestLogin}>guest</a></div>
           </form>
-
+          <ul className="errors-list">{errorsArr}</ul>
 
         </div>
       </div>
