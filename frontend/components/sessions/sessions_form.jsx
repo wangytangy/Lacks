@@ -65,6 +65,7 @@ class SessionForm extends React.Component {
 
           <button className="submit">Log In</button>
         </form>
+
         <ul>{errorsArr}</ul>
       </div>
     );
@@ -99,7 +100,8 @@ class SessionForm extends React.Component {
 
           <button className="submit">Sign Up</button>
         </form>
-        <ul>{errorsArr}</ul>
+
+          <ul>{errorsArr}</ul>
       </div>
     );
   }
@@ -108,7 +110,7 @@ class SessionForm extends React.Component {
     let errorsArr;
     if (this.props.errors.length > 0) {
       errorsArr = this.props.errors.map((error, i) => {
-        return <li key={i}>{error}</li>;
+        return <li key={i} className="auth-errors">{error}</li>;
       });
     }
 

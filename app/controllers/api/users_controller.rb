@@ -8,7 +8,7 @@ class Api::UsersController < ApplicationController
       login(@user)
       render :show
     else
-      render json: ["User not created"], status: 422
+      render json: ["username and password not valid"], status: 422
     end
   end
 
