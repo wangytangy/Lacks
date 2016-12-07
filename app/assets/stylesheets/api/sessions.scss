@@ -1,3 +1,210 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video, button, input {
+	margin: 0;
+	padding: 0;
+	border: 0;
+
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+  text-decoration: inherit;
+
+  background: transparent;
+
+}
+
+body {
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+// ****** MAIN ELEMENTS ******
+
+div .form {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  width: 640px;
+  height: 400px;
+  margin: 0 auto;
+
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+div .splash {
+  height: 1000px;
+  background-color: #eee;
+  background-image: url("https://s-media-cache-ak0.pinimg.com/originals/67/fc/45/67fc45bbe318641ce5a22871f81c54fe.jpg");
+  background-size: cover;
+
+  position: relative;
+}
+
+// *********************************
+
+
+// ****** BUTTONS ******
+.signin-corner {
+  display: block;
+  background: transparent;
+
+  border: 2px solid #E6E6E6;
+  margin: 20px;
+  border-radius: 5px;
+  float: right;
+}
+
+.signin-corner a {
+  padding: 10px 20px;
+  display: block;
+  color: #E6E6E6
+}
+
+.signin-corner:hover {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+
+// .signup-bg {
+//
+//   background-color: #000;
+//   width: 300px;
+//   height: 70px;
+//   opacity: 0.8;
+//
+//   position: absolute;
+//   top: 674px;
+//   left: 760px;
+// }
+
+.signup-button {
+  display: block;
+  background-color: #52B78D;
+  margin: 20px auto;
+  border-radius: 5px;
+
+  width: 185px;
+  height: 50px;
+  position: absolute;
+  left: 755px;
+  top: 611px;
+}
+
+.signup-button a {
+  padding: 10px 20px;
+  display: block;
+  color: #E6E6E6;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.signup-button:hover {
+  background-color: #58C799;
+  color: #ffffff;
+}
+
+// *************************
+.bg {
+  display: block;
+  width: 700px;
+  height: 210px;
+  background-color: #636363;
+  top: 500px;
+  left: 505px;
+  opacity: 0.6;
+  position: absolute;
+}
+
+h1.header-title {
+  display: block;
+  margin: 0 auto;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 42px;
+  padding: 20px;
+  position: absolute;
+  top: 498px;
+  left: 505px;
+  width: 675px;
+  text-align: center;
+}
+
+.header {
+  font-size: 36px;
+  text-align: center;
+  margin: 0 0 20px 0;
+}
+
+.signup-instruction {
+  font-size: 14px;
+  text-align: center;
+}
+
+input {
+
+  display: block;
+  width: 360px;
+  height: 50px;
+  font-size: 24px;
+  padding: 5px 10px;
+
+  box-sizing: border-box;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px auto;
+
+  transition: border-color 1s;
+}
+
+input:hover {
+  border-color: #38A2E0;
+}
+
+label {
+  text-align: center;
+  display: block;
+}
+
+.submit {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+
+  width: 360px;
+  height: 50px;
+  border-radius: 5px;
+
+  background-color: #38A2E0;
+
+  color: #fff;
+  font-size: 24px;
+
+  transition: background-color 2s;
+}
+
+.submit:hover {
+  background-color: #38BCE0;
+
+}
