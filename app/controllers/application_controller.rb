@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def require_login
-    #re-render signin unless logged_in?
+    #re-direct signin unless logged_in?
   end
 
   def logged_in?
@@ -27,5 +27,5 @@ class ApplicationController < ActionController::Base
     session[:session_token] = nil
     @current_user = nil
   end
-  
+
 end
