@@ -3,6 +3,7 @@ class Api::ChannelsController < ApplicationController
   def index
     #eventually...fetch all channels that belong to current user
     @channels = Channel.all
+    render :index
   end
 
   def create

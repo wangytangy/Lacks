@@ -1,14 +1,23 @@
-import { combineReducers } from 'redux';
-import SessionReducer from './session_reducer';
-import ChannelsReducer from './channels_reducer';
+import * as APIUtil from '../util/channels_api_util';
+
+export const RECEIVE_ALL_CHANNELS = "RECEIVE_ALL_CHANNELS";
 
 
-const rootReducer = combineReducers({
-  session: SessionReducer,
-  channels: ChannelsReducer
+
+export const receiveChannels = (channels) => ({
+    type: RECEIVE_ALL_CHANNELS,
+    channels
 });
 
-export default rootReducer;
+export const fetchAllChannels = () => {
+
+  return (dispatch) => {
+    return APIUtil.fetchChannels().then((channels) => {
+      // debugger
+      dispatch(receiveChannels(channels));
+    });
+  };
+};
 
 
 // {

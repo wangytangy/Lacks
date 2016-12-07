@@ -16,6 +16,7 @@ guest = User.create!(username: "guest", email: "guest@gmail.com", password: "gue
 
 
 Channel.destroy_all
+
 Channel.create!(title: "first channel", description: "all convos", user_id: user1.id)
 Channel.create!(title: "second channel", description: "family convos", user_id: user2.id)
 Channel.create!(title: "third channel", description: "work convos", user_id: user3.id)
