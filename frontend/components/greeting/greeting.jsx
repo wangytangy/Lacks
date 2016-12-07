@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router';
 
-
-
 class Greeting extends React.Component {
 
   constructor(props) {
