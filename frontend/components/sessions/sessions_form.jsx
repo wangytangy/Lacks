@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 class SessionForm extends React.Component {
 
@@ -11,6 +12,7 @@ class SessionForm extends React.Component {
     this.redirect = this.redirect.bind(this);
     this.renderLogIn = this.renderLogIn.bind(this);
     this.renderSignUp = this.renderSignUp.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
   }
 
   handleChange(e) {
@@ -23,6 +25,19 @@ class SessionForm extends React.Component {
     }
   }
 
+  guestLogin() {
+    let user = {username: "guest", email: "guest@gmail.com", password: "guestpassword"};
+    this.props.login(user).then((user) => {
+      window.currentUser = user;
+      this.redirect();
+    });
+  }
+
+  componentWillUnmount() {
+
+    this.props.clearErrors();
+  }
+
   redirect() {
     this.props.router.push("/");
   }
@@ -30,6 +45,7 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
+
     this.props.processForm(user).then((user) => {
       window.currentUser = user;
       this.redirect();
@@ -40,68 +56,78 @@ class SessionForm extends React.Component {
   renderLogIn(errorsArr) {
 
     return (
-      <div className="form">
+      <div className="splash">
+        <ul className="errors-list">{errorsArr}</ul>
+        <div className="form">
 
-        <h1 className="header">Sign in to your team</h1>
+          <h1 className="header">Sign in to your team</h1>
+          <h2 className="signup-instruction">enter a username and password</h2>
 
-        <form className="form-field" onSubmit={this.handleSubmit}>
-          <label>
-            <input
-              type="text"
-              placeholder="username"
-              value={this.state.username}
-              onChange={this.handleChange}>
-            </input>
-          </label>
+          <form className="form-field" onSubmit={this.handleSubmit}>
+            <label>
+              <input
+                type="text"
+                placeholder="username"
+                value={this.state.username}
+                onChange={this.handleChange}>
+              </input>
+            </label>
 
-          <label>
-            <input
-              type="password"
-              placeholder="password"
-              value={this.state.password}
-              onChange={this.handleChange}>
-            </input>
-          </label>
+            <label>
+              <input
+                type="password"
+                placeholder="password"
+                value={this.state.password}
+                onChange={this.handleChange}>
+              </input>
+            </label>
 
-          <button className="submit">Log In</button>
-        </form>
+            <button className="submit">Log In</button>
+          </form>
 
-        <ul>{errorsArr}</ul>
+          <div className="guest-login">Don't have an account. Sign up <Link to="signup">here</Link></div>
+
+
+        </div>
       </div>
     );
   }
 
   renderSignUp(errorsArr) {
     return (
-      <div className="form">
+      <div className="splash">
+        <ul className="errors-list">{errorsArr}</ul>
+        <div className="form">
 
-        <h1 className="header">Sign Up for Lacks</h1>
-        <h2 className="signup-instruction">enter a username and password</h2>
+          <h1 className="header">Sign Up for Lacks</h1>
+          <h2 className="signup-instruction">sign up with a username and password</h2>
 
-        <form className="form-field" onSubmit={this.handleSubmit}>
+          <form className="form-field" onSubmit={this.handleSubmit}>
 
-           <label htmlFor="form-username"></label>
-            <input
-              id="form-username"
-              placeholder="username"
-              type="text"
-              value={this.state.username}
-              onChange={this.handleChange}>
-            </input>
+             <label htmlFor="form-username"></label>
+              <input
+                id="form-username"
+                placeholder="username"
+                type="text"
+                value={this.state.username}
+                onChange={this.handleChange}>
+              </input>
 
-          <label htmlFor="form-password"></label>
-            <input
-              id="form-password"
-              placeholder="password"
-              type="password"
-              value={this.state.password}
-              onChange={this.handleChange}>
-            </input>
+            <label htmlFor="form-password"></label>
+              <input
+                id="form-password"
+                placeholder="password"
+                type="password"
+                value={this.state.password}
+                onChange={this.handleChange}>
+              </input>
 
-          <button className="submit">Sign Up</button>
-        </form>
+            <button className="submit">Sign Up</button>
+            <div className="guest-login">Sign up as a <a onClick={this.guestLogin}>guest</a></div>
+          </form>
 
-          <ul>{errorsArr}</ul>
+
+        </div>
       </div>
     );
   }
