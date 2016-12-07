@@ -20,6 +20,15 @@ class User < ActiveRecord::Base
 
   after_initialize :ensure_session_token!
 
+  has_many :channel_memberships,
+    class_name: :ChannelMembership,
+    primary_key: :id,
+    foreign_key: :member_id
+
+
+  has_many :channels, through: :channel_memberships
+
+
   def self.find_by_credentials(username, password)
     user = User.find_by(username: username)
     (user && user.is_password?(password)) ? user : nil

@@ -13,5 +13,12 @@
 class Channel < ActiveRecord::Base
   validates :title, :description, :user_id, presence: true
 
-  
+  has_many :channel_memberships,
+    class_name: :ChannelMembership,
+    primary_key: :id,
+    foreign_key: :channel_id
+
+
+  has_many :users, through: :channel_memberships
+
 end
