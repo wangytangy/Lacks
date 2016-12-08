@@ -18,7 +18,6 @@ class Channel < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :channel_id
 
-
   has_many :users, through: :channel_memberships
 
 end

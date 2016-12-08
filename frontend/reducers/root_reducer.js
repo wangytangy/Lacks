@@ -1,11 +1,13 @@
 import { combineReducers } from 'redux';
 import SessionReducer from './session_reducer';
 import ChannelsReducer from './channels_reducer';
+import CurrentChannelReducer from './current_channel_reducer';
 
 
 const rootReducer = combineReducers({
   session: SessionReducer,
-  channels: ChannelsReducer
+  channels: ChannelsReducer,
+  currentChannel: CurrentChannelReducer
 });
 
 export default rootReducer;
@@ -13,23 +15,29 @@ export default rootReducer;
 
 // {
 //   session: {
-//     currentUser: {
+//       currentUser: {
 //         id: 1,
-//         username: "wangytangy"
+//         username: wangytangy
 //       },
 //       errors: ["Invalid credentials"]
 //     }
 //   },
+//
 //   channels: {
-//     1: {
+//     1: { id: 1, title: "sample channel title" },
+//     2: { id: 5, title: "second channel" }
+//   },
+//
+//   currentChannel: {
+//     { id: 1,
 //       title: "sample channel title",
-//       user_id: 1,
+//       description: "this is the current channel"
 //       members: [
 //         { id: 1, username: "wangytangy" },
 //         { id: 2, username: "other_user" },
 //         { id: 3, username: "third_user" },
 //         { id: 4, username: "fourth_user" }
-//       ],
+//       ]
 //     }
 //   },
 // }
