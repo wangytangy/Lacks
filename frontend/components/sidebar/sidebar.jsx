@@ -1,18 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router';
+import ChannelIndexContainer from '../channels/channel_index_container';
 
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
-    this.mapChannelIndex = this.mapChannelIndex.bind(this);
+    // this.mapChannelIndex = this.mapChannelIndex.bind(this);
     this.dropdownOpen = this.dropdownOpen.bind(this);
     this.state = { dropdown: "dropdown-menu"};
   }
 
-  componentDidMount() {
-    this.props.fetchAllChannels();
-  }
+  // componentDidMount() {
+  //   this.props.fetchAllChannels();
+  // }
 
   handleLogout() {
     this.props.logout();
@@ -23,17 +24,17 @@ class Sidebar extends React.Component {
   }
 
   //probably will move this to a ChannelsIndex Component
-  mapChannelIndex() {
-    let channelsIndex = [];
-    if (this.props.channels) {
-      channelsIndex = Object.values(this.props.channels).map((channel, i) => {
-        return <li key={i}>{channel.title}</li>;
-      });
-      return channelsIndex;
-    } else {
-      return channelsIndex;
-    }
-  }
+  // mapChannelIndex() {
+  //   let channelsIndex = [];
+  //   if (this.props.channels) {
+  //     channelsIndex = Object.values(this.props.channels).map((channel, i) => {
+  //       return <li key={i}>{channel.title}</li>;
+  //     });
+  //     return channelsIndex;
+  //   } else {
+  //     return channelsIndex;
+  //   }
+  // }
 
   dropdownOpen() {
     if (this.state.dropdown === "dropdown-menu") {
@@ -44,7 +45,7 @@ class Sidebar extends React.Component {
   }
 
   render() {
-    let channelsIndex = this.mapChannelIndex();
+    // let channelsIndex = this.mapChannelIndex();
 
     return(
       <div className="sidebar">
@@ -62,19 +63,11 @@ class Sidebar extends React.Component {
               <div className="dropdown-list-item"><li><a onClick={this.handleLogout}>Sign out of Lacks</a></li></div>
             </ul>
           </nav>
-
         </div>
 
+        <ChannelIndexContainer />
 
-
-        <div id="channels">
-          <h2>Channels</h2>
-          <ul>{channelsIndex}</ul>
-        </div>
-
-        <div id="direct_messages">
-          <h2>Direct Messages</h2>
-        </div>
+        <h2>Direct Messages Container</h2>
 
       </div>
     );

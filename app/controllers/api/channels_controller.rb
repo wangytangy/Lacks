@@ -10,6 +10,9 @@ class Api::ChannelsController < ApplicationController
   def create
     @channel = Channel.new(channels_params)
     @channel.user_id = current_user.id
+    debugger
+
+    #add author to channel automatically? create a channel_membership
 
     if @channel.save
       render :show
