@@ -11,8 +11,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  logout: () => dispatch(logout()),
-  fetchAllChannels: () => dispatch(fetchAllChannels())
+
 });
 
 export default withRouter(connect(
