@@ -1,0 +1,76 @@
+// ****** SPLASH ******
+
+div .splash {
+  height: 1000px;
+  background-image: url("https://s-media-cache-ak0.pinimg.com/originals/67/fc/45/67fc45bbe318641ce5a22871f81c54fe.jpg");
+  background-size: cover;
+
+  position: relative;
+}
+
+.signup-bg {
+	display: block;
+	height: 168px;
+	width: 700px;
+	position: absolute;
+	top: 444px;
+	left: 50%;
+	margin-left: -350px;
+	padding: 20px;
+
+	z-index: 0;
+}
+
+.signup-bg:before {
+	content: "";
+	background-color: #424242;
+	display:block;
+	opacity: 0.7;
+	z-index: -1;
+	border-radius: 5px;
+
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+}
+
+h1.header-title {
+  display: block;
+  margin: 0 auto;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 42px;
+
+
+  width: 675px;
+  text-align: center;
+}
+
+
+.signup-button {
+	display: block;
+	background-color: #52B78D;
+	margin: 15px auto;
+	border-radius: 5px;
+
+	width: 185px;
+	height: 50px;
+
+}
+
+.signup-button a {
+	padding: 10px 20px;
+	display: block;
+	color: #ffffff;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.signup-button:hover {
+	background-color: #58C799;
+	color: #ffffff;
+}
+
+// *********************************

@@ -1,0 +1,54 @@
+
+// ****** HEADER ******
+
+.greeting {
+	position: absolute;
+	top: 0;
+	display: block;
+	z-index: 100;
+	width: 100%;
+	padding: 20px;
+
+	box-sizing: border-box;
+	// background: gray;
+
+}
+
+.logo {
+	float: left;
+	font-weight: 700;
+	// border: 2px solid red;
+}
+
+.logo a {
+	padding: 12px 22px;
+	display:block;
+	color: #E6E6E6;
+
+}
+
+.logo a:hover {
+	color: #ffffff;
+}
+
+.signin-corner {
+	display: block;
+	background: transparent;
+
+	border: 2px solid #E6E6E6;
+	box-sizing: border-box;
+	border-radius: 5px;
+	float: right;
+}
+
+.signin-corner a {
+	padding: 10px 20px;
+	display: block;
+	color: #E6E6E6;
+	font-weight: 700;
+}
+
+.signin-corner:hover {
+	border: 2px solid #ffffff;
+	color: #ffffff;
+}
