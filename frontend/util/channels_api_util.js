@@ -12,3 +12,10 @@ export function createChannel(channel) {
     data: { channels: channel }
   });
 }
+
+export function fetchAChannel(id) {
+  return $.ajax({
+    method: "GET",
+    url: `/api/channels/${id}`
+  });
+}

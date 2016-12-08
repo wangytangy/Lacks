@@ -11,7 +11,7 @@
 
   channels: {
     1: { id: 1, title: "sample channel title" },
-    2: { id: 5, title: "second channel" }
+    2: { id: 2, title: "second channel" }
   },
 
   currentChannel: {

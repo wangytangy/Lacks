@@ -2,6 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import customStyle from '../modal_style';
 import CreateChannelFormContainer from './create_channel_form_container';
+import { Link } from 'react-router';
 
 class ChannelIndex extends React.Component {
   constructor(props) {
@@ -11,24 +12,40 @@ class ChannelIndex extends React.Component {
     this.handleModalClick = this.handleModalClick.bind(this);
     this.onModalOpen = this.onModalOpen.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
-
+    this.redirect = this.redirect.bind(this);
     this.state = { modalOpen: false };
   }
 
   componentDidMount() {
-    this.props.fetchAllChannels();
+    if (this.props.channels[0] && this.props.location.pathname === "/messages") {
+      this.props.router.push(`/messages/${Object.keys(this.props.channels)[0]}`);
+    } else if (this.props.location.pathname === "/messages") {
+      this.props.fetchAllChannels().then((channels) => {
+        this.props.router.push(`/messages/${Object.keys(channels)[0]}`);
+      });
+    } else {
+      this.props.fetchAllChannels();
+    }
   }
 
   mapChannelIndex() {
     let channelsIndex = [];
     if (this.props.channels) {
       channelsIndex = Object.values(this.props.channels).map((channel, i) => {
-        return <li key={i}>{channel.title}</li>;
+        let path = `messages/${channel.id}`;
+        return <li
+          key={i}>
+          <Link to={path}>{channel.title}</Link>
+        </li>;
       });
       return channelsIndex;
     } else {
       return channelsIndex;
     }
+  }
+
+  redirect() {
+    this.props.router.push();
   }
 
   handleModalClick() {
@@ -58,6 +75,7 @@ class ChannelIndex extends React.Component {
           onAfterOpen={this.onModalOpen}
           onRequestClose={this.onModalClose}
           style={customStyle}
+          contentLabel=""
         >
           <CreateChannelFormContainer />
           <button onClick={this.onModalClose}>esc</button>

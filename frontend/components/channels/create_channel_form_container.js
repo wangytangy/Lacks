@@ -1,13 +1,19 @@
 import { connect } from 'react-redux';
 import CreateChannelForm from './create_channel_form';
-import { createAChannel } from '../../actions/channels_actions';
+import { createAChannel, fetchAllChannels } from '../../actions/channels_actions';
+import { Router, Route, IndexRoute, hashHistory, withRouter } from 'react-router';
 
 
-const mapDispatchToProps = (dispatch) => ({
-  createChannel: (channel) => dispatch(createAChannel(channel))
+const mapStateToProps = (state) => ({
+  currentChannel: state.currentChannel
 });
 
-export default connect(
-  null,
+const mapDispatchToProps = (dispatch) => ({
+  createChannel: (channel) => dispatch(createAChannel(channel)),
+  fetchAllChannels: () => dispatch(fetchAllChannels()),
+});
+
+export default withRouter(connect(
+  mapStateToProps,
   mapDispatchToProps
-)(CreateChannelForm);
+)(CreateChannelForm));

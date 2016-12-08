@@ -23,3 +23,18 @@ time, mark, audio, video, button, input {
   background: transparent;
 
 }
+
+body {
+  font-family: sans-serif;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.group:after {
+  content: "";
+  display: block;
+  clear: both;
+}
