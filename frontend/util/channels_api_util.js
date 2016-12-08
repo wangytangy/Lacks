@@ -4,3 +4,11 @@ export function fetchChannels() {
     url: "/api/channels"
   });
 }
+
+export function createChannel(channel) {
+  return $.ajax({
+    method: "POST",
+    url: "/api/channels",
+    data: { channels: channel }
+  });
+}
