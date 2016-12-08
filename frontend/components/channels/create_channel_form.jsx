@@ -6,19 +6,25 @@ class CreateChannelForm extends React.Component {
     this.handleCreateChannel = this.handleCreateChannel.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.state = { title: "", description: "" };
+    this.redirect = this.redirect.bind(this);
   }
 
   handleCreateChannel() {
-    this.props.createChannel(this.state);
+    this.props.createChannel(this.state).then(() => {
+      this.props.fetchAllChannels();
+      this.redirect();
+    });
+  }
+
+  redirect() {
+    this.props.router.push(`messages/${this.props.currentChannel.id}`);
   }
 
   handleChange(e) {
     if (e.currentTarget.id === "channel-name-input") {
       this.setState({title: e.currentTarget.value});
-      console.log(this.state.title);
     } else if (e.currentTarget.id === "channel-purpose-input") {
       this.setState({description: e.currentTarget.value});
-      console.log(this.state.description);
     }
   }
 

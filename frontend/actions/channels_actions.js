@@ -18,6 +18,7 @@ export const fetchAllChannels = () => {
   return (dispatch) => {
     return APIUtil.fetchChannels().then((channels) => {
       dispatch(receiveChannels(channels));
+      return channels;
     });
   };
 };
@@ -26,12 +27,19 @@ export const createAChannel = (channel) => {
   return (dispatch) => {
     return APIUtil.createChannel(channel).then((channel) => {
       dispatch(receiveNewChannel(channel));
-      //somehow channelsIndex needs to be updated as well
       //no error handling yet
     });
   };
 };
 
+export const fetchAChannel = (id) => {
+  return (dispatch) => {
+    return APIUtil.fetchAChannel(id).then((channel) => {
+
+      dispatch(receiveNewChannel(channel));
+    });
+  };
+};
 
 //
 // {
