@@ -2,7 +2,8 @@ class Api::ChannelsController < ApplicationController
 
   def index
     #eventually...fetch all channels that belong to current user
-    @channels = Channel.all
+    # @channels = Channel.where(user_id: current_user.id)
+    @channels = current_user.channels
     render :index
   end
 
@@ -25,6 +26,7 @@ class Api::ChannelsController < ApplicationController
   private
 
   def channels_params
+    debugger
     params.require(:channels).permit(:title, :description)
   end
 end

@@ -25,7 +25,6 @@ class User < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :member_id
 
-
   has_many :channels, through: :channel_memberships
 
 
