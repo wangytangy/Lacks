@@ -1,0 +1,61 @@
+div.sidebar {
+  width: 220px;
+  height: 860px;
+  background-color: #4D394B;
+
+
+  box-sizing: border-box;
+
+  color: #AB9BA9;
+}
+
+div.team-menu {
+  padding: 12px 18px;
+
+  position: relative;
+}
+
+div.team-menu:hover {
+  background-color: #3E313C;
+  color: #fff;
+  cursor: pointer;
+}
+
+h1.sidebar-header {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+nav.dropdown-menu {
+  display: none;
+}
+
+nav.dropdown-menu-open {
+  display: block;
+  position: absolute;
+
+
+  box-sizing: border-box;
+  border-radius: 5px;
+
+  width: 177px;
+
+  color: #000;
+  background-color: #fff;
+}
+
+nav.dropdown-menu-open li {
+  margin: 15px;
+}
+
+div.dropdown-list-item:last-child {
+  box-sizing: border-box;
+  border-top: 1px solid #ccc;
+  font-weight: 500;
+}
+
+div.dropdown-list-item:last-child li:hover {
+  color: #fff;
+  background-color: #40A4E0;
+}

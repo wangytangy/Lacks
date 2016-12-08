@@ -1,0 +1,23 @@
+
+//****** ERRORS ******
+ul.errors-list {
+	list-style: none;
+	position: absolute;
+	top: 400px;
+	left: 50%;
+	margin-left: -130px;
+}
+
+li.auth-errors {
+  display: block;
+  background-color: #eee;
+  padding: 5px;
+  font-size: 14px;
+  margin: 5px auto;
+  text-align: center;
+  width: 250px;
+  border-radius: 5px;
+}
+
+
+// *******************

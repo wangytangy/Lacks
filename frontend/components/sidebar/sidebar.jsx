@@ -1,13 +1,13 @@
 import React from 'react';
-
-//needs current_user, channels
-//needs logout button
+import { Link } from 'react-router';
 
 class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
     this.mapChannelIndex = this.mapChannelIndex.bind(this);
+    this.dropdownOpen = this.dropdownOpen.bind(this);
+    this.state = { dropdown: "dropdown-menu"};
   }
 
   componentDidMount() {
@@ -22,6 +22,7 @@ class Sidebar extends React.Component {
     }
   }
 
+  //probably will move this to a ChannelsIndex Component
   mapChannelIndex() {
     let channelsIndex = [];
     if (this.props.channels) {
@@ -34,16 +35,47 @@ class Sidebar extends React.Component {
     }
   }
 
+  dropdownOpen() {
+    if (this.state.dropdown === "dropdown-menu") {
+      this.setState({dropdown: "dropdown-menu-open"});
+    } else {
+      this.setState({dropdown: "dropdown-menu"});
+    }
+  }
+
   render() {
     let channelsIndex = this.mapChannelIndex();
 
     return(
-      <div>
-        This is sidebar
-        <h1>Welcome home {this.props.currentUser.username}</h1>
-        <button onClick={this.handleLogout}>Logout</button>
+      <div className="sidebar">
+        <div className="team-menu" onClick={this.dropdownOpen}>
 
-        <ul>{channelsIndex}</ul>
+          <h1 className="sidebar-header">Lacks</h1>
+
+          <span>{this.props.currentUser.username}</span>
+          <div><i>0</i></div>
+
+          <nav className={this.state.dropdown}>
+            <ul>
+              <div className="dropdown-list-item"><li><strong>{this.props.currentUser.username}</strong></li></div>
+              <div className="dropdown-list-item"><li><span>@{this.props.currentUser.username}</span></li></div>
+              <div className="dropdown-list-item"><li><a onClick={this.handleLogout}>Sign out of Lacks</a></li></div>
+            </ul>
+          </nav>
+
+        </div>
+
+
+
+        <div id="channels">
+          <h2>Channels</h2>
+          <ul>{channelsIndex}</ul>
+        </div>
+
+        <div id="direct_messages">
+          <h2>Direct Messages</h2>
+        </div>
+
       </div>
     );
   }
