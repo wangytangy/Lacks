@@ -1,0 +1,69 @@
+div.create-channel-form {
+  margin: 70px auto;
+  width: 620px;
+
+  position: relative;
+}
+
+div.create-channel-form h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+div.create-channel-form h2 {
+  margin: 15px 0 20px 0;
+  color: #aaa;
+}
+
+div.create-channel-form input {
+  //inheriting from other input
+  display: block;
+  width: 597px;
+  height: 50px;
+  font-size: 24px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+
+  transition: border-color 1s;
+}
+
+div.create-channel-form input:hover {
+  border-color: #38A2E0;
+}
+
+label.newchannel-label {
+  text-align: left;
+  margin: 0px 0 5px 0px;
+}
+
+div.create-channel-form p {
+  margin: 10px 0 10px 0;
+  color: #aaa;
+  font-size: 14px;
+}
+
+div.create-channel-form button.create-channel-button {
+  background-color: #38A2E0;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 10px 0 0 0;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+div.create-channel-form button.create-channel-button:hover {
+  cursor: pointer;
+}
+
+i.exit-icon {
+  font-size: 76px;
+  color: #aaa;
+  float: right;
+}
+
+i.exit-icon:hover {
+  color: #6E6E6E;
+  cursor: pointer;
+}

@@ -10,6 +10,7 @@ class CreateChannelForm extends React.Component {
   }
 
   handleCreateChannel() {
+    this.props.onModalClose();
     this.props.createChannel(this.state).then(() => {
       this.props.fetchAllChannels();
       this.redirect();
@@ -30,28 +31,44 @@ class CreateChannelForm extends React.Component {
 
   render() {
     return(
-      <div>
+      <div className="create-channel-form">
+
         <form onSubmit={this.handleCreateChannel}>
           <h1>Create a channel</h1>
-          <p>
-            Channels are where your team communicates.
-          </p>
 
-          <label for="channel-name-input">Name</label>
+          <h2>
+            Channels are where your team communicates.
+            They&#39;re best when organized around a topic- #leads, for example
+          </h2>
+
+          <label for="channel-name-input" className="newchannel-label">
+            Channel name
+          </label>
           <input
             id="channel-name-input"
             type="text"
             onChange={this.handleChange}>
           </input>
+          <p classname="channelname-specifications">
+            Names must be lowercase and less than 20 characters
+          </p>
 
-          <label for="channel-purpose-input">Purpose</label>
+          <label for="channel-purpose-input" className="newchannel-label">
+            Purpose
+          </label>
           <input
             id="channel-purpose-input"
             type="text"
             onChange={this.handleChange}>
           </input>
+          <p classname="channelname-specifications">
+            What's this channel about&#63;
+          </p>
 
-          <button>Create Channel</button>
+          <button className="create-channel-button">
+            Create channel
+          </button>
+
         </form>
       </div>
     );
