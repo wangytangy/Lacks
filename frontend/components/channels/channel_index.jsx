@@ -35,7 +35,7 @@ class ChannelIndex extends React.Component {
         let path = `messages/${channel.id}`;
         return <li
           key={i}>
-          <Link to={path}>{channel.title}</Link>
+          <Link to={path}>&#35; {channel.title}</Link>
         </li>;
       });
       return channelsIndex;
@@ -65,10 +65,20 @@ class ChannelIndex extends React.Component {
   render() {
     let channelsIndex = this.mapChannelIndex();
     return(
-      <div id="channels">
-        <h2>Channels</h2>
-        <button onClick={this.handleModalClick}>create a channel</button>
-        <ul>{channelsIndex}</ul>
+      <div className="channels group">
+
+        <h1 className="channels-header">
+          <Link>
+            channels &#40;{channelsIndex.length}&#41;
+            <i className="material-icons create-channel"
+              onClick={this.handleModalClick}>
+              add_circle_outline
+            </i>
+          </Link>
+        </h1>
+
+
+        <ul className="channels-index">{channelsIndex}</ul>
 
         <Modal
           isOpen={this.state.modalOpen}
