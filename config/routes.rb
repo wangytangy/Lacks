@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
     resources :channels, only: [:index, :create, :show, :destroy]
+    resources :channels do
+      resources :messages, only: [:create, :index, :show, :update, :destroy]
+    end
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
