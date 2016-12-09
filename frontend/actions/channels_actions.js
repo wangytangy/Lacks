@@ -2,11 +2,17 @@ import * as APIUtil from '../util/channels_api_util';
 
 export const RECEIVE_ALL_CHANNELS = "RECEIVE_ALL_CHANNELS";
 export const RECEIVE_NEW_CHANNEL = "RECEIVE_NEW_CHANNEL";
+export const DELETE_CHANNEL = "DELETE_CHANNEL";
 
 
 export const receiveChannels = (channels) => ({
     type: RECEIVE_ALL_CHANNELS,
     channels
+});
+
+export const deleteChannel = (channel) => ({
+  type: DELETE_CHANNEL,
+  channel
 });
 
 export const receiveNewChannel = (channel) => ({
@@ -18,6 +24,9 @@ export const fetchAllChannels = () => {
   return (dispatch) => {
     return APIUtil.fetchChannels().then((channels) => {
       dispatch(receiveChannels(channels));
+      //return channels so we can take the first channel's id
+      //and render it as a default channel show page
+      //(in ChannelsIndex componentDidMount)
       return channels;
     });
   };
@@ -35,13 +44,21 @@ export const createAChannel = (channel) => {
 export const fetchAChannel = (id) => {
   return (dispatch) => {
     return APIUtil.fetchAChannel(id).then((channel) => {
-
       dispatch(receiveNewChannel(channel));
     });
   };
 };
 
-//
+export const deleteAChannel = (id) => {
+  return (dispatch) => {
+    return APIUtil.deleteAChannel(id).then((channel) => {
+      dispatch(deleteChannel(channel));
+    });
+  };
+};
+
+
+
 // {
 //   session: {
 //       currentUser: {

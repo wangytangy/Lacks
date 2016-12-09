@@ -16,6 +16,7 @@ class CurrentChannel extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if (!nextProps.params.id) return;
     if (nextProps.params.id !== this.props.params.id) {
       this.props.fetchAChannel(nextProps.params.id);
     }

@@ -8,13 +8,11 @@ class Api::ChannelsController < ApplicationController
 
   def create
     @channel = Channel.new(channels_params)
-    @channel.user_id = current_user.id
-
-
-    #add author to channel automatically? create a channel_membership
+    @channel.user_id = current_user.id unless @channel.user_id
 
     if @channel.save
       #channel_membership is created with current_user
+      #research this:
       current_user.channels << @channel
       render :show
     else
@@ -25,6 +23,17 @@ class Api::ChannelsController < ApplicationController
   def show
     @channel = Channel.find(params[:id])
     render :show
+  end
+
+  def destroy
+    @channel = Channel.find(params[:id])
+    if @channel
+      #needs dependent destroy for channel_memberships
+      @channel.destroy
+      render :show
+    else
+      render json: ["channel not destroyed"], status: 404
+    end
   end
 
   private

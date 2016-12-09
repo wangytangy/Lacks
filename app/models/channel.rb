@@ -16,7 +16,8 @@ class Channel < ActiveRecord::Base
   has_many :channel_memberships,
     class_name: :ChannelMembership,
     primary_key: :id,
-    foreign_key: :channel_id
+    foreign_key: :channel_id,
+    dependent: :destroy
 
   has_many :users, through: :channel_memberships
 

@@ -9,21 +9,23 @@
 
 User.destroy_all
 
+guest = User.create!(username: "guest", email: "guest@gmail.com", password: "guestpassword")
 user1 = User.create!(username: "user1", email: "user1@email.com", password: "password1")
 user2 = User.create!(username: "user2", email: "user2@email.com", password: "password2")
 user3 = User.create!(username: "user3", email: "user3@email.com", password: "password3")
-guest = User.create!(username: "guest", email: "guest@gmail.com", password: "guestpassword")
 
 
 Channel.destroy_all
-
-channel1 = Channel.create!(title: "first channel", description: "all convos", user_id: user1.id)
-channel2 = Channel.create!(title: "second channel", description: "family convos", user_id: user2.id)
-channel3 = Channel.create!(title: "third channel", description: "work convos", user_id: user3.id)
+channel0 = Channel.create!(title: "general", description: "first channel", user_id: guest.id)
+# 
+# channel1 = Channel.create!(title: "first channel", description: "all convos", user_id: user1.id)
+# channel2 = Channel.create!(title: "second channel", description: "family convos", user_id: user2.id)
+# channel3 = Channel.create!(title: "third channel", description: "work convos", user_id: user3.id)
 
 
 ChannelMembership.destroy_all
 
-ChannelMembership.create!(channel_id: channel1.id, member_id: user1.id)
-ChannelMembership.create!(channel_id: channel2.id, member_id: user1.id)
-ChannelMembership.create!(channel_id: channel3.id, member_id: user1.id)
+ChannelMembership.create!(channel_id: channel0.id, member_id: guest.id)
+ChannelMembership.create!(channel_id: channel0.id, member_id: user1.id)
+ChannelMembership.create!(channel_id: channel0.id, member_id: user2.id)
+ChannelMembership.create!(channel_id: channel0.id, member_id: user3.id)

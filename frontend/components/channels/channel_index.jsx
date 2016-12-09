@@ -12,20 +12,41 @@ class ChannelIndex extends React.Component {
     this.handleModalClick = this.handleModalClick.bind(this);
     this.onModalOpen = this.onModalOpen.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
-    this.redirect = this.redirect.bind(this);
+
+    this.handleDelete = this.handleDelete.bind(this);
+
     this.state = { modalOpen: false };
+    this.redirect = this.redirect.bind(this);
   }
 
   componentDidMount() {
-    if (this.props.channels[0] && this.props.location.pathname === "/messages") {
-      this.props.router.push(`/messages/${Object.keys(this.props.channels)[0]}`);
-    } else if (this.props.location.pathname === "/messages") {
+    if (this.props.channels[0] === undefined && this.props.location.pathname === "messages") {
+      //if there a channel exists && pathname is "messages", go to that channel
       this.props.fetchAllChannels().then((channels) => {
-        this.props.router.push(`/messages/${Object.keys(channels)[0]}`);
+        console.log(this.props.router);
+
+        this.redirect(Object.keys(channels)[0]);
+        // this.props.router.push(`/messages/${Object.keys(channels)[0]}`);
       });
+
     } else {
+      //else, fetch the channels in all other cases
       this.props.fetchAllChannels();
     }
+  }
+
+  redirect(id) {
+    this.props.router.push(`/messages/${id}`);
+  }
+
+
+  handleDelete(id) {
+    this.props.deleteChannel(id).then(() =>{
+      //re-route to "/messages"
+      this.redirect(Object.keys(this.props.channels)[0]);
+      // this.props.router.push(`/messages/${Object.keys(this.props.channels)[0]}`);
+      //componentWillReceiveProps will find a default channel (first one)
+    });
   }
 
   mapChannelIndex() {
@@ -33,19 +54,32 @@ class ChannelIndex extends React.Component {
     if (this.props.channels) {
       channelsIndex = Object.values(this.props.channels).map((channel, i) => {
         let path = `messages/${channel.id}`;
+        let deleteFn = this.handleDelete;
+        let icon = (
+            <i
+              className="material-icons delete-channel"
+              onClick={() => deleteFn(channel.id)}>
+                cancel
+              </i>
+            );
+
+        if (i === 0) {
+          deleteFn = () => {};
+          icon = null;
+        }
+
         return <li
-          key={i}>
-          <Link to={path}>&#35; {channel.title}</Link>
+          key={i}
+          className="group">
+          <Link to={path}>&#35; {channel.title}
+            {icon}
+          </Link>
         </li>;
       });
       return channelsIndex;
     } else {
       return channelsIndex;
     }
-  }
-
-  redirect() {
-    this.props.router.push();
   }
 
   handleModalClick() {
@@ -77,24 +111,24 @@ class ChannelIndex extends React.Component {
           add_circle_outline
         </i>
 
-
-        <ul className="channels-index">{channelsIndex}</ul>
-
         <Modal
           isOpen={this.state.modalOpen}
           onAfterOpen={this.onModalOpen}
           onRequestClose={this.onModalClose}
           style={customStyle}
           contentLabel=""
-        >
-        <i className="material-icons exit-icon" onClick={this.onModalClose}>
-          highlight_off
-        </i>
+          >
+          <i className="material-icons exit-icon" onClick={this.onModalClose}>
+            highlight_off
+          </i>
 
-        <CreateChannelFormContainer
-          onModalClose={this.onModalClose}
-          />
+          <CreateChannelFormContainer
+            onModalClose={this.onModalClose}
+            />
         </Modal>
+
+        <ul className="channels-index">{channelsIndex}</ul>
+
       </div>
     );
   }
