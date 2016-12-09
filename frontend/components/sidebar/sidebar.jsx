@@ -49,12 +49,19 @@ class Sidebar extends React.Component {
 
     return(
       <div className="sidebar">
-        <div className="team-menu" onClick={this.dropdownOpen}>
+        <div className="team-menu group" onClick={this.dropdownOpen}>
 
-          <h1 className="sidebar-header">Lacks</h1>
+          <i className="material-icons bell">notifications_none</i>
+          <h1 className="sidebar-header">
+            Lacks
+            <i className="material-icons arrow">keyboard_arrow_down</i>
+          </h1>
 
-          <span>{this.props.currentUser.username}</span>
-          <div><i>0</i></div>
+
+          <span className="sidebar-header-username">
+            <i className="material-icons circle">panorama_fish_eye</i>
+            {this.props.currentUser.username}
+          </span>
 
           <nav className={this.state.dropdown}>
             <ul className="profile-options">

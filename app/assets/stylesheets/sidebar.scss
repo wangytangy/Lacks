@@ -7,7 +7,10 @@ div.sidebar {
   box-sizing: border-box;
 
   color: #AB9BA9;
+  box-sizing: border-box;
 }
+
+//****** MENU ******
 
 div.team-menu {
   padding: 12px 18px;
@@ -19,7 +22,13 @@ div.team-menu:hover {
   background-color: #3E313C;
   color: #fff;
   cursor: pointer;
+
 }
+
+div.team-menu:hover i.arrow {
+  color: #fff;
+}
+
 
 h1.sidebar-header {
   color: #ffffff;
@@ -27,6 +36,36 @@ h1.sidebar-header {
   font-weight: 700;
 }
 
+span.sidebar-header-username {
+  font-size: 14px;
+}
+
+i.circle {
+  font-size: 10px;
+  font-weight: bold;
+  margin-right: 4px;
+  color: #AB9BA9;
+}
+
+i.arrow {
+  margin-left: 6px;
+  font-size: 14px;
+  color: #AB9BA9;
+}
+
+i.bell {
+  float: right;
+  color: #AB9BA9;
+}
+i.bell:hover {
+  float: right;
+  color: #fff;
+}
+
+
+//******************
+
+//****** dropdown ******
 nav.dropdown-menu {
   display: none;
 }
@@ -35,7 +74,7 @@ nav.dropdown-menu-open {
   display: block;
   position: absolute;
 
-
+  z-index: 1;
   box-sizing: border-box;
   border-radius: 5px;
 
@@ -44,6 +83,11 @@ nav.dropdown-menu-open {
   color: #000;
   background-color: #fff;
 }
+
+//******************
+
+
+//****** menu items ******
 
 ul.profile-options {
   background: #fff;
@@ -80,3 +124,66 @@ ul.profile-options li:last-child:hover {
   background-color: #3aa3e3;
   color: #fff;
 }
+
+//****** CHANNEL INDEX ******
+
+div.channels {
+  //no styling
+  margin: 20px 0 0 0px;
+
+}
+
+h1.channels-header {
+  text-transform: uppercase;
+  font-size: 13px;
+  position: relative;
+  font-weight: bold;
+  padding: 0 0 0 20px;
+
+
+}
+
+div.channels h1:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+i.create-channel {
+  float: right;
+  font-size: 17px;
+  margin-right: 20px;
+  position: absolute;
+  left: 183px;
+  bottom: -1px;
+  color: #AB9BA9;
+}
+
+i.create-channel:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+i.create-channel:hover h1.channels-header {
+  color: #AB9BA9;
+}
+
+ul.channels-index {
+  margin: 5px 0 0 0;
+}
+
+ul.channels-index li a {
+  color: #AB9BA9;
+  display: block;
+  border-radius: 0 5px 5px 0;
+  margin: 0px 20px 0px 0;
+  padding: 3px 0 3px 20px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+ul.channels-index li a:hover {
+  background-color: #3E313C;
+}
+
+
+// ******************************
