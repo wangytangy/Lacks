@@ -1,4 +1,5 @@
 import React from 'react';
+import ChannelHeaderContainer from './channel_header_container';
 
 class CurrentChannel extends React.Component {
   constructor(props) {
@@ -31,9 +32,7 @@ class CurrentChannel extends React.Component {
   render() {
     return(
       <div className="current-channel">
-        <h1>Current Channel Component</h1>
-        <h2>{this.props.currentChannel.title}</h2>
-        <h2>{this.props.currentChannel.description}</h2>
+        <ChannelHeaderContainer />
       </div>
     );
   }

@@ -1,0 +1,60 @@
+div.channel-header-container {
+
+  height: 60px;
+
+  border-bottom: 1px solid #ccc;
+}
+
+div.header-left {
+  height: 60px;
+  float: left;
+
+
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+div.header-title {
+  display: flex;
+  align-items: center;
+  margin: 0 0 5px 0;
+}
+
+div.header-title h1 {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+div.header-title span {
+  color: #aaa;
+  margin-left: 5px;
+}
+
+div.header-info {
+  display: flex;
+  align-items: center;
+}
+
+div.header-info > * {
+    display: block;
+    margin-right: 5px;
+}
+
+div.header-info i.material-icons {
+  font-size: 12px;
+}
+
+i#circle {
+  color: #95CB95;
+}
+
+span.header-status-message {
+  font-size: 14px;
+  color: #757678;
+}
+
+span.topic-divider {
+  color: #757678;
+  font-weight:lighter;
+  font-size: 12px;
+}
