@@ -1,5 +1,5 @@
-import { receiveChannels } from '../actions/channels_actions';
-import { RECEIVE_ALL_CHANNELS } from '../actions/channels_actions';
+import { receiveChannels, deleteChannel } from '../actions/channels_actions';
+import { RECEIVE_ALL_CHANNELS, DELETE_CHANNEL } from '../actions/channels_actions';
 
 
 function ChannelsReducer(state = {}, action) {
@@ -7,6 +7,10 @@ function ChannelsReducer(state = {}, action) {
   switch(action.type) {
     case RECEIVE_ALL_CHANNELS:
       return action.channels;
+    case DELETE_CHANNEL:
+      let copyState = Object.assign({}, state);
+      delete copyState[`${action.channel.id}`];
+      return copyState;
     default:
       return state;
   }

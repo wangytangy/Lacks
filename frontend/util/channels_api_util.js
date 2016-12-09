@@ -19,3 +19,10 @@ export function fetchAChannel(id) {
     url: `/api/channels/${id}`
   });
 }
+
+export function deleteAChannel(id) {
+  return $.ajax({
+    method: "DELETE",
+    url: `/api/channels/${id}`
+  });
+}

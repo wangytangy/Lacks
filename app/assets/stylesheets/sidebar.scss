@@ -177,11 +177,29 @@ ul.channels-index li a {
   padding: 3px 0 3px 20px;
   font-size: 14px;
   box-sizing: border-box;
+
+  position: relative;
+
 }
 
 ul.channels-index li a:hover {
   background-color: #3E313C;
 }
 
+i.delete-channel {
+  display: none;
+  font-size: 14px;
+  position: absolute;
+  left: 184px;
+  top: 4px;
+}
+
+i.delete-channel:hover {
+  color: #fff;
+}
+
+ul.channels-index:not(first-child) li a:hover i.delete-channel {
+  display: block;
+}
 
 // ******************************
