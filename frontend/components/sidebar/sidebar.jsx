@@ -57,10 +57,10 @@ class Sidebar extends React.Component {
           <div><i>0</i></div>
 
           <nav className={this.state.dropdown}>
-            <ul>
-              <div className="dropdown-list-item"><li><strong>{this.props.currentUser.username}</strong></li></div>
-              <div className="dropdown-list-item"><li><span>@{this.props.currentUser.username}</span></li></div>
-              <div className="dropdown-list-item"><li><a onClick={this.handleLogout}>Sign out of Lacks</a></li></div>
+            <ul className="profile-options">
+              <li className="profile-options-username"><strong>{this.props.currentUser.username}</strong></li>
+              <li className="profile-options-handle">@{this.props.currentUser.username}</li>
+              <li className="logout"><a onClick={this.handleLogout}>Sign out of Lacks</a></li>
             </ul>
           </nav>
         </div>
