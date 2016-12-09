@@ -34,7 +34,7 @@ div .form {
   text-align: center;
 }
 
-input {
+form.form-field input {
 
   display: block;
   width: 360px;
@@ -51,7 +51,7 @@ input {
   transition: border-color 1s;
 }
 
-input:hover {
+form.form-field input:hover {
   border-color: #38A2E0;
 }
 

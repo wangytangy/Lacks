@@ -70,12 +70,12 @@ class ChannelIndex extends React.Component {
         <h1 className="channels-header">
           <Link>
             channels &#40;{channelsIndex.length}&#41;
-            <i className="material-icons create-channel"
-              onClick={this.handleModalClick}>
-              add_circle_outline
-            </i>
           </Link>
         </h1>
+        <i className="material-icons create-channel"
+          onClick={this.handleModalClick}>
+          add_circle_outline
+        </i>
 
 
         <ul className="channels-index">{channelsIndex}</ul>
@@ -87,8 +87,13 @@ class ChannelIndex extends React.Component {
           style={customStyle}
           contentLabel=""
         >
-          <CreateChannelFormContainer />
-          <button onClick={this.onModalClose}>esc</button>
+        <i className="material-icons exit-icon" onClick={this.onModalClose}>
+          highlight_off
+        </i>
+
+        <CreateChannelFormContainer
+          onModalClose={this.onModalClose}
+          />
         </Modal>
       </div>
     );

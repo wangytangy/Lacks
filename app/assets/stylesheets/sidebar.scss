@@ -128,15 +128,13 @@ ul.profile-options li:last-child:hover {
 //****** CHANNEL INDEX ******
 
 div.channels {
-  //no styling
   margin: 20px 0 0 0px;
-
+  position: relative;
 }
 
 h1.channels-header {
   text-transform: uppercase;
   font-size: 13px;
-  position: relative;
   font-weight: bold;
   padding: 0 0 0 20px;
 
@@ -154,7 +152,7 @@ i.create-channel {
   margin-right: 20px;
   position: absolute;
   left: 183px;
-  bottom: -1px;
+  top: -1px;
   color: #AB9BA9;
 }
 

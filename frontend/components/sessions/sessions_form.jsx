@@ -79,7 +79,9 @@ class SessionForm extends React.Component {
 
             <button className="submit">Log In</button>
           </form>
-          <div className="guest-login">Don't have an account. Sign up <Link to="signup">here</Link></div>
+          <div className="guest-login">Don't have an account&#63; Sign up <Link to="signup">
+            here</Link>
+          </div>
           <ul className="errors-list">{errorsArr}</ul>
 
 
