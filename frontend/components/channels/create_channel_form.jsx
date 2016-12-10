@@ -41,7 +41,7 @@ class CreateChannelForm extends React.Component {
             They&#39;re best when organized around a topic- #leads, for example
           </h2>
 
-          <label for="channel-name-input" className="newchannel-label">
+          <label className="newchannel-label">
             Channel name
           </label>
           <input
@@ -49,11 +49,11 @@ class CreateChannelForm extends React.Component {
             type="text"
             onChange={this.handleChange}>
           </input>
-          <p classname="channelname-specifications">
+          <p className="channelname-specifications">
             Names must be lowercase and less than 20 characters
           </p>
 
-          <label for="channel-purpose-input" className="newchannel-label">
+          <label className="newchannel-label">
             Purpose
           </label>
           <input
@@ -61,7 +61,7 @@ class CreateChannelForm extends React.Component {
             type="text"
             onChange={this.handleChange}>
           </input>
-          <p classname="channelname-specifications">
+          <p className="channelname-specifications">
             What's this channel about&#63;
           </p>
 
