@@ -8,7 +8,7 @@ class BrowseChannel extends React.Component {
   }
 
   handleClick() {
-    //join a channel
+    //join a channel (ajax call to create a new Channel Membership)
     // debugger
   }
 
@@ -16,11 +16,9 @@ class BrowseChannel extends React.Component {
     let allChannels;
     allChannels = Object.values(this.props.channels).map((channel, i) => {
       return (
-        <li
-          key={i}
-          onClick={this.handleClick}
-        >
-          {channel.title}
+        <li key={i}>
+          <span>{channel.title}</span>
+          <button onClick={this.handleClick}>Join for now</button>
         </li>
       );
     });

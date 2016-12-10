@@ -24,6 +24,7 @@ export const fetchAllChannels = () => {
   return (dispatch) => {
     return APIUtil.fetchChannels().then((channels) => {
       dispatch(receiveChannels(channels));
+      
       //return channels so we can take the first channel's id
       //and render it as a default channel show page
       //(in ChannelsIndex componentDidMount)
