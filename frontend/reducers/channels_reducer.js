@@ -10,7 +10,7 @@ function ChannelsReducer(state = {}, action) {
       return action.channels;
     case DELETE_CHANNEL:
       let copyState = Object.assign({}, state);
-      delete copyState[`${action.channel.id}`];
+      delete copyState[action.channel.id];
       return copyState;
     default:
       return state;

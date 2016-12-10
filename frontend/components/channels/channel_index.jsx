@@ -28,12 +28,8 @@ class ChannelIndex extends React.Component {
     if (this.props.channels[0] === undefined && this.props.location.pathname === "messages") {
       //if there a channel exists && pathname is "messages", go to that channel
       this.props.fetchAllChannels().then((channels) => {
-        console.log(this.props.router);
-
         this.redirect(Object.keys(channels)[0]);
-        // this.props.router.push(`/messages/${Object.keys(channels)[0]}`);
       });
-
     } else {
       //else, fetch the channels in all other cases
       this.props.fetchAllChannels();
@@ -41,14 +37,14 @@ class ChannelIndex extends React.Component {
   }
 
   redirect(id) {
-    this.props.router.push(`/messages/${id}`);
+    this.props.router.push(`messages/${id}`);
   }
 
 
   handleDelete(id) {
     this.props.deleteChannel(id).then(() =>{
       //re-route to "/messages"
-      this.redirect(Object.keys(this.props.channels)[0]);
+      this.redirect(this.props.channels[0].id);
       // this.props.router.push(`/messages/${Object.keys(this.props.channels)[0]}`);
       //componentWillReceiveProps will find a default channel (first one)
     });
