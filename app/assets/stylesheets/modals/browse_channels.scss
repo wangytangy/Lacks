@@ -6,22 +6,44 @@ div.browse-channels {
 }
 
 div.browse-channels h1 {
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
-  margin: 0 0 20px 0;
+  margin: 0 0 30px 0;
 }
 
 div.browse-channels h2 {
   padding: 0 10px;
-  margin: 0 0 10px;
-  font-size: 12px;
+  margin: 25px 0 10px 0;
+  font-size: 14px;
   color: #67686E;
-
   font-weight: bold;
 }
 
-div.browse-channels ul {
+input.browse-search {
+  width: 91%;
+  border-radius: 5px;
+  height: 50px;
+  border: 1px solid #ccc;
+  padding: 3px 0 3px 45px;
+  font-size: 24px;
 
+  transition: border-color 0.6s;
+}
+
+input.browse-search:hover {
+  border-color: #38A2E0;
+}
+
+div.browse-channel-searchbar {
+  position: relative;
+}
+
+div.browse-channel-searchbar i {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  font-size: 32px;
+  color: #ccc;
 }
 
 div.browse-channels ul > li {

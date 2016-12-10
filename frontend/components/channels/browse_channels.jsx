@@ -6,6 +6,9 @@ class BrowseChannel extends React.Component {
     this.allChannelsList = this.allChannelsList.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.isMember = this.isMember.bind(this);
+
+    this.state = { searchInput: "" };
+    this.handleInputChange = this.handleInputChange.bind(this);
   }
 
   handleClick(action, channel) {
@@ -17,6 +20,10 @@ class BrowseChannel extends React.Component {
       this.props.router.push(`messages/${channel.id}`);
       this.props.onBrowseModalClose();
     }
+  }
+
+  handleInputChange(e) {
+    this.setState({ searchInput: e.currentTarget.value });
   }
 
   isMember(channel) {
@@ -33,48 +40,68 @@ class BrowseChannel extends React.Component {
   }
 
   allChannelsList() {
-    let allChannels;
-    allChannels = Object.values(this.props.channels).map((channel, i) => {
+    let allChannels = [];
+    // debugger
+    let searchInput = this.state.searchInput.toLowerCase();
+    Object.values(this.props.channels).forEach((channel, i) => {
+      let sub = channel.title.slice(0, searchInput.length).toLowerCase();
+      
+      if (searchInput === sub) {
+        let action = "Join channel";
+        if (this.isMember(channel) === true) {
+          action = "Open channel";
+        }
+        let liElement = (
+          <li key={i}>
+            <div className="search-result group">
 
-      let action = "Join channel";
-      if (this.isMember(channel) === true) {
-        action = "Open channel";
-      }
-      //make li light up
-      //only have button clickable
-      return (
-        <li key={i}>
-          <div className="search-result group">
-
-            <div className="search-result-topline group">
-              <h3># {channel.title}</h3>
-              <div className="search-members-count">
-                <i className="material-icons">person_outline</i>
-                <span>{channel.members.length}</span>
+              <div className="search-result-topline group">
+                <h3># {channel.title}</h3>
+                <div className="search-members-count">
+                  <i className="material-icons">person_outline</i>
+                  <span>{channel.members.length}</span>
+                </div>
               </div>
+
+              <div className="search-result-bottomline">
+                <i>Created by <em>{channel.creator.username}</em></i>
+                <button onClick={() => this.handleClick(action, channel)}>
+                  {action}
+                </button>
+              </div>
+
             </div>
-
-
-            <div className="search-result-bottomline">
-              <i>Created by <em>{channel.creator.username}</em></i>
-              <button onClick={() => this.handleClick(action, channel)}>
-                {action}
-              </button>
-            </div>
-
-          </div>
-        </li>
-      );
+          </li>
+        );
+        allChannels.push(liElement);
+      }
+      //end of if statement
     });
+    //end of map
     return allChannels;
   }
 
   render() {
+    // console.log(this.state.input`);
+
     let allChannels = this.allChannelsList();
 
     return(
       <div className="browse-channels">
         <h1>Browse all channels</h1>
+
+        <div className="browse-channel-searchbar">
+          <i className="material-icons search">search</i>
+          <input
+            type="text"
+            className="browse-search"
+            placeholder="search for channels"
+            onChange={this.handleInputChange}
+
+            >
+          </input>
+        </div>
+
         <h2>Channels you can join</h2>
         <ul>
           {allChannels}
