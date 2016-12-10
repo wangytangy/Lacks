@@ -8,6 +8,7 @@ Rails.application.routes.draw do
     resources :channels, only: [:index, :create, :show, :destroy]
     resources :channels do
       resources :messages, only: [:create, :index, :show, :update, :destroy]
+      resources :channel_memberships, only: [:create]
     end
   end
   # The priority is based upon order of creation: first created -> highest priority.

@@ -20,11 +20,13 @@ export const receiveNewChannel = (channel) => ({
   currentChannel: channel
 });
 
+
+
 export const fetchAllChannels = () => {
   return (dispatch) => {
     return APIUtil.fetchChannels().then((channels) => {
       dispatch(receiveChannels(channels));
-      
+
       //return channels so we can take the first channel's id
       //and render it as a default channel show page
       //(in ChannelsIndex componentDidMount)
@@ -37,6 +39,7 @@ export const createAChannel = (channel) => {
   return (dispatch) => {
     return APIUtil.createChannel(channel).then((channel) => {
       dispatch(receiveNewChannel(channel));
+      return channel;
       //no error handling yet
     });
   };

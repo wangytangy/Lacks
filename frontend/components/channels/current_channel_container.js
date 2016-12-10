@@ -5,7 +5,6 @@ import { Router, Route, IndexRoute, hashHistory, withRouter } from 'react-router
 
 const mapStateToProps = (state) => ({
   currentChannel: state.currentChannel,
-  channels: state.channels
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -11,14 +11,15 @@ class CreateChannelForm extends React.Component {
 
   handleCreateChannel() {
     this.props.onModalClose();
-    this.props.createChannel(this.state).then(() => {
+    this.props.createChannel(this.state).then((channel) => {
+      this.redirect(channel.id);
       this.props.fetchAllChannels();
-      this.redirect();
     });
   }
 
-  redirect() {
-    this.props.router.push(`messages/${this.props.currentChannel.id}`);
+  redirect(id) {
+    // debugger
+    this.props.router.push(`messages/${id}`);
   }
 
   handleChange(e) {

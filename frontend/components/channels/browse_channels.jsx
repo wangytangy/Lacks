@@ -12,6 +12,7 @@ class BrowseChannel extends React.Component {
     if (action === "Join channel") {
       console.log("JOINNN");
       //dispatch a new Channel Membership create action
+      //passing in channel ID
     } else {
       console.log("OPENNN");
       //redirect url of the chosen channel
