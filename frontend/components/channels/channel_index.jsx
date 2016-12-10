@@ -13,9 +13,12 @@ class ChannelIndex extends React.Component {
     this.onModalOpen = this.onModalOpen.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
 
+    this.handleBrowseModalClick = this.handleBrowseModalClick.bind(this);
+    this.onBrowseModalClose = this.onBrowseModalClose.bind(this);
+
     this.handleDelete = this.handleDelete.bind(this);
 
-    this.state = { modalOpen: false };
+    this.state = { modalOpen: false, browseModalOpen: false };
     this.redirect = this.redirect.bind(this);
   }
 
@@ -50,9 +53,12 @@ class ChannelIndex extends React.Component {
   }
 
   mapChannelIndex() {
+
     let channelsIndex = [];
-    if (this.props.channels) {
-      channelsIndex = Object.values(this.props.channels).map((channel, i) => {
+    if (this.props.channels.length > 0) {
+
+      channelsIndex = this.props.channels.map((channel, i) => {
+
         let path = `messages/${channel.id}`;
         let deleteFn = this.handleDelete;
         let icon = (
@@ -96,13 +102,23 @@ class ChannelIndex extends React.Component {
     this.setState({modalOpen: false});
   }
 
+  handleBrowseModalClick() {
+    this.setState({browseModalOpen: true });
+  }
+
+  onBrowseModalClose() {
+    this.setState({browseModalOpen: false});
+  }
+
+
+
   render() {
     let channelsIndex = this.mapChannelIndex();
     return(
       <div className="channels group">
 
         <h1 className="channels-header">
-          <Link>
+          <Link onClick={this.handleBrowseModalClick}>
             channels &#40;{channelsIndex.length}&#41;
           </Link>
         </h1>
@@ -110,6 +126,16 @@ class ChannelIndex extends React.Component {
           onClick={this.handleModalClick}>
           add_circle_outline
         </i>
+
+        <Modal
+          isOpen={this.state.browseModalOpen}
+          onRequestClose={this.onBrowseModalClose}
+          contentLabel = "browse-modal"
+          >
+          browse channels
+        </Modal>
+
+
 
         <Modal
           isOpen={this.state.modalOpen}

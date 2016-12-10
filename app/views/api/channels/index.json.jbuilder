@@ -3,6 +3,6 @@
     json.id channel.id
     json.title channel.title
     json.description channel.description
-    json.user_id channel.id
+    json.user_id channel.user_id
   end
 end

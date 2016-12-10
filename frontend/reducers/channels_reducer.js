@@ -2,6 +2,7 @@ import { receiveChannels, deleteChannel } from '../actions/channels_actions';
 import { RECEIVE_ALL_CHANNELS, DELETE_CHANNEL } from '../actions/channels_actions';
 
 
+
 function ChannelsReducer(state = {}, action) {
   Object.freeze(state);
   switch(action.type) {
