@@ -2,6 +2,8 @@ import React from 'react';
 import Modal from 'react-modal';
 import customStyle from '../modal_style';
 import CreateChannelFormContainer from './create_channel_form_container';
+import BrowseChannelContainer from './browse_channels_container';
+
 import { Link } from 'react-router';
 
 class ChannelIndex extends React.Component {
@@ -55,6 +57,7 @@ class ChannelIndex extends React.Component {
   mapChannelIndex() {
 
     let channelsIndex = [];
+    // debugger
     if (this.props.channels.length > 0) {
 
       channelsIndex = this.props.channels.map((channel, i) => {
@@ -127,12 +130,14 @@ class ChannelIndex extends React.Component {
           add_circle_outline
         </i>
 
+        <ul className="channels-index">{channelsIndex}</ul>
+
         <Modal
           isOpen={this.state.browseModalOpen}
           onRequestClose={this.onBrowseModalClose}
           contentLabel = "browse-modal"
           >
-          browse channels
+          <BrowseChannelContainer />
         </Modal>
 
 
@@ -153,7 +158,6 @@ class ChannelIndex extends React.Component {
             />
         </Modal>
 
-        <ul className="channels-index">{channelsIndex}</ul>
 
       </div>
     );
