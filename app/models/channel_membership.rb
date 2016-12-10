@@ -12,6 +12,14 @@
 class ChannelMembership < ActiveRecord::Base
   validates :channel_id, uniqueness: { scope: :member_id }
 
-  belongs_to :channel
-  belongs_to :user
+  belongs_to :channel,
+    class_name: :Channel,
+    primary_key: :id,
+    foreign_key: :channel_id
+
+  belongs_to :user,
+    class_name: :User,
+    primary_key: :id,
+    foreign_key: :member_id
+
 end
