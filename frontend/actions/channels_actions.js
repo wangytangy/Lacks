@@ -57,6 +57,7 @@ export const deleteAChannel = (id) => {
   return (dispatch) => {
     return APIUtil.deleteAChannel(id).then((channel) => {
       dispatch(deleteChannel(channel));
+      return channel;
     });
   };
 };

@@ -12,7 +12,8 @@ import { Router, Route, IndexRoute, hashHistory, withRouter } from 'react-router
 
 const mapStateToProps = (state) => ({
   //selector;
-  channels: usersChannels(state)
+  channels: usersChannels(state),
+  currentChannel: state.currentChannel
 });
 
 const mapDispatchToProps = (dispatch) => ({

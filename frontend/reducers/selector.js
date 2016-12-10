@@ -4,7 +4,7 @@ export const usersChannels = (state) => {
     let firstChannel = Object.values(state.channels)[0];
     let filterChannels = [];
     filterChannels.push(firstChannel);
-    Object.values(state.channels).forEach((channel) => {
+    Object.values(state.channels).slice(1).forEach((channel) => {
       if (channel.user_id === state.session.currentUser.id) {
         filterChannels.push(channel);
       }

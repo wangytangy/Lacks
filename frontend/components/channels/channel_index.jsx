@@ -25,7 +25,9 @@ class ChannelIndex extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.channels[0] === undefined && this.props.location.pathname === "messages") {
+
+
+    if (this.props.location.pathname === "messages") {
       //if there a channel exists && pathname is "messages", go to that channel
       this.props.fetchAllChannels().then((channels) => {
         this.redirect(Object.keys(channels)[0]);
@@ -42,11 +44,13 @@ class ChannelIndex extends React.Component {
 
 
   handleDelete(id) {
-    this.props.deleteChannel(id).then(() =>{
-      //re-route to "/messages"
-      this.redirect(this.props.channels[0].id);
-      // this.props.router.push(`/messages/${Object.keys(this.props.channels)[0]}`);
-      //componentWillReceiveProps will find a default channel (first one)
+    this.props.deleteChannel(id).then((channel) =>{
+      //if deleted channel_id is the currentChannel's id => redirect to #general
+      //else nothing?
+
+      if (channel.id === this.props.currentChannel.id) {
+        this.redirect(this.props.channels[0].id);
+      }
     });
   }
 
@@ -106,6 +110,7 @@ class ChannelIndex extends React.Component {
   }
 
   onBrowseModalClose() {
+    customStyle.content.opacity = 0;
     this.setState({browseModalOpen: false});
   }
 
@@ -130,9 +135,15 @@ class ChannelIndex extends React.Component {
 
         <Modal
           isOpen={this.state.browseModalOpen}
+          onAfterOpen={this.onModalOpen}
           onRequestClose={this.onBrowseModalClose}
+          style={customStyle}
           contentLabel = "browse-modal"
+
           >
+          <i className="material-icons exit-icon" onClick={this.onBrowseModalClose}>
+            highlight_off
+          </i>
           <BrowseChannelContainer />
         </Modal>
 

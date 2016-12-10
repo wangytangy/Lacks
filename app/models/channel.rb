@@ -19,6 +19,11 @@ class Channel < ActiveRecord::Base
     foreign_key: :channel_id,
     dependent: :destroy
 
+  belongs_to :user,
+    class_name: :User,
+    primary_key: :id,
+    foreign_key: :user_id
+
   has_many :users, through: :channel_memberships
 
   has_many :messages, as: :messageable

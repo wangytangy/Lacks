@@ -32,7 +32,6 @@ class BrowseChannel extends React.Component {
     return bool;
   }
 
-
   allChannelsList() {
     let allChannels;
     allChannels = Object.values(this.props.channels).map((channel, i) => {
@@ -41,13 +40,29 @@ class BrowseChannel extends React.Component {
       if (this.isMember(channel) === true) {
         action = "Open channel";
       }
-
+      //make li light up
+      //only have button clickable
       return (
         <li key={i}>
-          <span>{channel.title}</span>
-          <button onClick={() => this.handleClick(action, channel)}>
-            {action}
-          </button>
+          <div className="search-result group">
+
+            <div className="search-result-topline group">
+              <h3># {channel.title}</h3>
+              <div className="search-members-count">
+                <i className="material-icons">person_outline</i>
+                <span>{channel.members.length}</span>
+              </div>
+            </div>
+
+
+            <div className="search-result-bottomline">
+              <i>Created by <em>{channel.creator.username}</em></i>
+              <button onClick={() => this.handleClick(action, channel)}>
+                {action}
+              </button>
+            </div>
+
+          </div>
         </li>
       );
     });
@@ -58,8 +73,9 @@ class BrowseChannel extends React.Component {
     let allChannels = this.allChannelsList();
 
     return(
-      <div>
+      <div className="browse-channels">
         <h1>Browse all channels</h1>
+        <h2>Channels you can join</h2>
         <ul>
           {allChannels}
         </ul>

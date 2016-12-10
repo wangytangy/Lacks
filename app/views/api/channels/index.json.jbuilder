@@ -5,5 +5,6 @@
     json.description channel.description
     json.user_id channel.user_id
     json.members channel.users
+    json.creator channel.user
   end
 end
