@@ -105,6 +105,8 @@ class ChannelIndex extends React.Component {
     this.setState({modalOpen: false});
   }
 
+
+
   handleBrowseModalClick() {
     this.setState({browseModalOpen: true });
   }
@@ -144,7 +146,9 @@ class ChannelIndex extends React.Component {
           <i className="material-icons exit-icon" onClick={this.onBrowseModalClose}>
             highlight_off
           </i>
-          <BrowseChannelContainer />
+          <BrowseChannelContainer
+            onBrowseModalClose={this.onBrowseModalClose}
+            />
         </Modal>
 
         <Modal

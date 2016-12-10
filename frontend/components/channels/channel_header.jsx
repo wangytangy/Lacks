@@ -9,7 +9,7 @@ class ChannelHeader extends React.Component {
 
   render() {
 
-
+    // debugger
     return(
       <div className="channel-header-container group">
         <div className="header-left">
@@ -21,15 +21,17 @@ class ChannelHeader extends React.Component {
           <div className="header-info">
 
             <i className="material-icons" id="star">star_border</i>
-            <span className="topic-divider">|</span>
 
+            <span className="topic-divider">|</span>
+            <i className="material-icons">person_outline</i>
+            <span className="header-status-text">46</span>
+
+            <span className="topic-divider">|</span>
             <i className="material-icons" id="circle">brightness_1</i>
-            <span className="header-status-message">{this.props.currentChannel.title}</span>
+            <span className="header-status-text">@{this.props.currentUser.username}</span>
 
             <span className="topic-divider">|</span>
-
-            <span className="header-status-message">@{this.props.currentUser.username}</span>
-
+            <span className="header-status-text">{this.props.currentChannel.description}</span>
           </div>
         </div>
       </div>

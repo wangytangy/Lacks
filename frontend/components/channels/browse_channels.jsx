@@ -14,8 +14,8 @@ class BrowseChannel extends React.Component {
       //dispatch a new Channel Membership create action
       //passing in channel ID
     } else {
-      console.log("OPENNN");
-      //redirect url of the chosen channel
+      this.props.router.push(`messages/${channel.id}`);
+      this.props.onBrowseModalClose();
     }
   }
 

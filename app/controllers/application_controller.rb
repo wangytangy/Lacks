@@ -28,4 +28,8 @@ class ApplicationController < ActionController::Base
     @current_user = nil
   end
 
+  def calculate_members(channel)
+    channel.users.length
+  end
+
 end

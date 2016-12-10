@@ -74,8 +74,6 @@ class Sidebar extends React.Component {
 
         <ChannelIndexContainer />
 
-        <h2>Direct Messages Container</h2>
-
       </div>
     );
   }
