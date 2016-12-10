@@ -15,8 +15,7 @@ class ChannelHeader extends React.Component {
         <div className="header-left">
 
           <div className="header-title">
-            <h1>@{this.props.currentUser.username}</h1>
-            <span>(you)</span>
+            <h1>#{this.props.currentChannel.title}</h1>
           </div>
 
           <div className="header-info">
@@ -29,7 +28,7 @@ class ChannelHeader extends React.Component {
 
             <span className="topic-divider">|</span>
 
-            <span className="header-status-message">{this.props.currentUser.username}</span>
+            <span className="header-status-message">@{this.props.currentUser.username}</span>
 
           </div>
         </div>
