@@ -140,8 +140,6 @@ class ChannelIndex extends React.Component {
           <BrowseChannelContainer />
         </Modal>
 
-
-
         <Modal
           isOpen={this.state.modalOpen}
           onAfterOpen={this.onModalOpen}
