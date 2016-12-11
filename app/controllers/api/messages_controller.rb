@@ -19,7 +19,7 @@ class Api::MessagesController < ApplicationController
       Pusher.trigger('my-channel', 'my-event', {
         message: 'hello world'
       })
-
+      render :show
     else
       render json: ["message could not be created"], status: 422
     end
