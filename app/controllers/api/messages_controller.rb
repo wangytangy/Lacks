@@ -2,14 +2,24 @@ class Api::MessagesController < ApplicationController
 
   def index
     #get all messages belonging to a channel/DM
-    @messages = Message.all
+    @channel = Channel.find(params[:channel_id])
+    @messages = @channel.messages
+    render :index
+
   end
 
   def create
     @message = Message.new(message_params)
+    @message.author_id = current_user.id
+    @message.channel_id = params[:channel_id]
 
     if @message.save
-      #
+      #publish an event
+      #all componenets subscribed to that event can hear about it
+      Pusher.trigger('my-channel', 'my-event', {
+        message: 'hello world'
+      })
+
     else
       render json: ["message could not be created"], status: 422
     end
@@ -35,12 +45,7 @@ class Api::MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:messages).permit(
-      :body,
-      :author_id,
-      :messageable_id,
-      :messageable_type
-    )
+    params.require(:messages).permit(:body, :author_id, :channel_id)
   end
 
 end

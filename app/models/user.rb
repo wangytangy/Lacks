@@ -25,7 +25,13 @@ class User < ActiveRecord::Base
     primary_key: :id,
     foreign_key: :member_id
 
+  has_many :messages,
+    class_name: :Message,
+    primary_key: :id,
+    foreign_key: :author_id
+
   has_many :channels, through: :channel_memberships
+
 
 
   def self.find_by_credentials(username, password)

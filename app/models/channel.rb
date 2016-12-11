@@ -26,6 +26,9 @@ class Channel < ActiveRecord::Base
 
   has_many :users, through: :channel_memberships
 
-  has_many :messages, as: :messageable
+  has_many :messages,
+    class_name: :Message,
+    primary_key: :id,
+    foreign_key: :channel_id
 
 end

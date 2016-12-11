@@ -1,5 +1,7 @@
+/* globals Pusher */
 import React from 'react';
 import ChannelHeaderContainer from './channel_header_container';
+import MessageIndexContainer from '../messages/message_index_container';
 
 class CurrentChannel extends React.Component {
   constructor(props) {
@@ -14,6 +16,24 @@ class CurrentChannel extends React.Component {
     // Initialization that requires DOM nodes should go here.
     // If you need to load data from a remote endpoint,
     //this is a good place to instantiate the network request
+
+    //subscription code IN HERE:
+
+    var pusher = new Pusher('6229f47cce1a7e390f4e', {
+      encrypted: true
+    });
+
+    //whenever someone publishes an event, CurrentChannel comp should hear it
+    //have pusher subscribe to a channel
+    var channel = pusher.subscribe('my-channel');
+
+    //every time a particular event is triggered, alert this message:
+    channel.bind('my-event', function(data) {
+      //do this action:
+      alert(data.message);
+      //fetch all messages that BELONG TO currentChannel
+    });
+
   }
 
   componentWillReceiveProps(nextProps) {
@@ -33,6 +53,7 @@ class CurrentChannel extends React.Component {
     return(
       <div className="current-channel">
         <ChannelHeaderContainer />
+        <MessageIndexContainer />
       </div>
     );
   }
