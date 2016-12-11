@@ -18,8 +18,9 @@ class MessageForm extends React.Component {
       channelID: parseInt(this.props.currentChannel.id),
       body: this.state.body
     };
-    this.props.createMessage(messageData);
+    this.setState({body: ""});
     //dispatch a POST action to messages
+    this.props.createMessage(messageData);
   }
 
 
@@ -28,7 +29,10 @@ class MessageForm extends React.Component {
     return(
       <div className="message-form">
         <form onSubmit={this.handleSubmit}>
-          <input type="text" onChange={this.handleChange}></input>
+          <input
+            type="text"
+            onChange={this.handleChange}
+            value={this.state.body}></input>
 
           <input type="submit" value="send"></input>
         </form>

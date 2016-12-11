@@ -30,7 +30,7 @@ class CurrentChannel extends React.Component {
     //every time a particular event is triggered, alert this message:
     channel.bind('my-event', function(data) {
       //do this action:
-      alert(data.message);
+      // alert(data.message);
       //fetch all messages that BELONG TO currentChannel
     });
 

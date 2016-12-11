@@ -5,6 +5,8 @@ export const RECEIVE_ALL_MESSAGES = "RECEIVE_ALL_MESSAGES";
 
 export const receiveNewMessage = (message) => ({
   //copy all the "messages" slice of state, add this message to it
+  type: RECEIVE_NEW_MESSAGE,
+  message
 });
 
 export const receiveAllMessages = (messages) => ({
@@ -17,7 +19,8 @@ export const receiveAllMessages = (messages) => ({
 
 export const createAMessage = (messageData) => {
   return (dispatch) => {
-    return APIUtil.createMessage(messageData).then(() => {
+    return APIUtil.createMessage(messageData).then((message) => {
+      dispatch(receiveNewMessage(message));
     });
   };
 };
