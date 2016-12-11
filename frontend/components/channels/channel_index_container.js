@@ -5,15 +5,12 @@ import {
   createAChannel,
   deleteAChannel
 } from '../../actions/channels_actions';
-
-import { usersChannels } from '../../reducers/selector';
-
 import { Router, Route, IndexRoute, hashHistory, withRouter } from 'react-router';
 
 const mapStateToProps = (state) => ({
-  //selector;
-  channels: usersChannels(state),
-  currentChannel: state.currentChannel
+  channels: state.channels,
+  currentChannel: state.currentChannel,
+  currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -47,20 +47,19 @@ div.browse-channel-searchbar i {
 }
 
 div.browse-channels ul > li {
-  border-radius: 5px;
+
   box-sizing: border-box;
   border-top: 1px solid #eee;
+
+  transition: background-color 0.6s;
+  transition: border-color 0.6s;
 }
 
 div.browse-channels ul > li:hover {
   background-color: #EDF7FD;
-  border: 1px solid #38A2E0;
-}
+  border-color: #38A2E0;
 
-div.browse-channels ul > li:hover button {
-  display: block
 }
-
 
 
 div.search-result {
@@ -121,4 +120,9 @@ div.search-result-bottomline button {
   color: #38A2E0;
   font-size: 15px;
   font-weight: normal;
+
+}
+
+div.browse-channels ul > li:hover button {
+  display: block
 }

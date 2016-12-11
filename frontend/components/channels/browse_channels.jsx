@@ -13,9 +13,9 @@ class BrowseChannel extends React.Component {
 
   handleClick(action, channel) {
     if (action === "Join channel") {
-      console.log("JOINNN");
-      //dispatch a new Channel Membership create action
-      //passing in channel ID
+      this.props.onBrowseModalClose();
+      this.props.joinChannel(channel.id);
+      //then direct to this new channel
     } else {
       this.props.router.push(`messages/${channel.id}`);
       this.props.onBrowseModalClose();
@@ -45,7 +45,7 @@ class BrowseChannel extends React.Component {
     let searchInput = this.state.searchInput.toLowerCase();
     Object.values(this.props.channels).forEach((channel, i) => {
       let sub = channel.title.slice(0, searchInput.length).toLowerCase();
-      
+
       if (searchInput === sub) {
         let action = "Join channel";
         if (this.isMember(channel) === true) {

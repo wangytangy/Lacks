@@ -5,7 +5,12 @@ class ChannelHeader extends React.Component {
 
   constructor(props) {
     super(props);
+
+    
   }
+
+  // calculateMembers() {
+  // }
 
   render() {
 
@@ -24,7 +29,7 @@ class ChannelHeader extends React.Component {
 
             <span className="topic-divider">|</span>
             <i className="material-icons">person_outline</i>
-            <span className="header-status-text">46</span>
+            <span className="header-status-text">30</span>
 
             <span className="topic-divider">|</span>
             <i className="material-icons" id="circle">brightness_1</i>
