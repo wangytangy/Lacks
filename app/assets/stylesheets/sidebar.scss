@@ -188,6 +188,17 @@ ul.channels-index li a {
 
 }
 
+//****ACTIVE CHANNEL ****
+ul.channels-index li.active a {
+  background-color: #4F9689;
+  color: #fff;
+}
+
+ul.channels-index li.active a:hover {
+  background-color: #4F9689;
+}
+// *************************
+
 ul.channels-index li a:hover {
   background-color: #3E313C;
 }

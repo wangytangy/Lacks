@@ -20,10 +20,12 @@ class ChannelIndex extends React.Component {
 
     this.handleDelete = this.handleDelete.bind(this);
 
-    this.state = { modalOpen: false, browseModalOpen: false };
+    this.state = { modalOpen: false, browseModalOpen: false, selected: "" };
     this.redirect = this.redirect.bind(this);
 
     this.isMember = this.isMember.bind(this);
+    this.setSelected = this.setSelected.bind(this);
+    this.isActive = this.isActive.bind(this);
   }
 
   componentDidMount() {
@@ -68,14 +70,23 @@ class ChannelIndex extends React.Component {
     return bool;
   }
 
+  setSelected(i) {
+    this.setState({selected: i});
+  }
+
+  isActive(value) {
+    if (value === this.state.selected) {
+      return 'group active';
+    } else {
+      return 'group default';
+    }
+  }
+
 
   mapChannelIndex() {
 
     let channelsIndex = [];
-    // debugger
-
     if (Object.values(this.props.channels).length > 0) {
-
       Object.values(this.props.channels).forEach((channel, i) => {
 
         if (this.isMember(channel)) {
@@ -93,8 +104,15 @@ class ChannelIndex extends React.Component {
             deleteFn = () => {};
             icon = null;
           }
+          console.log("i: " + i);
+          console.log(this.isActive(i));
+          let liElement = (<li
+            onClick={() => this.setSelected(i)}
+            key={i}
+            className={this.isActive(i)}>
+              <Link to={path}>&#35; {channel.title}{icon}</Link>
+            </li>);
 
-          let liElement = (<li key={i} className="group"><Link to={path}>&#35; {channel.title}{icon}</Link></li>);
           channelsIndex.push(liElement);
         }
       });
@@ -154,9 +172,7 @@ class ChannelIndex extends React.Component {
           onAfterOpen={this.onModalOpen}
           onRequestClose={this.onBrowseModalClose}
           style={customStyle}
-          contentLabel = "browse-modal"
-
-          >
+          contentLabel = "browse-modal">
           <i className="material-icons exit-icon" onClick={this.onBrowseModalClose}>
             highlight_off
           </i>
