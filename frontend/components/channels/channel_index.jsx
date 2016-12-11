@@ -20,7 +20,7 @@ class ChannelIndex extends React.Component {
 
     this.handleDelete = this.handleDelete.bind(this);
 
-    this.state = { modalOpen: false, browseModalOpen: false, selected: "" };
+    this.state = { modalOpen: false, browseModalOpen: false, selected: 0 };
     this.redirect = this.redirect.bind(this);
 
     this.isMember = this.isMember.bind(this);
@@ -104,8 +104,7 @@ class ChannelIndex extends React.Component {
             deleteFn = () => {};
             icon = null;
           }
-          console.log("i: " + i);
-          console.log(this.isActive(i));
+
           let liElement = (<li
             onClick={() => this.setSelected(i)}
             key={i}
