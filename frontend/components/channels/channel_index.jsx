@@ -77,6 +77,7 @@ class ChannelIndex extends React.Component {
     if (Object.values(this.props.channels).length > 0) {
 
       Object.values(this.props.channels).forEach((channel, i) => {
+
         if (this.isMember(channel)) {
           let path = `messages/${channel.id}`;
           let deleteFn = this.handleDelete;
@@ -88,7 +89,7 @@ class ChannelIndex extends React.Component {
             </i>
           );
 
-          if (i === 0) {
+          if (i === 0 || channel.user_id !== this.props.currentUser.id) {
             deleteFn = () => {};
             icon = null;
           }
