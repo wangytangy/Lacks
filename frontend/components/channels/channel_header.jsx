@@ -5,8 +5,6 @@ class ChannelHeader extends React.Component {
 
   constructor(props) {
     super(props);
-
-    
   }
 
   // calculateMembers() {

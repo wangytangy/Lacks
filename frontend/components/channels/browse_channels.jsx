@@ -11,6 +11,10 @@ class BrowseChannel extends React.Component {
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
+  componentDidMount() {
+    this.props.fetchAllChannels();
+  }
+
   handleClick(action, channel) {
     if (action === "Join channel") {
       this.props.onBrowseModalClose();
