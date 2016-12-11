@@ -22,11 +22,11 @@ class ChannelIndex extends React.Component {
 
     this.state = { modalOpen: false, browseModalOpen: false };
     this.redirect = this.redirect.bind(this);
+
+    this.isMember = this.isMember.bind(this);
   }
 
   componentDidMount() {
-
-
     if (this.props.location.pathname === "messages") {
       //if there a channel exists && pathname is "messages", go to that channel
       this.props.fetchAllChannels().then((channels) => {
@@ -37,6 +37,7 @@ class ChannelIndex extends React.Component {
       this.props.fetchAllChannels();
     }
   }
+
 
   redirect(id) {
     this.props.router.push(`messages/${id}`);
@@ -54,36 +55,47 @@ class ChannelIndex extends React.Component {
     });
   }
 
+  isMember(channel) {
+    let bool = false;
+    let currentUserID = this.props.currentUser.id;
+
+    channel.members.forEach((user) => {
+      if (user.id === currentUserID) {
+        bool = true;
+        return;
+      }
+    });
+    return bool;
+  }
+
+
   mapChannelIndex() {
 
     let channelsIndex = [];
     // debugger
-    if (this.props.channels.length > 0) {
 
-      channelsIndex = this.props.channels.map((channel, i) => {
+    if (Object.values(this.props.channels).length > 0) {
 
-        let path = `messages/${channel.id}`;
-        let deleteFn = this.handleDelete;
-        let icon = (
+      Object.values(this.props.channels).forEach((channel, i) => {
+        if (this.isMember(channel)) {
+          let path = `messages/${channel.id}`;
+          let deleteFn = this.handleDelete;
+          let icon = (
             <i
               className="material-icons delete-channel"
               onClick={() => deleteFn(channel.id)}>
-                cancel
-              </i>
-            );
+              cancel
+            </i>
+          );
 
-        if (i === 0) {
-          deleteFn = () => {};
-          icon = null;
+          if (i === 0) {
+            deleteFn = () => {};
+            icon = null;
+          }
+
+          let liElement = (<li key={i} className="group"><Link to={path}>&#35; {channel.title}{icon}</Link></li>);
+          channelsIndex.push(liElement);
         }
-
-        return <li
-          key={i}
-          className="group">
-          <Link to={path}>&#35; {channel.title}
-            {icon}
-          </Link>
-        </li>;
       });
       return channelsIndex;
     } else {
@@ -119,6 +131,7 @@ class ChannelIndex extends React.Component {
 
 
   render() {
+
     let channelsIndex = this.mapChannelIndex();
     return(
       <div className="channels group">
@@ -148,6 +161,7 @@ class ChannelIndex extends React.Component {
           </i>
           <BrowseChannelContainer
             onBrowseModalClose={this.onBrowseModalClose}
+
             />
         </Modal>
 
