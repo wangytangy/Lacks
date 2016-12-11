@@ -17,7 +17,13 @@ user3 = User.create!(username: "user3", email: "user3@email.com", password: "pas
 
 Channel.destroy_all
 channel0 = Channel.create!(title: "general", description: "first channel", user_id: guest.id)
-# 
+channel1 = Channel.create!(title: "work", description: "work only, no fun", user_id: guest.id)
+channel2 = Channel.create!(title: "family", description: "the family's all here", user_id: guest.id)
+channel3 = Channel.create!(title: "marketing dept", description: "yo", user_id: guest.id)
+channel4 = Channel.create!(title: "private", description: "secured channel", user_id: guest.id)
+channel6 = Channel.create!(title: "work mates", description: "social stuff", user_id: guest.id)
+channel7 = Channel.create!(title: "friends", description: "drinking", user_id: guest.id)
+#
 # channel1 = Channel.create!(title: "first channel", description: "all convos", user_id: user1.id)
 # channel2 = Channel.create!(title: "second channel", description: "family convos", user_id: user2.id)
 # channel3 = Channel.create!(title: "third channel", description: "work convos", user_id: user3.id)
