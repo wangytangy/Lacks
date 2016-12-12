@@ -37,6 +37,14 @@ class Api::ChannelsController < ApplicationController
     end
   end
 
+  def leave_channel
+
+    @channel = Channel.find(params[:id].to_i)
+    current_user.channels.delete(@channel)
+    @remaining_channels = current_user.channels
+    render :remaining_channels
+  end
+
   private
 
   def channels_params

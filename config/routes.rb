@@ -10,7 +10,9 @@ Rails.application.routes.draw do
       resources :messages, only: [:create, :index, :show, :update, :destroy]
       resources :channel_memberships, only: [:create]
     end
+    delete 'channels/:id/unsubscribe' => 'channels#leave_channel'
   end
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

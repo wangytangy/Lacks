@@ -7,10 +7,10 @@ class CurrentChannel extends React.Component {
   constructor(props) {
     super(props);
     this.boundFetchMessages = this.boundFetchMessages.bind(this);
+    this.handleLeaveChannel = this.handleLeaveChannel.bind(this);
   }
 
   boundFetchMessages() {
-    // debugger
     this.props.fetchMessages(this.props.params.id);
   }
 
@@ -22,8 +22,18 @@ class CurrentChannel extends React.Component {
     // Initialization that requires DOM nodes should go here.
     // If you need to load data from a remote endpoint,
     //this is a good place to instantiate the network request
-  }
+    this.pusher = new Pusher('6229f47cce1a7e390f4e', {
+      encrypted: true
+    });
+    console.log("this.pusher: " + this.pusher);
 
+    var channel = this.pusher.subscribe('channel');
+    channel.bind('message_published', (data) => {
+      console.log(data);
+      //use data to perform actions using @message
+      this.boundFetchMessages();
+    });
+  }
 
   componentWillReceiveProps(nextProps) {
 
@@ -32,13 +42,6 @@ class CurrentChannel extends React.Component {
       this.props.fetchAChannel(nextProps.params.id);
     }
 
-    this.pusher = new Pusher('6229f47cce1a7e390f4e', {
-      encrypted: true
-    });
-    var channel = this.pusher.subscribe('channel_' + this.props.params.id);
-    channel.bind('message_published', (data) => {
-      this.boundFetchMessages();
-    });
     // componentWillReceiveProps() is invoked before
     // a mounted component receives new props.
     // If you need to update the state in response to prop changes
@@ -50,11 +53,20 @@ class CurrentChannel extends React.Component {
   componentWillUnmount() {
     this.pusher.unsubscribe('channel_' + this.props.params.id);
   }
+  // creator={this.props.currentChannel.creator.username}
+  // memberCount={this.props.currentChannel.members.length}
+
+  handleLeaveChannel(channelID) {
+    this.props.leaveChannel(channelID);
+    //redirect to last available channel
+    let firstChannelID = Object.keys(this.props.channels)[0];
+    this.props.router.push(`messages/${firstChannelID}`);
+  }
 
   render() {
     return(
       <div className="current-channel">
-        <ChannelHeaderContainer />
+        <ChannelHeaderContainer leaveChannel={this.handleLeaveChannel}/>
         <MessageIndexContainer />
       </div>
     );
