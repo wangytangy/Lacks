@@ -19,6 +19,7 @@ class BrowseChannel extends React.Component {
     if (action === "Join channel") {
       this.props.onBrowseModalClose();
       this.props.joinChannel(channel.id);
+      this.props.router.push(`messages/${channel.id}`);
 
       //then direct to this new channel
     } else {

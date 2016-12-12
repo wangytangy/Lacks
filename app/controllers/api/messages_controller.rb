@@ -17,10 +17,7 @@ class Api::MessagesController < ApplicationController
       #publish an event
       #all componenets subscribed to that event can hear about it
       # debugger
-      Pusher.trigger('channel_' + params[:channel_id].to_s,
-        'message_published',
-        {}
-      )
+      Pusher.trigger('channel', 'message_published', @message)
 
       render :show
     else

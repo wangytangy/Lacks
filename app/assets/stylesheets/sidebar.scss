@@ -74,7 +74,7 @@ nav.dropdown-menu-open {
   display: block;
   position: absolute;
 
-  z-index: 1;
+  z-index: 100;
   box-sizing: border-box;
   border-radius: 5px;
 
@@ -82,6 +82,15 @@ nav.dropdown-menu-open {
 
   color: #000;
   background-color: #fff;
+}
+
+div.popover-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }
 
 //******************
@@ -216,6 +225,7 @@ ul.channels-index i.delete-channel {
 
 ul.channels-index li:hover i.delete-channel {
   display: block;
+  cursor: pointer;
 }
 
 i.delete-channel:hover {

@@ -59,6 +59,9 @@ class ChannelIndex extends React.Component {
       this.redirect(Object.keys(this.props.channels)[0]);
     });
   }
+  setSelected(channelID) {
+    this.setState({selected: channelID});
+  }
 
   isMember(channel) {
     let bool = false;
@@ -73,9 +76,6 @@ class ChannelIndex extends React.Component {
     return bool;
   }
 
-  setSelected(channelID) {
-    this.setState({selected: channelID});
-  }
 
   mapChannelIndex() {
     let channelsIndex = [];

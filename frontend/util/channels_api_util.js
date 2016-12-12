@@ -33,3 +33,10 @@ export function createChannelMembership(channelID) {
     url: `/api/channels/${channelID}/channel_memberships`
   });
 }
+
+export function leaveChannel(channelID) {
+  return $.ajax({
+    method: "DELETE",
+    url: `/api/channels/${channelID}/unsubscribe`
+  });
+}

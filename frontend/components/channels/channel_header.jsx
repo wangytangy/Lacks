@@ -7,12 +7,14 @@ class ChannelHeader extends React.Component {
     super(props);
   }
 
-  // calculateMembers() {
-  // }
-
   render() {
 
-    // debugger
+    let channelCreator = "";
+    let memberCount = "";
+    if (this.props.currentChannel.id) {
+      channelCreator = this.props.currentChannel.creator.username;
+      memberCount = this.props.currentChannel.memberCount;
+    }
     return(
       <div className="channel-header-container group">
         <div className="header-left">
@@ -27,15 +29,21 @@ class ChannelHeader extends React.Component {
 
             <span className="topic-divider">|</span>
             <i className="material-icons">person_outline</i>
-            <span className="header-status-text">30</span>
+            <span className="header-status-text">{memberCount}</span>
 
             <span className="topic-divider">|</span>
             <i className="material-icons" id="circle">brightness_1</i>
-            <span className="header-status-text">@{this.props.currentUser.username}</span>
+            <span className="header-status-text">Created by {channelCreator}</span>
 
             <span className="topic-divider">|</span>
             <span className="header-status-text">{this.props.currentChannel.description}</span>
           </div>
+        </div>
+        <div className="header-right">
+          <button
+            onClick={() => this.props.leaveChannel(this.props.currentChannel.id)}
+            >
+            Leave Channel</button>
         </div>
       </div>
     );

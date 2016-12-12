@@ -23,18 +23,6 @@ class Sidebar extends React.Component {
     }
   }
 
-  //probably will move this to a ChannelsIndex Component
-  // mapChannelIndex() {
-  //   let channelsIndex = [];
-  //   if (this.props.channels) {
-  //     channelsIndex = Object.values(this.props.channels).map((channel, i) => {
-  //       return <li key={i}>{channel.title}</li>;
-  //     });
-  //     return channelsIndex;
-  //   } else {
-  //     return channelsIndex;
-  //   }
-  // }
 
   dropdownOpen() {
     if (this.state.dropdown === "dropdown-menu") {
@@ -64,6 +52,7 @@ class Sidebar extends React.Component {
           </span>
 
           <nav className={this.state.dropdown}>
+            <div className="popover-mask"></div>
             <ul className="profile-options">
               <li className="profile-options-username"><strong>{this.props.currentUser.username}</strong></li>
               <li className="profile-options-handle">@{this.props.currentUser.username}</li>
