@@ -19,6 +19,11 @@ div.browse-channels h2 {
   font-weight: bold;
 }
 
+div.browse-channels ul {
+  overflow: auto;
+  height: 510px;
+}
+
 input.browse-search {
   width: 91%;
   border-radius: 5px;
