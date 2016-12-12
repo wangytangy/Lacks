@@ -171,22 +171,6 @@ i.create-channel:hover h1.channels-header {
   color: #AB9BA9;
 }
 
-ul.channels-index {
-  margin: 5px 0 0 0;
-}
-
-ul.channels-index li a {
-  color: #AB9BA9;
-  display: block;
-  border-radius: 0 5px 5px 0;
-  margin: 0px 20px 0px 0;
-  padding: 3px 0 3px 20px;
-  font-size: 14px;
-  box-sizing: border-box;
-
-  position: relative;
-
-}
 
 //****ACTIVE CHANNEL ****
 ul.channels-index li.active a {
@@ -199,11 +183,30 @@ ul.channels-index li.active a:hover {
 }
 // *************************
 
-ul.channels-index li a:hover {
+ul.channels-index {
+  margin: 5px 0 0 0;
+}
+
+ul.channels-index > li {
+  position: relative;
+
+}
+
+ul.channels-index li a {
+  color: #AB9BA9;
+  display: block;
+  border-radius: 0 5px 5px 0;
+  margin: 0px 20px 0px 0;
+  padding: 3px 0 3px 20px;
+  font-size: 14px;
+  box-sizing: border-box;
+}
+
+ul.channels-index li:hover a {
   background-color: #3E313C;
 }
 
-i.delete-channel {
+ul.channels-index i.delete-channel {
   display: none;
   font-size: 14px;
   position: absolute;
@@ -211,12 +214,13 @@ i.delete-channel {
   top: 4px;
 }
 
+ul.channels-index li:hover i.delete-channel {
+  display: block;
+}
+
 i.delete-channel:hover {
   color: #fff;
 }
 
-ul.channels-index:not(first-child) li a:hover i.delete-channel {
-  display: block;
-}
 
 // ******************************

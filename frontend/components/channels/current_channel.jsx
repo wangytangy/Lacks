@@ -6,10 +6,10 @@ import MessageIndexContainer from '../messages/message_index_container';
 class CurrentChannel extends React.Component {
   constructor(props) {
     super(props);
-    this.wrappedFetchMessages = this.wrappedFetchMessages.bind(this);
+    this.boundFetchMessages = this.boundFetchMessages.bind(this);
   }
 
-  wrappedFetchMessages() {
+  boundFetchMessages() {
     // debugger
     this.props.fetchMessages(this.props.params.id);
   }
@@ -26,7 +26,8 @@ class CurrentChannel extends React.Component {
 
 
   componentWillReceiveProps(nextProps) {
-    if (!nextProps.params.id) return;
+
+    //fetch next channel if params change
     if (nextProps.params.id !== this.props.params.id) {
       this.props.fetchAChannel(nextProps.params.id);
     }
@@ -36,7 +37,7 @@ class CurrentChannel extends React.Component {
     });
     var channel = this.pusher.subscribe('channel_' + this.props.params.id);
     channel.bind('message_published', (data) => {
-      this.wrappedFetchMessages();
+      this.boundFetchMessages();
     });
     // componentWillReceiveProps() is invoked before
     // a mounted component receives new props.

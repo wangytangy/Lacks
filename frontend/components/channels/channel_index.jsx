@@ -53,9 +53,10 @@ class ChannelIndex extends React.Component {
     this.props.deleteChannel(id).then((channel) =>{
       //if deleted channel_id is the currentChannel's id => redirect to #general
       //else nothing?
-      if (channel.id === this.props.currentChannel.id) {
-        this.redirect(this.props.channels[0].id);
-      }
+
+      //check if deleted channel is the currentChannel
+      //if true, redirect to "general" (the first channel)
+      this.redirect(Object.keys(this.props.channels)[0]);
     });
   }
 
@@ -111,7 +112,8 @@ class ChannelIndex extends React.Component {
             onClick={() => this.setSelected(`${channel.id}`)}
             key={i}
             className={highlightPresence}>
-              <Link to={path}>&#35; {channel.title}{icon}</Link>
+              <Link to={path}>&#35; {channel.title}</Link>
+              {icon}
             </li>);
 
           channelsIndex.push(liElement);
