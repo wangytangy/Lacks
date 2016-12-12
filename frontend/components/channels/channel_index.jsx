@@ -49,11 +49,6 @@ class ChannelIndex extends React.Component {
 
   handleDelete(id) {
     this.props.deleteChannel(id).then((channel) =>{
-      //if deleted channel_id is the currentChannel's id => redirect to #general
-      //else nothing?
-
-      //check if deleted channel is the currentChannel
-      //if true, redirect to "general" (the first channel)
       let lastChannelsIdx = this.props.usersChannels.length - 1 || 0;
       if (this.props.usersChannels.length > 0 && this.props.currentChannel.id === channel.id) {
         this.redirect(this.props.usersChannels[lastChannelsIdx].id);

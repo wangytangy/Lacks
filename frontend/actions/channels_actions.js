@@ -26,7 +26,6 @@ export const fetchAllChannels = () => {
   return (dispatch) => {
     return APIUtil.fetchChannels().then((channels) => {
       dispatch(receiveChannels(channels));
-
       //return channels so we can take the first channel's id
       //and render it as a default channel show page
       //(in ChannelsIndex componentDidMount)
@@ -45,6 +44,13 @@ export const createAChannel = (channel) => {
   };
 };
 
+export const joinChannel = (channelID) => {
+  return (dispatch) => {
+    return APIUtil.createChannelMembership(channelID).then((joinedChannels) => {
+      dispatch(receiveChannels(joinedChannels));
+    });
+  };
+};
 export const fetchAChannel = (id) => {
   return (dispatch) => {
     return APIUtil.fetchAChannel(id).then((channel) => {
@@ -62,13 +68,6 @@ export const deleteAChannel = (id) => {
   };
 };
 
-export const joinChannel = (channelID) => {
-  return (dispatch) => {
-    return APIUtil.createChannelMembership(channelID).then((joinedChannels) => {
-      dispatch(receiveChannels(joinedChannels));
-    });
-  };
-};
 
 export const leaveChannel = (channelID) => {
   return (dispatch) => {

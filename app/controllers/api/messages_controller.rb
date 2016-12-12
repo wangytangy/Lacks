@@ -16,7 +16,6 @@ class Api::MessagesController < ApplicationController
     if @message.save
       #publish an event
       #all componenets subscribed to that event can hear about it
-      # debugger
       Pusher.trigger('channel', 'message_published', @message)
 
       render :show

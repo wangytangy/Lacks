@@ -58,3 +58,19 @@ span.topic-divider {
   font-weight:lighter;
   font-size: 12px;
 }
+
+div.header-right {
+  height: 60px;
+  float: right;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  align-items: center;
+}
+
+div.header-right button.leave-button-active {
+  height: 40px;
+}
+
+div.header-right button.leave-button-block {
+  display: none;
+}

@@ -4,6 +4,8 @@ class Api::ChannelsController < ApplicationController
     #eventually...fetch all channels that belong to current user
     # @channels = current_user.channels
     @channels = Channel.all
+    #index action, don't send all channels
+    #have custom search method
     render :index
   end
 
