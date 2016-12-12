@@ -5,10 +5,11 @@ import {
   createAChannel,
   deleteAChannel
 } from '../../actions/channels_actions';
+import { filterUsersChannels } from '../../util/selectors';
 import { Router, Route, IndexRoute, hashHistory, withRouter } from 'react-router';
 
 const mapStateToProps = (state) => ({
-  channels: state.channels,
+  usersChannels: filterUsersChannels(state.channels, state.session.currentUser.id),
   currentChannel: state.currentChannel,
   currentUser: state.session.currentUser
 });
