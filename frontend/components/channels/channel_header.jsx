@@ -11,6 +11,13 @@ class ChannelHeader extends React.Component {
 
     let channelCreator = "";
     let memberCount = "";
+    let leaveButtonStatus = "leave-button-active";
+
+    if (this.props.currentChannel.title === "general") {
+      leaveButtonStatus = "leave-button-block";
+    }
+
+
     if (this.props.currentChannel.id) {
       channelCreator = this.props.currentChannel.creator.username;
       memberCount = this.props.currentChannel.memberCount;
@@ -42,6 +49,7 @@ class ChannelHeader extends React.Component {
         <div className="header-right">
           <button
             onClick={() => this.props.leaveChannel(this.props.currentChannel.id)}
+            className={leaveButtonStatus}
             >
             Leave Channel</button>
         </div>

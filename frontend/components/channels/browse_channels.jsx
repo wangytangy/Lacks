@@ -47,7 +47,6 @@ class BrowseChannel extends React.Component {
 
   allChannelsList() {
     let allChannels = [];
-    // debugger
     let searchInput = this.state.searchInput.toLowerCase();
     Object.values(this.props.channels).forEach((channel, i) => {
       let sub = channel.title.slice(0, searchInput.length).toLowerCase();
