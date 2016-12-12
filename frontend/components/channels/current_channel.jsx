@@ -31,12 +31,11 @@ class CurrentChannel extends React.Component {
       this.props.fetchAChannel(nextProps.params.id);
     }
 
-    var pusher = new Pusher('6229f47cce1a7e390f4e', {
+    this.pusher = new Pusher('6229f47cce1a7e390f4e', {
       encrypted: true
     });
-    var channel = pusher.subscribe('channel_' + this.props.params.id);
+    var channel = this.pusher.subscribe('channel_' + this.props.params.id);
     channel.bind('message_published', (data) => {
-      console.log(data.message);
       this.wrappedFetchMessages();
     });
     // componentWillReceiveProps() is invoked before
@@ -45,6 +44,10 @@ class CurrentChannel extends React.Component {
     // (for example, to reset it),
     // you may compare this.props and nextProps
     // and perform state transitions using this.setState() in this method.
+  }
+
+  componentWillUnmount() {
+    this.pusher.unsubscribe('channel_' + this.props.params.id);
   }
 
   render() {

@@ -29,6 +29,7 @@ class Channel < ActiveRecord::Base
   has_many :messages,
     class_name: :Message,
     primary_key: :id,
-    foreign_key: :channel_id
+    foreign_key: :channel_id,
+    dependent: :destroy
 
 end
