@@ -6,9 +6,9 @@ class Api::ChannelMembershipsController < ApplicationController
     #add current_user to @channel's users
 
     # @channel.users << current_user
-    @joined_channels = current_user.channels
 
-    render :joined_channels
+
+    render :join_channel
   end
 
 end

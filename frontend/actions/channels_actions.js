@@ -3,11 +3,12 @@ import * as APIUtil from '../util/channels_api_util';
 export const RECEIVE_ALL_CHANNELS = "RECEIVE_ALL_CHANNELS";
 export const RECEIVE_NEW_CHANNEL = "RECEIVE_NEW_CHANNEL";
 export const DELETE_CHANNEL = "DELETE_CHANNEL";
+export const RECEIVE_JOIN_CHANNEL = "RECEIVE_JOIN_CHANNEL";
 
 
 export const receiveChannels = (channels) => ({
-    type: RECEIVE_ALL_CHANNELS,
-    channels
+  type: RECEIVE_ALL_CHANNELS,
+  channels
 });
 
 export const deleteChannel = (channel) => ({
@@ -18,6 +19,11 @@ export const deleteChannel = (channel) => ({
 export const receiveNewChannel = (channel) => ({
   type: RECEIVE_NEW_CHANNEL,
   currentChannel: channel
+});
+
+export const receiveJoinedChannel = (channel) => ({
+  type: RECEIVE_JOIN_CHANNEL,
+  joinedChannel: channel
 });
 
 
@@ -46,8 +52,8 @@ export const createAChannel = (channel) => {
 
 export const joinChannel = (channelID) => {
   return (dispatch) => {
-    return APIUtil.createChannelMembership(channelID).then((joinedChannels) => {
-      dispatch(receiveChannels(joinedChannels));
+    return APIUtil.createChannelMembership(channelID).then((channel) => {
+      dispatch(receiveJoinedChannel(channel));
     });
   };
 };
