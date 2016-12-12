@@ -18,7 +18,6 @@ class CreateChannelForm extends React.Component {
   }
 
   redirect(id) {
-    // debugger
     this.props.router.push(`messages/${id}`);
   }
 

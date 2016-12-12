@@ -20,12 +20,11 @@ class ChannelIndex extends React.Component {
 
     this.handleDelete = this.handleDelete.bind(this);
 
-    this.state = { modalOpen: false, browseModalOpen: false, selected: 0 };
+    this.state = { modalOpen: false, browseModalOpen: false, selected: this.props.params.id };
     this.redirect = this.redirect.bind(this);
 
     this.isMember = this.isMember.bind(this);
     this.setSelected = this.setSelected.bind(this);
-    this.isActive = this.isActive.bind(this);
   }
 
   componentDidMount() {
@@ -40,6 +39,10 @@ class ChannelIndex extends React.Component {
     }
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({ selected: nextProps.params.id });
+  }
+
 
   redirect(id) {
     this.props.router.push(`messages/${id}`);
@@ -50,7 +53,6 @@ class ChannelIndex extends React.Component {
     this.props.deleteChannel(id).then((channel) =>{
       //if deleted channel_id is the currentChannel's id => redirect to #general
       //else nothing?
-
       if (channel.id === this.props.currentChannel.id) {
         this.redirect(this.props.channels[0].id);
       }
@@ -70,21 +72,11 @@ class ChannelIndex extends React.Component {
     return bool;
   }
 
-  setSelected(i) {
-    this.setState({selected: i});
+  setSelected(channelID) {
+    this.setState({selected: channelID});
   }
-
-  isActive(value) {
-    if (value === this.state.selected) {
-      return 'group active';
-    } else {
-      return 'group default';
-    }
-  }
-
 
   mapChannelIndex() {
-
     let channelsIndex = [];
     if (Object.values(this.props.channels).length > 0) {
       Object.values(this.props.channels).forEach((channel, i) => {
@@ -92,23 +84,33 @@ class ChannelIndex extends React.Component {
         if (this.isMember(channel)) {
           let path = `messages/${channel.id}`;
           let deleteFn = this.handleDelete;
-          let icon = (
-            <i
-              className="material-icons delete-channel"
-              onClick={() => deleteFn(channel.id)}>
-              cancel
-            </i>
-          );
+          let icon;
 
           if (i === 0 || channel.user_id !== this.props.currentUser.id) {
             deleteFn = () => {};
             icon = null;
+          } else {
+            icon = (
+              <i
+                className="material-icons delete-channel"
+                onClick={() => deleteFn(channel.id)}>
+                cancel
+              </i>
+            );
           }
 
+          let highlightPresence;
+          if (this.state.selected === `${channel.id}`) {
+            highlightPresence = "group active";
+          } else {
+            highlightPresence = "group default";
+          }
+
+
           let liElement = (<li
-            onClick={() => this.setSelected(i)}
+            onClick={() => this.setSelected(`${channel.id}`)}
             key={i}
-            className={this.isActive(i)}>
+            className={highlightPresence}>
               <Link to={path}>&#35; {channel.title}{icon}</Link>
             </li>);
 
@@ -149,7 +151,6 @@ class ChannelIndex extends React.Component {
 
 
   render() {
-
     let channelsIndex = this.mapChannelIndex();
     return(
       <div className="channels group">
