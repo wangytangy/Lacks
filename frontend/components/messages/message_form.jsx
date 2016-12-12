@@ -25,7 +25,6 @@ class MessageForm extends React.Component {
 
 
   render() {
-    console.log(this.state.body);
     return(
       <div className="message-form">
         <form onSubmit={this.handleSubmit}>

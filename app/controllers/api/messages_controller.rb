@@ -16,9 +16,12 @@ class Api::MessagesController < ApplicationController
     if @message.save
       #publish an event
       #all componenets subscribed to that event can hear about it
-      Pusher.trigger('my-channel', 'my-event', {
-        message: 'hello world'
-      })
+      # debugger
+      Pusher.trigger('channel_' + params[:channel_id].to_s,
+        'message_published',
+        {}
+      )
+
       render :show
     else
       render json: ["message could not be created"], status: 422
