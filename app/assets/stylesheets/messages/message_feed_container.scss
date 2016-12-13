@@ -1,7 +1,8 @@
-div.message-feed {
+div#message-feed {
   display: block;
-  overflow: auto;
+  overflow-y: scroll;
   height: calc(100% - 150px);
+  // height: 500px;
 
   width: 100%;
 

@@ -9,6 +9,7 @@ class CurrentChannel extends React.Component {
     super(props);
     this.boundFetchMessages = this.boundFetchMessages.bind(this);
     this.handleLeaveChannel = this.handleLeaveChannel.bind(this);
+    // this.updateScroll = this.updateScroll.bind(this);
   }
 
   boundFetchMessages() {
@@ -63,6 +64,8 @@ class CurrentChannel extends React.Component {
     let firstChannelID = Object.keys(this.props.channels)[0];
     this.props.router.push(`messages/${firstChannelID}`);
   }
+
+//
 
   render() {
     return(

@@ -28,6 +28,10 @@ input {
 	outline: none;
 }
 
+button {
+	outline: none;
+}
+
 body {
   font-family: sans-serif;
   text-decoration: none;
