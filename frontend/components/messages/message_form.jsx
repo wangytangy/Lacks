@@ -13,7 +13,8 @@ class MessageForm extends React.Component {
     this.setState({body: e.currentTarget.value});
   }
 
-  handleSubmit() {
+  handleSubmit(e) {
+
     let messageData = {
       channelID: parseInt(this.props.currentChannel.id),
       body: this.state.body
@@ -23,26 +24,28 @@ class MessageForm extends React.Component {
     this.props.createMessage(messageData);
   }
 
+  handleUpload(e) {
+    
+  }
+
 
   render() {
     return(
       <div className="footer-input">
         <div className="message-form">
-          <form onSubmit={this.handleSubmit} className="message-form-container">
 
+          <form onSubmit={this.handleSubmit} className="message-form-container">
             <input
               type="text"
               className="message-form-chatbar"
               onChange={this.handleChange}
               value={this.state.body}>
             </input>
-
-            <button className="message-form-button">
+            <button type="button" className="message-form-button" onClick={this.handleUpload}>
               <i className="material-icons add">add</i>
             </button>
-
-
           </form>
+
         </div>
       </div>
     );

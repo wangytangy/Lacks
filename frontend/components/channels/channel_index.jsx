@@ -135,6 +135,7 @@ class ChannelIndex extends React.Component {
 
 
   render() {
+
     let channelsIndex = this.mapChannelIndex();
     return(
       <div className="channels group">

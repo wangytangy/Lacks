@@ -5,7 +5,7 @@
     json.description channel.description
     json.user_id channel.user_id
     json.members channel.users
-    json.memberCount channel.users.length
+    json.memberCount calculate_members(channel)
     json.creator channel.user
   end
 end

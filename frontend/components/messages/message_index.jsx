@@ -5,6 +5,9 @@ class MessageIndex extends React.Component {
   constructor(props) {
     super(props);
     this.mapMessages = this.mapMessages.bind(this);
+    this.updateScroll = this.updateScroll.bind(this);
+
+    this.state = { previousAuthor: "" };
   }
 
   componentWillReceiveProps(nextProps) {
@@ -13,22 +16,81 @@ class MessageIndex extends React.Component {
     }
   }
 
+  componentDidUpdate() {
+    this.updateScroll();
+  }
+
+  updateScroll() {
+    let element = document.getElementById("messages-end");
+    // debugger
+    if (element) {
+      element.scrollIntoView();
+    }
+  }
+
+
+
   mapMessages() {
     let messagesArr = [];
-
     this.props.messages.forEach((message, i) => {
-      messagesArr.push(<li key={i}>{message.body}</li>);
+
+      //if previous message author is the same:
+      //construct a different li that omits profile pic and username
+      let liElement;
+
+      if (
+        i !== 0 &&
+        (message.author === this.props.messages[i - 1].author)
+      ) {
+        liElement = (
+          <li key={i} className="message-item-container repeat">
+            <div className="message-detail">
+              <small>{message.createdAt}</small>
+              <div className="message-detail-content">
+                <span>{message.body}</span>
+              </div>
+            </div>
+          </li>
+        );
+      } else {
+        liElement = (
+          <li key={i} className="message-item-container">
+            <div className="message-detail">
+              <img src="" className="message-detail-profile-picture"></img>
+              <div className="message-detail-content">
+                <div className="message-detail-top">
+                  <p>{message.author}</p>
+                  <small>{message.createdAt}</small>
+                </div>
+                <span>{message.body}</span>
+              </div>
+            </div>
+          </li>
+        );
+      }
+      // console.log(this.props.messages[i - 1].author);
+      // if (message.author === this.props.messages[i - 1].author) {
+      // }
+
+
+      messagesArr.push(liElement);
     });
     return messagesArr;
   }
 
+
   render() {
-    let messageItems = this.mapMessages();
+    let messageItems = [];
+    if (this.props.messages.length > 0) {
+      messageItems = this.mapMessages();
+    }
+
     return(
-      <div className="message-feed">
-        <ul className="chat-messages">
+      <div id="message-feed">
+        <ul id="chat-messages">
           {messageItems}
         </ul>
+        <div id="messages-end"></div>
       </div>
     );
   }
