@@ -139,15 +139,17 @@ class ChannelIndex extends React.Component {
     return(
       <div className="channels group">
 
-        <h1 className="channels-header">
-          <Link onClick={this.handleBrowseModalClick}>
-            channels &#40;{channelsIndex.length}&#41;
-          </Link>
-        </h1>
-        <i className="material-icons create-channel"
-          onClick={this.handleModalClick}>
-          add_circle_outline
-        </i>
+        <div className="channels-title">
+          <h1 className="channels-header">
+            <Link onClick={this.handleBrowseModalClick}>
+              channels &#40;{channelsIndex.length}&#41;
+            </Link>
+          </h1>
+          <i className="material-icons create-channel"
+            onClick={this.handleModalClick}>
+            add_circle_outline
+          </i>
+        </div>
 
         <ul className="channels-index">{channelsIndex}</ul>
 

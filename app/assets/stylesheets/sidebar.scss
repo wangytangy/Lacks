@@ -1,7 +1,6 @@
 div.sidebar {
   width: 220px;
-  height: 860px;
-  float: left;
+  height: 100vh;
 
   background-color: #4D394B;
   box-sizing: border-box;
@@ -147,6 +146,12 @@ div.channels {
   position: relative;
 }
 
+div.channels-title {
+  display: flex;
+  justify-content: space-between;
+  width: 199px;
+}
+
 h1.channels-header {
   text-transform: uppercase;
   font-size: 13px;
@@ -162,12 +167,7 @@ div.channels h1:hover {
 }
 
 i.create-channel {
-  float: right;
   font-size: 17px;
-  margin-right: 20px;
-  position: absolute;
-  left: 183px;
-  top: -1px;
   color: #AB9BA9;
 }
 
