@@ -26,13 +26,9 @@ class MessageIndex extends React.Component {
     let messageItems = this.mapMessages();
     return(
       <div className="message-feed">
-        <div>
-          <h1>Message Feed</h1>
-        </div>
-        <ul>
+        <ul className="chat-messages">
           {messageItems}
         </ul>
-        <MessageFormContainer />
       </div>
     );
   }

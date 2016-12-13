@@ -1,7 +1,5 @@
 div.channel-header-container {
 
-  height: 60px;
-
   border-bottom: 1px solid #ccc;
 }
 
@@ -67,21 +65,24 @@ div.header-right {
   padding: 15px 20px;
 }
 
-div.header-right button.leave-button-active {
-  background-color: #38A2E0;
-  color: #fff;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-weight: bold;
-  font-size: 12px;
-}
 
 div.header-right button.leave-button-active:hover {
+  background-color: #38A2E0;
+  color: #fff;
+  border-radius: 5px;
   cursor: pointer;
+
+
+
 }
 
 div.header-right button.leave-button-active {
   height: 30px;
+  padding: 5px 10px;
+  background-color: #fff;
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 div.header-right button.leave-button-block {
