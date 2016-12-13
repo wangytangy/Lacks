@@ -28,16 +28,19 @@ class MessageForm extends React.Component {
     return(
       <div className="footer-input">
         <div className="message-form">
-          <form onSubmit={this.handleSubmit}>
-            <div className="message-form-button">
-              <i className="material-icons add">add</i>
-            </div>
+          <form onSubmit={this.handleSubmit} className="message-form-container">
+
             <input
               type="text"
               className="message-form-chatbar"
               onChange={this.handleChange}
               value={this.state.body}>
             </input>
+
+            <button className="message-form-button">
+              <i className="material-icons add">add</i>
+            </button>
+
 
           </form>
         </div>

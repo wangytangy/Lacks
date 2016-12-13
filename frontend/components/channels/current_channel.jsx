@@ -2,6 +2,7 @@
 import React from 'react';
 import ChannelHeaderContainer from './channel_header_container';
 import MessageIndexContainer from '../messages/message_index_container';
+import MessageFormContainer from '../messages/message_form_container';
 
 class CurrentChannel extends React.Component {
   constructor(props) {
@@ -68,6 +69,7 @@ class CurrentChannel extends React.Component {
       <div className="current-channel">
         <ChannelHeaderContainer leaveChannel={this.handleLeaveChannel}/>
         <MessageIndexContainer />
+        <MessageFormContainer />
       </div>
     );
   }
