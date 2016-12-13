@@ -62,13 +62,26 @@ span.topic-divider {
 div.header-right {
   height: 60px;
   float: right;
-  padding: 10px 20px;
   box-sizing: border-box;
   align-items: center;
+  padding: 15px 20px;
 }
 
 div.header-right button.leave-button-active {
-  height: 40px;
+  background-color: #38A2E0;
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+div.header-right button.leave-button-active:hover {
+  cursor: pointer;
+}
+
+div.header-right button.leave-button-active {
+  height: 30px;
 }
 
 div.header-right button.leave-button-block {

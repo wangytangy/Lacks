@@ -1,0 +1,55 @@
+div.footer-input {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  margin: 10px 20px;
+}
+
+div.message-form form {
+  width: 100%;
+  position: relative;
+}
+
+div.message-form input.message-form-chatbar {
+  border: 2px solid #E0E0E0;
+  border-radius: 5px;
+  padding: 10px 10px 10px 55px;
+  box-sizing: border-box;
+
+  width: 100%;
+  flex-grow: 1;
+}
+
+div.message-form input.message-form-chatbar:focus {
+  border-color: #BBBDBF;
+}
+div.message-form input.message-form-chatbar:focus div.message-form-button {
+  border-color: #BBBDBF;
+}
+
+
+div.message-form div.message-form-button {
+  width: 45px;
+  height: 41px;
+  border-right: 2px solid #E0E0E0;
+  border-radius: 5px 0 0 5px;
+  box-sizing: border-box;
+  color: #E0E0E0;
+
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+div.message-form-button i {
+  color: #E0E0E0;
+}
+
+div.message-form-button:hover {
+  background-color: #53B68D;
+}
+div.message-form-button:hover i {
+  color: #fff;
+}

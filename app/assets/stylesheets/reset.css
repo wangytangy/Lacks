@@ -24,6 +24,10 @@ time, mark, audio, video, button, input {
 
 }
 
+input {
+	outline: none;
+}
+
 body {
   font-family: sans-serif;
   text-decoration: none;

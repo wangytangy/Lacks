@@ -2,7 +2,6 @@ import React from 'react';
 import MessageFormContainer from './message_form_container';
 
 class MessageIndex extends React.Component {
-
   constructor(props) {
     super(props);
     this.mapMessages = this.mapMessages.bind(this);
