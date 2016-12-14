@@ -4,9 +4,16 @@ class MessageForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = ({body: ""});
+    this.state = ({
+      body: "",
+      uploadDropdown: "upload-dropdown",
+      imageFile: null,
+      imageUrl: null
+    });
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.openUploadMenu = this.openUploadMenu.bind(this);
+    // this.handleUpload = this.handleUpload.bind(this);
   }
 
   handleChange(e) {
@@ -14,20 +21,44 @@ class MessageForm extends React.Component {
   }
 
   handleSubmit(e) {
+    // return;
+
+    // let formData = new FormData();
 
     let messageData = {
       channelID: parseInt(this.props.currentChannel.id),
-      body: this.state.body
+      body: this.state.body,
+      image: this.state.imageFile
     };
-    this.setState({body: ""});
-    //dispatch a POST action to messages
+
     this.props.createMessage(messageData);
+    this.setState({body: "", imageFile: null, imageUrl: null});
+    //dispatch a POST action to messages
   }
 
-  handleUpload(e) {
-    
-  }
 
+  openUploadMenu() {
+    if (this.state.uploadDropdown === "upload-dropdown") {
+      this.setState({uploadDropdown: "upload-dropdown-open"});
+    } else {
+      this.setState({uploadDropdown: "upload-dropdown"});
+    }
+  }
+  //
+  // handleUpload(e) {
+  //   let file = e.currentTarget.files[0];
+  //
+  //   let fileReader = new FileReader();
+  //
+  //   fileReader.onloadend = function () {
+  //     this.setState({ imageFile: file, imageUrl: fileReader.result });
+  //   }.bind(this);
+  //
+  //
+  //   fileReader.readAsDataURL(file);
+  // }
+  //
+  //
 
   render() {
     return(
@@ -41,17 +72,40 @@ class MessageForm extends React.Component {
               onChange={this.handleChange}
               value={this.state.body}>
             </input>
-            <button type="button" className="message-form-button" onClick={this.handleUpload}>
+
+            <button
+              type="button"
+              className="message-form-button"
+              onClick={this.openUploadMenu}>
               <i className="material-icons add">add</i>
             </button>
-          </form>
 
+          </form>
         </div>
       </div>
     );
   }
 
 
+  // <nav className={this.state.uploadDropdown}>
+  //   <div className="popover-mask" onClick={this.openUploadMenu}></div>
+  //
+  //   <ul className="upload-menu-list">
+  //     <li>
+  //       <button type="button" onClick={this.handleSubmit}>SUBMIT PHOTO</button>
+  //       <input
+  //         type="file"
+  //         className="image-upload-input"
+  //         multiple accept='image/*'
+  //         id="Attach an image"
+  //         onChange={this.handleUpload}>
+  //       </input>
+  //     </li>
+  //     <li>
+  //       <img src={this.state.imageUrl}/>
+  //     </li>
+  //   </ul>
+  // </nav>
 
 
 

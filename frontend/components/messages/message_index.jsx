@@ -6,8 +6,6 @@ class MessageIndex extends React.Component {
     super(props);
     this.mapMessages = this.mapMessages.bind(this);
     this.updateScroll = this.updateScroll.bind(this);
-
-    this.state = { previousAuthor: "" };
   }
 
   componentWillReceiveProps(nextProps) {
@@ -22,17 +20,14 @@ class MessageIndex extends React.Component {
 
   updateScroll() {
     let element = document.getElementById("messages-end");
-    // debugger
     if (element) {
       element.scrollIntoView();
     }
   }
 
-
-
   mapMessages() {
     let messagesArr = [];
-    this.props.messages.forEach((message, i) => {
+    Object.values(this.props.messages).forEach((message, i) => {
 
       //if previous message author is the same:
       //construct a different li that omits profile pic and username
@@ -40,7 +35,7 @@ class MessageIndex extends React.Component {
 
       if (
         i !== 0 &&
-        (message.author === this.props.messages[i - 1].author)
+        (message.author === Object.values(this.props.messages)[i - 1].author)
       ) {
         liElement = (
           <li key={i} className="message-item-container repeat">
@@ -68,10 +63,6 @@ class MessageIndex extends React.Component {
           </li>
         );
       }
-      // console.log(this.props.messages[i - 1].author);
-      // if (message.author === this.props.messages[i - 1].author) {
-      // }
-
 
       messagesArr.push(liElement);
     });
@@ -80,10 +71,12 @@ class MessageIndex extends React.Component {
 
 
   render() {
+
     let messageItems = [];
-    if (this.props.messages.length > 0) {
+    if (Object.values(this.props.messages).length > 0) {
       messageItems = this.mapMessages();
     }
+    console.log(this.props.currentChannel.title);
 
     return(
       <div id="message-feed">
