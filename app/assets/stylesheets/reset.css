@@ -24,6 +24,8 @@ time, mark, audio, video, button, input {
 
 }
 
+"Helvetica Neue",Helvetica,"Segoe UI",Tahoma,Arial,sans-serif;
+
 input {
 	outline: none;
 }
@@ -33,7 +35,7 @@ button {
 }
 
 body {
-  font-family: sans-serif;
+	font-family: 'Open Sans', 'Roboto', sans-serif;
   text-decoration: none;
 }
 

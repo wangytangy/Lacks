@@ -144,6 +144,7 @@ ul.profile-options li:last-child:hover {
 div.channels {
   margin: 20px 0 0 0px;
   position: relative;
+  font-size: 15px;
 }
 
 div.channels-title {
@@ -207,20 +208,26 @@ ul.channels-index li a {
   border-radius: 0 5px 5px 0;
   margin: 0px 20px 0px 0;
   padding: 3px 0 3px 20px;
-  font-size: 14px;
+
+
   box-sizing: border-box;
 }
 
+
 ul.channels-index li:hover a {
   background-color: #3E313C;
+}
+
+ul.channels-index li {
+
 }
 
 ul.channels-index i.delete-channel {
   display: none;
   font-size: 14px;
   position: absolute;
-  left: 184px;
-  top: 4px;
+  left: 182px;
+  top: 7px;
 }
 
 ul.channels-index li:hover i.delete-channel {
