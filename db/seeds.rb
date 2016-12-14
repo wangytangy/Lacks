@@ -23,6 +23,11 @@ channel3 = Channel.create!(title: "marketing dept", description: "yo", user_id: 
 channel4 = Channel.create!(title: "private", description: "secured channel", user_id: guest.id)
 channel6 = Channel.create!(title: "work mates", description: "social stuff", user_id: guest.id)
 channel7 = Channel.create!(title: "friends", description: "drinking", user_id: guest.id)
+
+
+channel8 = Channel.create!(title: "DM 1", description: "first DM", user_id: guest.id, direct_message_status: true)
+channel9 = Channel.create!(title: "DM 2", description: "second DM", user_id: user1.id, direct_message_status: true)
+channel10 = Channel.create!(title: "DM 3", description: "third DM", user_id: user1.id, direct_message_status: true)
 #
 # channel1 = Channel.create!(title: "first channel", description: "all convos", user_id: user1.id)
 # channel2 = Channel.create!(title: "second channel", description: "family convos", user_id: user2.id)
@@ -30,8 +35,12 @@ channel7 = Channel.create!(title: "friends", description: "drinking", user_id: g
 
 
 ChannelMembership.destroy_all
-
 ChannelMembership.create!(channel_id: channel0.id, member_id: guest.id)
 ChannelMembership.create!(channel_id: channel0.id, member_id: user1.id)
 ChannelMembership.create!(channel_id: channel0.id, member_id: user2.id)
 ChannelMembership.create!(channel_id: channel0.id, member_id: user3.id)
+
+
+ChannelMembership.create!(channel_id: channel8.id, member_id: user1.id)
+ChannelMembership.create!(channel_id: channel8.id, member_id: user2.id)
+ChannelMembership.create!(channel_id: channel9.id, member_id: user3.id)

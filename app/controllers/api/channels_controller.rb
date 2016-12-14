@@ -3,7 +3,7 @@ class Api::ChannelsController < ApplicationController
   def index
     #eventually...fetch all channels that belong to current user
     # @channels = current_user.channels
-    @channels = Channel.all
+    @channels = Channel.all.where({ direct_message_status: false })
     #index action, don't send all channels
     #have custom search method
     render :index
@@ -23,6 +23,11 @@ class Api::ChannelsController < ApplicationController
     end
   end
 
+  def get_direct_messages
+    @direct_messages = current_user.channels.where({ direct_message_status: true })
+    render :dm_index
+  end
+
   def show
     @channel = Channel.find(params[:id])
     render :show
@@ -40,7 +45,6 @@ class Api::ChannelsController < ApplicationController
   end
 
   def leave_channel
-
     @channel = Channel.find(params[:id].to_i)
     current_user.channels.delete(@channel)
     @remaining_channels = current_user.channels
@@ -50,6 +54,10 @@ class Api::ChannelsController < ApplicationController
   private
 
   def channels_params
-    params.require(:channels).permit(:title, :description)
+    params.require(:channels).permit(
+      :title,
+      :description,
+      :direct_message_status
+    )
   end
 end

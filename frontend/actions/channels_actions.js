@@ -50,13 +50,6 @@ export const createAChannel = (channel) => {
   };
 };
 
-export const joinChannel = (channelID) => {
-  return (dispatch) => {
-    return APIUtil.createChannelMembership(channelID).then((channel) => {
-      dispatch(receiveJoinedChannel(channel));
-    });
-  };
-};
 export const fetchAChannel = (id) => {
   return (dispatch) => {
     return APIUtil.fetchAChannel(id).then((channel) => {
@@ -74,6 +67,13 @@ export const deleteAChannel = (id) => {
   };
 };
 
+export const joinChannel = (channelID) => {
+  return (dispatch) => {
+    return APIUtil.createChannelMembership(channelID).then((channel) => {
+      dispatch(receiveJoinedChannel(channel));
+    });
+  };
+};
 
 export const leaveChannel = (channelID) => {
   return (dispatch) => {

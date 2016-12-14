@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: "static_pages#root"
 
   namespace :api, defaults: {format: :json} do
+    get 'channels/direct_messages' => 'channels#get_direct_messages'
     resources :users, only: [:create]
     resource :session, only: [:create, :destroy]
     resources :channels, only: [:index, :create, :show, :destroy]
@@ -11,6 +12,9 @@ Rails.application.routes.draw do
       resources :channel_memberships, only: [:create]
     end
     delete 'channels/:id/unsubscribe' => 'channels#leave_channel'
+
+
+    #DM's
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

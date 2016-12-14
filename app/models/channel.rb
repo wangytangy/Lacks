@@ -2,12 +2,13 @@
 #
 # Table name: channels
 #
-#  id          :integer          not null, primary key
-#  title       :string           not null
-#  description :text             not null
-#  user_id     :integer          not null
-#  created_at  :datetime
-#  updated_at  :datetime
+#  id                    :integer          not null, primary key
+#  title                 :string           not null
+#  description           :text             not null
+#  user_id               :integer          not null
+#  created_at            :datetime
+#  updated_at            :datetime
+#  direct_message_status :boolean          default(FALSE), not null
 #
 
 class Channel < ActiveRecord::Base
