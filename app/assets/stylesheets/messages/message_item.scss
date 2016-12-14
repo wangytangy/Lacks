@@ -66,3 +66,18 @@ div.message-detail-top small {
   color: #9e9ea6;
   margin-left: 10px;
 }
+
+
+// ********** IMAGES ************
+
+div.message-image-container {
+
+  min-width: 220px;
+  max-width: 100%;
+}
+
+div.message-image-container img {
+
+  width: 360px;
+  border-radius: 5px;
+}

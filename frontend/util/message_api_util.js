@@ -8,6 +8,18 @@ export function createMessage(messageData) {
   });
 }
 
+export function createImageMessage(formData) {
+  let channelID = parseInt(formData.get("messages[channel_id]"));
+  return $.ajax({
+    method: "POST",
+    url: `/api/channels/${channelID}/messages`,
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: formData
+  });
+}
+
 export function fetchAllMessages (channelID) {
   return $.ajax({
     method: "GET",
