@@ -76,7 +76,7 @@ class MessageIndex extends React.Component {
     if (Object.values(this.props.messages).length > 0) {
       messageItems = this.mapMessages();
     }
-    console.log(this.props.currentChannel.title);
+  
 
     return(
       <div id="message-feed">
