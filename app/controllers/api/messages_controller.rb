@@ -12,7 +12,6 @@ class Api::MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.author_id = current_user.id
     @message.channel_id = params[:channel_id]
-
     if @message.save
       #publish an event
       #all componenets subscribed to that event can hear about it
@@ -43,7 +42,7 @@ class Api::MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:messages).permit(:body, :author_id, :channel_id)
+    params.require(:messages).permit(:body, :author_id, :channel_id, :image)
   end
 
 end

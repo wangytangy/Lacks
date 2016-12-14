@@ -6,5 +6,6 @@
     json.author message.author.username
     json.channelID message.channel_id
     json.createdAt format_date(message.created_at)
+    json.imageUrl asset_path(message.image.url)
   end
 end

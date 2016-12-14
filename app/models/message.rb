@@ -16,9 +16,9 @@
 
 class Message < ActiveRecord::Base
   validates :author_id, :channel_id, presence: true
-  # 
-  # has_attached_file :image, default_url: "ic_photo_black_24px.svg"
-  # validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
+
+  has_attached_file :image, default_url: "ic_photo_black_24px.svg"
+  validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
 
   belongs_to :author,

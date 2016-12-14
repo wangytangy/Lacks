@@ -33,10 +33,29 @@ class MessageIndex extends React.Component {
       //construct a different li that omits profile pic and username
       let liElement;
 
-      if (
+      if (message.imageUrl && message.body === null) {
+
+        liElement = (
+          <li key={i} className="message-item-container">
+            <div className="message-detail">
+              <img src="" className="message-detail-profile-picture"></img>
+              <div className="message-detail-content">
+                <div className="message-detail-top">
+                  <p>{message.author}</p>
+                  <small>{message.createdAt}</small>
+                </div>
+                <div className="message-image-container">
+                  <img src={message.imageUrl}/>
+                </div>
+              </div>
+            </div>
+          </li>
+        );
+      } else if (
         i !== 0 &&
         (message.author === Object.values(this.props.messages)[i - 1].author)
       ) {
+
         liElement = (
           <li key={i} className="message-item-container repeat">
             <div className="message-detail">
@@ -48,6 +67,7 @@ class MessageIndex extends React.Component {
           </li>
         );
       } else {
+
         liElement = (
           <li key={i} className="message-item-container">
             <div className="message-detail">
@@ -76,7 +96,7 @@ class MessageIndex extends React.Component {
     if (Object.values(this.props.messages).length > 0) {
       messageItems = this.mapMessages();
     }
-  
+
 
     return(
       <div id="message-feed">

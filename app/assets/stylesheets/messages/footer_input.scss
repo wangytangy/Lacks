@@ -119,3 +119,11 @@ ul.upload-menu-list li:hover {
   color: #fff;
   cursor: pointer;
 }
+
+div.image-upload-preview {
+  
+}
+
+div.image-upload-preview img {
+  width: calc(100% - 335px);
+}

@@ -25,6 +25,14 @@ export const createAMessage = (messageData) => {
   };
 };
 
+export const createImageMessage = (formData) => {
+  return (dispatch) => {
+    return APIUtil.createImageMessage(formData).then((message) => {
+      dispatch(receiveNewMessage(message));
+    });
+  };
+};
+
 export const fetchMessages = (channelID) => {
   return (dispatch) => {
     return APIUtil.fetchAllMessages(channelID).then((messages) => {

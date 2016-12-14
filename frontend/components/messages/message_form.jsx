@@ -1,4 +1,7 @@
 import React from 'react';
+import Modal from 'react-modal';
+import ImageUploadForm from './image_upload_form';
+import imageUploadStyle from '../modal_styles/image_upload_style';
 
 class MessageForm extends React.Component {
 
@@ -8,12 +11,15 @@ class MessageForm extends React.Component {
       body: "",
       uploadDropdown: "upload-dropdown",
       imageFile: null,
-      imageUrl: null
+      imageUrl: null,
+      imageModalOpen: false
     });
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.openUploadMenu = this.openUploadMenu.bind(this);
-    // this.handleUpload = this.handleUpload.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
+    this.handleImageSubmit = this.handleImageSubmit.bind(this);
+    this.toggleImageModalOpen = this.toggleImageModalOpen.bind(this);
   }
 
   handleChange(e) {
@@ -23,8 +29,6 @@ class MessageForm extends React.Component {
   handleSubmit(e) {
     // return;
 
-    // let formData = new FormData();
-
     let messageData = {
       channelID: parseInt(this.props.currentChannel.id),
       body: this.state.body,
@@ -33,7 +37,17 @@ class MessageForm extends React.Component {
 
     this.props.createMessage(messageData);
     this.setState({body: "", imageFile: null, imageUrl: null});
-    //dispatch a POST action to messages
+  }
+
+  handleImageSubmit() {
+    let formData = new FormData();
+    let channelID = parseInt(this.props.currentChannel.id);
+
+    this.toggleImageModalOpen();
+    formData.set("messages[image]", this.state.imageFile);
+    formData.set("messages[channel_id]", channelID);
+    this.props.createImageMessage(formData);
+    this.setState({body: "", imageFile: null, imageUrl: null});
   }
 
 
@@ -44,21 +58,31 @@ class MessageForm extends React.Component {
       this.setState({uploadDropdown: "upload-dropdown"});
     }
   }
-  //
-  // handleUpload(e) {
-  //   let file = e.currentTarget.files[0];
-  //
-  //   let fileReader = new FileReader();
-  //
-  //   fileReader.onloadend = function () {
-  //     this.setState({ imageFile: file, imageUrl: fileReader.result });
-  //   }.bind(this);
-  //
-  //
-  //   fileReader.readAsDataURL(file);
-  // }
-  //
-  //
+
+  handleUpload(e) {
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+
+    fileReader.onloadend = function () {
+      this.setState({
+        uploadDropdown: "upload-dropdown",
+        imageFile: file,
+        imageUrl: fileReader.result
+      });
+    }.bind(this);
+
+    fileReader.readAsDataURL(file);
+  }
+
+  toggleImageModalOpen() {
+    if (this.state.imageModalOpen) {
+      this.setState({imageModalOpen: false});
+    } else {
+      this.setState({imageModalOpen: true});
+    }
+  }
+
+
 
   render() {
     return(
@@ -76,38 +100,41 @@ class MessageForm extends React.Component {
             <button
               type="button"
               className="message-form-button"
-              onClick={this.openUploadMenu}>
+              onClick={this.toggleImageModalOpen}>
               <i className="material-icons add">add</i>
             </button>
 
+            <nav className={this.state.uploadDropdown}>
+              <div className="popover-mask" onClick={this.openUploadMenu}></div>
+
+              <Modal
+                isOpen={this.state.imageModalOpen}
+                onRequestClose={this.toggleImageModalOpen}
+                contentLabel = "browse-modal"
+                style={imageUploadStyle}
+                contentLabel="image-upload"
+              >
+                <i className="material-icons exit-icon" onClick={this.toggleImageModalOpen}>
+                  highlight_off
+                </i>
+
+                <ImageUploadForm
+                  imageUrl={this.state.imageUrl}
+                  handleUpload={this.handleUpload}
+                  handleImageSubmit={this.handleImageSubmit}
+                  />
+              </Modal>
+            </nav>
           </form>
+
+
         </div>
       </div>
     );
   }
 
-
-  // <nav className={this.state.uploadDropdown}>
-  //   <div className="popover-mask" onClick={this.openUploadMenu}></div>
   //
-  //   <ul className="upload-menu-list">
-  //     <li>
-  //       <button type="button" onClick={this.handleSubmit}>SUBMIT PHOTO</button>
-  //       <input
-  //         type="file"
-  //         className="image-upload-input"
-  //         multiple accept='image/*'
-  //         id="Attach an image"
-  //         onChange={this.handleUpload}>
-  //       </input>
-  //     </li>
-  //     <li>
-  //       <img src={this.state.imageUrl}/>
-  //     </li>
-  //   </ul>
-  // </nav>
-
-
+  //
 
 }
 

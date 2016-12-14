@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import customStyle from '../modal_style';
+import customStyle from '../modal_styles/modal_style';
 import CreateChannelFormContainer from './create_channel_form_container';
 import BrowseChannelContainer from './browse_channels_container';
 
