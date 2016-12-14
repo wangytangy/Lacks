@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from 'react-modal';
 import { Link } from 'react-router';
-import CreateDirectMessages from './create_direct_messages';
+import CreateDirectMessagesContainer from './create_direct_messages_container';
 
 class DirectMessagesIndex extends React.Component {
   constructor(props) {
@@ -116,7 +116,7 @@ class DirectMessagesIndex extends React.Component {
           onRequestClose={this.onCreateDirectMessageClose}
           contentLabel = "create-dm-modal"
         >
-          <CreateDirectMessages />
+          <CreateDirectMessagesContainer />
         </Modal>
       </div>
     );

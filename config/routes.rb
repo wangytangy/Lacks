@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: {format: :json} do
     get 'channels/direct_messages' => 'channels#get_direct_messages'
-    resources :users, only: [:create]
+    resources :users, only: [:create, :index]
     resource :session, only: [:create, :destroy]
     resources :channels, only: [:index, :create, :show, :destroy]
     resources :channels do
