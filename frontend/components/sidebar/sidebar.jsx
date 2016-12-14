@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router';
 import ChannelIndexContainer from '../channels/channel_index_container';
+import DirectMessagesContainer from '../direct_messages/direct_messages_container';
 
 class Sidebar extends React.Component {
   constructor(props) {
@@ -8,12 +9,14 @@ class Sidebar extends React.Component {
     this.handleLogout = this.handleLogout.bind(this);
     // this.mapChannelIndex = this.mapChannelIndex.bind(this);
     this.dropdownOpen = this.dropdownOpen.bind(this);
-    this.state = { dropdown: "dropdown-menu"};
+
+    this.state = { dropdown: "dropdown-menu" };
   }
 
   // componentDidMount() {
   //   this.props.fetchAllChannels();
   // }
+
 
   handleLogout() {
     this.props.logout();
@@ -62,6 +65,7 @@ class Sidebar extends React.Component {
         </div>
 
         <ChannelIndexContainer />
+        <DirectMessagesContainer />
 
       </div>
     );

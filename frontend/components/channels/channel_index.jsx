@@ -132,8 +132,6 @@ class ChannelIndex extends React.Component {
     this.setState({browseModalOpen: false});
   }
 
-
-
   render() {
 
     let channelsIndex = this.mapChannelIndex();
