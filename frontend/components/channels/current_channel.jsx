@@ -27,11 +27,11 @@ class CurrentChannel extends React.Component {
     this.pusher = new Pusher('6229f47cce1a7e390f4e', {
       encrypted: true
     });
-    console.log("this.pusher: " + this.pusher);
+    // console.log("this.pusher: " + this.pusher);
 
     var channel = this.pusher.subscribe('channel');
     channel.bind('message_published', (data) => {
-      console.log(data);
+      // console.log(data);
       //use data to perform actions using @message
       this.boundFetchMessages();
     });
@@ -53,7 +53,7 @@ class CurrentChannel extends React.Component {
   }
 
   componentWillUnmount() {
-    this.pusher.unsubscribe('channel_' + this.props.params.id);
+    this.pusher.unsubscribe('channel');
   }
   // creator={this.props.currentChannel.creator.username}
   // memberCount={this.props.currentChannel.members.length}

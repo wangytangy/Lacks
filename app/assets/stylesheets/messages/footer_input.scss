@@ -37,16 +37,6 @@ input.message-form-chatbar {
   border-color: #BBBDBF;
 }
 
-.message-form-chatbar:focus + .message-form-button {
-  border-color: #BBBDBF;
-}
-
-.message-form-chatbar:focus + .message-form-button:hover {
-  border-color: #BBBDBF;
-  border-color: #53B68D;
-}
-
-
 .message-form-button {
   width: 45px;
   height: 41px;
@@ -60,6 +50,15 @@ input.message-form-chatbar {
   justify-content: center;
 }
 
+.message-form-chatbar:focus + .message-form-button {
+  border-color: #BBBDBF;
+}
+
+.message-form-chatbar:focus + .message-form-button:hover {
+  border-color: #BBBDBF;
+  border-color: #53B68D;
+}
+
 .message-form-button i {
   color: #BBBDBF;
 }
@@ -71,4 +70,52 @@ input.message-form-chatbar {
 }
 .message-form-button:hover i {
   color: #fff;
+}
+
+// ********IMAGE UPLOAD********
+
+.message-form nav.upload-dropdown {
+  display: none;
+}
+
+.message-form nav.upload-dropdown-open {
+  display: block;
+
+  position: absolute;
+
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+
+  left: 0px;
+  bottom: 45px;
+
+  color: #000;
+  background-color: #fff;
+}
+
+ul.upload-menu-list {
+  background: #fff;
+  padding: 15px;
+
+  color: #2c2d30;
+  border-radius: 5px;
+}
+
+input.image-upload-input {
+  width: 100%;
+}
+
+ul.upload-menu-list li {
+
+  border-radius: 5px;
+  padding: 5px 10px;
+
+  box-sizing: border-box;
+}
+
+ul.upload-menu-list li:hover {
+  background-color: #3aa3e3;
+  color: #fff;
+  cursor: pointer;
 }

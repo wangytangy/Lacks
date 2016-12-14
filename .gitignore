@@ -21,3 +21,6 @@ bundle.js.map
 npm-debug.log
 .byebug_history
 log.txt
+
+# Ignore application configuration
+/config/application.yml
