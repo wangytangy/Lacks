@@ -4,7 +4,7 @@ export const RECEIVE_ALL_CHANNELS = "RECEIVE_ALL_CHANNELS";
 export const RECEIVE_NEW_CHANNEL = "RECEIVE_NEW_CHANNEL";
 export const DELETE_CHANNEL = "DELETE_CHANNEL";
 export const RECEIVE_JOIN_CHANNEL = "RECEIVE_JOIN_CHANNEL";
-
+export const RECEIVE_REMAINING_DIRECT_MESSAGES = "RECEIVE_REMAINING_DIRECT_MESSAGES";
 
 export const receiveChannels = (channels) => ({
   type: RECEIVE_ALL_CHANNELS,
@@ -25,6 +25,13 @@ export const receiveJoinedChannel = (channel) => ({
   type: RECEIVE_JOIN_CHANNEL,
   joinedChannel: channel
 });
+
+
+// export const receiveDirectMessages = (directMessages) => ({
+//   type: RECEIVE_REMAINING_DIRECT_MESSAGES,
+//   directMessages
+// });
+
 
 export const createDirectMessage = (formData) => {
   return (dispatch) => {

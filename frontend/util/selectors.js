@@ -4,7 +4,8 @@ export const filterUsersChannels = (channels, currentUserID) => {
 
   if (allChannels.length > 0) {
     allChannels.forEach((channel) => {
-      if (isMember(channel, currentUserID)) {
+      if (isMember(channel, currentUserID) && !channel.directMessageStatus) {
+
         usersChannels.push(channel);
       }
     });

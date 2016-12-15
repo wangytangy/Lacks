@@ -19,6 +19,7 @@ class DirectMessagesIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    this.props.fetchDirectMessages();
     this.setState({ selected: nextProps.params.id });
   }
 
@@ -48,21 +49,6 @@ class DirectMessagesIndex extends React.Component {
           title = dm.title;
         }
 
-        let deleteFn = this.handleDelete;
-        let icon;
-        if (i === 0 || dm.user_id !== this.props.currentUser.id) {
-          deleteFn = () => {};
-          icon = null;
-        } else {
-          icon = (
-            <i
-              className="material-icons delete-channel"
-              onClick={() => deleteFn(dm.id)}>
-              cancel
-            </i>
-          );
-        }
-
         let highlightPresence;
         if (this.state.selected === `${dm.id}`) {
           highlightPresence = "group active";
@@ -78,7 +64,6 @@ class DirectMessagesIndex extends React.Component {
             className={highlightPresence}
           >
             <Link to={path}>&#35; {title}</Link>
-            {icon}
           </li>);
 
           dmIndex.push(liElement);

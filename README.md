@@ -36,14 +36,14 @@ DEVELOPMENT README
 
 **Objective:** Messages that belong to a DM thread can be created, read, edited, and destroyed through the API.
 
-## BONUS: Phase 5: Search Messages
+## BONUS: Phase 5: Image/GIF uploads
+
+**Objective:** Messages allow images and GIFs to be uploaded.
+
+## BONUS: Phase 6: Search Messages
 
 **Objective:** Search for messages by content or author within a channel.
 
-## BONUS: Phase 6: Notifications
+## BONUS: Phase 7: Notifications
 
 **Objective:** Channels show a count of unread messages.
-
-## BONUS: Phase 7: Image/GIF uploads
-
-**Objective:** Messages allow images and GIFs to be uploaded.
