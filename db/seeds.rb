@@ -13,13 +13,13 @@ guest = User.create!(username: "guest", email: "guest@gmail.com", password: "gue
 user1 = User.create!(username: "user1", email: "user1@email.com", password: "password1")
 user2 = User.create!(username: "user2", email: "user2@email.com", password: "password1")
 user3 = User.create!(username: "user3", email: "user3@email.com", password: "password1")
-user4 = User.create!(username: "user4", email: "user3@email.com", password: "password1")
-user5 = User.create!(username: "user5", email: "user3@email.com", password: "password1")
+user4 = User.create!(username: "wangytangyissocool", email: "user3@email.com", password: "password1")
+user5 = User.create!(username: "dudeduderdue", email: "user3@email.com", password: "password1")
 user6 = User.create!(username: "user6", email: "user3@email.com", password: "password1")
-user7 = User.create!(username: "user7", email: "user3@email.com", password: "password1")
-user8 = User.create!(username: "user8", email: "user3@email.com", password: "password1")
+user7 = User.create!(username: "sdfadsasdf7", email: "user3@email.com", password: "password1")
+user8 = User.create!(username: "whosthatguy8", email: "user3@email.com", password: "password1")
 user9 = User.create!(username: "user9", email: "user3@email.com", password: "password1")
-user10 = User.create!(username: "user10", email: "user3@email.com", password: "password1")
+user10 = User.create!(username: "gretchweiners", email: "user3@email.com", password: "password1")
 
 
 Channel.destroy_all

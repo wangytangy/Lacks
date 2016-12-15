@@ -15,10 +15,14 @@ div.browse-dm h1 {
 
 
 div.dm-selected-container {
-  border: 1px solid blue;
   display: flex;
-  padding: 5px 5px;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
 
+ul.dm-search-results {
+  overflow: auto;
+  height: 510px;
 }
 
 
@@ -26,20 +30,26 @@ li.dm-selected-item {
   list-style: none;
   border-radius: 5px;
   background-color: #3aa3e3;
-  margin: 5px;
+  margin: 5px 3px;
   padding: 3px 8px;
 
   color: #fff;
+  flex-shrink: 1;
+}
+
+li.dm-selected-item:hover {
+  background-color: #0B91E3;
+  cursor: pointer;
 }
 
 div.dm-details-container {
   display: flex;
   align-items: center;
-
 }
 
 div.dm-details-container p {
   margin-right: 5px;
+  font-size: 11px;
 }
 
 i.clear {
@@ -47,21 +57,37 @@ i.clear {
   font-size: 12px;
 }
 
+// *****************************
 
-
-
-
-
-
-
-
+div.dm-subheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+}
 
 div.browse-dm h2 {
-  padding: 0 10px;
-  margin: 25px 0 10px 0;
+  padding: 0 10px 0 0;
+  margin: 0 0 0 0;
   font-size: 14px;
   color: #67686E;
   font-weight: bold;
+}
+
+button#join-dm {
+  outline: none;
+  background: #2ab27b;
+  color: #fff;
+  padding: 0px 20px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+button#join-dm:hover {
+  outline: none;
+  background: #0DA668;
+  cursor: pointer;
 }
 
 div.browse-dm ul {
@@ -76,12 +102,14 @@ input.dm-search {
   border: 1px solid #ccc;
   padding: 3px 0 3px 45px;
   font-size: 24px;
+  outline: none;
 
   transition: border-color 0.6s;
 }
 
 input.dm-search:hover {
   border-color: #38A2E0;
+  outline: none;
 }
 
 div.browse-dm-searchbar {
@@ -108,7 +136,7 @@ div.browse-dm ul > li {
 div.browse-dm ul > li:hover {
   background-color: #EDF7FD;
   border-color: #38A2E0;
-
+  cursor: pointer;
 }
 
 
