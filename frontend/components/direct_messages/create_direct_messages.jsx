@@ -20,12 +20,14 @@ class CreateDirectMessages extends React.Component {
 
   handleClick(e) {
     let updatedFriends = this.state.friends;
+
     let selectedUser = e.currentTarget.type;
     if (this.state.friends.includes(selectedUser)) {
       let deleteIdx = updatedFriends.indexOf(selectedUser);
       updatedFriends.splice(deleteIdx, 1);
       this.setState({friends: updatedFriends});
     } else {
+      if (updatedFriends.length >= 8) { return; }
       updatedFriends.push(selectedUser);
       this.setState({friends: updatedFriends});
     }
@@ -100,9 +102,6 @@ class CreateDirectMessages extends React.Component {
     return(
       <div className="browse-dm">
         <h1>Direct Messages</h1>
-        <div className="dm-selected-container">
-          {selectedUsers}
-        </div>
         <div className="browse-dm-searchbar">
           <i className="material-icons search">search</i>
           <input
@@ -114,8 +113,14 @@ class CreateDirectMessages extends React.Component {
           </input>
         </div>
 
-        <h2>Find or start a conversation</h2>
-        <ul>
+        <div className="dm-subheader">
+          <h2>Find or start a conversation</h2>
+          <button id="join-dm">Go</button>
+        </div>
+        <div className="dm-selected-container">
+          {selectedUsers}
+        </div>
+        <ul className="dm-search-results">
           {usersElements}
         </ul>
 
