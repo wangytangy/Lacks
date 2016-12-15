@@ -1,5 +1,6 @@
 import React from 'react';
 import MessageFormContainer from './message_form_container';
+import { Link } from 'react-router';
 
 class MessageIndex extends React.Component {
   constructor(props) {
@@ -96,20 +97,42 @@ class MessageIndex extends React.Component {
     if (Object.values(this.props.messages).length > 0) {
       messageItems = this.mapMessages();
     }
+
     let channelCreator;
-    if (this.props.currentChannel.creator) {
+    if (this.props.currentChannel.creator && !this.props.currentChannel.direct_message_status) {
       channelCreator = this.props.currentChannel.creator.username;
     }
 
+    let channelDescrip;
+    let channelPurpose;
+
+    if (this.props.currentChannel.direct_message_status) {
+      let members = this.props.currentChannel.title.split(',');
+      members = members.join(', ');
+      channelDescrip = "This is your direct message history with " + members;
+      channelPurpose = "";
+    } else {
+      channelDescrip = ` created this channel on ${this.props.currentChannel.createdAt}`;
+      channelPurpose = "Purpose: ";
+    }
+
+    let path = `messages/${this.props.currentChannel.id}`;
+    // debugger
     return(
       <div id="message-feed">
         <ul id="chat-messages">
           <div id="message-feed-header">
-            <h2 className="feed-header-title">{this.props.currentChannel.title}</h2>
-            <p className="feed-header-info">
-              {channelCreator} created this channel
-            </p>
-            <p className="feed-header-purpose">Purpose: {this.props.currentChannel.description}</p>
+            <Link to={path}><h2>#{this.props.currentChannel.title}</h2></Link>
+
+            <div className="feed-header-title">
+              <p className="feed-header-creator">{channelCreator}</p>
+              <p>{channelDescrip}</p>
+
+            </div>
+            <div className="feed-header-info">
+              <p>{channelPurpose}</p>
+              <p className="feed-header-purpose">{this.props.currentChannel.description}</p>
+            </div>
           </div>
           {messageItems}
         </ul>

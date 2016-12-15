@@ -1,7 +1,4 @@
-div.channel-header-container {
 
-  border-bottom: 1px solid #ccc;
-}
 
 div.header-left {
   height: 60px;
@@ -39,7 +36,22 @@ div.header-info > * {
 }
 
 div.header-info i.material-icons {
-  font-size: 12px;
+  font-size: 15px;
+}
+
+div.header-info i.person:hover {
+  color: #3aa3e3;
+  cursor: default;
+}
+
+.star:hover {
+  color: #fc0;
+  cursor: default;
+}
+
+.header-status-text:hover {
+  color: #3aa3e3;
+  cursor: default;
 }
 
 i#circle {
