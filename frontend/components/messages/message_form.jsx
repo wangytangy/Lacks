@@ -54,7 +54,7 @@ class MessageForm extends React.Component {
 
       $.ajax({
         method: "GET",
-        url: `http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC${tagName}${rating}`,
+        url: `https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC${tagName}${rating}`,
         success: (response) => this.processGiphyResponse(response)
       });
       this.setState({body: "", imageFile: null, imageUrl: null});
