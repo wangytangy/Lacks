@@ -1,0 +1,122 @@
+div.browse-dm {
+  margin: 100px auto;
+  width: 640px;
+
+  position: relative;
+}
+
+div.browse-dm h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0 0 30px 0;
+}
+
+// SELECTED USERS IN DM search
+
+
+div.dm-selected-container {
+  border: 1px solid blue;
+  display: flex;
+  padding: 5px 5px;
+
+}
+
+
+li.dm-selected-item {
+  list-style: none;
+  border-radius: 5px;
+  background-color: #3aa3e3;
+  margin: 5px;
+  padding: 3px 8px;
+
+  color: #fff;
+}
+
+div.dm-details-container {
+  display: flex;
+  align-items: center;
+
+}
+
+div.dm-details-container p {
+  margin-right: 5px;
+}
+
+i.clear {
+  color: #fff;
+  font-size: 12px;
+}
+
+
+
+
+
+
+
+
+
+
+div.browse-dm h2 {
+  padding: 0 10px;
+  margin: 25px 0 10px 0;
+  font-size: 14px;
+  color: #67686E;
+  font-weight: bold;
+}
+
+div.browse-dm ul {
+  overflow: auto;
+  height: 510px;
+}
+
+input.dm-search {
+  width: 91%;
+  border-radius: 5px;
+  height: 50px;
+  border: 1px solid #ccc;
+  padding: 3px 0 3px 45px;
+  font-size: 24px;
+
+  transition: border-color 0.6s;
+}
+
+input.dm-search:hover {
+  border-color: #38A2E0;
+}
+
+div.browse-dm-searchbar {
+  position: relative;
+}
+
+div.browse-dm-searchbar i {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  font-size: 32px;
+  color: #ccc;
+}
+
+div.browse-dm ul > li {
+
+  box-sizing: border-box;
+  border-top: 1px solid #eee;
+
+  transition: background-color 0.6s;
+  transition: border-color 0.6s;
+}
+
+div.browse-dm ul > li:hover {
+  background-color: #EDF7FD;
+  border-color: #38A2E0;
+
+}
+
+
+div.search-result {
+  padding: 10px 5px;
+
+  color: #67686E;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 0 5px;
+}
