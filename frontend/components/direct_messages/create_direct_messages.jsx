@@ -127,7 +127,6 @@ class CreateDirectMessages extends React.Component {
   render() {
     let usersElements = this.allUsersList(this.filterUsersbyInput());
     let selectedUsers = this.renderSelectedUsers();
-    console.log(selectedUsers);
 
     return(
       <div className="browse-dm">
