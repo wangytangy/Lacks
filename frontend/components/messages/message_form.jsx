@@ -20,23 +20,55 @@ class MessageForm extends React.Component {
     this.handleUpload = this.handleUpload.bind(this);
     this.handleImageSubmit = this.handleImageSubmit.bind(this);
     this.toggleImageModalOpen = this.toggleImageModalOpen.bind(this);
+
+    this.processGiphyResponse = this.processGiphyResponse.bind(this);
   }
 
   handleChange(e) {
     this.setState({body: e.currentTarget.value});
   }
 
-  handleSubmit(e) {
-    // return;
-
+  processGiphyResponse(response) {
     let messageData = {
       channelID: parseInt(this.props.currentChannel.id),
       body: this.state.body,
-      image: this.state.imageFile
+      giphy_url: response.data.image_original_url
     };
-
     this.props.createMessage(messageData);
-    this.setState({body: "", imageFile: null, imageUrl: null});
+  }
+
+  handleSubmit(e) {
+    //if message = "/giphy", make api call
+    if (this.state.body.slice(0, 6) === "/giphy") {
+      let tag = this.state.body.slice(6);
+      let tagName = tag.split(' ').join('+');
+
+      if (tagName[0] === "+") {
+        tagName = "&tag=" + tagName.slice(1);
+      } else {
+        tagName = "&tag=" + tagName;
+      }
+
+      let rating = "&rating=pg-13";
+
+
+      $.ajax({
+        method: "GET",
+        url: `http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC${tagName}${rating}`,
+        success: (response) => this.processGiphyResponse(response)
+      });
+      this.setState({body: "", imageFile: null, imageUrl: null});
+    } else {
+      let messageData = {
+        channelID: parseInt(this.props.currentChannel.id),
+        body: this.state.body,
+        image: this.state.imageFile
+      };
+
+      this.props.createMessage(messageData);
+      this.setState({body: "", imageFile: null, imageUrl: null});
+    }
+
   }
 
   handleImageSubmit() {
@@ -46,6 +78,7 @@ class MessageForm extends React.Component {
     this.toggleImageModalOpen();
     formData.set("messages[image]", this.state.imageFile);
     formData.set("messages[channel_id]", channelID);
+    formData.set("messages[body]", "");
     this.props.createImageMessage(formData);
     this.setState({body: "", imageFile: null, imageUrl: null});
   }

@@ -9,6 +9,7 @@ class Api::MessagesController < ApplicationController
   end
 
   def create
+
     @message = Message.new(message_params)
     @message.author_id = current_user.id
     @message.channel_id = params[:channel_id]
@@ -56,7 +57,13 @@ class Api::MessagesController < ApplicationController
   private
 
   def message_params
-    params.require(:messages).permit(:body, :author_id, :channel_id, :image)
+    params.require(:messages).permit(
+      :body,
+      :author_id,
+      :channel_id,
+      :image,
+      :giphy_url
+    )
   end
 
 end

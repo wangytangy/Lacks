@@ -28,13 +28,21 @@ class MessageIndex extends React.Component {
 
   mapMessages() {
     let messagesArr = [];
+
     Object.values(this.props.messages).forEach((message, i) => {
 
       //if previous message author is the same:
       //construct a different li that omits profile pic and username
       let liElement;
-
-      if (message.imageUrl && message.body === null) {
+      if ((message.imageUrl || message.giphyUrl) && message.body === "") {
+        let imgSrc;
+        if (message.imageUrl.indexOf("missing") === 17 && message.giphyUrl === null) {
+          imgSrc = "";
+        } else if (message.giphyUrl) {
+          imgSrc = message.giphyUrl;
+        } else if (message.imageUrl) {
+          imgSrc = message.imageUrl;
+        }
 
         liElement = (
           <li key={i} className="message-item-container">
@@ -46,7 +54,7 @@ class MessageIndex extends React.Component {
                   <small>{message.createdAt}</small>
                 </div>
                 <div className="message-image-container">
-                  <img src={message.imageUrl}/>
+                  <img src={imgSrc}/>
                 </div>
               </div>
             </div>
@@ -117,7 +125,6 @@ class MessageIndex extends React.Component {
     }
 
     let path = `messages/${this.props.currentChannel.id}`;
-    // debugger
     return(
       <div id="message-feed">
         <ul id="chat-messages">

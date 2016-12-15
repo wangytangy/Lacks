@@ -1,9 +1,13 @@
 export function createMessage(messageData) {
-
   return $.ajax({
     method: "POST",
     url: `/api/channels/${messageData.channelID}/messages`,
-    data: { messages: { body: messageData.body } },
+    data: {
+      messages: {
+        body: messageData.body,
+        giphy_url: messageData.giphy_url
+        }
+      },
 
   });
 }
