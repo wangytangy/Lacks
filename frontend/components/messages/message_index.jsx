@@ -96,11 +96,21 @@ class MessageIndex extends React.Component {
     if (Object.values(this.props.messages).length > 0) {
       messageItems = this.mapMessages();
     }
-
+    let channelCreator;
+    if (this.props.currentChannel.creator) {
+      channelCreator = this.props.currentChannel.creator.username;
+    }
 
     return(
       <div id="message-feed">
         <ul id="chat-messages">
+          <div id="message-feed-header">
+            <h2 className="feed-header-title">{this.props.currentChannel.title}</h2>
+            <p className="feed-header-info">
+              {channelCreator} created this channel
+            </p>
+            <p className="feed-header-purpose">Purpose: {this.props.currentChannel.description}</p>
+          </div>
           {messageItems}
         </ul>
         <div id="messages-end"></div>

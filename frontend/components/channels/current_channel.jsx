@@ -8,12 +8,17 @@ class CurrentChannel extends React.Component {
   constructor(props) {
     super(props);
     this.boundFetchMessages = this.boundFetchMessages.bind(this);
+    this.boundFetchDirectMessages = this.boundFetchDirectMessages.bind(this);
     this.handleLeaveChannel = this.handleLeaveChannel.bind(this);
     // this.updateScroll = this.updateScroll.bind(this);
   }
 
   boundFetchMessages() {
     this.props.fetchMessages(this.props.params.id);
+  }
+
+  boundFetchDirectMessages() {
+    this.props.fetchDirectMessages();
   }
 
   componentDidMount() {
@@ -34,6 +39,7 @@ class CurrentChannel extends React.Component {
       // console.log(data);
       //use data to perform actions using @message
       this.boundFetchMessages();
+      this.boundFetchDirectMessages();
     });
   }
 
@@ -60,6 +66,7 @@ class CurrentChannel extends React.Component {
 
   handleLeaveChannel(channelID) {
     this.props.leaveChannel(channelID);
+    this.props.fetchDirectMessages();
     //redirect to last available channel
     let firstChannelID = Object.keys(this.props.channels)[0];
     this.props.router.push(`messages/${firstChannelID}`);

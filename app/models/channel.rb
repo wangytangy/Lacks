@@ -13,6 +13,7 @@
 
 class Channel < ActiveRecord::Base
   validates :title, :user_id, presence: true
+  validates :title, uniqueness: true
 
   has_many :channel_memberships,
     class_name: :ChannelMembership,

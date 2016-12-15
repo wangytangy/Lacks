@@ -150,8 +150,10 @@ div.channels {
 div.channels-title {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   width: 199px;
 }
+
 
 h1.channels-header {
   text-transform: uppercase;
@@ -197,6 +199,12 @@ ul.channels-index {
   margin: 5px 0 0 0;
 }
 
+.channels-index li:first-child a {
+  font-weight: bold;
+  color: #fff;
+  font-size: 18px;
+}
+
 ul.channels-index > li {
   position: relative;
 
@@ -208,6 +216,9 @@ ul.channels-index li a {
   border-radius: 0 5px 5px 0;
   margin: 0px 20px 0px 0;
   padding: 3px 0 3px 20px;
+
+  display: flex;
+  align-items: baseline;
 
 
   box-sizing: border-box;
@@ -241,3 +252,124 @@ i.delete-channel:hover {
 
 
 // ******************************
+
+
+// *************DM Li************
+
+
+//****** DM INDEX ******
+
+div.channels {
+  margin: 20px 0 0 0px;
+  position: relative;
+  font-size: 15px;
+}
+
+div.channels-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 199px;
+}
+
+
+h1.channels-header {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 0 0 0 20px;
+
+
+}
+
+div.channels h1:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+i.create-channel {
+  font-size: 17px;
+  color: #AB9BA9;
+}
+
+i.create-channel:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+i.create-channel:hover h1.channels-header {
+  color: #AB9BA9;
+}
+
+
+//****ACTIVE CHANNEL ****
+ul.dm-index li.active a {
+  background-color: #4F9689;
+  color: #fff;
+}
+
+ul.dm-index li.active a:hover {
+  background-color: #4F9689;
+}
+// *************************
+
+ul.dm-index {
+  margin: 5px 0 0 0;
+}
+
+
+ul.dm-index > li {
+  position: relative;
+
+}
+
+ul.dm-index li a {
+  color: #AB9BA9;
+  display: block;
+  border-radius: 0 5px 5px 0;
+  margin: 0px 20px 0px 0;
+  padding: 3px 0 3px 20px;
+
+  display: flex;
+  align-items: baseline;
+
+
+  box-sizing: border-box;
+}
+
+
+ul.dm-index li:hover a {
+  background-color: #3E313C;
+}
+
+ul.dm-index li {
+
+}
+
+ul.dm-index i.delete-channel {
+  display: none;
+  font-size: 14px;
+  position: absolute;
+  left: 182px;
+  top: 7px;
+}
+
+ul.dm-index li:hover i.delete-channel {
+  display: block;
+  cursor: pointer;
+}
+
+i.delete-channel:hover {
+  color: #fff;
+}
+
+
+li.dm-li span {
+  margin-right: 5px;
+  background-color: #ab9ba9;
+  padding: 0px 4px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #4D394A;
+  border-radius: 2px;
+}
