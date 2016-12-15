@@ -35,11 +35,20 @@ div.header-info > * {
     margin-right: 5px;
 }
 
-div.header-info i.material-icons {
+i.star {
+  font-size: 12px;
+}
+
+i.circle {
+  font-size: 12px;
+}
+
+i.person {
   font-size: 15px;
 }
 
-div.header-info i.person:hover {
+
+i.person:hover {
   color: #3aa3e3;
   cursor: default;
 }
