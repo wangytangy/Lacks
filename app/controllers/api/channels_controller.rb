@@ -23,6 +23,24 @@ class Api::ChannelsController < ApplicationController
     end
   end
 
+  def create_dm
+    @channel = Channel.new(channels_params)
+    @channel.direct_message_status = true
+    @channel.user_id = current_user.id
+
+    if @channel.save
+      #join all the members
+      params[:channels][:friends].each do |username|
+        user = User.find_by(username: username)
+        user.channels << @channel
+      end
+      render :show
+    else
+      render json: ["direct message channel not created!"], status: 422
+    end
+
+  end
+
   def get_direct_messages
     @direct_messages = current_user.channels.where({ direct_message_status: true })
     render :dm_index

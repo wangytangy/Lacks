@@ -8,6 +8,9 @@ class CreateDirectMessages extends React.Component {
     this.allUsersList = this.allUsersList.bind(this);
     this.handleClick = this.handleClick.bind(this);
     this.renderSelectedUsers = this.renderSelectedUsers.bind(this);
+    this.handleJoinDm = this.handleJoinDm.bind(this);
+    this.redirect = this.redirect.bind(this);
+
     this.state = {
       friends: [],
       searchInput: ""
@@ -32,6 +35,33 @@ class CreateDirectMessages extends React.Component {
       this.setState({friends: updatedFriends});
     }
   }
+
+  handleJoinDm() {
+    this.props.onCreateDirectMessageClose();
+    let currentUsername = this.props.currentUser.username;
+    let friends = this.state.friends;
+    friends.push(currentUsername);
+    let title = friends.join();
+
+
+    let formData ={
+      "channels[title]": title,
+      "channels[description]": "",
+      "channels[friends]": this.state.friends
+    };
+
+    console.log(formData);
+    this.props.createDirectMessage(formData).then((channel) => {
+      this.redirect(channel.id);
+      this.props.fetchDirectMessages();
+    });
+
+  }
+
+  redirect(id) {
+    this.props.router.push(`messages/${id}`);
+  }
+
 
 
   allUsersList(searchedUsers) {
@@ -115,7 +145,7 @@ class CreateDirectMessages extends React.Component {
 
         <div className="dm-subheader">
           <h2>Find or start a conversation</h2>
-          <button id="join-dm">Go</button>
+          <button id="join-dm" onClick={this.handleJoinDm}>Go</button>
         </div>
         <div className="dm-selected-container">
           {selectedUsers}

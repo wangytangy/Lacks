@@ -11,7 +11,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchAllDirectMessages: dispatch(fetchAllDirectMessages())
+  fetchDirectMessages: () => dispatch(fetchAllDirectMessages())
 });
 
 export default withRouter(connect(

@@ -26,6 +26,14 @@ export const receiveJoinedChannel = (channel) => ({
   joinedChannel: channel
 });
 
+export const createDirectMessage = (formData) => {
+  return (dispatch) => {
+    return APIUtil.createDirectMessage(formData).then((directMessage) => {
+      dispatch(receiveNewChannel(directMessage));
+      return directMessage;
+    });
+  };
+};
 
 
 export const fetchAllChannels = () => {

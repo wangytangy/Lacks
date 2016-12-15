@@ -22,6 +22,10 @@ class DirectMessagesIndex extends React.Component {
     this.setState({ selected: nextProps.params.id });
   }
 
+  componentDidMount() {
+    this.props.fetchDirectMessages();
+  }
+
 
   setSelected(dmID) {
     this.setState({selected: dmID});
@@ -36,10 +40,16 @@ class DirectMessagesIndex extends React.Component {
     let dmIndex = [];
     if (this.props.usersDirectMessages.length > 0) {
       this.props.usersDirectMessages.forEach((dm, i) => {
-        let path = `messages/${dm.id}`;
+
+        let title;
+        if (dm.title.length > 20) {
+          title = dm.title.slice(0, 16) + "...";
+        } else {
+          title = dm.title;
+        }
+
         let deleteFn = this.handleDelete;
         let icon;
-
         if (i === 0 || dm.user_id !== this.props.currentUser.id) {
           deleteFn = () => {};
           icon = null;
@@ -60,14 +70,14 @@ class DirectMessagesIndex extends React.Component {
           highlightPresence = "group default";
         }
 
-
+        let path = `messages/${dm.id}`;
         let liElement = (
           <li
             onClick={() => this.setSelected(`${dm.id}`)}
             key={i}
             className={highlightPresence}
           >
-            <Link to={path}>&#35; {dm.title}</Link>
+            <Link to={path}>&#35; {title}</Link>
             {icon}
           </li>);
 
@@ -120,7 +130,9 @@ class DirectMessagesIndex extends React.Component {
         <i className="material-icons exit-icon" onClick={this.onCreateDirectMessageClose}>
           highlight_off
         </i>
-          <CreateDirectMessagesContainer />
+          <CreateDirectMessagesContainer
+            onCreateDirectMessageClose={this.onCreateDirectMessageClose}
+            />
         </Modal>
       </div>
     );

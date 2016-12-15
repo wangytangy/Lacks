@@ -7,12 +7,13 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :index]
     resource :session, only: [:create, :destroy]
     resources :channels, only: [:index, :create, :show, :destroy]
+
     resources :channels do
       resources :messages, only: [:create, :index, :show, :update, :destroy]
       resources :channel_memberships, only: [:create]
     end
     delete 'channels/:id/unsubscribe' => 'channels#leave_channel'
-
+    post 'direct_messages' => 'channels#create_dm'
 
     #DM's
   end

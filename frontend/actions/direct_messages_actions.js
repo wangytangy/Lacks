@@ -13,6 +13,7 @@ export const receiveAllUsers = (users) => ({
   users
 });
 
+
 export const fetchAllDirectMessages = () => {
   return (dispatch) => {
     return APIUtil.fetchDirectMessages().then((directMessages) => {
