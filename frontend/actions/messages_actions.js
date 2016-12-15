@@ -19,7 +19,6 @@ export const receiveAllMessages = (messages) => ({
 export const createAMessage = (messageData) => {
   return (dispatch) => {
     return APIUtil.createMessage(messageData).then((message) => {
-
       dispatch(receiveNewMessage(message));
     });
   };

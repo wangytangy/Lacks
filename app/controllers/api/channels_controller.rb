@@ -36,7 +36,7 @@ class Api::ChannelsController < ApplicationController
       end
       render :show
     else
-      render json: ["direct message channel not created!"], status: 422
+      render json: "Cannot create direct messages with duplicate members", status: 422
     end
 
   end
@@ -65,6 +65,10 @@ class Api::ChannelsController < ApplicationController
   def leave_channel
     @channel = Channel.find(params[:id].to_i)
     current_user.channels.delete(@channel)
+
+    # check if channel is a DM, if true => update the channel title?
+    # iterate over @channel.users, concat remaining users for new channel name
+
     @remaining_channels = current_user.channels
     render :remaining_channels
   end

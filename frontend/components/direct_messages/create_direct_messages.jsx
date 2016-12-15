@@ -10,10 +10,12 @@ class CreateDirectMessages extends React.Component {
     this.renderSelectedUsers = this.renderSelectedUsers.bind(this);
     this.handleJoinDm = this.handleJoinDm.bind(this);
     this.redirect = this.redirect.bind(this);
+    this.handleErrors = this.handleErrors.bind(this);
 
     this.state = {
       friends: [],
-      searchInput: ""
+      searchInput: "",
+      errors: ""
     };
   }
 
@@ -30,14 +32,13 @@ class CreateDirectMessages extends React.Component {
       updatedFriends.splice(deleteIdx, 1);
       this.setState({friends: updatedFriends});
     } else {
-      if (updatedFriends.length >= 8) { return; }
+      if (updatedFriends.length >= 7) { return; }
       updatedFriends.push(selectedUser);
       this.setState({friends: updatedFriends});
     }
   }
 
   handleJoinDm() {
-    this.props.onCreateDirectMessageClose();
     let currentUsername = this.props.currentUser.username;
     let friends = this.state.friends;
     friends.push(currentUsername);
@@ -52,10 +53,18 @@ class CreateDirectMessages extends React.Component {
 
     console.log(formData);
     this.props.createDirectMessage(formData).then((channel) => {
+      this.props.onCreateDirectMessageClose();
       this.redirect(channel.id);
       this.props.fetchDirectMessages();
+    }, (errors) => {
+      debugger
+      this.handleErrors(errors);
     });
 
+  }
+
+  handleErrors(errors) {
+    this.setState({errors: errors.responseText });
   }
 
   redirect(id) {
@@ -127,6 +136,7 @@ class CreateDirectMessages extends React.Component {
   render() {
     let usersElements = this.allUsersList(this.filterUsersbyInput());
     let selectedUsers = this.renderSelectedUsers();
+    let errorsMessage = this.state.errors;
 
     return(
       <div className="browse-dm">

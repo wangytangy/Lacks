@@ -19,7 +19,7 @@ class DirectMessagesIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    this.props.fetchDirectMessages();
+    // this.props.fetchDirectMessages();
     this.setState({ selected: nextProps.params.id });
   }
 
@@ -41,7 +41,6 @@ class DirectMessagesIndex extends React.Component {
     let dmIndex = [];
     if (this.props.usersDirectMessages.length > 0) {
       this.props.usersDirectMessages.forEach((dm, i) => {
-
         let title;
         if (dm.title.length > 20) {
           title = dm.title.slice(0, 16) + "...";
@@ -51,9 +50,9 @@ class DirectMessagesIndex extends React.Component {
 
         let highlightPresence;
         if (this.state.selected === `${dm.id}`) {
-          highlightPresence = "group active";
+          highlightPresence = "dm-li active";
         } else {
-          highlightPresence = "group default";
+          highlightPresence = "dm-li default";
         }
 
         let path = `messages/${dm.id}`;
@@ -63,7 +62,10 @@ class DirectMessagesIndex extends React.Component {
             key={i}
             className={highlightPresence}
           >
-            <Link to={path}>&#35; {title}</Link>
+            <Link to={path}>
+              <span>{dm.members.length}</span>
+              <p>{title}</p>
+            </Link>
           </li>);
 
           dmIndex.push(liElement);
@@ -104,7 +106,7 @@ class DirectMessagesIndex extends React.Component {
           </i>
         </div>
 
-        <ul className="channels-index">{dmIndex}</ul>
+        <ul className="dm-index">{dmIndex}</ul>
 
         <Modal
           isOpen={this.state.createDirectMessageOpen}

@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 import CurrentChannel from './current_channel';
 import { fetchAllChannels, fetchAChannel, leaveChannel } from '../../actions/channels_actions';
+import { fetchAllDirectMessages } from '../../actions/direct_messages_actions';
 import { fetchMessages } from '../../actions/messages_actions';
 import { Router, Route, IndexRoute, hashHistory, withRouter } from 'react-router';
 
@@ -12,7 +13,8 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   fetchAChannel: (id) => dispatch(fetchAChannel(id)),
   fetchMessages: (channelID) => dispatch(fetchMessages(channelID)),
-  leaveChannel: (channelID) => dispatch(leaveChannel(channelID))
+  leaveChannel: (channelID) => dispatch(leaveChannel(channelID)),
+  fetchDirectMessages: () => dispatch(fetchAllDirectMessages())
 });
 
 export default withRouter(connect(

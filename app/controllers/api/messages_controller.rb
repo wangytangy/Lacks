@@ -12,7 +12,21 @@ class Api::MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.author_id = current_user.id
     @message.channel_id = params[:channel_id]
+    @channel = Channel.find(params[:channel_id])
+
+
     if @message.save
+      # if channel is a DM
+      if @channel.direct_message_status
+        # on message create, re-subscribe users to the DM
+        # iterate over channel tile, split on ',' to get usernames
+        all_usernames = @channel.title.split(',')
+        all_usernames.each do |username|
+          user = User.find_by(username: username)
+          user.channels << @channel unless user.channels.include?(@channel)
+        end
+      end
+
       #publish an event
       #all componenets subscribed to that event can hear about it
       Pusher.trigger('channel', 'message_published', @message)

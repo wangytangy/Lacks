@@ -9,25 +9,31 @@ class ChannelHeader extends React.Component {
 
   render() {
 
-    let channelCreator = "";
-    let memberCount = "";
     let leaveButtonStatus = "leave-button-active";
-
     if (this.props.currentChannel.title === "general") {
       leaveButtonStatus = "leave-button-block";
     }
 
-
+    let channelCreator = "";
+    let memberCount = "";
     if (this.props.currentChannel.id) {
       channelCreator = this.props.currentChannel.creator.username;
       memberCount = this.props.currentChannel.memberCount;
     }
+    let headerTitle = "";
+    if (this.props.currentChannel.direct_message_status === true) {
+      headerTitle = this.props.currentChannel.title;
+    } else {
+      headerTitle = "# " + this.props.currentChannel.title;
+    }
+
+
     return(
       <div className="channel-header-container group">
         <div className="header-left">
 
           <div className="header-title">
-            <h1>#{this.props.currentChannel.title}</h1>
+            <h1>{headerTitle}</h1>
           </div>
 
           <div className="header-info">
