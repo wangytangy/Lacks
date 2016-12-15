@@ -28,7 +28,7 @@ li.repeat:hover small {
 }
 
 .message-detail {
-  padding: 10px 10px;
+  padding: 3px 10px;
   margin-left: 20px;
   display: flex;
   align-items: center;
@@ -46,6 +46,10 @@ img.message-detail-profile-picture {
 
 div.message-detail-content {
   margin: 0 0 0 10px;
+}
+
+div.message-detail-content span {
+  font-size: 14px;
 }
 
 div.message-detail-top {

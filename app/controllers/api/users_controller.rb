@@ -11,7 +11,11 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login(@user)
-      current_user.channels << Channel.first
+      if current_user
+        current_user.channels << Channel.first
+      else
+        @user.channels << Channel.first
+      end
       render :show
     else
       render json: @user.errors.full_messages, status: 422
