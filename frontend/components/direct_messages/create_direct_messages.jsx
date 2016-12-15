@@ -11,6 +11,7 @@ class CreateDirectMessages extends React.Component {
     this.handleJoinDm = this.handleJoinDm.bind(this);
     this.redirect = this.redirect.bind(this);
     this.handleErrors = this.handleErrors.bind(this);
+    this.clearErrors = this.clearErrors.bind(this);
 
     this.state = {
       friends: [],
@@ -65,8 +66,11 @@ class CreateDirectMessages extends React.Component {
   }
 
   handleErrors(errors) {
-    this.setState({errors: errors.responseText });
-    debugger
+    this.setState({ errors: errors.responseText });
+  }
+
+  clearErrors() {
+    this.setState({ errors: "" });
   }
 
   redirect(id) {
@@ -152,19 +156,22 @@ class CreateDirectMessages extends React.Component {
             onChange={this.handleInputChange}
             >
           </input>
+          <button id="join-dm" onClick={this.handleJoinDm}>Go</button>
         </div>
 
-        <div className="dm-subheader">
-          <h2>Find or start a conversation</h2>
-          <button id="join-dm" onClick={this.handleJoinDm}>Go</button>
+        <div className="browse-dm-errors group">
+          <span>{errorsMessage}</span>
         </div>
         <div className="dm-selected-container">
           {selectedUsers}
         </div>
+        <div className="dm-subheader">
+          <h2>Find or start a conversation</h2>
+        </div>
         <ul className="dm-search-results">
           {usersElements}
         </ul>
-
+        <div className="popover-mask" onClick={this.clearErrors}></div>
       </div>
     );
   }

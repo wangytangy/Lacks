@@ -32,6 +32,7 @@ li.dm-selected-item {
   background-color: #3aa3e3;
   margin: 5px 3px;
   padding: 3px 8px;
+  box-sizing: border-box;
 
   color: #fff;
   flex-shrink: 1;
@@ -45,6 +46,7 @@ li.dm-selected-item:hover {
 div.dm-details-container {
   display: flex;
   align-items: center;
+
 }
 
 div.dm-details-container p {
@@ -78,10 +80,13 @@ button#join-dm {
   outline: none;
   background: #2ab27b;
   color: #fff;
-  padding: 0px 20px;
+  padding: 10px 15px;
   border-radius: 5px;
   font-size: 20px;
   font-weight: bold;
+  position: absolute;
+  top: 5px;
+  right: 17px;
 }
 
 button#join-dm:hover {
@@ -147,4 +152,22 @@ div.search-result {
   font-size: 18px;
   font-weight: bold;
   margin: 0 0 0 5px;
+}
+
+
+//errors
+
+
+.browse-dm-errors {
+  height: 30px;
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 10px;
+}
+
+.browse-dm-errors span {
+  color: #E85D72;
+  display: flex;
+  align-self: flex-end;
+  font-size: 12px;
 }
