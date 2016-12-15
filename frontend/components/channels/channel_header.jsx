@@ -38,10 +38,10 @@ class ChannelHeader extends React.Component {
 
           <div className="header-info">
 
-            <i className="material-icons" id="star">star_border</i>
+            <i className="material-icons star" id="star">star_border</i>
 
             <span className="topic-divider">|</span>
-            <i className="material-icons">person_outline</i>
+            <i className="material-icons person">person_outline</i>
             <span className="header-status-text">{memberCount}</span>
 
             <span className="topic-divider">|</span>

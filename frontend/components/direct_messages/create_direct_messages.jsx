@@ -52,12 +52,13 @@ class CreateDirectMessages extends React.Component {
     };
 
     console.log(formData);
+    this.setState({ friends: [], searchInput: "", errors: "" });
     this.props.createDirectMessage(formData).then((channel) => {
       this.props.onCreateDirectMessageClose();
       this.redirect(channel.id);
       this.props.fetchDirectMessages();
     }, (errors) => {
-      debugger
+
       this.handleErrors(errors);
     });
 

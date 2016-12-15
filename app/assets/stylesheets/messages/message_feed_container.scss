@@ -5,5 +5,48 @@ div#message-feed {
   // height: 500px;
 
   width: 100%;
+  color: #555459;
 
+}
+
+#message-feed-header {
+  padding: 40px 0 20px 15px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+#message-feed-header h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+#message-feed-header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#message-feed-header h2:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.feed-header-title {
+  display: flex
+}
+
+.feed-header-creator {
+  color: #E85D72;
+  margin-right: 5px;
+}
+
+.feed-header-info {
+  display: flex;
+}
+
+
+.feed-header-purpose {
+  margin-left: 5px;
+  font-style: italic;
 }
