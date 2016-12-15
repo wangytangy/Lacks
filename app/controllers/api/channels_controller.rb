@@ -36,7 +36,7 @@ class Api::ChannelsController < ApplicationController
       end
       render :show
     else
-      render json: "Cannot create direct messages with duplicate members", status: 422
+      render json: "Cannot create conversation with duplicate members", status: 422
     end
 
   end
