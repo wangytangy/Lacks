@@ -2,7 +2,8 @@
 
 div .splash {
   height: 100vh;
-  background-image: url("https://s-media-cache-ak0.pinimg.com/originals/67/fc/45/67fc45bbe318641ce5a22871f81c54fe.jpg");
+  // background-image: url("https://s-media-cache-ak0.pinimg.com/originals/67/fc/45/67fc45bbe318641ce5a22871f81c54fe.jpg");
+  background-image: asset-url("desktop_bg.jpg");
   background-size: cover;
   position: relative;
 }
