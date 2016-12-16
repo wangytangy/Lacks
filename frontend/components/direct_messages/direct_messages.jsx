@@ -2,7 +2,7 @@ import React from 'react';
 import Modal from 'react-modal';
 import { Link } from 'react-router';
 import CreateDirectMessagesContainer from './create_direct_messages_container';
-import imageUploadStyle from '../modal_styles/image_upload_style';
+import browseModal from '../modal_styles/browse_dm_modal';
 class DirectMessagesIndex extends React.Component {
   constructor(props) {
     super(props);
@@ -78,11 +78,16 @@ class DirectMessagesIndex extends React.Component {
   }
 
   onCreateDirectMessageClose() {
+    browseModal.content.opacity = 0;
     this.setState({ createDirectMessageOpen: false });
   }
 
   openCreateModal() {
     this.setState({ createDirectMessageOpen: true });
+  }
+
+  onModalOpen() {
+    browseModal.content.opacity = 100;
   }
 
 
@@ -110,9 +115,10 @@ class DirectMessagesIndex extends React.Component {
 
         <Modal
           isOpen={this.state.createDirectMessageOpen}
+          onAfterOpen={this.onModalOpen}
           onRequestClose={this.onCreateDirectMessageClose}
           contentLabel = "create-dm-modal"
-          style={imageUploadStyle}
+          style={browseModal}
         >
         <i className="material-icons exit-icon" onClick={this.onCreateDirectMessageClose}>
           highlight_off
