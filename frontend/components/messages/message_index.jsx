@@ -1,6 +1,7 @@
 import React from 'react';
 import MessageFormContainer from './message_form_container';
 import { Link } from 'react-router';
+import MDSpinner from 'react-md-spinner';
 
 class MessageIndex extends React.Component {
   constructor(props) {
@@ -101,6 +102,10 @@ class MessageIndex extends React.Component {
 
 
   render() {
+
+    // if (!Object.values(this.props.messages).length) {
+    //   return <MDSpinner className="spinner" size={100} duration={5} />;
+    // }
 
     let messageItems = [];
     if (Object.values(this.props.messages).length > 0) {

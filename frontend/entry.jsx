@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //tell Modal what content to disable(the whole body?)
   Modal.setAppElement(document.body);
-
+  
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={ store }/>, root);
 });
