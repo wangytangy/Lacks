@@ -1,0 +1,52 @@
+/* line 4, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/header.scss */
+.greeting {
+  position: absolute;
+  top: 0;
+  display: block;
+  z-index: 100;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* line 17, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/header.scss */
+.logo {
+  float: left;
+  font-weight: 700;
+}
+
+/* line 23, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/header.scss */
+.logo a {
+  padding: 12px 22px;
+  display: block;
+  color: #E6E6E6;
+}
+
+/* line 30, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/header.scss */
+.logo a:hover {
+  color: #ffffff;
+}
+
+/* line 34, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/header.scss */
+.signin-corner {
+  display: block;
+  background: transparent;
+  border: 2px solid #E6E6E6;
+  box-sizing: border-box;
+  border-radius: 5px;
+  float: right;
+}
+
+/* line 44, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/header.scss */
+.signin-corner a {
+  padding: 10px 20px;
+  display: block;
+  color: #E6E6E6;
+  font-weight: 700;
+}
+
+/* line 51, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/header.scss */
+.signin-corner:hover {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}

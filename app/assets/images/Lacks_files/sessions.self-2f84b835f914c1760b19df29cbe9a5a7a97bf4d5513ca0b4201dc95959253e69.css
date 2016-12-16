@@ -1,0 +1,88 @@
+/* line 8, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+div .form {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  width: 640px;
+  height: 400px;
+  margin: 0 auto;
+  padding: 30px;
+  box-sizing: border-box;
+  position: absolute;
+  left: 50%;
+  top: 135px;
+  margin-left: -320px;
+}
+
+/* line 26, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+.header {
+  font-size: 36px;
+  text-align: center;
+  margin: 0 0 20px 0;
+  color: #2c2d30;
+}
+
+/* line 33, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+.signup-instruction {
+  font-size: 14px;
+  text-align: center;
+  color: #2c2d30;
+}
+
+/* line 39, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+form.form-field input {
+  display: block;
+  width: 360px;
+  height: 50px;
+  font-size: 24px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  color: #2c2d30;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 20px auto;
+  transition: border-color 1s;
+}
+
+/* line 58, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+form.form-field input:hover {
+  border-color: #38A2E0;
+}
+
+/* line 62, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+label {
+  text-align: center;
+  display: block;
+}
+
+/* line 67, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+.submit {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  width: 360px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #38A2E0;
+  color: #fff;
+  font-size: 24px;
+  transition: background-color 2s;
+}
+
+/* line 84, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+.submit:hover {
+  background-color: #38BCE0;
+}
+
+/* line 89, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+.guest-login {
+  text-align: center;
+  margin: 20px;
+  font-size: 14px;
+}
+
+/* line 97, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+.guest-login a {
+  text-decoration: underline;
+  cursor: pointer;
+}

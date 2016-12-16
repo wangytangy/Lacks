@@ -1,0 +1,144 @@
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+div.browse-channels {
+  margin: 100px auto;
+  width: 640px;
+  position: relative;
+}
+
+/* line 8, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+div.browse-channels h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0 0 30px 0;
+}
+
+/* line 14, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+div.browse-channels h2 {
+  padding: 0 10px;
+  margin: 25px 0 10px 0;
+  font-size: 14px;
+  color: #67686E;
+  font-weight: bold;
+}
+
+/* line 22, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+div.browse-channels ul {
+  overflow: auto;
+  height: 510px;
+}
+
+/* line 27, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+input.browse-search {
+  width: 91%;
+  border-radius: 5px;
+  height: 50px;
+  border: 1px solid #ccc;
+  padding: 3px 0 3px 45px;
+  font-size: 24px;
+  transition: border-color 0.6s;
+}
+
+/* line 38, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+input.browse-search:hover {
+  border-color: #38A2E0;
+}
+
+/* line 42, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+div.browse-channel-searchbar {
+  position: relative;
+}
+
+/* line 46, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+div.browse-channel-searchbar i {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  font-size: 32px;
+  color: #ccc;
+}
+
+/* line 54, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+div.browse-channels ul > li {
+  box-sizing: border-box;
+  border-top: 1px solid #eee;
+  transition: background-color 0.6s;
+  transition: border-color 0.6s;
+}
+
+/* line 63, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+div.browse-channels ul > li:hover {
+  background-color: #EDF7FD;
+  border-color: #38A2E0;
+}
+
+/* line 70, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+div.search-result {
+  padding: 10px 5px;
+  color: #67686E;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 0 5px;
+}
+
+/* line 79, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+div.search-result-topline {
+  float: left;
+  width: 100%;
+}
+
+/* line 84, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+div.search-result-topline h3 {
+  display: inline-block;
+}
+
+/* line 88, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+div.search-result-topline div.search-members-count {
+  float: right;
+  display: flex;
+  align-items: center;
+}
+
+/* line 94, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+div.search-result-topline i {
+  font-size: 20px;
+}
+
+/* line 98, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+div.search-result-topline span {
+  font-size: 14px;
+}
+
+/* line 104, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+div.search-result-bottomline {
+  float: left;
+  width: 100%;
+}
+
+/* line 109, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+div.search-result-bottomline i {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+}
+
+/* line 115, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+div.search-result-bottomline em {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* line 120, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+div.search-result-bottomline button {
+  display: none;
+  cursor: pointer;
+  float: right;
+  align-items: center;
+  color: #38A2E0;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+/* line 131, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+div.browse-channels ul > li:hover button {
+  display: block;
+}

@@ -1,0 +1,78 @@
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+div.create-channel-form {
+  margin: 70px auto;
+  width: 620px;
+  position: relative;
+}
+
+/* line 8, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+div.create-channel-form h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* line 13, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+div.create-channel-form h2 {
+  margin: 15px 0 20px 0;
+  color: #aaa;
+}
+
+/* line 18, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+div.create-channel-form input {
+  display: block;
+  width: 597px;
+  height: 50px;
+  font-size: 24px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 1s;
+}
+
+/* line 32, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+div.create-channel-form input:hover {
+  border-color: #38A2E0;
+}
+
+/* line 36, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+label.newchannel-label {
+  text-align: left;
+  margin: 0px 0 5px 0px;
+}
+
+/* line 41, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+div.create-channel-form p {
+  margin: 10px 0 10px 0;
+  color: #aaa;
+  font-size: 14px;
+}
+
+/* line 47, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+div.create-channel-form button.create-channel-button {
+  background-color: #38A2E0;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 10px 0 0 0;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+/* line 56, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+div.create-channel-form button.create-channel-button:hover {
+  cursor: pointer;
+}
+
+/* line 60, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+i.exit-icon {
+  font-size: 76px;
+  color: #aaa;
+  float: right;
+  transition: color 0.6s;
+}
+
+/* line 68, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+i.exit-icon:hover {
+  color: #6E6E6E;
+  cursor: pointer;
+}

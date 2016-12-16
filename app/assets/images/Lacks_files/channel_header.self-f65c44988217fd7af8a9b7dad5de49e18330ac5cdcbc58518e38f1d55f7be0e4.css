@@ -1,0 +1,122 @@
+/* line 3, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+div.header-left {
+  height: 60px;
+  float: left;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+/* line 12, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+div.header-title {
+  display: flex;
+  align-items: center;
+  margin: 0 0 5px 0;
+}
+
+/* line 18, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+div.header-title h1 {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/* line 23, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+div.header-title span {
+  color: #aaa;
+  margin-left: 5px;
+}
+
+/* line 28, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+div.header-info {
+  display: flex;
+  align-items: center;
+}
+
+/* line 33, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+div.header-info > * {
+  display: block;
+  margin-right: 5px;
+}
+
+/* line 38, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+i.star {
+  font-size: 12px;
+}
+
+/* line 42, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+i.circle {
+  font-size: 12px;
+}
+
+/* line 46, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+i.person {
+  font-size: 15px;
+}
+
+/* line 51, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+i.person:hover {
+  color: #3aa3e3;
+  cursor: default;
+}
+
+/* line 56, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+.star:hover {
+  color: #fc0;
+  cursor: default;
+}
+
+/* line 61, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+.header-status-text:hover {
+  color: #3aa3e3;
+  cursor: default;
+}
+
+/* line 66, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+i#circle {
+  color: #95CB95;
+}
+
+/* line 70, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+span.header-status-text {
+  font-size: small;
+  color: #757678;
+}
+
+/* line 75, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+span.topic-divider {
+  color: #757678;
+  font-weight: lighter;
+  font-size: 12px;
+}
+
+/* line 81, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+div.header-right {
+  height: 60px;
+  float: right;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 15px 20px;
+}
+
+/* line 89, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+div.header-right button.leave-button-active {
+  height: 30px;
+  padding: 5px 10px;
+  background-color: #fff;
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+/* line 99, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+div.header-right button.leave-button-active:hover {
+  background-color: #38A2E0;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+/* line 108, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+div.header-right button.leave-button-block {
+  display: none;
+}

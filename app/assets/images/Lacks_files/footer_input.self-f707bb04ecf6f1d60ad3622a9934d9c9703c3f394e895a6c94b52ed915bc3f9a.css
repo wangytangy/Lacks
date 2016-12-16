@@ -1,0 +1,127 @@
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+div.footer-input {
+  margin: 10px 35px 10px 20px;
+  position: fixed;
+  bottom: 10px;
+  left: 220px;
+  right: 0;
+  height: 50px;
+  display: block;
+}
+
+/* line 12, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form {
+  width: 100%;
+}
+
+/* line 16, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+form.message-form-container {
+  width: 100%;
+  position: relative;
+  flex-direction: row-reverse;
+  display: flex;
+}
+
+/* line 23, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+input.message-form-chatbar {
+  border: 2px solid #E0E0E0;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  padding: 5px 10px 5px 15px;
+  box-sizing: border-box;
+  color: #3d3c40;
+  outline: none;
+  width: 100%;
+  flex-grow: 1;
+}
+
+/* line 36, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form-chatbar:focus {
+  border-color: #BBBDBF;
+}
+
+/* line 40, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form-button {
+  width: 45px;
+  height: 41px;
+  border: 2px solid #E0E0E0;
+  border-radius: 5px 0 0 5px;
+  box-sizing: border-box;
+  color: #E0E0E0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 53, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form-chatbar:focus + .message-form-button {
+  border-color: #BBBDBF;
+}
+
+/* line 57, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form-chatbar:focus + .message-form-button:hover {
+  border-color: #BBBDBF;
+  border-color: #53B68D;
+}
+
+/* line 62, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form-button i {
+  color: #BBBDBF;
+}
+
+/* line 66, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form-button:hover {
+  background-color: #53B68D;
+  border-color: #53B68D;
+  cursor: pointer;
+}
+
+/* line 71, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form-button:hover i {
+  color: #fff;
+}
+
+/* line 77, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form nav.upload-dropdown {
+  display: none;
+}
+
+/* line 81, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form nav.upload-dropdown-open {
+  display: block;
+  position: absolute;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  left: 0px;
+  bottom: 45px;
+  color: #000;
+  background-color: #fff;
+}
+
+/* line 97, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+ul.upload-menu-list {
+  background: #fff;
+  padding: 15px;
+  color: #2c2d30;
+  border-radius: 5px;
+}
+
+/* line 105, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+input.image-upload-input {
+  width: 100%;
+}
+
+/* line 109, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+ul.upload-menu-list li {
+  border-radius: 5px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+
+/* line 117, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+ul.upload-menu-list li:hover {
+  background-color: #3aa3e3;
+  color: #fff;
+  cursor: pointer;
+}
