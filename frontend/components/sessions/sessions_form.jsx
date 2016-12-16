@@ -33,6 +33,10 @@ class SessionForm extends React.Component {
     });
   }
 
+  componentDidMount() {
+    this.props.clearErrors();
+  }
+
 
   redirect() {
     this.props.router.push("messages");
@@ -46,10 +50,13 @@ class SessionForm extends React.Component {
       window.currentUser = user;
       this.redirect();
     }, (errors) => {
+
       console.log(errors);
     });
     this.setState({username: "", email: "", password: ""});
   }
+
+  //clear errors when switching from signup/login
 
   renderLogIn(errorsArr) {
 

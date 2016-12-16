@@ -6,12 +6,15 @@ import SessionFormContainer from './sessions/sessions_form_container';
 import Splash from './greeting/splash';
 import HomeContainer from './home/home_container';
 import CurrentChannelContainer from './channels/current_channel_container';
+import { clearErrors } from '../actions/sessions_actions';
 
 const Root = ({ store }) => {
 
   function _redirectIfLoggedIn(nextState, replace) {
     if (store.getState().session.currentUser) {
       replace("/messages");
+    } else {
+      store.dispatch(clearErrors());
     }
   }
 

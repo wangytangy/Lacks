@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import SessionForm from './sessions_form';
-import { login, signup, receiveErrors } from '../../actions/sessions_actions';
+import { login, signup, receiveErrors, clearErrors } from '../../actions/sessions_actions';
 
 const mapStateToProps = (state) => ({
   loggedin: Boolean(state.session.currentUser),
@@ -21,7 +21,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     formType: ownProps.location.pathname,
     processForm,
     login: (user) => dispatch(login(user)),
-    clearErrors: () => dispatch(receiveErrors())
+    clearErrors: () => dispatch(clearErrors())
   };
 
 };

@@ -23,6 +23,7 @@ function SessionReducer(state = defaultState, action) {
       };
     case CLEAR_ERRORS:
       return {
+        currentUser: null,
         errors: []
       };
     default:
