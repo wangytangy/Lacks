@@ -52,28 +52,26 @@ div.browse-channel-searchbar i {
 }
 
 div.browse-channels ul > li {
-
-  box-sizing: border-box;
-  border-top: 1px solid #eee;
-
-  transition: background-color 0.6s;
-  transition: border-color 0.6s;
+  border-radius: 5px;
+  transition: background-color 0.4s;
+  padding: 0px 10px;
 }
 
 div.browse-channels ul > li:hover {
   background-color: #EDF7FD;
-  border-color: #38A2E0;
-
+  cursor: default;
 }
 
 
 div.search-result {
-  padding: 10px 5px;
-
+  padding: 10px 10px;
   color: #67686E;
   font-size: 18px;
   font-weight: bold;
-  margin: 0 0 0 5px;
+}
+
+div.search-result:hover {
+  cursor: default;
 }
 
 div.search-result-topline {

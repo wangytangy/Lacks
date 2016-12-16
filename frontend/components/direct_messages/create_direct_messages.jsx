@@ -88,9 +88,10 @@ class CreateDirectMessages extends React.Component {
           onClick={this.handleClick}
           type={user.username}
         >
-          <div className="search-result group">
-            <div className="search-result-topline group">
+          <div className="dm-search-result group">
+            <div className="dm-search-result-topline group">
               <h3>{user.username}</h3>
+              <i className="material-icons join-dm">subdirectory_arrow_left</i>
             </div>
 
           </div>

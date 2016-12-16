@@ -33,6 +33,7 @@ class SessionForm extends React.Component {
     });
   }
 
+
   redirect() {
     this.props.router.push("messages");
   }
@@ -44,6 +45,8 @@ class SessionForm extends React.Component {
     this.props.processForm(user).then((user) => {
       window.currentUser = user;
       this.redirect();
+    }, (errors) => {
+      console.log(errors);
     });
     this.setState({username: "", email: "", password: ""});
   }
@@ -83,7 +86,6 @@ class SessionForm extends React.Component {
             here</Link>
           </div>
           <ul className="errors-list">{errorsArr}</ul>
-
 
         </div>
       </div>
@@ -133,7 +135,6 @@ class SessionForm extends React.Component {
     let errorsArr;
     if (this.props.errors.length > 0) {
       errorsArr = this.props.errors.map((error, i) => {
-        console.log(error);
         return <li key={i} className="auth-errors">{error}</li>;
       });
     }
