@@ -1,0 +1,75 @@
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+.upload-form {
+  border: 1px solid #ccc;
+  width: 560px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+/* line 10, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+.upload-form h3 {
+  background-color: #f2f2f5;
+  padding: 10px 20px;
+  color: #555459;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+/* line 19, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+div.image-upload-preview {
+  width: 267px;
+  height: 150px;
+  margin: 0 auto;
+  border: 2px dotted #38A2E0;
+}
+
+/* line 27, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+div.image-upload-preview img {
+  width: 100%;
+}
+
+/* line 32, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+.image-upload-input {
+  display: none;
+  align-items: center;
+}
+
+/* line 37, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+div.upload-buttons {
+  margin-top: 20px;
+  padding: 20px 20px;
+  display: flex;
+}
+
+/* line 43, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+#image-upload-label {
+  background-color: #2ab27b;
+  margin-right: 5px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  align-self: flex-end;
+  padding: 7px 10px;
+  width: 103px;
+}
+
+/* line 54, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+#image-upload-label:hover {
+  background-color: #0DA668;
+  cursor: pointer;
+}
+
+/* line 59, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+#image-submit {
+  background-color: #2ab27b;
+  color: #fff;
+  border-radius: 5px;
+  padding: 7px 10px;
+  font-weight: bold;
+}
+
+/* line 67, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+#image-submit:hover {
+  background-color: #0DA668;
+  cursor: pointer;
+}

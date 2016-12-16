@@ -31,13 +31,14 @@ class MessageIndex extends React.Component {
 
     Object.values(this.props.messages).forEach((message, i) => {
 
+      let liElement;
+
       //if previous message author is the same:
       //construct a different li that omits profile pic and username
-      let liElement;
       if ((message.imageUrl || message.giphyUrl) && message.body === "") {
         let imgSrc;
         if (message.imageUrl.indexOf("missing") === 17 && message.giphyUrl === null) {
-          imgSrc = "";
+          imgSrc = null;
         } else if (message.giphyUrl) {
           imgSrc = message.giphyUrl;
         } else if (message.imageUrl) {
@@ -106,6 +107,15 @@ class MessageIndex extends React.Component {
       messageItems = this.mapMessages();
     }
 
+    let title;
+    if (Object.keys(this.props.currentChannel).length > 0) {
+      if (this.props.currentChannel.title.length > 50) {
+        title = this.props.currentChannel.title.slice(0, 47) + "...";
+      } else {
+        title = this.props.currentChannel.title;
+      }
+    }
+
     let channelCreator;
     if (this.props.currentChannel.creator && !this.props.currentChannel.direct_message_status) {
       channelCreator = this.props.currentChannel.creator.username;
@@ -129,7 +139,7 @@ class MessageIndex extends React.Component {
       <div id="message-feed">
         <ul id="chat-messages">
           <div id="message-feed-header">
-            <Link to={path}><h2>#{this.props.currentChannel.title}</h2></Link>
+            <Link to={path}><h2>#{title}</h2></Link>
 
             <div className="feed-header-title">
               <p className="feed-header-creator">{channelCreator}</p>
@@ -147,11 +157,6 @@ class MessageIndex extends React.Component {
       </div>
     );
   }
-
-
-
-
-
 }
 
 export default MessageIndex;

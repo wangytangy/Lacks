@@ -1,0 +1,59 @@
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_feed_container.scss */
+div#message-feed {
+  display: block;
+  overflow-y: scroll;
+  height: calc(100% - 150px);
+  width: 100%;
+  color: #2c2d30;
+}
+
+/* line 11, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_feed_container.scss */
+#message-feed-header {
+  padding: 40px 0 20px 15px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-top: 1px solid #eee;
+}
+
+/* line 19, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_feed_container.scss */
+#message-feed-header h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* line 24, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_feed_container.scss */
+#message-feed-header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* line 29, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_feed_container.scss */
+#message-feed-header h2:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* line 34, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_feed_container.scss */
+.feed-header-title {
+  display: flex;
+  width: 50%;
+}
+
+/* line 39, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_feed_container.scss */
+.feed-header-creator {
+  color: #E85D72;
+  margin-right: 5px;
+}
+
+/* line 44, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_feed_container.scss */
+.feed-header-info {
+  display: flex;
+}
+
+/* line 49, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_feed_container.scss */
+.feed-header-purpose {
+  margin-left: 5px;
+  font-style: italic;
+}

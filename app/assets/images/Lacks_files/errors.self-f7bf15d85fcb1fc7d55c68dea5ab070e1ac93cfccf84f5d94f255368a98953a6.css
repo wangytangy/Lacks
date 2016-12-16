@@ -1,0 +1,20 @@
+/* line 3, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/errors.scss */
+ul.errors-list {
+  list-style: none;
+  position: absolute;
+  top: 400px;
+  left: 50%;
+  margin-left: -130px;
+}
+
+/* line 11, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/errors.scss */
+li.auth-errors {
+  display: block;
+  background-color: #eee;
+  padding: 5px;
+  font-size: 14px;
+  margin: 5px auto;
+  text-align: center;
+  width: 250px;
+  border-radius: 5px;
+}

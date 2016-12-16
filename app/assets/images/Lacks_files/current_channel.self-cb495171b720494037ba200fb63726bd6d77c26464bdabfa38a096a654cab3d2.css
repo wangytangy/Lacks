@@ -1,0 +1,6 @@
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/current_channel.scss */
+div.current-channel {
+  min-width: 900px;
+  flex-grow: 1;
+  height: 100vh;
+}

@@ -1,0 +1,178 @@
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+div.browse-dm {
+  margin: 100px auto;
+  width: 640px;
+  position: relative;
+}
+
+/* line 8, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+div.browse-dm h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0 0 30px 0;
+}
+
+/* line 17, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+div.dm-selected-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+/* line 23, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+ul.dm-search-results {
+  overflow: auto;
+  height: 510px;
+}
+
+/* line 29, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+li.dm-selected-item {
+  list-style: none;
+  border-radius: 5px;
+  background-color: #3aa3e3;
+  margin: 5px 3px;
+  padding: 3px 8px;
+  box-sizing: border-box;
+  color: #fff;
+  flex-shrink: 1;
+}
+
+/* line 41, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+li.dm-selected-item:hover {
+  background-color: #0B91E3;
+  cursor: pointer;
+}
+
+/* line 46, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+div.dm-details-container {
+  display: flex;
+  align-items: center;
+}
+
+/* line 52, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+div.dm-details-container p {
+  margin-right: 5px;
+  font-size: 11px;
+}
+
+/* line 57, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+i.clear {
+  color: #fff;
+  font-size: 12px;
+}
+
+/* line 64, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+div.dm-subheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+}
+
+/* line 71, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+div.browse-dm h2 {
+  padding: 0 10px 0 0;
+  margin: 0 0 0 0;
+  font-size: 14px;
+  color: #67686E;
+  font-weight: bold;
+}
+
+/* line 79, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+button#join-dm {
+  outline: none;
+  background: #2ab27b;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 5px;
+  right: 17px;
+}
+
+/* line 92, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+button#join-dm:hover {
+  outline: none;
+  background: #0DA668;
+  cursor: pointer;
+}
+
+/* line 98, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+div.browse-dm ul {
+  overflow: auto;
+  height: 510px;
+}
+
+/* line 103, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+input.dm-search {
+  width: 91%;
+  border-radius: 5px;
+  height: 50px;
+  border: 1px solid #ccc;
+  padding: 3px 0 3px 45px;
+  font-size: 24px;
+  outline: none;
+  transition: border-color 0.6s;
+}
+
+/* line 115, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+input.dm-search:hover {
+  border-color: #38A2E0;
+  outline: none;
+}
+
+/* line 120, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+div.browse-dm-searchbar {
+  position: relative;
+}
+
+/* line 124, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+div.browse-dm-searchbar i {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  font-size: 32px;
+  color: #ccc;
+}
+
+/* line 132, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+div.browse-dm ul > li {
+  box-sizing: border-box;
+  border-top: 1px solid #eee;
+  transition: background-color 0.6s;
+  transition: border-color 0.6s;
+}
+
+/* line 141, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+div.browse-dm ul > li:hover {
+  background-color: #EDF7FD;
+  border-color: #38A2E0;
+  cursor: pointer;
+}
+
+/* line 148, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+div.search-result {
+  padding: 10px 5px;
+  color: #67686E;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0 0 0 5px;
+}
+
+/* line 161, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.browse-dm-errors {
+  height: 30px;
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 10px;
+}
+
+/* line 168, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.browse-dm-errors span {
+  color: #E85D72;
+  display: flex;
+  align-self: flex-end;
+  font-size: 12px;
+}

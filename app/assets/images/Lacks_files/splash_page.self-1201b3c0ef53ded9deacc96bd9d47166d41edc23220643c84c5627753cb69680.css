@@ -1,0 +1,71 @@
+/* line 3, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/splash_page.scss */
+div .splash {
+  height: 100vh;
+  background-image: url(/assets/desktop_bg-95c9886910cb81eaf61a2aec6e04d24af291bf076fd8625a801e7cb8e8bc0198.jpg);
+  background-size: cover;
+  position: relative;
+}
+
+/* line 11, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/splash_page.scss */
+.signup-bg {
+  display: block;
+  height: 200px;
+  width: 700px;
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  margin-left: -350px;
+  padding: 20px;
+  z-index: 0;
+}
+
+/* line 24, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/splash_page.scss */
+.signup-bg:before {
+  content: "";
+  background-color: #424242;
+  display: block;
+  opacity: 0.7;
+  z-index: -1;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+
+/* line 39, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/splash_page.scss */
+h1.header-title {
+  display: block;
+  margin: 0 auto;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 42px;
+  width: 675px;
+  text-align: center;
+}
+
+/* line 52, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/splash_page.scss */
+.signup-button {
+  display: block;
+  background-color: #52B78D;
+  margin: 15px auto;
+  border-radius: 5px;
+  width: 185px;
+  height: 50px;
+}
+
+/* line 63, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/splash_page.scss */
+.signup-button a {
+  padding: 10px 20px;
+  display: block;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* line 71, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/splash_page.scss */
+.signup-button:hover {
+  background-color: #58C799;
+  color: #ffffff;
+}
