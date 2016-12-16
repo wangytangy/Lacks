@@ -8,5 +8,6 @@
     json.createdAt format_date(message.created_at)
     json.imageUrl asset_path(message.image.url)
     json.giphyUrl message.giphy_url
+    json.profilePicUrl message.author.profile_pic_url
   end
 end
