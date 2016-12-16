@@ -23,7 +23,7 @@ class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     @user.profile_pic_url = PROFILE_PICS[rand(0...10)]
-
+    
     if @user.save
       login(@user)
       if current_user

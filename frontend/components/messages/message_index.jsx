@@ -29,7 +29,6 @@ class MessageIndex extends React.Component {
 
   mapMessages() {
     let messagesArr = [];
-
     Object.values(this.props.messages).forEach((message, i) => {
 
       let liElement;
@@ -82,7 +81,7 @@ class MessageIndex extends React.Component {
         liElement = (
           <li key={i} className="message-item-container">
             <div className="message-detail">
-              <img src="" className="message-detail-profile-picture"></img>
+              <img src={message.profilePicUrl} className="message-detail-profile-picture"></img>
               <div className="message-detail-content">
                 <div className="message-detail-top">
                   <p>{message.author}</p>
