@@ -27,11 +27,13 @@ div .form {
   font-size: 36px;
   text-align: center;
   margin: 0 0 20px 0;
+  color: #2c2d30;
 }
 
 .signup-instruction {
   font-size: 14px;
   text-align: center;
+  color: #2c2d30;
 }
 
 form.form-field input {
@@ -43,6 +45,8 @@ form.form-field input {
   padding: 5px 10px;
 
   box-sizing: border-box;
+
+  color: #2c2d30;
 
   border: 1px solid #ccc;
   border-radius: 5px;

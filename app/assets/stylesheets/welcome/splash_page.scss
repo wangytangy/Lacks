@@ -1,19 +1,18 @@
 // ****** SPLASH ******
 
 div .splash {
-  height: 1000px;
+  height: 100vh;
   background-image: url("https://s-media-cache-ak0.pinimg.com/originals/67/fc/45/67fc45bbe318641ce5a22871f81c54fe.jpg");
   background-size: cover;
-
   position: relative;
 }
 
 .signup-bg {
 	display: block;
-	height: 168px;
+	height: 200px;
 	width: 700px;
 	position: absolute;
-	top: 444px;
+	top: 53%;
 	left: 50%;
 	margin-left: -350px;
 	padding: 20px;
