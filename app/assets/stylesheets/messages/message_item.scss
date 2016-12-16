@@ -4,16 +4,18 @@ li.message-item-container {
 
 }
 
+.message-detail {
+  display: flex;
+}
+
+.message-detail img {
+  align-self: flex-start;
+}
+
 li.message-item-container:hover {
   background-color: #f9f9f9;
 }
 
-li.repeat .message-detail-content {
-}
-
-li.repeat .message-detail {
-
-}
 
 li.repeat small {
   visibility: hidden;

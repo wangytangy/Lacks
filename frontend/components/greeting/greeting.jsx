@@ -20,7 +20,9 @@ class Greeting extends React.Component {
     return (
     <div className="greeting group">
 
-      <figure className="logo"><Link to="/">Lacks</Link></figure>
+      <figure className="logo">
+        <Link to="/">Lacks</Link>
+      </figure>
 
       <button className="signin-corner">
         <Link to="login">Sign in</Link>

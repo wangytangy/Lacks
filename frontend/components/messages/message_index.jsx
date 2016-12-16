@@ -8,7 +8,22 @@ class MessageIndex extends React.Component {
     super(props);
     this.mapMessages = this.mapMessages.bind(this);
     this.updateScroll = this.updateScroll.bind(this);
+    // this.renderSpinner = this.renderSpinner.bind(this);
+    // this.handleImageLoad = this.handleImageLoad.bind(this);
+    this.state = ({ loading: true });
   }
+
+  // renderSpinner() {
+  //   if (this.state.loading) {
+  //     return <MDSpinner className="message-index-spinners" size={100} />;
+  //   } else {
+  //     return <MDSpinner className="message-index-spinners" size={100} />;
+  //   }
+  // }
+  //
+  // handleImageLoad() {
+  //   this.setState({ loading: false });
+  // }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.currentChannel.id !== nextProps.currentChannel.id) {
@@ -44,11 +59,10 @@ class MessageIndex extends React.Component {
         } else if (message.imageUrl) {
           imgSrc = message.imageUrl;
         }
-
         liElement = (
           <li key={i} className="message-item-container">
             <div className="message-detail">
-              <img src="" className="message-detail-profile-picture"></img>
+              <img src={message.profilePicUrl} className="message-detail-profile-picture"></img>
               <div className="message-detail-content">
                 <div className="message-detail-top">
                   <p>{message.author}</p>
