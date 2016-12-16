@@ -137,27 +137,23 @@ class MessageForm extends React.Component {
               <i className="material-icons add">add</i>
             </button>
 
-            <nav className={this.state.uploadDropdown}>
-              <div className="popover-mask" onClick={this.openUploadMenu}></div>
+            <Modal
+              isOpen={this.state.imageModalOpen}
+              onRequestClose={this.toggleImageModalOpen}
+              contentLabel = "browse-modal"
+              style={imageUploadStyle}
+              contentLabel="image-upload"
+            >
+              <i className="material-icons exit-icon" onClick={this.toggleImageModalOpen}>
+                highlight_off
+              </i>
 
-              <Modal
-                isOpen={this.state.imageModalOpen}
-                onRequestClose={this.toggleImageModalOpen}
-                contentLabel = "browse-modal"
-                style={imageUploadStyle}
-                contentLabel="image-upload"
-              >
-                <i className="material-icons exit-icon" onClick={this.toggleImageModalOpen}>
-                  highlight_off
-                </i>
-
-                <ImageUploadForm
-                  imageUrl={this.state.imageUrl}
-                  handleUpload={this.handleUpload}
-                  handleImageSubmit={this.handleImageSubmit}
-                  />
-              </Modal>
-            </nav>
+              <ImageUploadForm
+                imageUrl={this.state.imageUrl}
+                handleUpload={this.handleUpload}
+                handleImageSubmit={this.handleImageSubmit}
+                />
+            </Modal>
           </form>
 
 

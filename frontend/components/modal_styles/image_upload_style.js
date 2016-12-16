@@ -16,7 +16,7 @@ const style = {
     bottom          : '0',
     border          : '1px solid #ccc',
     zIndex          : 11,
-    opacity         : '1',
+    opacity         : '1'
   }
 };
 
