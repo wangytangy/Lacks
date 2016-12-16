@@ -12,7 +12,7 @@ li.repeat .message-detail-content {
 }
 
 li.repeat .message-detail {
-  // padding: 5px 10px;
+
 }
 
 li.repeat small {
@@ -31,7 +31,7 @@ li.repeat:hover small {
 }
 
 .message-detail {
-  padding: 3px 10px;
+  padding: 1px 10px;
   margin-left: 20px;
   display: flex;
   align-items: center;
@@ -58,7 +58,7 @@ div.message-detail-content span {
 div.message-detail-top {
   display: flex;
   align-items: center;
-  margin-bottom: 5px;
+
 }
 
 div.message-detail-top p {
@@ -73,6 +73,7 @@ div.message-detail-top small {
   color: #9e9ea6;
   margin-left: 10px;
 }
+
 
 
 // ********** IMAGES ************

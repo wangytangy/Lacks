@@ -50,7 +50,7 @@ class Sidebar extends React.Component {
 
 
           <span className="sidebar-header-username">
-            <i className="material-icons circle">panorama_fish_eye</i>
+            <i className="material-icons circle" id="circle">brightness_1</i>
             {this.props.currentUser.username}
           </span>
         </div>

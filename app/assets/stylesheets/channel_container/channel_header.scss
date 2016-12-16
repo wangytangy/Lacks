@@ -86,17 +86,6 @@ div.header-right {
   padding: 15px 20px;
 }
 
-
-div.header-right button.leave-button-active:hover {
-  background-color: #38A2E0;
-  color: #fff;
-  border-radius: 5px;
-  cursor: pointer;
-
-
-
-}
-
 div.header-right button.leave-button-active {
   height: 30px;
   padding: 5px 10px;
@@ -104,7 +93,17 @@ div.header-right button.leave-button-active {
   color: #000;
   font-size: 12px;
   font-weight: bold;
+  border-radius: 5px;
 }
+
+div.header-right button.leave-button-active:hover {
+  background-color: #38A2E0;
+  color: #fff;
+  cursor: pointer;
+
+  transition: background-color 0.5s;
+}
+
 
 div.header-right button.leave-button-block {
   display: none;
