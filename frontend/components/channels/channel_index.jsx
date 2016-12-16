@@ -3,6 +3,7 @@ import Modal from 'react-modal';
 import customStyle from '../modal_styles/modal_style';
 import CreateChannelFormContainer from './create_channel_form_container';
 import BrowseChannelContainer from './browse_channels_container';
+import MDSpinner from 'react-md-spinner';
 
 import { Link } from 'react-router';
 
@@ -63,7 +64,6 @@ class ChannelIndex extends React.Component {
 
     let channelsIndex = [];
     //userChannels should be array of user's channels
-    if (this.props.usersChannels.length > 0) {
       this.props.usersChannels.forEach((channel, i) => {
         let path = `messages/${channel.id}`;
         let deleteFn = this.handleDelete;
@@ -102,9 +102,6 @@ class ChannelIndex extends React.Component {
         }
       );
       return channelsIndex;
-    } else {
-      return channelsIndex;
-    }
   }
 
   handleModalClick() {
@@ -133,6 +130,10 @@ class ChannelIndex extends React.Component {
   }
 
   render() {
+
+    // if (!this.props.usersChannels.length) {
+    //   return <MDSpinner className="spinner" size={100} />;
+    // }
 
     let channelsIndex = this.mapChannelIndex();
     return(
