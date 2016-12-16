@@ -22,10 +22,13 @@ div.image-upload-preview {
   margin: 0 auto;
 
   border: 2px dotted #38A2E0;
+  display: flex;
 }
 
 div.image-upload-preview img {
-  width: 100%;
+  width: auto;
+  height: inherit;
+  margin: 0 auto;
 }
 
 
