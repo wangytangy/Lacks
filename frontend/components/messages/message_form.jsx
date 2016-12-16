@@ -132,7 +132,8 @@ class MessageForm extends React.Component {
               type="text"
               className="message-form-chatbar"
               onChange={this.handleChange}
-              value={this.state.body}>
+              value={this.state.body}
+              placeholder={`message #${this.props.currentChannel.title}`}>
             </input>
 
             <button

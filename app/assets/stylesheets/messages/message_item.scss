@@ -42,8 +42,9 @@ img.message-detail-profile-picture {
   width: 40px;
 
   border-radius: 5px;
-  background-image: url("http://fr.upside-art.com/images/empty_profile.png");
+  background-image: asset-url("chat-empty.svg");
   background-size: contain;
+
 
 }
 
