@@ -109,10 +109,15 @@ class MessageForm extends React.Component {
 
   toggleImageModalOpen() {
     if (this.state.imageModalOpen) {
+      imageUploadStyle.content.opacity = 0;
       this.setState({imageModalOpen: false});
     } else {
       this.setState({imageModalOpen: true});
     }
+  }
+
+  onModalOpen() {
+    imageUploadStyle.content.opacity = 100;
   }
 
 
@@ -139,6 +144,7 @@ class MessageForm extends React.Component {
 
             <Modal
               isOpen={this.state.imageModalOpen}
+              onAfterOpen={this.onModalOpen}
               onRequestClose={this.toggleImageModalOpen}
               contentLabel = "browse-modal"
               style={imageUploadStyle}
