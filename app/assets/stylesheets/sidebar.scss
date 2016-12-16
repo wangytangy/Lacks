@@ -7,6 +7,7 @@ div.sidebar {
 
   color: #AB9BA9;
   box-sizing: border-box;
+  position: relative;
 }
 
 //****** MENU ******
@@ -14,14 +15,13 @@ div.sidebar {
 div.team-menu {
   padding: 12px 18px;
 
-  position: relative;
+
 }
 
 div.team-menu:hover {
   background-color: #3E313C;
   color: #fff;
   cursor: pointer;
-
 }
 
 div.team-menu:hover i.arrow {
@@ -72,12 +72,15 @@ nav.dropdown-menu {
 nav.dropdown-menu-open {
   display: block;
   position: absolute;
-
+  top: 65px;
+  left: 18px;
   z-index: 100;
+
   box-sizing: border-box;
+  border: 1px solid #eee;
   border-radius: 5px;
 
-  width: 173px;
+  width: 183px;
 
   color: #000;
   background-color: #fff;
@@ -90,6 +93,7 @@ div.popover-mask {
   width: 100%;
   height: 100%;
   z-index: -1;
+
 }
 
 //******************
@@ -111,6 +115,10 @@ ul.profile-options li {
   padding: 5px 10px;
 
   box-sizing: border-box;
+}
+
+ul.profile-options li:hover {
+  cursor: default
 }
 
 
@@ -137,6 +145,7 @@ ul.profile-options li:last-child a {
 ul.profile-options li:last-child:hover {
   background-color: #3aa3e3;
   color: #fff;
+  cursor: pointer;
 }
 
 //****** CHANNEL INDEX ******

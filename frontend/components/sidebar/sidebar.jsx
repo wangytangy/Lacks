@@ -53,16 +53,16 @@ class Sidebar extends React.Component {
             <i className="material-icons circle">panorama_fish_eye</i>
             {this.props.currentUser.username}
           </span>
-
-          <nav className={this.state.dropdown}>
-            <div className="popover-mask"></div>
-            <ul className="profile-options">
-              <li className="profile-options-username"><strong>{this.props.currentUser.username}</strong></li>
-              <li className="profile-options-handle">@{this.props.currentUser.username}</li>
-              <li className="logout"><a onClick={this.handleLogout}>Sign out of Lacks</a></li>
-            </ul>
-          </nav>
         </div>
+
+        <nav className={this.state.dropdown}>
+          <ul className="profile-options">
+            <li className="profile-options-username"><strong>{this.props.currentUser.username}</strong></li>
+            <li className="profile-options-handle">@{this.props.currentUser.username}</li>
+            <li className="logout"><a onClick={this.handleLogout}>Sign out of Lacks</a></li>
+          </ul>
+          <div className="popover-mask" onClick={this.dropdownOpen}></div>
+        </nav>
 
         <ChannelIndexContainer />
         <DirectMessagesContainer />
