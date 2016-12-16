@@ -33,11 +33,6 @@ channel4 = Channel.create!(title: "private", description: "secured channel", use
 channel6 = Channel.create!(title: "work mates", description: "social stuff", user_id: guest.id)
 channel7 = Channel.create!(title: "friends", description: "drinking", user_id: guest.id)
 
-# DIRECT MESSAGES
-channel8 = Channel.create!(title: "DM 1", description: "first DM", user_id: guest.id, direct_message_status: true)
-channel9 = Channel.create!(title: "DM 2", description: "second DM", user_id: user1.id, direct_message_status: true)
-channel10 = Channel.create!(title: "DM 3", description: "third DM", user_id: user1.id, direct_message_status: true)
-
 
 
 ChannelMembership.create!(channel_id: channel0.id, member_id: guest.id)
@@ -46,6 +41,6 @@ ChannelMembership.create!(channel_id: channel0.id, member_id: user2.id)
 ChannelMembership.create!(channel_id: channel0.id, member_id: user3.id)
 
 
-ChannelMembership.create!(channel_id: channel8.id, member_id: user1.id)
-ChannelMembership.create!(channel_id: channel8.id, member_id: user2.id)
-ChannelMembership.create!(channel_id: channel9.id, member_id: user3.id)
+ChannelMembership.create!(channel_id: channel6.id, member_id: user1.id)
+ChannelMembership.create!(channel_id: channel6.id, member_id: user2.id)
+ChannelMembership.create!(channel_id: channel7.id, member_id: user3.id)
