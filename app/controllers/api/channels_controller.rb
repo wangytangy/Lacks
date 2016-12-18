@@ -56,7 +56,7 @@ class Api::ChannelsController < ApplicationController
     if @channel
       #needs dependent destroy for channel_memberships
       @channel.destroy
-      # Pusher.trigger('channelIndex', 'leave_channel', "channel deleted")
+      Pusher.trigger('channelIndex', 'leave_channel', "channel deleted")
       render :show
     else
       render json: ["channel not destroyed"], status: 404

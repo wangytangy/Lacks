@@ -28,6 +28,8 @@ class CurrentChannel extends React.Component {
     // Initialization that requires DOM nodes should go here.
     // If you need to load data from a remote endpoint,
     //this is a good place to instantiate the network request
+
+    
     this.pusher = new Pusher('6229f47cce1a7e390f4e', {
       encrypted: true
     });

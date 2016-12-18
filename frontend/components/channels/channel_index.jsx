@@ -24,27 +24,18 @@ class ChannelIndex extends React.Component {
     this.redirect = this.redirect.bind(this);
     this.setSelected = this.setSelected.bind(this);
     this.boundFetchAllChannels = this.boundFetchAllChannels.bind(this);
+    this.boundRedirectToGeneral = this.boundRedirectToGeneral.bind(this);
   }
 
   boundFetchAllChannels() {
     this.props.fetchAllChannels();
   }
 
+  boundRedirectToGeneral() {
+    this.redirect(this.props.usersChannels[0].id);
+  }
+
   componentDidMount() {
-
-    // this.pusher = new Pusher('6229f47cce1a7e390f4e', {
-    //   encrypted: true
-    // });
-    // // console.log("this.pusher: " + this.pusher);
-    //
-    // let channel = this.pusher.subscribe('channelIndex');
-    // channel.bind('leave_channel', (data) => {
-    //   console.log(data);
-    //   //use data to perform actions using @message
-    //   this.boundFetchAllChannels().
-    //   this.redirect(this.props.usersChannels[0].id);
-    // });
-
     if (this.props.location.pathname === "messages") {
       //if there a channel exists && pathname is "messages", go to that channel
       this.props.fetchAllChannels().then((channels) => {
@@ -54,6 +45,19 @@ class ChannelIndex extends React.Component {
       //else, fetch the channels in all other cases
       this.props.fetchAllChannels();
     }
+    this.pusher = new Pusher('6229f47cce1a7e390f4e', {
+      encrypted: true
+    });
+    // console.log("this.pusher: " + this.pusher);
+
+    let channelA = this.pusher.subscribe('channelIndex');
+    channelA.bind('leave_channel', (data) => {
+      console.log(data);
+      //use data to perform actions using @message
+      this.boundRedirectToGeneral();
+      this.boundFetchAllChannels();
+    });
+
   }
 
   componentWillReceiveProps(nextProps) {
