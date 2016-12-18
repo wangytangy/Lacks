@@ -49,9 +49,9 @@ class BrowseChannel extends React.Component {
     let allChannels = [];
     let searchInput = this.state.searchInput.toLowerCase();
     Object.values(this.props.channels).forEach((channel, i) => {
-      let sub = channel.title.slice(0, searchInput.length).toLowerCase();
+      let channelTitleLowerCase = channel.title.toLowerCase();
 
-      if (searchInput === sub) {
+      if (channelTitleLowerCase.indexOf(searchInput) !== -1) {
         let action = "Join channel";
         if (this.isMember(channel) === true) {
           action = "Open channel";
