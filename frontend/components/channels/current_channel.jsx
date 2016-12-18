@@ -10,7 +10,6 @@ class CurrentChannel extends React.Component {
     this.boundFetchMessages = this.boundFetchMessages.bind(this);
     this.boundFetchDirectMessages = this.boundFetchDirectMessages.bind(this);
     this.handleLeaveChannel = this.handleLeaveChannel.bind(this);
-    // this.updateScroll = this.updateScroll.bind(this);
   }
 
   boundFetchMessages() {

@@ -27,6 +27,13 @@ class ChannelHeader extends React.Component {
       headerTitle = "# " + this.props.currentChannel.title;
     }
 
+    let leaveButton = "";
+    if (this.props.currentChannel.direct_message_status) {
+      leaveButton = "Leave conversation";
+    } else {
+      leaveButton = "Leave channel";
+    }
+
 
     return(
       <div className="channel-header-container group">
@@ -55,9 +62,9 @@ class ChannelHeader extends React.Component {
         <div className="header-right">
           <button
             onClick={() => this.props.leaveChannel(this.props.currentChannel.id)}
-            className={leaveButtonStatus}
-            >
-            Leave Channel</button>
+            className={leaveButtonStatus}>
+            {leaveButton}
+          </button>
         </div>
       </div>
     );

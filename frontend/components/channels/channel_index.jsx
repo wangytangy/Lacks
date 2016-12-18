@@ -1,10 +1,9 @@
+/* globals Pusher */
 import React from 'react';
 import Modal from 'react-modal';
 import customStyle from '../modal_styles/modal_style';
 import CreateChannelFormContainer from './create_channel_form_container';
 import BrowseChannelContainer from './browse_channels_container';
-import MDSpinner from 'react-md-spinner';
-
 import { Link } from 'react-router';
 
 class ChannelIndex extends React.Component {
@@ -24,9 +23,28 @@ class ChannelIndex extends React.Component {
     this.state = { modalOpen: false, browseModalOpen: false, selected: this.props.params.id };
     this.redirect = this.redirect.bind(this);
     this.setSelected = this.setSelected.bind(this);
+    this.boundFetchAllChannels = this.boundFetchAllChannels.bind(this);
+  }
+
+  boundFetchAllChannels() {
+    this.props.fetchAllChannels();
   }
 
   componentDidMount() {
+
+    // this.pusher = new Pusher('6229f47cce1a7e390f4e', {
+    //   encrypted: true
+    // });
+    // // console.log("this.pusher: " + this.pusher);
+    //
+    // let channel = this.pusher.subscribe('channelIndex');
+    // channel.bind('leave_channel', (data) => {
+    //   console.log(data);
+    //   //use data to perform actions using @message
+    //   this.boundFetchAllChannels().
+    //   this.redirect(this.props.usersChannels[0].id);
+    // });
+
     if (this.props.location.pathname === "messages") {
       //if there a channel exists && pathname is "messages", go to that channel
       this.props.fetchAllChannels().then((channels) => {

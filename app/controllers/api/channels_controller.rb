@@ -56,6 +56,7 @@ class Api::ChannelsController < ApplicationController
     if @channel
       #needs dependent destroy for channel_memberships
       @channel.destroy
+      # Pusher.trigger('channelIndex', 'leave_channel', "channel deleted")
       render :show
     else
       render json: ["channel not destroyed"], status: 404
@@ -65,9 +66,6 @@ class Api::ChannelsController < ApplicationController
   def leave_channel
     @channel = Channel.find(params[:id].to_i)
     current_user.channels.delete(@channel)
-
-    # check if channel is a DM, if true => update the channel title?
-    # iterate over @channel.users, concat remaining users for new channel name
 
     @remaining_channels = current_user.channels
     render :remaining_channels
