@@ -97,11 +97,11 @@ Image upload:![](./app/assets/images/production_readme_gifs/imageupload.gif)
 
 ### Giphy Integration
 
-The message table also includes the `giphy_url` column which holds a url of a randomly-fetched GIF from the Giphy's library. Users can randomly generate a GIF from Giphy's library by posting a chat message starting with `/giphy`. GIFs can be filtered by adding an optional string to the chat message to filter GIFs by tags.
+The message table also includes the `giphy_url` column which holds a url of a randomly-fetched GIF from Giphy's library. Users can randomly generate a GIF from Giphy's library by posting a chat message starting with `/giphy`. GIFs can be filtered by adding an optional string to the chat message to retrieve GIFs by tags.
 
 
 ```javascript
-//example Giphy query with public beta key
+//example Giphy query
 
 $.ajax({
   method: "GET",
@@ -111,3 +111,16 @@ $.ajax({
 ```
 
 Sending GIFs:![](app/assets/images/production_readme_gifs/giphy.gif)
+
+### Future Directions for Lacks
+
+These are the possible features that can be implemented on Lacks.
+
+#### Notifications
+
+Any messaging app would be incomplete without notifications. The Pusher API
+could further aid in implementing a notifications feature that updates a messages counter when messages sent to channels belonging to the current user are not the current channel. Notifications would reset to zero on channel entry.
+
+#### Online Status
+
+Lacks needs to render a list of users who are currently online in order to facilitate true interactive messaging. To do this, there must be a way to keep track of multiple sessions and link them to user profiles. A show page of users also needs custom online/offline icons to reflect their login status.
