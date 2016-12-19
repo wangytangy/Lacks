@@ -22,7 +22,7 @@ Channels and Direct Messages are the context in which chat messages are displaye
 
 Users can search for existing channels to join or create their own channel.
 
-[Imgur](http://i.imgur.com/CArMN03.gif?3)
+![](http://i.imgur.com/CArMN03.gif)
 
 
 Leaving a channel will remove the channel from the user's list of channels.
