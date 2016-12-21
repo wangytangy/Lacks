@@ -114,8 +114,6 @@ Sending GIFs:![](app/assets/images/production_readme_gifs/giphy.gif)
 
 ### Future Directions for Lacks
 
-These are the possible features that can be implemented on Lacks.
-
 #### Notifications
 
 Any messaging app would be incomplete without notifications. The Pusher API
