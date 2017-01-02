@@ -52,3 +52,24 @@
 	border: 2px solid #ffffff;
 	color: #ffffff;
 }
+
+.guest-signup {
+
+
+	border-radius: 5px;
+	padding: 12px 20px;
+	background-color: #52B78D;
+
+	margin-right: 10px;
+
+	color: #ffffff;
+	font-weight: bold;
+
+	float: right;
+}
+
+.guest-signup:hover {
+	background-color: #58C799;
+	color: #ffffff;
+	cursor: pointer;
+}

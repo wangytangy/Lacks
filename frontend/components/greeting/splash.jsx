@@ -6,12 +6,23 @@ class Splash extends React.Component {
 
   constructor(props) {
     super(props);
+    this.imgArray = [
+      "https://s3.amazonaws.com/lacks-pro/messages/images/000/000/085/original/designer_bg.jpg",
+      "https://s3.amazonaws.com/lacks-pro/messages/images/000/000/085/original/desktop2_bg.jpg",
+      "https://s3.amazonaws.com/lacks-pro/messages/images/000/000/085/original/desktop_bg.jpg",
+      "https://s3.amazonaws.com/lacks-pro/messages/images/000/000/085/original/wood1_bg.jpg",
+      "https://s3.amazonaws.com/lacks-pro/messages/images/000/000/085/original/wood2_bg.jpg"
+    ];
+    this.randomImg = this.imgArray[Math.floor(Math.random() * this.imgArray.length)];
+    this.backgroundImg = {
+      backgroundImage: 'url(' + this.randomImg + ')'
+    };
   }
 
   render() {
 
     return(
-      <div className="splash">
+      <div id="splash" style={this.backgroundImg}>
         <div className="signup-bg">
           <h1 className="header-title">
             A messaging app for teams who like not working
