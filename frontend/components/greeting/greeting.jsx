@@ -13,7 +13,7 @@ class Greeting extends React.Component {
     this.props.logout();
     window.currentUser = null;
     if (this.props.currentUser) {
-      this.props.router.push("/");
+      this.props.router.replace("/");
     }
   }
 
@@ -21,7 +21,7 @@ class Greeting extends React.Component {
     let user = {username: "guest", email: "guest@gmail.com", password: "guestpassword"};
     this.props.login(user).then((user) => {
       window.currentUser = user;
-      this.props.router.push("messages");
+      this.props.router.replace("messages");
     });
   }
 

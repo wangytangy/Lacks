@@ -39,7 +39,7 @@ class SessionForm extends React.Component {
 
 
   redirect() {
-    this.props.router.push("messages");
+    this.props.router.replace("messages");
   }
 
   handleSubmit(e) {

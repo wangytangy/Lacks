@@ -22,7 +22,7 @@ class Sidebar extends React.Component {
     this.props.logout();
     window.currentUser = null;
     if (this.props.currentUser) {
-      this.props.router.push("/");
+      this.props.router.replace("/");
     }
   }
 

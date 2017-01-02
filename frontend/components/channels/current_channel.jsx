@@ -29,7 +29,7 @@ class CurrentChannel extends React.Component {
     // If you need to load data from a remote endpoint,
     //this is a good place to instantiate the network request
 
-    
+
     this.pusher = new Pusher('6229f47cce1a7e390f4e', {
       encrypted: true
     });
@@ -37,7 +37,6 @@ class CurrentChannel extends React.Component {
 
     var channel = this.pusher.subscribe('channel');
     channel.bind('message_published', (data) => {
-      // console.log(data);
       //use data to perform actions using @message
       this.boundFetchMessages();
       this.boundFetchDirectMessages();
@@ -70,7 +69,7 @@ class CurrentChannel extends React.Component {
     this.props.fetchDirectMessages();
     //redirect to last available channel
     let firstChannelID = Object.keys(this.props.channels)[0];
-    this.props.router.push(`messages/${firstChannelID}`);
+    this.props.router.replace(`messages/${firstChannelID}`);
   }
 
 //

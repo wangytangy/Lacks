@@ -74,7 +74,7 @@ class CreateDirectMessages extends React.Component {
   }
 
   redirect(id) {
-    this.props.router.push(`messages/${id}`);
+    this.props.router.replace(`messages/${id}`);
   }
 
 
