@@ -153,10 +153,6 @@ class ChannelIndex extends React.Component {
 
   render() {
 
-    // if (!this.props.usersChannels.length) {
-    //   return <MDSpinner className="spinner" size={100} />;
-    // }
-
     let channelsIndex = this.mapChannelIndex();
     return(
       <div className="channels group">
