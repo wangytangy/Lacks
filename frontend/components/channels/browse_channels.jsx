@@ -21,7 +21,7 @@ class BrowseChannel extends React.Component {
       this.props.joinChannel(channel.id);
       this.props.router.replace(`messages/${channel.id}`);
 
-      //then direct to this new channel
+
     } else {
       this.props.router.replace(`messages/${channel.id}`);
       this.props.onBrowseModalClose();
@@ -80,14 +80,13 @@ class BrowseChannel extends React.Component {
         );
         allChannels.push(liElement);
       }
-      //end of if statement
+
     });
-    //end of map
+
     return allChannels;
   }
 
   render() {
-    // console.log(this.state.input`);
 
     let allChannels = this.allChannelsList();
 

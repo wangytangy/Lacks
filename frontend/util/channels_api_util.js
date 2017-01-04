@@ -42,7 +42,6 @@ export function leaveChannel(channelID) {
 }
 
 export function createDirectMessage(formData) {
-  console.log(formData);
   return $.ajax({
     method: "POST",
     url: '/api/direct_messages',

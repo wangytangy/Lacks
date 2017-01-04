@@ -1,7 +1,3 @@
-//needs current_user, channels
-//needs logout button
-//needs fetchAllChannels
-
 import { connect } from 'react-redux';
 import Sidebar from './sidebar';
 import { logout } from '../../actions/sessions_actions';

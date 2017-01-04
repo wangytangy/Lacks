@@ -61,14 +61,9 @@ class SessionForm extends React.Component {
     this.props.processForm(user).then((user) => {
       window.currentUser = user;
       this.redirect();
-    }, (errors) => {
-
-      console.log(errors);
     });
     this.setState({username: "", email: "", password: ""});
   }
-
-  //clear errors when switching from signup/login
 
   renderLogIn(errorsArr) {
 

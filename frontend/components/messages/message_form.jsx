@@ -167,10 +167,6 @@ class MessageForm extends React.Component {
       </div>
     );
   }
-
-  //
-  //
-
 }
 
 export default MessageForm;

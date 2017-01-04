@@ -61,7 +61,6 @@ componentDidMount() {
   //bind this.pusher to a channel
   let channelA = this.pusher.subscribe('channelIndex');
   channelA.bind('leave_channel', (data) => {
-    console.log(data);
     //callbacks to execute:
     this.boundRedirectToGeneral();
     this.boundFetchAllChannels();

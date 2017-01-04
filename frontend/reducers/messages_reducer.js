@@ -9,9 +9,6 @@ function MessagesReducer(state = {}, action) {
     case RECEIVE_ALL_MESSAGES:
       return action.messages;
     case RECEIVE_NEW_MESSAGE:
-
-      // let newState = JSON.parse(JSON.stringify(state));
-      // newState.push(action.message);
       let deepCopy = merge({}, state);
       deepCopy[action.message.id] = action.message;
       return deepCopy;

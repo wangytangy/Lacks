@@ -8,22 +8,8 @@ class MessageIndex extends React.Component {
     super(props);
     this.mapMessages = this.mapMessages.bind(this);
     this.updateScroll = this.updateScroll.bind(this);
-    // this.renderSpinner = this.renderSpinner.bind(this);
-    // this.handleImageLoad = this.handleImageLoad.bind(this);
     this.state = ({ loading: true });
   }
-
-  // renderSpinner() {
-  //   if (this.state.loading) {
-  //     return <MDSpinner className="message-index-spinners" size={100} />;
-  //   } else {
-  //     return <MDSpinner className="message-index-spinners" size={100} />;
-  //   }
-  // }
-  //
-  // handleImageLoad() {
-  //   this.setState({ loading: false });
-  // }
 
   componentWillReceiveProps(nextProps) {
     if (this.props.currentChannel.id !== nextProps.currentChannel.id) {
@@ -48,8 +34,6 @@ class MessageIndex extends React.Component {
 
       let liElement;
 
-      //if previous message author is the same:
-      //construct a different li that omits profile pic and username
       if ((message.imageUrl || message.giphyUrl) && message.body === "") {
         let imgSrc;
         if (message.imageUrl.indexOf("missing") === 17 && message.giphyUrl === null) {

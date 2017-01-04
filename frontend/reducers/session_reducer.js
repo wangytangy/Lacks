@@ -32,22 +32,3 @@ function SessionReducer(state = defaultState, action) {
 }
 
 export default SessionReducer;
-
-// LOGGED OUT
-// {
-//   session: {
-//     currentUser: null,
-//     errors: ["Invalid credentials"]
-//   }
-// }
-
-// LOGGED IN
-// {
-//   session: {
-//     currentUser: {
-//       id: 1,
-//       username: wangytangy
-//     },
-//     errors: ["Invalid credentials"]
-//   }
-// }

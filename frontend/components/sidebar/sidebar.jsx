@@ -7,15 +7,10 @@ class Sidebar extends React.Component {
   constructor(props) {
     super(props);
     this.handleLogout = this.handleLogout.bind(this);
-    // this.mapChannelIndex = this.mapChannelIndex.bind(this);
     this.dropdownOpen = this.dropdownOpen.bind(this);
 
     this.state = { dropdown: "dropdown-menu" };
   }
-
-  // componentDidMount() {
-  //   this.props.fetchAllChannels();
-  // }
 
 
   handleLogout() {
@@ -36,7 +31,6 @@ class Sidebar extends React.Component {
   }
 
   render() {
-    // let channelsIndex = this.mapChannelIndex();
 
     return(
       <div className="sidebar">

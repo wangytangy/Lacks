@@ -49,22 +49,3 @@ export const signup = (user) => {
    });
  };
 };
-
-// LOGGED OUT
-// {
-//   session: {
-//     currentUser: null,
-//     errors: ["Invalid credentials"]
-//   }
-// }
-
-// LOGGED IN
-// {
-//   session: {
-//     currentUser: {
-//       id: 1,
-//       username: wangytangy
-//     },
-//     errors: []
-//   }
-// }

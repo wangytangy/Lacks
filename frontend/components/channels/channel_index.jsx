@@ -37,23 +37,20 @@ class ChannelIndex extends React.Component {
 
   componentDidMount() {
     if (this.props.location.pathname === "messages") {
-      //if there a channel exists && pathname is "messages", go to that channel
       this.props.fetchAllChannels().then((channels) => {
         this.redirect(Object.keys(channels)[0]);
       });
     } else {
-      //else, fetch the channels in all other cases
+
       this.props.fetchAllChannels();
     }
     this.pusher = new Pusher('6229f47cce1a7e390f4e', {
       encrypted: true
     });
-    // console.log("this.pusher: " + this.pusher);
+
 
     let channelA = this.pusher.subscribe('channelIndex');
     channelA.bind('leave_channel', (data) => {
-      console.log(data);
-      //use data to perform actions using @message
       this.boundRedirectToGeneral();
       this.boundFetchAllChannels();
     });
@@ -131,7 +128,6 @@ class ChannelIndex extends React.Component {
   }
 
   onModalOpen() {
-    //toggles opacity of modal
     customStyle.content.opacity = 100;
   }
 
@@ -201,8 +197,6 @@ class ChannelIndex extends React.Component {
             onModalClose={this.onModalClose}
             />
         </Modal>
-
-
       </div>
     );
   }

@@ -8,7 +8,6 @@ class DirectMessagesIndex extends React.Component {
     super(props);
 
     this.mapDmIndex = this.mapDmIndex.bind(this);
-    this.handleDelete = this.handleDelete.bind(this);
     this.openCreateModal = this.openCreateModal.bind(this);
     this.onCreateDirectMessageClose = this.onCreateDirectMessageClose.bind(this);
     this.state = {
@@ -30,11 +29,6 @@ class DirectMessagesIndex extends React.Component {
 
   setSelected(dmID) {
     this.setState({selected: dmID});
-  }
-
-  handleDelete(dmId) {
-    console.log("handle delete");
-    return;
   }
 
   mapDmIndex() {
