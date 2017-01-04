@@ -18,7 +18,7 @@
 class Message < ActiveRecord::Base
   validates :author_id, :channel_id, presence: true
 
-  has_attached_file :image
+  has_attached_file :image, :s3_protocol => :https
   validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
 
 

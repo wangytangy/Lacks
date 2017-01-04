@@ -32,13 +32,12 @@ class MessageForm extends React.Component {
     let messageData = {
       channelID: parseInt(this.props.currentChannel.id),
       body: this.state.body,
-      giphy_url: response.data.image_original_url
+      giphy_url: response.data.image_original_url.replace("http", "https")
     };
     this.props.createMessage(messageData);
   }
 
   handleSubmit(e) {
-    //if message = "/giphy", make api call
     if (this.state.body.slice(0, 6) === "/giphy") {
       let tag = this.state.body.slice(6);
       let tagName = tag.split(' ').join('+');
@@ -51,12 +50,12 @@ class MessageForm extends React.Component {
 
       let rating = "&rating=pg-13";
 
-
       $.ajax({
         method: "GET",
         url: `https://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC${tagName}${rating}`,
         success: (response) => this.processGiphyResponse(response)
       });
+
       this.setState({body: "", imageFile: null, imageUrl: null});
     } else {
       let messageData = {
