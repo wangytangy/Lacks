@@ -13,6 +13,18 @@ class SessionForm extends React.Component {
     this.renderLogIn = this.renderLogIn.bind(this);
     this.renderSignUp = this.renderSignUp.bind(this);
     this.guestLogin = this.guestLogin.bind(this);
+
+    this.imgArray = [
+      "https://s3.amazonaws.com/lacks-pro/messages/images/000/000/085/original/designer_bg.jpg",
+      "https://s3.amazonaws.com/lacks-pro/messages/images/000/000/085/original/desktop2_bg.jpg",
+      "https://s3.amazonaws.com/lacks-pro/messages/images/000/000/085/original/desktop_bg.jpg",
+      "https://s3.amazonaws.com/lacks-pro/messages/images/000/000/085/original/wood1_bg.jpg",
+      "https://s3.amazonaws.com/lacks-pro/messages/images/000/000/085/original/wood2_bg.jpg"
+    ];
+    this.randomImg = this.imgArray[Math.floor(Math.random() * this.imgArray.length)];
+    this.backgroundImg = {
+      backgroundImage: 'url(' + this.randomImg + ')'
+    };
   }
 
   handleChange(e) {
@@ -61,7 +73,7 @@ class SessionForm extends React.Component {
   renderLogIn(errorsArr) {
 
     return (
-      <div className="splash">
+      <div id="splash" style={this.backgroundImg}>
 
         <div className="form">
 
@@ -101,7 +113,7 @@ class SessionForm extends React.Component {
 
   renderSignUp(errorsArr) {
     return (
-      <div className="splash">
+      <div id="splash" style={this.backgroundImg}>
 
         <div className="form">
 
