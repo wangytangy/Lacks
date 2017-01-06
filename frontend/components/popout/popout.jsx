@@ -6,7 +6,7 @@ class Popout extends React.Component {
   constructor(props) {
     super(props);
     this.exitProfilePicUpdate = this.exitProfilePicUpdate.bind(this);
-
+    this.openUpdateProfileModal = this.openUpdateProfileModal.bind(this);
   }
   exitProfilePicUpdate() {
     let path = hashHistory.getCurrentLocation().pathname;
@@ -16,16 +16,36 @@ class Popout extends React.Component {
     }
   }
 
+  openUpdateProfileModal() {
+    alert("FEATURE NOT IMPLEMENTED");
+  }
+
   render() {
 
     return (
       <div id="popout">
-        It's POPOUT TIME
+        <div id="popout-header">
           <i
             className="material-icons popout-exit"
             onClick={this.exitProfilePicUpdate}>
             clear
           </i>
+        </div>
+
+        <img src={this.props.currentUser.profile_pic_url}>
+        </img>
+
+        <div id="popout-intro">
+          <span>{this.props.currentUser.username}</span>
+          <i className="material-icons circle" id="circle">brightness_1</i>
+        </div>
+
+        <div id="popout-edit-buttons">
+          <button onClick={this.openUpdateProfileModal}>
+            Edit Profile
+          </button>
+        </div>
+
       </div>
     );
   }

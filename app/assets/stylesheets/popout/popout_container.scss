@@ -2,3 +2,13 @@
   width: 50%;
   border-left: 1px solid #000;
 }
+
+#popout-header {
+  display: flex;
+  justify-content: flex-end;
+
+  padding: 20px;
+}
+
+.popout-exit {
+}
