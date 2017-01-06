@@ -51,9 +51,18 @@ class Sidebar extends React.Component {
 
         <nav className={this.state.dropdown}>
           <ul className="profile-options">
-            <li className="profile-options-username"><strong>{this.props.currentUser.username}</strong></li>
-            <li className="profile-options-handle">@{this.props.currentUser.username}</li>
+            <li>
+              <div id="profile-options-header">
+                <img id="profile-options-thumb" src={this.props.currentUser.profile_pic_url} />
+                <div id="usernames">
+                  <span className="profile-options-username"><strong>{this.props.currentUser.username}</strong></span>
+                  <span className="profile-options-handle">@{this.props.currentUser.username}</span>
+                </div>
+              </div>
+            </li>
+
             <li className="logout"><a onClick={this.handleLogout}>Sign out of Lacks</a></li>
+
           </ul>
           <div className="popover-mask" onClick={this.dropdownOpen}></div>
         </nav>
