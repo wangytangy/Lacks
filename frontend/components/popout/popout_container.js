@@ -7,7 +7,9 @@ import { Router, Route, IndexRoute, hashHistory, withRouter } from 'react-router
 
 
 const mapStateToProps = (state) => ({
-  currentUser: state.session.currentUser
+  currentUser: state.session.currentUser,
+  currentChannel: state.currentChannel
+
 });
 
 const mapDispatchToProps = (dispatch) => ({
