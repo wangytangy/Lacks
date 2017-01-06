@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, hashHistory } from 'react-router';
 import ChannelIndexContainer from '../channels/channel_index_container';
 import DirectMessagesContainer from '../direct_messages/direct_messages_container';
 
@@ -31,6 +31,10 @@ class Sidebar extends React.Component {
   }
 
   render() {
+    let path = hashHistory.getCurrentLocation().pathname;
+    if (path.indexOf("popout") === -1) {
+      path += "/popout";
+    }
 
     return(
       <div className="sidebar">
@@ -53,7 +57,13 @@ class Sidebar extends React.Component {
           <ul className="profile-options">
             <li>
               <div id="profile-options-header">
-                <img id="profile-options-thumb" src={this.props.currentUser.profile_pic_url} />
+                <Link to={ path }>
+                  <img
+                    id="profile-options-thumb"
+                    src={this.props.currentUser.profile_pic_url}
+                    onClick={this.openProfilePicUpdate}
+                    />
+                </Link>
                 <div id="usernames">
                   <span className="profile-options-username"><strong>{this.props.currentUser.username}</strong></span>
                   <span className="profile-options-handle">@{this.props.currentUser.username}</span>

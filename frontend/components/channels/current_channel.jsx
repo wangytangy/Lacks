@@ -58,13 +58,6 @@ class CurrentChannel extends React.Component {
   }
 
   render() {
-    // debugger
-    console.log(this.props);
-    // let children;
-    // if (this.props.location.pathname.indexOf("popout") !== -1) {
-    //   children = <PopoutContainer />;
-    // }
-
     return(
       <div className="current-channel">
         <div id="current-channel-main">
