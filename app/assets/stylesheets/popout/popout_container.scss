@@ -1,6 +1,9 @@
 #popout {
   width: 50%;
   border-left: 1px solid #000;
+  display: flex;
+  flex-direction: column;
+
 }
 
 #popout-header {
@@ -11,4 +14,48 @@
 }
 
 .popout-exit {
+
+}
+
+.popout-exit:hover {
+  cursor: pointer;
+  color: #ccc;
+}
+
+#popout img {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px dotted #ccc;
+}
+
+#popout-intro {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+  margin: 20px 0;
+}
+
+#popout-intro i {
+  margin-left: 5px;
+}
+
+#popout-edit-buttons {
+  display: flex;
+  justify-content: center;
+}
+
+#edit-profile {
+  font-weight: bold;
+  padding: 8px 12px;
+  color: #aaa;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+#edit-profile:hover {
+  // font-weight: bold;
+  color: #38A2E0;
+  text-decoration: underline;
+  cursor: pointer;
 }

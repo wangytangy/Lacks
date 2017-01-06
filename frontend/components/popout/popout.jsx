@@ -41,7 +41,7 @@ class Popout extends React.Component {
         </div>
 
         <div id="popout-edit-buttons">
-          <button onClick={this.openUpdateProfileModal}>
+          <button id="edit-profile" onClick={this.openUpdateProfileModal}>
             Edit Profile
           </button>
         </div>
