@@ -3,6 +3,7 @@ import React from 'react';
 import ChannelHeaderContainer from './channel_header_container';
 import MessageIndexContainer from '../messages/message_index_container';
 import MessageFormContainer from '../messages/message_form_container';
+import PopoutContainer from '../popout/popout_container';
 
 class CurrentChannel extends React.Component {
   constructor(props) {
@@ -57,11 +58,22 @@ class CurrentChannel extends React.Component {
   }
 
   render() {
+    // debugger
+    console.log(this.props);
+    // let children;
+    // if (this.props.location.pathname.indexOf("popout") !== -1) {
+    //   children = <PopoutContainer />;
+    // }
+
     return(
       <div className="current-channel">
-        <ChannelHeaderContainer leaveChannel={this.handleLeaveChannel}/>
-        <MessageIndexContainer />
-        <MessageFormContainer />
+        <div id="current-channel-main">
+          <ChannelHeaderContainer leaveChannel={this.handleLeaveChannel}/>
+          <MessageIndexContainer />
+          <MessageFormContainer />
+        </div>
+
+        { this.props.children }
       </div>
     );
   }

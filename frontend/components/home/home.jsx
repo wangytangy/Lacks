@@ -11,7 +11,7 @@ class Home extends React.Component {
     return(
       <div className="home-container group">
         <SidebarContainer />
-        <CurrentChannelContainer />
+        {this.props.children}
       </div>
     );
   }

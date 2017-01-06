@@ -3,5 +3,9 @@ div.current-channel {
   flex-grow: 1;
   height: 100vh;
 
+  display: flex;
+}
 
+#current-channel-main {
+  width: 100%;
 }

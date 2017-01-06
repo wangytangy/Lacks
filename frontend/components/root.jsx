@@ -6,6 +6,7 @@ import SessionFormContainer from './sessions/sessions_form_container';
 import Splash from './greeting/splash';
 import HomeContainer from './home/home_container';
 import CurrentChannelContainer from './channels/current_channel_container';
+import PopoutContainer from './popout/popout_container';
 import { clearErrors } from '../actions/sessions_actions';
 
 const Root = ({ store }) => {
@@ -17,19 +18,24 @@ const Root = ({ store }) => {
       store.dispatch(clearErrors());
     }
   }
-
+  let username = store.getState().session.currentUser.username;
   return(
     <Provider store={ store }>
+
       <Router history={ hashHistory }>
         <Route path="/" component={ App }>
           <IndexRoute component={ Splash } />
           <Route path="login" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
           <Route path="signup" component={ SessionFormContainer } onEnter={_redirectIfLoggedIn} />
         </Route>
+
         <Route path="messages" component={ HomeContainer }>
-          <Route path=":id" component={ CurrentChannelContainer } />
+          <Route path=":id" component={ CurrentChannelContainer }>
+            <Route path="popout" component={ PopoutContainer } />
+          </Route>
         </Route>
       </Router>
+
     </Provider>
   );
 };
