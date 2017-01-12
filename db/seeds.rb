@@ -9,18 +9,20 @@
 
 User.destroy_all
 
-admin = User.create!(username: "admin", email: "admin@yamail.com", password: "password1", profile_pic_url: Faker::Avatar.image("admin", "50x50"))
-guest = User.create!(username: "guest", email: "guest@gmail.com", password: "guestpassword", profile_pic_url: Faker::Avatar.image("guest", "50x50"))
+
+picture_results = HTTParty.get("https://randomuser.me/api/?results=22")
+admin = User.create!(username: "admin", email: "admin@yamail.com", password: "password1", profile_pic_url: picture_results["results"][0]["picture"]["large"])
+guest = User.create!(username: "guest", email: "guest@gmail.com", password: "guestpassword", profile_pic_url: picture_results["results"][1]["picture"]["large"])
 
 
 all_users = []
 all_users << guest
-20.times do
+20.times do |i|
   all_users << User.create!(
     username: Faker::Internet.user_name,
     email: Faker::Internet.email,
     password: "password1",
-    profile_pic_url: Faker::Avatar.image(Faker::Name.first_name, "50x50"))
+    profile_pic_url: picture_results["results"][i + 2]["picture"]["large"])
 end
 
 

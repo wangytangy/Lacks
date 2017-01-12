@@ -61,7 +61,6 @@ class Sidebar extends React.Component {
                   <img
                     id="profile-options-thumb"
                     src={this.props.currentUser.profile_pic_url}
-                    onClick={this.openProfilePicUpdate}
                     />
                 </Link>
                 <div id="usernames">

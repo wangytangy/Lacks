@@ -1,6 +1,6 @@
 #popout {
   width: 50%;
-  border-left: 1px solid #000;
+
   display: flex;
   flex-direction: column;
 
@@ -46,6 +46,7 @@
 }
 
 #edit-profile {
+  display: none;
   font-weight: bold;
   padding: 8px 12px;
   color: #aaa;
