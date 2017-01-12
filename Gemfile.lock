@@ -83,6 +83,8 @@ GEM
       activesupport (>= 4.1.0)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
+    httparty (0.14.0)
+      multi_xml (>= 0.5.2)
     httpclient (2.8.3)
     i18n (0.7.0)
     jbuilder (2.6.1)
@@ -106,6 +108,7 @@ GEM
     mini_portile2 (2.1.0)
     minitest (5.10.1)
     multi_json (1.12.1)
+    multi_xml (0.6.0)
     netrc (0.11.0)
     nokogiri (1.6.8.1)
       mini_portile2 (~> 2.1.0)
@@ -220,6 +223,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   faker
   figaro
+  httparty
   jbuilder (~> 2.0)
   jquery-rails
   paperclip (~> 5.0.0)

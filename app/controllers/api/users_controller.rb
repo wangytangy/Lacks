@@ -9,7 +9,10 @@ class Api::UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
-    @user.profile_pic_url = Faker::Avatar.image(Faker::Name.first_name, "50x50")
+    # @user.profile_pic_url = Faker::Avatar.image(Faker::Name.first_name, "50x50")
+
+    something = HTTParty.get("https://pixabay.com/api/?key=4251249-d945570e58ebc1fb4aac5f0a1&q=people&image_type=photo")
+    @user.profile_pic_url = something["hits"][rand(21)]["previewURL"]
 
     if @user.save
       login(@user)
