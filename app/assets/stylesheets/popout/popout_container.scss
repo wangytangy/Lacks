@@ -46,16 +46,16 @@
 }
 
 #edit-profile {
-  display: none;
   font-weight: bold;
   padding: 8px 12px;
-  color: #aaa;
+  color: #555459;
   border: 1px solid #ccc;
   border-radius: 5px;
+  background-color: #fbfbfa;
 }
 
 #edit-profile:hover {
-  // font-weight: bold;
+  background-color: #fff;
   color: #38A2E0;
   text-decoration: underline;
   cursor: pointer;

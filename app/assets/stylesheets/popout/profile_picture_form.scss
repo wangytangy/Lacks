@@ -1,0 +1,42 @@
+.modal-background-close {
+  display: none;
+}
+
+.profile-picture-modal-close {
+  display: none;
+}
+
+.modal-background-open {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+
+  background-color: rgba(255, 255, 255, 0.74902);
+  z-index: 10;
+
+}
+
+.profile-picture-modal-open {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+
+  border: 1px solid rgb(204, 204, 204);
+  background: rgb(255, 255, 255);
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  z-index: 11;
+  opacity: 100;
+  transition: opacity 1s;
+
+}
+
+.profile-picture-modal-exit {
+  display: inherit;
+}

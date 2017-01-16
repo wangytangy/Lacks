@@ -7,6 +7,11 @@ class Popout extends React.Component {
     super(props);
     this.exitProfilePicUpdate = this.exitProfilePicUpdate.bind(this);
     this.openUpdateProfileModal = this.openUpdateProfileModal.bind(this);
+    this.closeUpdateProfileModal = this.closeUpdateProfileModal.bind(this);
+    this.state = {
+      modalContainerClass: "modal-background-close",
+      modalClass: "profile-picture-modal-close"
+    };
   }
   exitProfilePicUpdate() {
     let path = hashHistory.getCurrentLocation().pathname;
@@ -17,7 +22,17 @@ class Popout extends React.Component {
   }
 
   openUpdateProfileModal() {
-    alert("FEATURE NOT IMPLEMENTED");
+    this.setState({
+      modalContainerClass: "modal-background-open",
+      modalClass: "profile-picture-modal-open"
+    });
+  }
+
+  closeUpdateProfileModal() {
+    this.setState({
+      modalContainerClass: "modal-background-close",
+      modalClass: "profile-picture-modal-close"
+    });
   }
 
   render() {
@@ -44,6 +59,18 @@ class Popout extends React.Component {
           <button id="edit-profile" onClick={this.openUpdateProfileModal}>
             Edit Profile
           </button>
+        </div>
+
+        <div className={this.state.modalContainerClass}>
+          <div className={this.state.modalClass}>
+            <i className="material-icons profile-picture-modal-exit"
+              onClick={this.closeUpdateProfileModal}>
+              clear
+            </i>
+
+
+
+          </div>
         </div>
 
       </div>
