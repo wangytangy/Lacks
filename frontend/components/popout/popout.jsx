@@ -8,6 +8,7 @@ class Popout extends React.Component {
     this.exitProfilePicUpdate = this.exitProfilePicUpdate.bind(this);
     this.openUpdateProfileModal = this.openUpdateProfileModal.bind(this);
     this.closeUpdateProfileModal = this.closeUpdateProfileModal.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
       modalContainerClass: "modal-background-close",
       modalClass: "profile-picture-modal-close"
@@ -35,7 +36,18 @@ class Popout extends React.Component {
     });
   }
 
+  handleSubmit() {
+    alert("You're ugly");
+  }
+
   render() {
+
+    let style = {
+      backgroundImage: 'url(' + this.props.currentUser.profile_pic_url + ')',
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover'
+    };
+
 
     return (
       <div id="popout">
@@ -68,7 +80,18 @@ class Popout extends React.Component {
               clear
             </i>
 
-
+            <div id="update-picture-container">
+              <label style={style}>
+                <input
+                  type="file"
+                  className="profile-pic-update"
+                  multiple accept='image/*'
+                  id="Attach an image"
+                  onChange={this.handleSubmit}
+                  >
+                </input>
+              </label>
+            </div>
 
           </div>
         </div>
