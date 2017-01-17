@@ -53,19 +53,59 @@
 #update-picture-container {
   width: 192px;
   height: 192px;
+  background-color: #000;
+  position: relative;
+}
+
+#update-picture-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  span {
+    display: none;
+  }
+
+  i {
+    display: none;
+  }
+
 }
 
 
 
 #update-picture-container label {
-  background-color: gray;
   width: 100%;
   height: 100%;
 }
 
 #update-picture-container:hover {
-  cursor: pointer;
+
   border: 3px solid #2d9ee0;
   box-sizing: border-box;
-  content: "Change profile picture";
+  cursor: pointer;
+
+  label {
+    cursor: pointer;
+    filter: opacity(0.5);
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    z-index: 100;
+    margin: 0 10px 0 10px;
+  }
+
+  i {
+    display: block;
+    position: absolute;
+    color: #fff;
+    z-index: 100;
+    top: 45px;
+  }
 }
