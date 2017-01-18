@@ -8,10 +8,13 @@ class Popout extends React.Component {
     this.exitProfilePicUpdate = this.exitProfilePicUpdate.bind(this);
     this.openUpdateProfileModal = this.openUpdateProfileModal.bind(this);
     this.closeUpdateProfileModal = this.closeUpdateProfileModal.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleImgSubmit = this.handleImgSubmit.bind(this);
+    this.handleProfileSubmit = this.handleProfileSubmit.bind(this);
     this.state = {
       modalContainerClass: "modal-background-close",
-      modalClass: "profile-picture-modal-close"
+      modalClass: "profile-picture-modal-close",
+      avatarFile: null,
+      avatarUrl: null
     };
   }
   exitProfilePicUpdate() {
@@ -36,14 +39,39 @@ class Popout extends React.Component {
     });
   }
 
-  handleSubmit() {
-    alert("You're ugly");
+  handleImgSubmit(e) {
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+
+    fileReader.onloadend = function() {
+      this.setState({
+        avatarFile: file,
+        avatarUrl: fileReader.result
+      });
+    }.bind(this);
+
+    fileReader.readAsDataURL(file);
+  }
+
+  handleProfileSubmit() {
+    let formData = new FormData();
+
+    formData.set("user[avatar]", this.state.avatarFile);
+    formData.set("user[id]", this.props.currentUser.id);
+    this.props.handleProfileUpdate(formData);
+    //need to close modal
   }
 
   render() {
+    let imgSrc;
+    if (this.state.avatarUrl) {
+      imgSrc = this.state.avatarUrl;
+    } else {
+      imgSrc = this.props.currentUser.avatar;
+    }
 
     let style = {
-      backgroundImage: 'url(' + this.props.currentUser.profile_pic_url + ')',
+      backgroundImage: 'url(' + imgSrc + ')',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover'
     };
@@ -59,8 +87,7 @@ class Popout extends React.Component {
           </i>
         </div>
 
-        <img src={this.props.currentUser.profile_pic_url}>
-        </img>
+        <img src={imgSrc}></img>
 
         <div id="popout-intro">
           <span>{this.props.currentUser.username}</span>
@@ -81,23 +108,26 @@ class Popout extends React.Component {
             </i>
 
             <div id="update-picture-container">
-
-
               <label style={style}>
                 <input
                   type="file"
                   className="profile-pic-update"
                   multiple accept='image/*'
                   id="Attach an image"
-                  onChange={this.handleSubmit}
+                  onChange={this.handleImgSubmit}
                   >
                 </input>
               </label>
-              
               <i className="material-icons">photo_camera</i>
               <span>Change your profile photo</span>
 
             </div>
+            <button
+              id="image-submit"
+              type="button"
+              onClick={this.handleProfileSubmit}>
+              Save changes
+            </button>
 
           </div>
         </div>

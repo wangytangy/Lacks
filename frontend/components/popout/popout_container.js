@@ -1,10 +1,7 @@
 import { connect } from 'react-redux';
 import Popout from './popout';
 import { Router, Route, IndexRoute, hashHistory, withRouter } from 'react-router';
-
-// import 'update' ajax call for users
-// import 'change profile picture' action;
-
+import { handleProfileUpdate } from '../../actions/user_actions';
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
@@ -13,7 +10,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-
+  handleProfileUpdate: (profileData) => dispatch(handleProfileUpdate(profileData))
 });
 
 export default withRouter(connect(

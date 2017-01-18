@@ -35,7 +35,7 @@ class Sidebar extends React.Component {
     if (path.indexOf("popout") === -1) {
       path += "/popout";
     }
-    debugger
+    
     return(
       <div className="sidebar">
         <div className="team-menu group" onClick={this.dropdownOpen}>
