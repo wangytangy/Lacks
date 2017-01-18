@@ -5,7 +5,6 @@ class Api::MessagesController < ApplicationController
     @channel = Channel.find(params[:channel_id])
     @messages = @channel.messages
     render :index
-
   end
 
   def create

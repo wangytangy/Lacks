@@ -35,7 +35,7 @@ class Sidebar extends React.Component {
     if (path.indexOf("popout") === -1) {
       path += "/popout";
     }
-
+    debugger
     return(
       <div className="sidebar">
         <div className="team-menu group" onClick={this.dropdownOpen}>
@@ -60,7 +60,7 @@ class Sidebar extends React.Component {
                 <Link to={ path }>
                   <img
                     id="profile-options-thumb"
-                    src={this.props.currentUser.profile_pic_url}
+                    src={this.props.currentUser.avatar}
                     />
                 </Link>
                 <div id="usernames">
