@@ -37,22 +37,12 @@
     }
   },
 
-  directMessages: {
-    1: {
-      title: "sample DM title",
-      members: [
-        { id: 1, username: "wangytangy" },
-        { id: 2, username: "other_user" }
-      ]
-    }
-  },
-
   messages: {
     1: {
       user_id: 1,
       body: "this is my first message",
-      messageable_id: 1
-      messageable_type: "channel"
+      image_file_name: null,
+      giphy_url: null
     }
   }
 }

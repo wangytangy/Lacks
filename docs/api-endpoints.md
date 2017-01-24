@@ -22,7 +22,7 @@
 
 - `POST /api/messages`
 - `DELETE /api/messages`
-- `PATCH /api/messages/:id`
+
 
 ### Channels
 
@@ -30,10 +30,3 @@
 - `POST /api/channels`
 - `GET /api/channels/:id`
 - `DELETE /api/channels/:id`
-
-### Direct Messages
-
-- `GET /api/direct-messages`
-- `POST /api/direct-messages`
-- `GET /api/direct-messages/:id`
-- `DELETE /api/direct-messages/:id`
