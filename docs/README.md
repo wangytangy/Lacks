@@ -11,11 +11,11 @@ DEVELOPMENT README
   - [ ] Channel and group chat messaging
 
 ## Design Docs
-  * [Wireframes](docs/wireframes)
-  * [React Components](docs/component-hierarchy.md)
-  * [API endpoints](docs/api-endpoints.md)
-  * [DB schema](docs/schema.md)
-  * [Sample State](docs/sample-state.md)
+  * [Wireframes](./wireframes)
+  * [React Components](./component-hierarchy.md)
+  * [API endpoints](./api-endpoints.md)
+  * [DB schema](./schema.md)
+  * [Sample State](./sample-state.md)
 
 
 ### Implementation Timeline
