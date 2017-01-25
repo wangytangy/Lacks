@@ -18,7 +18,7 @@ const Root = ({ store }) => {
       store.dispatch(clearErrors());
     }
   }
-  // let username = store.getState().session.currentUser.username;
+  
   return(
     <Provider store={ store }>
 

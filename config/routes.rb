@@ -15,7 +15,7 @@ Rails.application.routes.draw do
     delete 'channels/:id/unsubscribe' => 'channels#leave_channel'
     post 'direct_messages' => 'channels#create_dm'
 
-    #DM's
+
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

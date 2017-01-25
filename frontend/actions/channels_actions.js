@@ -26,13 +26,6 @@ export const receiveJoinedChannel = (channel) => ({
   joinedChannel: channel
 });
 
-
-// export const receiveDirectMessages = (directMessages) => ({
-//   type: RECEIVE_REMAINING_DIRECT_MESSAGES,
-//   directMessages
-// });
-
-
 export const createDirectMessage = (formData) => {
   return (dispatch) => {
     return APIUtil.createDirectMessage(formData).then((directMessage) => {
