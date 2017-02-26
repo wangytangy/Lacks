@@ -99,7 +99,6 @@ class MessageIndex extends React.Component {
 
 
   render() {
-
     // if (!Object.values(this.props.messages).length) {
     //   return <MDSpinner className="spinner" size={100} duration={5} />;
     // }

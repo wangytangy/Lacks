@@ -4,6 +4,7 @@ import { RECEIVE_ALL_CHANNELS, DELETE_CHANNEL, RECEIVE_JOIN_CHANNEL } from '../a
 
 
 function ChannelsReducer(state = {}, action) {
+
   Object.freeze(state);
   let copyState;
   switch(action.type) {

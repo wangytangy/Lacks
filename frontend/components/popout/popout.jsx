@@ -81,8 +81,6 @@ class Popout extends React.Component {
             </i>
 
             <div id="update-picture-container">
-
-
               <label style={style}>
                 <input
                   type="file"
@@ -93,7 +91,7 @@ class Popout extends React.Component {
                   >
                 </input>
               </label>
-              
+
               <i className="material-icons">photo_camera</i>
               <span>Change your profile photo</span>
 
