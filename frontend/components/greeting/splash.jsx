@@ -22,9 +22,9 @@ class Splash extends React.Component {
   render() {
 
     return(
-      <div id="splash" style={this.backgroundImg}>
+      <div className="splash" style={this.backgroundImg}>
         <div className="signup-bg">
-          <h1 className="header-title">
+          <h1>
             A messaging app for teams who like not working
           </h1>
 

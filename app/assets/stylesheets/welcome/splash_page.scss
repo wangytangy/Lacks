@@ -1,5 +1,4 @@
-// ****** SPLASH ******
-#splash {
+.splash {
   height: 100vh;
   background-size: cover;
   position: relative;
@@ -7,71 +6,69 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  .signup-bg {
+    height: 200px;
+    width: 700px;
+    padding: 20px;
+
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    margin-left: -350px;
+
+    z-index: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    //transparent div as pseudo-content
+    &:before {
+      content: "";
+      background-color: #424242;
+      display: block;
+      opacity: 0.7;
+      z-index: -1;
+      border-radius: 5px;
+
+      //take up the whole space of div
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+    }
+
+    h1 {
+      align-self: flex-start;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 42px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .signup-button {
+      background-color: $green-button;
+      border-radius: 5px;
+
+      width: 185px;
+      height: 50px;
+
+      &:hover {
+        background-color: $green-button-hover;
+        color: #ffffff;
+      }
+
+      a {
+        display: block;
+        padding: 10px 20px;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    }
+  }
 }
-
-.signup-bg {
-	display: block;
-	height: 200px;
-	width: 700px;
-	position: absolute;
-	top: 53%;
-	left: 50%;
-	margin-left: -350px;
-	padding: 20px;
-
-	z-index: 0;
-}
-
-.signup-bg:before {
-	content: "";
-	background-color: #424242;
-	display:block;
-	opacity: 0.7;
-	z-index: -1;
-	border-radius: 5px;
-
-	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-}
-
-h1.header-title {
-  display: block;
-  margin: 0 auto;
-  color: #ffffff;
-  font-weight: 700;
-  font-size: 42px;
-
-
-  width: 675px;
-  text-align: center;
-}
-
-
-.signup-button {
-	display: block;
-	background-color: #52B78D;
-	margin: 15px auto;
-	border-radius: 5px;
-
-	width: 185px;
-	height: 50px;
-
-}
-
-.signup-button a {
-	padding: 10px 20px;
-	display: block;
-	color: #ffffff;
-	font-size: 18px;
-	font-weight: bold;
-}
-
-.signup-button:hover {
-	background-color: #58C799;
-	color: #ffffff;
-}
-
-// *********************************
