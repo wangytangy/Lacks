@@ -1,10 +1,14 @@
 
 
-@import "_variables.scss";
-@import "reset.css";
+@import "modules/_variables.scss";
+@import "modules/reset.css";
 
-// HOMEPAGE
+// SIGNIN PAGE
 @import "welcome/header.scss";
 @import "welcome/sessions.scss";
 @import "welcome/splash_page.scss";
 @import "welcome/errors.scss";
+
+//HOMEPAGE
+@import "home/home.scss";
+@import "home/sidebar.scss";

@@ -27,19 +27,21 @@ class Greeting extends React.Component {
 
   render() {
     return (
-    <div className="greeting group">
+    <div className="greeting">
 
       <figure className="logo">
         <Link to="/">Lacks</Link>
       </figure>
 
-      <button className="signin-corner">
-        <Link to="login">Sign in</Link>
-      </button>
+      <div className="signin-corner">
+        <button className="guest-signup" onClick={this.guestLogin}>
+          Guest Signup
+        </button>
 
-      <button className="guest-signup" onClick={this.guestLogin}>
-        Guest Signup
-      </button>
+        <button className="login-corner">
+          <Link to="login">Sign in</Link>
+        </button>
+      </div>
 
     </div>
     );

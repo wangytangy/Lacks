@@ -1,102 +1,83 @@
-// Place all the styles related to the api/sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-
-// ****** LOGIN/SIGNUP ******
-
-div .form {
+.form {
   background-color: #fff;
-  border: 2px solid #ccc;
 	border-radius: 5px;
   width: 640px;
   height: 400px;
-  margin: 0 auto;
 
   padding: 30px;
   box-sizing: border-box;
 
-	position: absolute;
-	left: 50%;
-	top: 135px;
-	margin-left: -320px;
+  h1 {
+    font-size: 36px;
+    text-align: center;
+    margin: 0 0 20px 0;
+    color: $offblack-text;
+  }
 
+  h2 {
+    font-size: 14px;
+    text-align: center;
+    color: $offblack-text;
+  }
+
+  .guest-login {
+  	text-align: center;
+  	margin: 20px;
+  	font-size: 14px;
+
+    a {
+      text-decoration: underline;
+      cursor: pointer;
+    }
+  }
 }
 
-.header {
-  font-size: 36px;
-  text-align: center;
-  margin: 0 0 20px 0;
-  color: #2c2d30;
+.form-field {
+  label {
+    text-align: center;
+    display: block;
+  }
+
+  input {
+    display: block;
+    width: 360px;
+    height: 50px;
+    font-size: 24px;
+    padding: 5px 10px;
+    margin: 20px auto;
+
+    color: $offblack-text;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+
+    transition: border-color 1s;
+
+    &:hover {
+      border-color: $blue-border-hover;
+    }
+  }
+
+  .submit {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid $lightblue-button;
+
+    width: 360px;
+    height: 50px;
+    border-radius: 5px;
+
+    background-color: $lightblue-button;
+    color: #fff;
+    font-size: 24px;
+    transition: background-color 1s;
+
+    &:hover {
+      background-color: $lightblue-button-hover;
+      border: 1px solid $lightblue-button-hover;
+      cursor: pointer;
+    }
+  }
 }
-
-.signup-instruction {
-  font-size: 14px;
-  text-align: center;
-  color: #2c2d30;
-}
-
-form.form-field input {
-
-  display: block;
-  width: 360px;
-  height: 50px;
-  font-size: 24px;
-  padding: 5px 10px;
-
-  box-sizing: border-box;
-
-  color: #2c2d30;
-
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin: 20px auto;
-
-  transition: border-color 1s;
-}
-
-form.form-field input:hover {
-  border-color: #38A2E0;
-}
-
-label {
-  text-align: center;
-  display: block;
-}
-
-.submit {
-  display: block;
-  margin: 0 auto;
-  border: 1px solid #ccc;
-
-  width: 360px;
-  height: 50px;
-  border-radius: 5px;
-
-  background-color: #38A2E0;
-
-  color: #fff;
-  font-size: 24px;
-
-  transition: background-color 2s;
-}
-
-.submit:hover {
-  background-color: #38BCE0;
-
-}
-
-.guest-login {
-	text-align: center;
-
-	margin: 20px;
-
-	font-size: 14px;
-}
-
-.guest-login a {
-	text-decoration: underline;
-	cursor: pointer;
-}
-
-// *************************

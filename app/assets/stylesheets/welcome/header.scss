@@ -1,69 +1,64 @@
-
-// ****** HEADER ******
-
 .greeting {
+	display: flex;
+	align-items: stretch;
+  justify-content: space-between;
+
 	position: absolute;
 	top: 0;
-	display: block;
 	z-index: 100;
 	width: 100%;
 	padding: 20px;
 
 	box-sizing: border-box;
-
-
 }
 
 .logo {
-	float: left;
 	font-weight: 700;
 
 	a {
 		padding: 12px 22px;
 		display:block;
 		color: $welcome-text-gray;
-	}
 
-	&:hover {
-		color: #ffffff;
+		&:hover {
+			color: #ffffff;
+		}
 	}
 }
 
 .signin-corner {
-	display: block;
-	background: transparent;
+	display: flex;
 
-	border: 2px solid $welcome-text-gray;
-	box-sizing: border-box;
-	border-radius: 5px;
-	float: right;
+	.login-corner {
+		background: transparent;
+		border: 2px solid $welcome-text-gray;
+		box-sizing: border-box;
+		border-radius: 5px;
 
-	a {
-		padding: 10px 20px;
-		display: block;
-		color: $welcome-text-gray;
-		font-weight: 700;
+		&:hover {
+			border: 2px solid #ffffff;
+			color: #ffffff;
+		}
+
+		a {
+			padding: 10px 20px;
+			color: $welcome-text-gray;
+			font-weight: 700;
+		}
 	}
-}
 
-
-.signin-corner:hover {
-	border: 2px solid #ffffff;
-	color: #ffffff;
-}
-
-.guest-signup {
-	border-radius: 5px;
-	padding: 12px 20px;
-	background-color: $green-button;
-	margin-right: 10px;
-	color: #ffffff;
-	font-weight: bold;
-	float: right;
-
-	&:hover {
-		background-color: $green-button-hover;
+	.guest-signup {
+		border-radius: 5px;
+		padding: 12px 20px;
+		background-color: $green-button;
+		margin-right: 10px;
 		color: #ffffff;
-		cursor: pointer;
+		font-weight: bold;
+
+		&:hover {
+			background-color: $green-button-hover;
+			color: #ffffff;
+			cursor: pointer;
+		}
 	}
 }

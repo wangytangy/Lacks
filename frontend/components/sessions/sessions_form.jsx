@@ -72,7 +72,7 @@ class SessionForm extends React.Component {
 
         <div className="form">
 
-          <h1 className="header">Sign in to your team</h1>
+          <h1>Sign in to your team</h1>
           <h2 className="signup-instruction">enter a username and password</h2>
 
           <form className="form-field" onSubmit={this.handleSubmit}>
@@ -112,7 +112,7 @@ class SessionForm extends React.Component {
 
         <div className="form">
 
-          <h1 className="header">Sign Up for Lacks</h1>
+          <h1>Sign Up for Lacks</h1>
           <h2 className="signup-instruction">sign up with a username and password</h2>
 
           <form className="form-field" onSubmit={this.handleSubmit}>
