@@ -17,35 +17,35 @@
 .logo {
 	float: left;
 	font-weight: 700;
-}
 
-.logo a {
-	padding: 12px 22px;
-	display:block;
-	color: #E6E6E6;
+	a {
+		padding: 12px 22px;
+		display:block;
+		color: $welcome-text-gray;
+	}
 
-}
-
-.logo a:hover {
-	color: #ffffff;
+	&:hover {
+		color: #ffffff;
+	}
 }
 
 .signin-corner {
 	display: block;
 	background: transparent;
 
-	border: 2px solid #E6E6E6;
+	border: 2px solid $welcome-text-gray;
 	box-sizing: border-box;
 	border-radius: 5px;
 	float: right;
+
+	a {
+		padding: 10px 20px;
+		display: block;
+		color: $welcome-text-gray;
+		font-weight: 700;
+	}
 }
 
-.signin-corner a {
-	padding: 10px 20px;
-	display: block;
-	color: #E6E6E6;
-	font-weight: 700;
-}
 
 .signin-corner:hover {
 	border: 2px solid #ffffff;
@@ -53,22 +53,17 @@
 }
 
 .guest-signup {
-
-
 	border-radius: 5px;
 	padding: 12px 20px;
-	background-color: #52B78D;
-
+	background-color: $green-button;
 	margin-right: 10px;
-
 	color: #ffffff;
 	font-weight: bold;
-
 	float: right;
-}
 
-.guest-signup:hover {
-	background-color: #58C799;
-	color: #ffffff;
-	cursor: pointer;
+	&:hover {
+		background-color: $green-button-hover;
+		color: #ffffff;
+		cursor: pointer;
+	}
 }
