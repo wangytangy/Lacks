@@ -151,10 +151,10 @@ class ChannelIndex extends React.Component {
 
     let channelsIndex = this.mapChannelIndex();
     return(
-      <div className="channels group">
+      <div className="channels">
 
         <div className="channels-title">
-          <h1 className="channels-header">
+          <h1>
             <Link onClick={this.handleBrowseModalClick}>
               channels &#40;{channelsIndex.length}&#41;
             </Link>

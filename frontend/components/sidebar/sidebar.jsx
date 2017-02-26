@@ -41,13 +41,12 @@ class Sidebar extends React.Component {
         <div className="team-menu group" onClick={this.dropdownOpen}>
 
           <i className="material-icons bell">notifications_none</i>
-          <h1 className="sidebar-header">
+          <h1>
             Lacks
             <i className="material-icons arrow">keyboard_arrow_down</i>
           </h1>
 
-
-          <span className="sidebar-header-username">
+          <span>
             <i className="material-icons circle" id="circle">brightness_1</i>
             {this.props.currentUser.username}
           </span>
@@ -56,14 +55,12 @@ class Sidebar extends React.Component {
         <nav className={this.state.dropdown}>
           <ul className="profile-options">
             <li>
-              <div id="profile-options-header">
+              <div className="profile-options-header">
                 <Link to={ path }>
-                  <img
-                    id="profile-options-thumb"
-                    src={this.props.currentUser.profile_pic_url}
-                    />
+                  <img src={this.props.currentUser.profile_pic_url} />
                 </Link>
-                <div id="usernames">
+
+                <div className="usernames">
                   <span className="profile-options-username"><strong>{this.props.currentUser.username}</strong></span>
                   <span className="profile-options-handle">@{this.props.currentUser.username}</span>
                 </div>

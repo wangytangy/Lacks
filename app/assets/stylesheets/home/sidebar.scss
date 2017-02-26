@@ -1,74 +1,75 @@
-div.sidebar {
+.sidebar {
   width: 220px;
   height: 100vh;
 
-  background-color: #4D394B;
+  background-color: $slack-purple;
   box-sizing: border-box;
 
-  color: #AB9BA9;
+  color: $sidebar-header-lightpurple;
   box-sizing: border-box;
   position: relative;
 }
 
 //****** MENU ******
 
-div.team-menu {
+.team-menu {
   padding: 12px 18px;
+
+  &:hover {
+    background-color: $slack-purple-deep;
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &:hover i.arrow {
+    color: #fff;
+  }
+
+  h1 {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  span {
+    font-size: 14px;
+  }
 }
 
-div.team-menu:hover {
-  background-color: #3E313C;
-  color: #fff;
-  cursor: pointer;
-}
-
-div.team-menu:hover i.arrow {
-  color: #fff;
-}
-
-
-h1.sidebar-header {
-  color: #ffffff;
-  font-size: 20px;
-  font-weight: 700;
-}
-
-span.sidebar-header-username {
-  font-size: 14px;
-}
 
 i.circle {
   font-size: 10px;
   font-weight: bold;
   margin-right: 4px;
-  color: #AB9BA9;
+  color: $sidebar-header-lightpurple;
 }
 
 i.arrow {
   margin-left: 6px;
   font-size: 14px;
-  color: #AB9BA9;
+  color: $sidebar-header-lightpurple;
 }
 
 i.bell {
   float: right;
-  color: #AB9BA9;
+  color: $sidebar-header-lightpurple;
   display: none;
-}
-i.bell:hover {
-  float: right;
-  color: #fff;
+
+  &:hover {
+    float: right;
+    color: #fff;
+  }
 }
 
 
 //******************
 
 //****** dropdown ******
-nav.dropdown-menu {
+.dropdown-menu {
   display: none;
 }
 
-nav.dropdown-menu-open {
+.dropdown-menu-open {
   display: block;
   position: absolute;
   top: 65px;
@@ -88,14 +89,13 @@ nav.dropdown-menu-open {
   padding: 15px;
 }
 
-div.popover-mask {
+.popover-mask {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
-
 }
 
 //******************
@@ -104,163 +104,157 @@ div.popover-mask {
 //****** menu items ******
 
 
-#profile-options-header {
+
+.profile-options {
+  background: #fff;
+  border-radius: 5px;
+
+  li {
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    &:hover {
+      cursor: default
+    }
+
+    &:last-child {
+      margin-top: 10px;
+      padding: 0;
+
+      a {
+        display: block;
+        padding: 5px 10px;
+      }
+    }
+
+    &:last-child:hover {
+      background-color: $lightblue-button-hover;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+}
+
+.profile-options-header {
   display: flex;
   align-items: center;
   padding: 0 5px;
-}
 
-#usernames span {
-  display: block;
-  padding: 3px 10px;
-}
+  img {
+    border-radius: 5px;
+    width: 36px;
+    height: 36px;
+  }
 
-#profile-options-thumb {
-  border-radius: 5px;
+  .usernames {
+    span {
+      display: block;
+      padding: 3px 10px;
+    }
 
-  width: 36px;
-  height: 36px;
-}
+    .profile-options-handle {
+      font-size: 14px;
+      margin: -10px 0px 0px 0px;
+      color: #A0A0A2;
+    }
 
-
-
-ul.profile-options {
-  background: #fff;
-
-  color: #2c2d30;
-  border-radius: 5px;
-}
-
-ul.profile-options li {
-
-  border-radius: 5px;
-
-  box-sizing: border-box;
-}
-
-ul.profile-options li:hover {
-  cursor: default
-}
-
-
-.profile-options-handle {
-  font-size: 14px;
-  margin: -10px 0px 0px 0px;
-  color: #A0A0A2;
-}
-
-.profile-options-username {
-  font-weight: bold;
-}
-
-ul.profile-options li:last-child {
-  margin-top: 10px;
-  padding: 0;
-}
-
-ul.profile-options li:last-child a {
-  display: block;
-  padding: 5px 10px;
-}
-
-ul.profile-options li:last-child:hover {
-  background-color: #3aa3e3;
-  color: #fff;
-  cursor: pointer;
+    .profile-options-username {
+      font-weight: bold;
+    }
+  }
 }
 
 //****** CHANNEL INDEX ******
 
-div.channels {
+.channels {
   margin: 20px 0 0 0px;
   position: relative;
   font-size: 14px;
-  // font-weight: 600;
 }
 
-div.channels-title {
+.channels-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 199px;
-}
 
+  h1 {
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 0 0 0 20px;
 
-h1.channels-header {
-  text-transform: uppercase;
-  font-size: 13px;
-  font-weight: bold;
-  padding: 0 0 0 20px;
-}
-
-div.channels h1:hover {
-  color: #fff;
-  cursor: pointer;
+    &:hover {
+      color: #fff;
+      cursor: pointer;
+    }
+  }
 }
 
 i.create-channel {
   font-size: 17px;
   color: #AB9BA9;
+
+  &:hover {
+    color: #fff;
+    cursor: pointer;
+  }
+
+  &:hover h1.channels-header {
+    color: $sidebar-header-lightpurple;
+  }
 }
 
-i.create-channel:hover {
-  color: #fff;
-  cursor: pointer;
-}
-
-i.create-channel:hover h1.channels-header {
-  color: #AB9BA9;
-}
 
 
 //****ACTIVE CHANNEL ****
-ul.channels-index li.active a {
-  background-color: #4F9689;
-  color: #fff;
+.channels-index {
+  margin: 5px 0 0 0;
+
+  li:first-child a {
+    font-weight: bold;
+    color: #fff;
+    font-size: 18px;
+  }
+
+  .active a {
+    background-color: $green-active-channel;
+    color: #fff;
+
+    &:hover {
+      background-color: $green-active-channel;
+    }
+  }
+
+  & > li {
+    position: relative;
+
+    a {
+      color: $sidebar-header-lightpurple;
+      display: block;
+      border-radius: 0 5px 5px 0;
+      box-sizing: border-box;
+
+      margin: 0px 20px 0px 0;
+      padding: 3px 0 3px 20px;
+
+      display: flex;
+      align-items: baseline;
+    }
+
+    &:hover a {
+      background-color: $slack-purple-deep;
+    }
+  }
 }
 
-ul.channels-index li.active a:hover {
-  background-color: #4F9689;
-}
+
 // *************************
 
-ul.channels-index {
-  margin: 5px 0 0 0;
-}
-
-.channels-index li:first-child a {
-  font-weight: bold;
-  color: #fff;
-  font-size: 18px;
-}
-
-ul.channels-index > li {
-  position: relative;
-
-}
-
-ul.channels-index li a {
-  color: #AB9BA9;
-  display: block;
-  border-radius: 0 5px 5px 0;
-  margin: 0px 20px 0px 0;
-  padding: 3px 0 3px 20px;
-
-  display: flex;
-  align-items: baseline;
 
 
-  box-sizing: border-box;
-}
 
 
-ul.channels-index li:hover a {
-  background-color: #3E313C;
-}
-
-ul.channels-index li {
-
-}
 
 ul.channels-index i.delete-channel {
   display: none;

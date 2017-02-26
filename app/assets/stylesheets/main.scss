@@ -1,5 +1,3 @@
-
-
 @import "modules/_variables.scss";
 @import "modules/reset.css";
 
@@ -12,3 +10,22 @@
 //HOMEPAGE
 @import "home/home.scss";
 @import "home/sidebar.scss";
+
+//Channels
+@import "channel_container/channel_header.scss";
+@import "channel_container/current_channel.scss";
+
+//Message Container
+@import "messages/message_feed_container.scss";
+@import "messages/message_item.scss";
+@import "messages/footer_input.scss";
+
+//Modals
+@import "modals/browse_channels.scss";
+@import "modals/create_channel_form.scss";
+@import "modals/direct_messages_join.scss";
+@import "modals/image_upload.scss";
+
+//Popout
+@import "popout/popout_container.scss";
+@import "popout/profile_picture_form.scss";
