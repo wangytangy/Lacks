@@ -50,7 +50,7 @@ class Popout extends React.Component {
 
 
     return (
-      <div id="popout">
+      <div className="popout">
         <div id="popout-header">
           <i
             className="material-icons popout-exit"

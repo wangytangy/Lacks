@@ -1,4 +1,4 @@
-#popout {
+.popout {
   width: 50%;
 
   display: flex;
@@ -18,7 +18,7 @@
   color: #ccc;
 }
 
-#popout img {
+.popout img {
   width: 80%;
   margin: 0 auto;
   border: 1px dotted #ccc;
