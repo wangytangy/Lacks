@@ -68,8 +68,7 @@ class SessionForm extends React.Component {
   renderLogIn(errorsArr) {
 
     return (
-      <div id="splash" style={this.backgroundImg}>
-
+      <div className="splash" style={this.backgroundImg}>
         <div className="form">
 
           <h1>Sign in to your team</h1>
@@ -108,7 +107,7 @@ class SessionForm extends React.Component {
 
   renderSignUp(errorsArr) {
     return (
-      <div id="splash" style={this.backgroundImg}>
+      <div className="splash" style={this.backgroundImg}>
 
         <div className="form">
 
