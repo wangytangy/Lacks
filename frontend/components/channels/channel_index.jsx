@@ -103,9 +103,9 @@ class ChannelIndex extends React.Component {
 
         let highlightPresence;
         if (this.state.selected === `${channel.id}`) {
-          highlightPresence = "group active";
+          highlightPresence = "active";
         } else {
-          highlightPresence = "group default";
+          highlightPresence = "default";
         }
 
 
@@ -177,9 +177,7 @@ class ChannelIndex extends React.Component {
             highlight_off
           </i>
           <BrowseChannelContainer
-            onBrowseModalClose={this.onBrowseModalClose}
-
-            />
+            onBrowseModalClose={this.onBrowseModalClose} />
         </Modal>
 
         <Modal

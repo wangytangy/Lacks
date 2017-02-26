@@ -89,7 +89,7 @@ class DirectMessagesIndex extends React.Component {
 
     let dmIndex = this.mapDmIndex();
     return(
-      <div className="channels group">
+      <div className="channels">
 
         <div className="channels-title">
           <h1 className="channels-header">
