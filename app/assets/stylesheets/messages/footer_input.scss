@@ -1,4 +1,4 @@
-div.footer-input {
+.footer-input {
   margin: 10px 35px 10px 20px;
   height: 50px;
   display: block;
@@ -8,28 +8,28 @@ div.footer-input {
   width: 100%;
 }
 
-form.message-form-container {
+.message-form-container {
   width: 100%;
   position: relative;
   flex-direction: row-reverse;
   display: flex;
-}
 
-input.message-form-chatbar {
-  border: 2px solid #E0E0E0;
-  border-left: none;
-  border-radius: 0 5px 5px 0;
-  padding: 5px 10px 5px 15px;
-  box-sizing: border-box;
-  color: #3d3c40;
-  outline: none;
+  .message-form-chatbar {
+    border: 2px solid #E0E0E0;
+    border-left: none;
+    border-radius: 0 5px 5px 0;
+    padding: 5px 10px 5px 15px;
+    box-sizing: border-box;
+    color: #3d3c40;
+    outline: none;
 
-  width: 100%;
-  flex-grow: 1;
-}
+    width: 100%;
+    flex-grow: 1;
 
-.message-form-chatbar:focus {
-  border-color: #BBBDBF;
+    &:focus {
+      border-color: #BBBDBF;
+    }
+  }
 }
 
 .message-form-button {
@@ -51,66 +51,70 @@ input.message-form-chatbar {
 
 .message-form-chatbar:focus + .message-form-button:hover {
   border-color: #BBBDBF;
-  border-color: #53B68D;
+  border-color: $green-button;
 }
 
-.message-form-button i {
-  color: #BBBDBF;
+.message-form-button {
+  i {
+    color: #BBBDBF;
+  }
+
+  &:hover {
+    background-color: $green-button;
+    border-color: $green-button;
+    cursor: pointer;
+  }
+
+  &:hover i {
+    color: #fff;
+  }
 }
 
-.message-form-button:hover {
-  background-color: #53B68D;
-  border-color: #53B68D;
-  cursor: pointer;
-}
-.message-form-button:hover i {
-  color: #fff;
-}
 
 // ********IMAGE UPLOAD********
 
-.message-form nav.upload-dropdown {
-  display: none;
+.message-form {
+  .upload-dropdown {
+    display: none;
+  }
+  .upload-dropdown-open {
+    display: block;
+
+    position: absolute;
+
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+
+    left: 0px;
+    bottom: 45px;
+
+    color: #000;
+    background-color: #fff;
+  }
 }
 
-.message-form nav.upload-dropdown-open {
-  display: block;
 
-  position: absolute;
-
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-
-  left: 0px;
-  bottom: 45px;
-
-  color: #000;
-  background-color: #fff;
-}
-
-ul.upload-menu-list {
+.upload-menu-list {
   background: #fff;
   padding: 15px;
 
   color: #2c2d30;
   border-radius: 5px;
+
+  li {
+    border-radius: 5px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+
+    &:hover {
+      background-color: #3aa3e3;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
 }
 
-input.image-upload-input {
+.image-upload-input {
   width: 100%;
-}
-
-ul.upload-menu-list li {
-
-  border-radius: 5px;
-  padding: 5px 10px;
-
-  box-sizing: border-box;
-}
-
-ul.upload-menu-list li:hover {
-  background-color: #3aa3e3;
-  color: #fff;
-  cursor: pointer;
 }

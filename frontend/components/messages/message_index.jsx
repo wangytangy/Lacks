@@ -137,16 +137,16 @@ class MessageIndex extends React.Component {
 
     let path = `messages/${this.props.currentChannel.id}`;
     return(
-      <div id="message-feed">
-        <ul id="chat-messages">
-          <div id="message-feed-header">
+      <div className="message-feed">
+        <ul>
+          <div className="message-feed-header">
             <Link to={path}><h2>#{title}</h2></Link>
 
             <div className="feed-header-title">
               <p className="feed-header-creator">{channelCreator}</p>
               <p>{channelDescrip}</p>
-
             </div>
+
             <div className="feed-header-info">
               <p>{channelPurpose}</p>
               <p className="feed-header-purpose">{this.props.currentChannel.description}</p>

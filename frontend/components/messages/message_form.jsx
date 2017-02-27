@@ -125,7 +125,6 @@ class MessageForm extends React.Component {
     return(
       <div className="footer-input">
         <div className="message-form">
-
           <form onSubmit={this.handleSubmit} className="message-form-container">
             <input
               type="text"

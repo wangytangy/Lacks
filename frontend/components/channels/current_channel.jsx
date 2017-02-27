@@ -60,7 +60,7 @@ class CurrentChannel extends React.Component {
   render() {
     return(
       <div className="current-channel">
-        <div id="current-channel-main">
+        <div className="current-channel-main">
           <ChannelHeaderContainer leaveChannel={this.handleLeaveChannel}/>
           <MessageIndexContainer />
           <MessageFormContainer />

@@ -18,7 +18,6 @@ class DirectMessagesIndex extends React.Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    // this.props.fetchDirectMessages();
     this.setState({ selected: nextProps.params.id });
   }
 
@@ -97,10 +96,8 @@ class DirectMessagesIndex extends React.Component {
               Direct Messages &#40;{dmIndex.length}&#41;
             </Link>
           </h1>
-          <i
-            className="material-icons create-channel"
-            onClick={this.openCreateModal}
-          >
+          <i className="material-icons create-channel"
+            onClick={this.openCreateModal}>
             add_circle_outline
           </i>
         </div>
@@ -112,14 +109,13 @@ class DirectMessagesIndex extends React.Component {
           onAfterOpen={this.onModalOpen}
           onRequestClose={this.onCreateDirectMessageClose}
           contentLabel = "create-dm-modal"
-          style={browseModal}
-        >
-        <i className="material-icons exit-icon" onClick={this.onCreateDirectMessageClose}>
+          style={browseModal}>
+        <i className="material-icons exit-icon"
+          onClick={this.onCreateDirectMessageClose}>
           highlight_off
         </i>
           <CreateDirectMessagesContainer
-            onCreateDirectMessageClose={this.onCreateDirectMessageClose}
-            />
+            onCreateDirectMessageClose={this.onCreateDirectMessageClose} />
         </Modal>
       </div>
     );

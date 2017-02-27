@@ -36,18 +36,15 @@ class ChannelHeader extends React.Component {
 
 
     return(
-      <div className="channel-header-container group">
+      <div className="channel-header-container">
         <div className="header-left">
 
-          <div className="header-title">
-            <h1>{headerTitle}</h1>
-          </div>
+          <h1>{headerTitle}</h1>
 
           <div className="header-info">
 
             <i className="material-icons star" id="star">star_border</i>
 
-            <span className="topic-divider">|</span>
             <i className="material-icons person">person_outline</i>
             <span className="header-status-text">{memberCount}</span>
 
@@ -59,6 +56,7 @@ class ChannelHeader extends React.Component {
             <span className="header-status-text">{this.props.currentChannel.description}</span>
           </div>
         </div>
+
         <div className="header-right">
           <button
             onClick={() => this.props.leaveChannel(this.props.currentChannel.id)}
