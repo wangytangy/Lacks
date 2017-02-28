@@ -58,9 +58,9 @@ class BrowseChannel extends React.Component {
         }
         let liElement = (
           <li key={i}>
-            <div className="search-result group">
+            <div className="search-result">
 
-              <div className="search-result-topline group">
+              <div className="search-result-topline">
                 <h3># {channel.title}</h3>
                 <div className="search-members-count">
                   <i className="material-icons">person_outline</i>

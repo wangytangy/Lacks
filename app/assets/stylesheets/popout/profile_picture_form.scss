@@ -34,17 +34,17 @@
   z-index: 11;
   opacity: 100;
   transition: opacity 1s;
-
 }
 
 .profile-picture-modal-exit {
   display: inherit;
+
+  &:hover {
+    cursor: pointer;
+    color: #ccc;
+  }
 }
 
-.profile-picture-modal-exit:hover {
-  cursor: pointer;
-  color: #ccc;
-}
 
 .profile-pic-update {
   display: none;
@@ -75,37 +75,39 @@
 
 
 
-#update-picture-container label {
-  width: 100%;
-  height: 100%;
-}
-
-#update-picture-container:hover {
-
-  border: 3px solid #2d9ee0;
-  box-sizing: border-box;
-  cursor: pointer;
-
+#update-picture-container {
   label {
+    width: 100%;
+    height: 100%;
+  }
+
+  &:hover {
+
+    border: 3px solid #2d9ee0;
+    box-sizing: border-box;
     cursor: pointer;
-    filter: opacity(0.5);
-  }
 
-  span {
-    display: block;
-    position: absolute;
-    font-size: 16px;
-    font-weight: bold;
-    color: #fff;
-    z-index: 100;
-    margin: 0 10px 0 10px;
-  }
+    label {
+      cursor: pointer;
+      filter: opacity(0.5);
+    }
 
-  i {
-    display: block;
-    position: absolute;
-    color: #fff;
-    z-index: 100;
-    top: 45px;
+    span {
+      display: block;
+      position: absolute;
+      font-size: 16px;
+      font-weight: bold;
+      color: #fff;
+      z-index: 100;
+      margin: 0 10px 0 10px;
+    }
+
+    i {
+      display: block;
+      position: absolute;
+      color: #fff;
+      z-index: 100;
+      top: 45px;
+    }
   }
 }

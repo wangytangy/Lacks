@@ -28,13 +28,13 @@
   display: flex;
   justify-content: center;
   align-items: baseline;
-
   margin: 20px 0;
+
+  i {
+    margin-left: 5px;
+  }
 }
 
-#popout-intro i {
-  margin-left: 5px;
-}
 
 #popout-edit-buttons {
   display: flex;
@@ -49,11 +49,11 @@
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fbfbfa;
-}
 
-#edit-profile:hover {
-  background-color: #fff;
-  color: #38A2E0;
-  text-decoration: underline;
-  cursor: pointer;
+  &:hover {
+    background-color: #fff;
+    color: $lightblue-button-hover;
+    text-decoration: underline;
+    cursor: pointer;
+  }
 }

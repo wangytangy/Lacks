@@ -1,87 +1,91 @@
-div.browse-dm {
+.browse-dm {
   margin: 100px auto;
   width: 640px;
-
   position: relative;
-}
 
-div.browse-dm h1 {
-  font-size: 36px;
-  font-weight: bold;
-  margin: 0 0 30px 0;
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0 0 30px 0;
+  }
 }
 
 // SELECTED USERS IN DM search
 
-
-div.dm-selected-container {
+.dm-selected-container {
   display: flex;
   justify-content: flex-start;
   flex-wrap: wrap;
 }
 
-ul.dm-search-results {
+.dm-search-results {
   overflow: auto;
   height: 510px;
+
+  li {
+    transition: background-color 0.4s;
+
+    &:hover {
+      background-color: $search-result-blue-hover;
+      cursor: pointer;
+    }
+  }
 }
 
-div.dm-search-result {
+.dm-search-result {
   padding: 10px 15px;
-  color: #67686E;
+  color: $search-result-text-gray;
   font-size: 18px;
   font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &:hover i {
+    display: block;
+    cursor: pointer;
+    color: $dm-search-result-arrow-blue;
+    font-size: 20px;
+  }
 }
 
-div.dm-search-result:hover {
-  cursor: pointer;
-}
-
-div.dm-search-result:hover i {
-  display: block;
-  cursor: pointer;
-  color: #439fe0;
-  font-size: 20px;
-}
-
-
-
-.dm-search-result-topline h3 {
-  float: left;
-}
-
-.dm-search-result-topline i {
-  float: right;
-  display: none
+.dm-search-result-topline {
+  display: flex;
+  justify-content: space-between;
+  
+  i {
+    display: none
+  }
 }
 
 
-
-li.dm-selected-item {
+.dm-selected-item {
   list-style: none;
   border-radius: 5px;
-  background-color: #3aa3e3;
+  background-color: $dm-selected-item-blue;
   margin: 5px 3px;
   padding: 3px 8px;
   box-sizing: border-box;
 
   color: #fff;
   flex-shrink: 1;
+
+  &:hover {
+    background-color: $dm-selected-item-blue-hover;
+    cursor: pointer;
+  }
 }
 
-li.dm-selected-item:hover {
-  background-color: #0B91E3;
-  cursor: pointer;
-}
 
-div.dm-details-container {
+.dm-details-container {
   display: flex;
   align-items: center;
 
-}
-
-div.dm-details-container p {
-  margin-right: 5px;
-  font-size: 11px;
+  p {
+    margin-right: 5px;
+    font-size: 11px;
+  }
 }
 
 i.clear {
@@ -91,24 +95,31 @@ i.clear {
 
 // *****************************
 
-div.dm-subheader {
+.dm-subheader {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 10px 10px;
 }
 
-div.browse-dm h2 {
-  padding: 0 10px 0 0;
-  margin: 0 0 0 0;
-  font-size: 14px;
-  color: #67686E;
-  font-weight: bold;
+.browse-dm {
+  h2 {
+    padding: 0 10px 0 0;
+    margin: 0 0 0 0;
+    font-size: 14px;
+    color: $search-result-text-gray;
+    font-weight: bold;
+  }
+
+  ul {
+    overflow: auto;
+    height: 510px;
+  }
 }
 
-button#join-dm {
+#join-dm {
   outline: none;
-  background: #2ab27b;
+  background: $green-button;
   color: #fff;
   padding: 10px 15px;
   border-radius: 5px;
@@ -117,20 +128,15 @@ button#join-dm {
   position: absolute;
   top: 5px;
   right: 17px;
+
+  &:hover {
+    outline: none;
+    background: $green-button-hover;
+    cursor: pointer;
+  }
 }
 
-button#join-dm:hover {
-  outline: none;
-  background: #0DA668;
-  cursor: pointer;
-}
-
-div.browse-dm ul {
-  overflow: auto;
-  height: 510px;
-}
-
-input.dm-search {
+.dm-search {
   width: 91%;
   border-radius: 5px;
   height: 50px;
@@ -140,36 +146,25 @@ input.dm-search {
   outline: none;
 
   transition: border-color 0.6s;
+
+  &:hover {
+    border-color: $blue-border-hover;
+    outline: none;
+  }
 }
 
-input.dm-search:hover {
-  border-color: #38A2E0;
-  outline: none;
-}
 
-div.browse-dm-searchbar {
+.browse-dm-searchbar {
   position: relative;
+
+  i {
+    position: absolute;
+    left: 10px;
+    top: 15px;
+    font-size: 32px;
+    color: #ccc;
+  }
 }
-
-div.browse-dm-searchbar i {
-  position: absolute;
-  left: 10px;
-  top: 15px;
-  font-size: 32px;
-  color: #ccc;
-}
-
-.dm-search-results > li {
-  transition: background-color 0.4s;
-}
-
-.dm-search-results > li:hover {
-  background-color: #EDF7FD;
-  cursor: pointer;
-}
-
-
-
 
 //errors
 
@@ -179,11 +174,11 @@ div.browse-dm-searchbar i {
   display: flex;
   flex-direction: row-reverse;
   padding-right: 10px;
-}
 
-.browse-dm-errors span {
-  color: #E85D72;
-  display: flex;
-  align-self: flex-end;
-  font-size: 12px;
+  span {
+    color: #E85D72;
+    display: flex;
+    align-self: flex-end;
+    font-size: 12px;
+  }
 }

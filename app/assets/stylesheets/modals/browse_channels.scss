@@ -13,7 +13,7 @@
     padding: 0 10px;
     margin: 25px 0 10px 0;
     font-size: 14px;
-    color: #67686E;
+    color: $search-result-text-gray;
     font-weight: bold;
   }
 
@@ -27,7 +27,7 @@
       padding: 0px 10px;
 
       &:hover {
-        background-color: #EDF7FD;
+        background-color: $search-result-blue-hover;
         cursor: default;
       }
 
@@ -39,7 +39,7 @@
 }
 
 
-input.browse-search {
+.browse-search {
   width: 91%;
   border-radius: 5px;
   height: 50px;
@@ -50,12 +50,12 @@ input.browse-search {
   transition: border-color 0.6s;
 
   &:hover {
-    border-color: #38A2E0;
+    border-color: $lightblue-button-hover;
   }
 }
 
 
-div.browse-channel-searchbar {
+.browse-channel-searchbar {
   position: relative;
 
   i {
@@ -67,11 +67,12 @@ div.browse-channel-searchbar {
   }
 }
 
-div.search-result {
+.search-result {
   padding: 10px 10px;
-  color: #67686E;
+  color: $search-result-text-gray;
   font-size: 18px;
   font-weight: bold;
+  display: block;
 
   &:hover {
     cursor: default;
@@ -79,8 +80,9 @@ div.search-result {
 }
 
 
-div.search-result-topline {
-  float: left;
+.search-result-topline {
+  display: flex;
+  justify-content: space-between;
   width: 100%;
 
   h3 {
@@ -88,7 +90,6 @@ div.search-result-topline {
   }
 
   .search-members-count {
-    float: right;
     display: flex;
     align-items: center;
   }
@@ -103,8 +104,9 @@ div.search-result-topline {
 }
 
 .search-result-bottomline {
-  float: left;
   width: 100%;
+  display: flex;
+  justify-content: space-between;
 
   i {
     font-size: 14px;
@@ -120,11 +122,9 @@ div.search-result-topline {
   button {
     display: none;
     cursor: pointer;
-    float: right;
     align-items: center;
-    color: #38A2E0;
+    color: $lightblue-button;
     font-size: 15px;
     font-weight: normal;
-
   }
 }
