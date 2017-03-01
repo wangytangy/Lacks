@@ -9,7 +9,6 @@
 
 User.destroy_all
 
-
 picture_results = HTTParty.get("https://randomuser.me/api/?results=22")
 admin = User.create!(username: "admin", email: "admin@yamail.com", password: "password1", profile_pic_url: picture_results["results"][0]["picture"]["large"])
 guest = User.create!(username: "guest", email: "guest@gmail.com", password: "guestpassword", profile_pic_url: picture_results["results"][1]["picture"]["large"])
@@ -122,51 +121,23 @@ ChannelMembership.create!(member_id: all_users[5].id, channel_id: dm3.id)
 ChannelMembership.create!(member_id: all_users[4].id, channel_id: dm3.id)
 
 # Messages
-message1 = Message.create!(
-            body: "Welcome to Lacks",
-            author_id: admin.id,
-            channel_id: general.id
-          )
+Message.destroy_all
 
-Message.create!(
-  body: "Click on the \"Channels\" sidebar to search all channels",
-  author_id: admin.id,
-  channel_id: general.id
-)
+messages = [
+  "Welcome to Lacks",
+  "Click on the \"Channels\" sidebar to search all channels",
+  "Click on the \"+\" icon to create your own channel!",
+  "All channels are public and can be joined by anyone",
+  "Direct Messages can have up to 8 users in a conversation",
+  "If you type \"\\giphy\", a random GIF will be generated",
+  "Typing \"/giphy\" with an additional tagname will generate a GIF by that tagname: ",
+   "for example: \"/giphy New York City\""
+]
 
-Message.create!(
-  body: "Click on the \"+\" icon to create your own channel!",
-  author_id: admin.id,
-  channel_id: general.id
-)
-
-Message.create!(
-  body: "All channels are public and can be joined by anyone",
-  author_id: admin.id,
-  channel_id: general.id
-)
-
-Message.create!(
-  body: "Direct Messages can have up to 8 users in a conversation",
-  author_id: admin.id,
-  channel_id: general.id
-)
-
-Message.create!(
-  body: "If you type \"\\giphy\", a random GIF will be generated",
-  author_id: admin.id,
-  channel_id: general.id
-)
-
-Message.create!(
-  body: "Typing \"/giphy\" with an additional tagname will generated
-  a GIF by that tagname: ",
-  author_id: admin.id,
-  channel_id: general.id
-)
-
-Message.create!(
-  body: "for example: \"/giphy New York City\"",
-  author_id: admin.id,
-  channel_id: general.id
-)
+messages.each do |body|
+  Message.create!(
+    body: body,
+    author_id: admin.id,
+    channel_id: general.id
+  )
+end
