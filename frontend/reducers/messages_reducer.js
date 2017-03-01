@@ -11,7 +11,6 @@ function MessagesReducer(state = {}, action) {
     case RECEIVE_NEW_MESSAGE:
       let deepCopy = merge({}, state);
       deepCopy[action.message.id] = action.message;
-      debugger
       return deepCopy;
     default:
       return state;

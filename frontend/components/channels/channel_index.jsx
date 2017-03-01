@@ -10,21 +10,18 @@ class ChannelIndex extends React.Component {
   constructor(props) {
     super(props);
     this.mapChannelIndex = this.mapChannelIndex.bind(this);
-
     this.handleModalClick = this.handleModalClick.bind(this);
     this.onModalOpen = this.onModalOpen.bind(this);
     this.onModalClose = this.onModalClose.bind(this);
-
     this.handleBrowseModalClick = this.handleBrowseModalClick.bind(this);
     this.onBrowseModalClose = this.onBrowseModalClose.bind(this);
-
     this.handleDelete = this.handleDelete.bind(this);
-
-    this.state = { modalOpen: false, browseModalOpen: false, selected: this.props.params.id };
     this.redirect = this.redirect.bind(this);
     this.setSelected = this.setSelected.bind(this);
     this.boundFetchAllChannels = this.boundFetchAllChannels.bind(this);
     this.boundRedirectToGeneral = this.boundRedirectToGeneral.bind(this);
+
+    this.state = { modalOpen: false, browseModalOpen: false, selected: this.props.params.id };
   }
 
   boundFetchAllChannels() {

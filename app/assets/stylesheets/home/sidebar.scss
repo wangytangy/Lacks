@@ -172,7 +172,8 @@ i.bell {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 199px;
+  width: 200px;
+  margin-right: 20px;
 
   h1 {
     text-transform: uppercase;
@@ -189,7 +190,7 @@ i.bell {
 
 i.create-channel {
   font-size: 17px;
-  color: #AB9BA9;
+  color: $sidebar-header-lightpurple;
 
   &:hover {
     color: #fff;
