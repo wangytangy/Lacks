@@ -25,8 +25,6 @@ all_users << guest
     profile_pic_url: picture_results["results"][i + 2]["picture"]["large"])
 end
 
-
-
 # CHANNELS
 
 Channel.destroy_all
@@ -72,8 +70,6 @@ end
 all_users[9..11].each do |user|
   ChannelMembership.create!(member_id: user.id, channel_id: channel7.id)
 end
-
-
 
 #grab samples of users and join them to random DM's
 dm1_title = all_users[19].username + "," + all_users[18].username + "," + all_users[17].username
@@ -124,3 +120,53 @@ ChannelMembership.create!(member_id: all_users[7].id, channel_id: dm3.id)
 ChannelMembership.create!(member_id: all_users[6].id, channel_id: dm3.id)
 ChannelMembership.create!(member_id: all_users[5].id, channel_id: dm3.id)
 ChannelMembership.create!(member_id: all_users[4].id, channel_id: dm3.id)
+
+# Messages
+message1 = Message.create!(
+            body: "Welcome to Lacks",
+            author_id: admin.id,
+            channel_id: general.id
+          )
+
+Message.create!(
+  body: "Click on the \"Channels\" sidebar to search all channels",
+  author_id: admin.id,
+  channel_id: general.id
+)
+
+Message.create!(
+  body: "Click on the \"+\" icon to create your own channel!",
+  author_id: admin.id,
+  channel_id: general.id
+)
+
+Message.create!(
+  body: "All channels are public and can be joined by anyone",
+  author_id: admin.id,
+  channel_id: general.id
+)
+
+Message.create!(
+  body: "Direct Messages can have up to 8 users in a conversation",
+  author_id: admin.id,
+  channel_id: general.id
+)
+
+Message.create!(
+  body: "If you type \"\\giphy\", a random GIF will be generated",
+  author_id: admin.id,
+  channel_id: general.id
+)
+
+Message.create!(
+  body: "Typing \"/giphy\" with an additional tagname will generated
+  a GIF by that tagname: ",
+  author_id: admin.id,
+  channel_id: general.id
+)
+
+Message.create!(
+  body: "for example: \"/giphy New York City\"",
+  author_id: admin.id,
+  channel_id: general.id
+)
