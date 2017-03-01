@@ -55,9 +55,6 @@
   height: 192px;
   background-color: #000;
   position: relative;
-}
-
-#update-picture-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -71,11 +68,6 @@
     display: none;
   }
 
-}
-
-
-
-#update-picture-container {
   label {
     width: 100%;
     height: 100%;
@@ -83,7 +75,7 @@
 
   &:hover {
 
-    border: 3px solid #2d9ee0;
+    border: 3px solid $lightblue-button;
     box-sizing: border-box;
     cursor: pointer;
 
