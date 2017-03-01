@@ -40,7 +40,3 @@ class Splash extends React.Component {
 }
 
 export default Splash;
-
-// if (!this.props.usersChannels.length) {
-//   return <MDSpinner className="spinner" size={100} />;
-// }
