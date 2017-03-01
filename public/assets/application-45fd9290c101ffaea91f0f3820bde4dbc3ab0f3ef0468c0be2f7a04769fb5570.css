@@ -1,0 +1,1576 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+
+
+ *
+ */
+
+@import url(modules/reset.css);
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/header.scss */
+.greeting {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* line 15, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/header.scss */
+.logo {
+  font-weight: 700;
+}
+/* line 18, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/header.scss */
+.logo a {
+  padding: 12px 22px;
+  display: block;
+  color: #E6E6E6;
+}
+/* line 23, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/header.scss */
+.logo a:hover {
+  color: #ffffff;
+}
+
+/* line 29, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/header.scss */
+.signin-corner {
+  display: flex;
+}
+/* line 32, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/header.scss */
+.signin-corner .login-corner {
+  background: transparent;
+  border: 2px solid #E6E6E6;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+/* line 38, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/header.scss */
+.signin-corner .login-corner:hover {
+  border: 2px solid #ffffff;
+  color: #ffffff;
+}
+/* line 43, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/header.scss */
+.signin-corner .login-corner a {
+  padding: 10px 20px;
+  color: #E6E6E6;
+  font-weight: 700;
+}
+/* line 50, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/header.scss */
+.signin-corner .guest-signup {
+  border-radius: 5px;
+  padding: 12px 20px;
+  background-color: #53B68D;
+  margin-right: 10px;
+  color: #ffffff;
+  font-weight: bold;
+}
+/* line 58, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/header.scss */
+.signin-corner .guest-signup:hover {
+  background-color: #58C799;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+.form {
+  background-color: #fff;
+  border-radius: 5px;
+  width: 640px;
+  height: 400px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+/* line 10, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+.form h1 {
+  font-size: 36px;
+  text-align: center;
+  margin: 0 0 20px 0;
+  color: #2c2d30;
+}
+/* line 17, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+.form h2 {
+  font-size: 14px;
+  text-align: center;
+  color: #2c2d30;
+}
+/* line 23, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+.form .guest-login {
+  text-align: center;
+  margin: 20px;
+  font-size: 14px;
+}
+/* line 28, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+.form .guest-login a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* line 36, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+.form-field label {
+  text-align: center;
+  display: block;
+}
+/* line 41, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+.form-field input {
+  display: block;
+  width: 360px;
+  height: 50px;
+  font-size: 24px;
+  padding: 5px 10px;
+  margin: 20px auto;
+  color: #2c2d30;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 1s;
+}
+/* line 58, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+.form-field input:hover {
+  border-color: #38A2E0;
+}
+/* line 63, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+.form-field .submit {
+  display: block;
+  margin: 0 auto;
+  border: 1px solid #38A2E0;
+  width: 360px;
+  height: 50px;
+  border-radius: 5px;
+  background-color: #38A2E0;
+  color: #fff;
+  font-size: 24px;
+  transition: background-color 1s;
+}
+/* line 77, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/sessions.scss */
+.form-field .submit:hover {
+  background-color: #38BCE0;
+  border: 1px solid #38BCE0;
+  cursor: pointer;
+}
+
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/splash_page.scss */
+.splash {
+  height: 100vh;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* line 10, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/splash_page.scss */
+.splash .signup-bg {
+  height: 200px;
+  width: 700px;
+  padding: 20px;
+  position: absolute;
+  top: 53%;
+  left: 50%;
+  margin-left: -350px;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* line 28, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/splash_page.scss */
+.splash .signup-bg:before {
+  content: "";
+  background-color: #424242;
+  display: block;
+  opacity: 0.7;
+  z-index: -1;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+/* line 44, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/splash_page.scss */
+.splash .signup-bg h1 {
+  align-self: flex-start;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 42px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+/* line 53, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/splash_page.scss */
+.splash .signup-bg .signup-button {
+  background-color: #53B68D;
+  border-radius: 5px;
+  width: 185px;
+  height: 50px;
+}
+/* line 60, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/splash_page.scss */
+.splash .signup-bg .signup-button:hover {
+  background-color: #58C799;
+  color: #ffffff;
+}
+/* line 65, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/splash_page.scss */
+.splash .signup-bg .signup-button a {
+  display: block;
+  padding: 10px 20px;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* line 3, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/errors.scss */
+ul.errors-list {
+  list-style: none;
+  position: absolute;
+  top: 400px;
+  left: 50%;
+  margin-left: -130px;
+}
+
+/* line 11, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/welcome/errors.scss */
+li.auth-errors {
+  display: block;
+  background-color: #eee;
+  padding: 5px;
+  font-size: 14px;
+  margin: 5px auto;
+  text-align: center;
+  width: 250px;
+  border-radius: 5px;
+}
+
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/home.scss */
+#root {
+  width: 100%;
+}
+
+/* line 5, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/home.scss */
+.home-container {
+  display: flex;
+  width: 100%;
+}
+
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.sidebar {
+  width: 220px;
+  height: 100vh;
+  background-color: #4D394B;
+  box-sizing: border-box;
+  color: #AB9BA9;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* line 15, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.team-menu {
+  padding: 12px 18px;
+}
+/* line 18, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.team-menu:hover {
+  background-color: #3E313C;
+  color: #fff;
+  cursor: pointer;
+}
+/* line 24, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.team-menu:hover i.arrow {
+  color: #fff;
+}
+/* line 28, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.team-menu h1 {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+}
+/* line 34, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.team-menu span {
+  font-size: 14px;
+}
+
+/* line 39, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+i.circle {
+  font-size: 10px;
+  font-weight: bold;
+  margin-right: 4px;
+  color: #95CB95;
+}
+
+/* line 46, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+i.arrow {
+  margin-left: 6px;
+  font-size: 14px;
+  color: #AB9BA9;
+}
+
+/* line 52, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+i.bell {
+  float: right;
+  color: #AB9BA9;
+  display: none;
+}
+/* line 57, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+i.bell:hover {
+  float: right;
+  color: #fff;
+}
+
+/* line 64, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.dropdown-menu {
+  display: none;
+}
+
+/* line 68, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.dropdown-menu-open {
+  display: block;
+  position: absolute;
+  top: 65px;
+  left: 18px;
+  z-index: 100;
+  box-sizing: border-box;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  box-shadow: 0px 0px 7px 0px rgba(0, 0, 0, 0.5);
+  width: 220px;
+  color: #000;
+  background-color: #fff;
+  padding: 15px;
+}
+
+/* line 88, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.popover-mask {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* line 104, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.profile-options {
+  background: #fff;
+  border-radius: 5px;
+}
+/* line 108, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.profile-options li {
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+/* line 112, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.profile-options li:hover {
+  cursor: default;
+}
+/* line 116, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.profile-options li:last-child {
+  margin-top: 10px;
+  padding: 0;
+}
+/* line 120, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.profile-options li:last-child a {
+  display: block;
+  padding: 5px 10px;
+}
+/* line 126, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.profile-options li:last-child:hover {
+  background-color: #38BCE0;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* line 134, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.profile-options-header {
+  display: flex;
+  align-items: center;
+  padding: 0 5px;
+}
+/* line 139, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.profile-options-header img {
+  border-radius: 5px;
+  width: 36px;
+  height: 36px;
+}
+/* line 146, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.profile-options-header .usernames span {
+  display: block;
+  padding: 3px 10px;
+}
+/* line 151, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.profile-options-header .usernames .profile-options-handle {
+  font-size: 14px;
+  margin: -10px 0px 0px 0px;
+  color: #A0A0A2;
+}
+/* line 157, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.profile-options-header .usernames .profile-options-username {
+  font-weight: bold;
+}
+
+/* line 165, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.channels {
+  margin: 20px 0 0 0px;
+  position: relative;
+  font-size: 14px;
+}
+
+/* line 171, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.channels-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 200px;
+  margin-right: 20px;
+}
+/* line 178, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.channels-title h1 {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 0 0 0 20px;
+}
+/* line 184, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.channels-title h1:hover {
+  color: #fff;
+  cursor: pointer;
+}
+
+/* line 191, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+i.create-channel {
+  font-size: 17px;
+  color: #AB9BA9;
+}
+/* line 195, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+i.create-channel:hover {
+  color: #fff;
+  cursor: pointer;
+}
+/* line 200, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+i.create-channel:hover h1.channels-header {
+  color: #AB9BA9;
+}
+
+/* line 206, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.channels-index {
+  margin: 5px 0 0 0;
+}
+/* line 209, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.channels-index li:first-child a {
+  font-weight: bold;
+  color: #fff;
+  font-size: 18px;
+}
+/* line 215, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.channels-index .active a {
+  background-color: #4F9689;
+  color: #fff;
+}
+/* line 219, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.channels-index .active a:hover {
+  background-color: #4F9689;
+}
+/* line 224, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.channels-index > li {
+  position: relative;
+}
+/* line 227, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.channels-index > li a {
+  color: #AB9BA9;
+  display: block;
+  border-radius: 0 5px 5px 0;
+  box-sizing: border-box;
+  margin: 0px 20px 0px 0;
+  padding: 3px 0 3px 20px;
+  display: flex;
+  align-items: baseline;
+}
+/* line 240, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.channels-index > li:hover a {
+  background-color: #3E313C;
+}
+/* line 244, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.channels-index > li:hover i.delete-channel {
+  display: block;
+  cursor: pointer;
+}
+/* line 249, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.channels-index > li i.delete-channel {
+  display: none;
+  font-size: 14px;
+  position: absolute;
+  left: 182px;
+  top: 7px;
+}
+/* line 256, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.channels-index > li i.delete-channel:hover {
+  color: #fff;
+}
+
+/* line 265, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+i.create-channel {
+  font-size: 17px;
+  color: #AB9BA9;
+}
+/* line 269, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+i.create-channel:hover {
+  color: #fff;
+  cursor: pointer;
+}
+/* line 274, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+i.create-channel:hover h1 {
+  color: #AB9BA9;
+}
+
+/* line 282, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.dm-index {
+  margin: 5px 0 0 0;
+}
+/* line 284, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.dm-index li {
+  position: relative;
+}
+/* line 287, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.dm-index li a {
+  color: #AB9BA9;
+  display: block;
+  border-radius: 0 5px 5px 0;
+  margin: 0px 20px 0px 0;
+  padding: 3px 0 3px 20px;
+  display: flex;
+  align-items: baseline;
+  box-sizing: border-box;
+}
+/* line 299, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.dm-index li:hover a {
+  background-color: #3E313C;
+}
+/* line 303, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.dm-index li span {
+  margin-right: 5px;
+  background-color: #AB9BA9;
+  padding: 0px 4px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #4D394B;
+  border-radius: 2px;
+}
+/* line 314, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.dm-index .active a {
+  background-color: #4F9689;
+  color: #fff;
+}
+/* line 318, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.dm-index .active a:hover {
+  background-color: #4F9689;
+}
+/* line 323, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.dm-index i.delete-channel {
+  display: none;
+  font-size: 14px;
+  position: absolute;
+  left: 182px;
+  top: 7px;
+}
+/* line 330, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.dm-index i.delete-channel:hover {
+  color: #fff;
+}
+/* line 335, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/home/sidebar.scss */
+.dm-index li:hover i.delete-channel {
+  display: block;
+  cursor: pointer;
+}
+
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+.channel-header-container {
+  border-bottom: 1px solid #eee;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* line 11, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+.header-left {
+  height: 60px;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+/* line 16, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+.header-left h1 {
+  font-weight: bold;
+  font-size: 18px;
+  margin: 0 0 5px 0;
+}
+/* line 22, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+.header-left .header-info {
+  display: flex;
+  align-items: center;
+}
+/* line 26, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+.header-left .header-info > * {
+  display: block;
+  margin-right: 5px;
+}
+/* line 31, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+.header-left .header-info i.star {
+  font-size: 12px;
+  display: none;
+}
+/* line 36, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+.header-left .header-info i.circle {
+  font-size: 12px;
+  color: #95CB95;
+}
+/* line 41, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+.header-left .header-info i.person {
+  font-size: 15px;
+}
+/* line 45, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+.header-left .header-info .header-status-text {
+  font-size: small;
+  color: #757678;
+}
+/* line 50, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+.header-left .header-info .topic-divider {
+  color: #757678;
+  font-weight: lighter;
+  font-size: 12px;
+}
+
+/* line 58, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+.header-right {
+  height: 60px;
+  box-sizing: border-box;
+  align-items: center;
+  padding: 15px 20px;
+}
+/* line 64, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+.header-right .leave-button-block {
+  display: none;
+}
+/* line 68, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+.header-right .leave-button-active {
+  background-color: #fff;
+  height: 30px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+}
+/* line 77, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/channel_header.scss */
+.header-right .leave-button-active:hover {
+  background-color: #38A2E0;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.5s;
+}
+
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/current_channel.scss */
+.current-channel {
+  min-width: 900px;
+  flex-grow: 1;
+  height: 100vh;
+  display: flex;
+}
+/* line 7, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/channel_container/current_channel.scss */
+.current-channel .current-channel-main {
+  width: 100%;
+}
+
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_feed_container.scss */
+.message-feed {
+  display: block;
+  overflow-y: scroll;
+  height: calc(100% - 150px);
+  width: 100%;
+  color: #2c2d30;
+}
+
+/* line 11, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_feed_container.scss */
+.message-feed-header {
+  padding: 40px 0 20px 15px;
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+/* line 17, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_feed_container.scss */
+.message-feed-header h2 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+/* line 22, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_feed_container.scss */
+.message-feed-header h2:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+/* line 28, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_feed_container.scss */
+.message-feed-header a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* line 34, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_feed_container.scss */
+.feed-header-title {
+  display: flex;
+  width: 50%;
+}
+/* line 38, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_feed_container.scss */
+.feed-header-title .feed-header-creator {
+  color: #E85D72;
+  margin-right: 5px;
+}
+
+/* line 45, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_feed_container.scss */
+.feed-header-info {
+  display: flex;
+}
+/* line 48, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_feed_container.scss */
+.feed-header-info .feed-header-purpose {
+  margin-left: 5px;
+  font-style: italic;
+}
+
+/* line 3, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_item.scss */
+li.message-item-container:hover {
+  background-color: #f9f9f9;
+}
+/* line 7, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_item.scss */
+li.message-item-container .message-detail {
+  display: flex;
+  align-items: center;
+  padding: 1px 10px;
+  margin-left: 20px;
+}
+/* line 13, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_item.scss */
+li.message-item-container .message-detail img {
+  align-self: flex-start;
+}
+
+/* line 20, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_item.scss */
+.repeat small {
+  visibility: hidden;
+  display: block;
+  margin-left: -11px;
+  font-size: 12px;
+  color: #757678;
+}
+/* line 28, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_item.scss */
+.repeat:hover small {
+  visibility: visible;
+  font-size: 12px;
+  color: #757678;
+}
+
+/* line 35, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_item.scss */
+img.message-detail-profile-picture {
+  height: 40px;
+  width: 40px;
+  border-radius: 5px;
+  background-size: contain;
+}
+
+/* line 43, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_item.scss */
+div.message-detail-content {
+  margin: 0 0 0 10px;
+}
+/* line 46, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_item.scss */
+div.message-detail-content span {
+  font-size: 14px;
+}
+/* line 50, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_item.scss */
+div.message-detail-content .message-detail-top {
+  display: flex;
+  align-items: center;
+}
+/* line 54, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_item.scss */
+div.message-detail-content .message-detail-top p {
+  font-size: 15px;
+  font-weight: 900;
+  color: #2c2d30;
+  cursor: default;
+}
+/* line 61, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_item.scss */
+div.message-detail-content .message-detail-top small {
+  font-size: 12px;
+  color: #757678;
+  margin-left: 10px;
+}
+/* line 67, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_item.scss */
+div.message-detail-content .message-detail-top .message-image-container {
+  margin-top: 5px;
+  min-width: 220px;
+  max-width: 100%;
+}
+/* line 72, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/message_item.scss */
+div.message-detail-content .message-detail-top .message-image-container img {
+  width: 360px;
+  border-radius: 5px;
+}
+
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.footer-input {
+  margin: 10px 35px 10px 20px;
+  height: 50px;
+  display: block;
+}
+
+/* line 7, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form {
+  width: 100%;
+}
+
+/* line 11, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form-container {
+  width: 100%;
+  position: relative;
+  flex-direction: row-reverse;
+  display: flex;
+}
+/* line 17, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form-container .message-form-chatbar {
+  border: 2px solid #E0E0E0;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  padding: 5px 10px 5px 15px;
+  box-sizing: border-box;
+  color: #3d3c40;
+  outline: none;
+  width: 100%;
+  flex-grow: 1;
+}
+/* line 29, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form-container .message-form-chatbar:focus {
+  border-color: #BBBDBF;
+}
+
+/* line 35, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form-button {
+  width: 45px;
+  height: 41px;
+  border: 2px solid #E0E0E0;
+  border-radius: 5px 0 0 5px;
+  box-sizing: border-box;
+  color: #E0E0E0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* line 48, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form-chatbar:focus + .message-form-button {
+  border-color: #BBBDBF;
+}
+
+/* line 52, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form-chatbar:focus + .message-form-button:hover {
+  border-color: #BBBDBF;
+  border-color: #53B68D;
+}
+
+/* line 58, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form-button i {
+  color: #BBBDBF;
+}
+/* line 62, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form-button:hover {
+  background-color: #53B68D;
+  border-color: #53B68D;
+  cursor: pointer;
+}
+/* line 68, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form-button:hover i {
+  color: #fff;
+}
+
+/* line 77, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form .upload-dropdown {
+  display: none;
+}
+/* line 80, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.message-form .upload-dropdown-open {
+  display: block;
+  position: absolute;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  left: 0px;
+  bottom: 45px;
+  color: #000;
+  background-color: #fff;
+}
+
+/* line 98, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.upload-menu-list {
+  background: #fff;
+  padding: 15px;
+  color: #2c2d30;
+  border-radius: 5px;
+}
+/* line 105, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.upload-menu-list li {
+  border-radius: 5px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+}
+/* line 110, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.upload-menu-list li:hover {
+  background-color: #3aa3e3;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* line 118, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/messages/footer_input.scss */
+.image-upload-input {
+  width: 100%;
+}
+
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.browse-channels {
+  margin: 100px auto;
+  width: 640px;
+  position: relative;
+}
+/* line 6, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.browse-channels h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0 0 30px 0;
+}
+/* line 12, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.browse-channels h2 {
+  padding: 0 10px;
+  margin: 25px 0 10px 0;
+  font-size: 14px;
+  color: #67686E;
+  font-weight: bold;
+}
+/* line 20, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.browse-channels ul {
+  overflow: auto;
+  height: 510px;
+}
+/* line 24, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.browse-channels ul li {
+  border-radius: 5px;
+  transition: background-color 0.4s;
+  padding: 0px 10px;
+}
+/* line 29, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.browse-channels ul li:hover {
+  background-color: #EDF7FD;
+  cursor: default;
+}
+/* line 34, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.browse-channels ul li:hover button {
+  display: block;
+}
+
+/* line 42, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.browse-search {
+  width: 91%;
+  border-radius: 5px;
+  height: 50px;
+  border: 1px solid #ccc;
+  padding: 3px 0 3px 45px;
+  font-size: 24px;
+  transition: border-color 0.6s;
+}
+/* line 52, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.browse-search:hover {
+  border-color: #38BCE0;
+}
+
+/* line 58, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.browse-channel-searchbar {
+  position: relative;
+}
+/* line 61, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.browse-channel-searchbar i {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  font-size: 32px;
+  color: #ccc;
+}
+
+/* line 70, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.search-result {
+  padding: 10px 10px;
+  color: #67686E;
+  font-size: 18px;
+  font-weight: bold;
+  display: block;
+}
+/* line 77, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.search-result:hover {
+  cursor: default;
+}
+
+/* line 83, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.search-result-topline {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+/* line 88, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.search-result-topline h3 {
+  display: inline-block;
+}
+/* line 92, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.search-result-topline .search-members-count {
+  display: flex;
+  align-items: center;
+}
+/* line 97, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.search-result-topline i {
+  font-size: 20px;
+}
+/* line 101, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.search-result-topline span {
+  font-size: 14px;
+}
+
+/* line 106, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.search-result-bottomline {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+/* line 111, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.search-result-bottomline i {
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 400;
+}
+/* line 117, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.search-result-bottomline em {
+  font-size: 16px;
+  font-weight: bold;
+}
+/* line 122, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/browse_channels.scss */
+.search-result-bottomline button {
+  display: none;
+  cursor: pointer;
+  align-items: center;
+  color: #38A2E0;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+div.create-channel-form {
+  margin: 70px auto;
+  width: 620px;
+  position: relative;
+}
+/* line 7, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+div.create-channel-form h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+/* line 12, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+div.create-channel-form h2 {
+  margin: 15px 0 20px 0;
+  color: #aaa;
+}
+/* line 17, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+div.create-channel-form input {
+  display: block;
+  width: 597px;
+  height: 50px;
+  font-size: 24px;
+  padding: 5px 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 1s;
+}
+/* line 30, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+div.create-channel-form input:hover {
+  border-color: #38A2E0;
+}
+/* line 35, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+div.create-channel-form p {
+  margin: 10px 0 10px 0;
+  color: #aaa;
+  font-size: 14px;
+}
+/* line 41, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+div.create-channel-form .create-channel-button {
+  background-color: #38A2E0;
+  color: #fff;
+  padding: 10px 20px;
+  margin: 10px 0 0 0;
+  border-radius: 5px;
+  font-weight: bold;
+}
+/* line 49, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+div.create-channel-form .create-channel-button:hover {
+  cursor: pointer;
+  background-color: #38BCE0;
+}
+
+/* line 56, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+.newchannel-label {
+  text-align: left;
+  margin: 0px 0 5px 0px;
+}
+
+/* line 62, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+i.exit-icon {
+  font-size: 76px;
+  color: #aaa;
+  float: right;
+  transition: color 0.6s;
+}
+/* line 69, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/create_channel_form.scss */
+i.exit-icon:hover {
+  color: #6E6E6E;
+  cursor: pointer;
+}
+
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.browse-dm {
+  margin: 100px auto;
+  width: 640px;
+  position: relative;
+}
+/* line 6, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.browse-dm h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0 0 30px 0;
+}
+
+/* line 15, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.dm-selected-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+/* line 21, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.dm-search-results {
+  overflow: auto;
+  height: 510px;
+}
+/* line 25, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.dm-search-results li {
+  transition: background-color 0.4s;
+}
+/* line 28, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.dm-search-results li:hover {
+  background-color: #EDF7FD;
+  cursor: pointer;
+}
+
+/* line 35, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.dm-search-result {
+  padding: 10px 15px;
+  color: #67686E;
+  font-size: 18px;
+  font-weight: bold;
+}
+/* line 41, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.dm-search-result:hover {
+  cursor: pointer;
+}
+/* line 45, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.dm-search-result:hover i {
+  display: block;
+  cursor: pointer;
+  color: #439fe0;
+  font-size: 20px;
+}
+
+/* line 53, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.dm-search-result-topline {
+  display: flex;
+  justify-content: space-between;
+}
+/* line 57, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.dm-search-result-topline i {
+  display: none;
+}
+
+/* line 63, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.dm-selected-item {
+  list-style: none;
+  border-radius: 5px;
+  background-color: #3aa3e3;
+  margin: 5px 3px;
+  padding: 3px 8px;
+  box-sizing: border-box;
+  color: #fff;
+  flex-shrink: 1;
+}
+/* line 74, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.dm-selected-item:hover {
+  background-color: #0B91E3;
+  cursor: pointer;
+}
+
+/* line 81, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.dm-details-container {
+  display: flex;
+  align-items: center;
+}
+/* line 85, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.dm-details-container p {
+  margin-right: 5px;
+  font-size: 11px;
+}
+
+/* line 91, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+i.clear {
+  color: #fff;
+  font-size: 12px;
+}
+
+/* line 98, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.dm-subheader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 10px;
+}
+
+/* line 106, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.browse-dm h2 {
+  padding: 0 10px 0 0;
+  margin: 0 0 0 0;
+  font-size: 14px;
+  color: #67686E;
+  font-weight: bold;
+}
+/* line 114, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.browse-dm ul {
+  overflow: auto;
+  height: 510px;
+}
+
+/* line 120, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+#join-dm {
+  outline: none;
+  background: #53B68D;
+  color: #fff;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  top: 5px;
+  right: 17px;
+}
+/* line 132, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+#join-dm:hover {
+  outline: none;
+  background: #58C799;
+  cursor: pointer;
+}
+
+/* line 139, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.dm-search {
+  width: 91%;
+  border-radius: 5px;
+  height: 50px;
+  border: 1px solid #ccc;
+  padding: 3px 0 3px 45px;
+  font-size: 24px;
+  outline: none;
+  transition: border-color 0.6s;
+}
+/* line 150, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.dm-search:hover {
+  border-color: #38A2E0;
+  outline: none;
+}
+
+/* line 157, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.browse-dm-searchbar {
+  position: relative;
+}
+/* line 160, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.browse-dm-searchbar i {
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  font-size: 32px;
+  color: #ccc;
+}
+
+/* line 172, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.browse-dm-errors {
+  height: 30px;
+  display: flex;
+  flex-direction: row-reverse;
+  padding-right: 10px;
+}
+/* line 178, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/direct_messages_join.scss */
+.browse-dm-errors span {
+  color: #E85D72;
+  display: flex;
+  align-self: flex-end;
+  font-size: 12px;
+}
+
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+.upload-form {
+  border: 1px solid #ccc;
+  width: 560px;
+  margin: 0 auto;
+  border-radius: 5px;
+}
+
+/* line 10, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+.upload-form h3 {
+  background-color: #f2f2f5;
+  padding: 10px 20px;
+  color: #555459;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+/* line 19, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+div.image-upload-preview {
+  width: 267px;
+  height: 150px;
+  margin: 0 auto;
+  overflow: hidden;
+  border: 2px dotted #38A2E0;
+  display: flex;
+}
+
+/* line 29, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+div.image-upload-preview img {
+  width: auto;
+  height: inherit;
+  margin: 0 auto;
+}
+
+/* line 36, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+.image-upload-input {
+  display: none;
+  align-items: center;
+}
+
+/* line 41, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+div.upload-buttons {
+  margin-top: 20px;
+  padding: 20px 20px;
+  display: flex;
+}
+
+/* line 47, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+#image-upload-label {
+  background-color: #2ab27b;
+  margin-right: 5px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  align-self: flex-end;
+  padding: 7px 10px;
+  width: 103px;
+}
+
+/* line 58, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+#image-upload-label:hover {
+  background-color: #0DA668;
+  cursor: pointer;
+}
+
+/* line 63, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+#image-submit {
+  background-color: #2ab27b;
+  color: #fff;
+  border-radius: 5px;
+  padding: 7px 10px;
+  font-weight: bold;
+}
+
+/* line 71, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/modals/image_upload.scss */
+#image-submit:hover {
+  background-color: #0DA668;
+  cursor: pointer;
+}
+
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/popout_container.scss */
+.popout {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* line 9, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/popout_container.scss */
+#popout-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+}
+
+/* line 16, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/popout_container.scss */
+.popout-exit:hover {
+  cursor: pointer;
+  color: #ccc;
+}
+
+/* line 21, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/popout_container.scss */
+.popout img {
+  width: 80%;
+  margin: 0 auto;
+  border: 1px dotted #ccc;
+}
+
+/* line 27, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/popout_container.scss */
+#popout-intro {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin: 20px 0;
+}
+/* line 33, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/popout_container.scss */
+#popout-intro i {
+  margin-left: 5px;
+}
+
+/* line 39, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/popout_container.scss */
+#popout-edit-buttons {
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+
+/* line 45, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/popout_container.scss */
+#edit-profile {
+  font-weight: bold;
+  padding: 8px 12px;
+  color: #555459;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fbfbfa;
+}
+/* line 53, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/popout_container.scss */
+#edit-profile:hover {
+  background-color: #fff;
+  color: #38BCE0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* line 1, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/profile_picture_form.scss */
+.modal-background-close {
+  display: none;
+}
+
+/* line 5, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/profile_picture_form.scss */
+.profile-picture-modal-close {
+  display: none;
+}
+
+/* line 9, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/profile_picture_form.scss */
+.modal-background-open {
+  position: fixed;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: rgba(255, 255, 255, 0.74902);
+  z-index: 10;
+}
+
+/* line 21, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/profile_picture_form.scss */
+.profile-picture-modal-open {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border: 1px solid #cccccc;
+  background: white;
+  overflow: auto;
+  border-radius: 4px;
+  outline: none;
+  padding: 20px;
+  z-index: 11;
+  opacity: 100;
+  transition: opacity 1s;
+}
+
+/* line 39, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/profile_picture_form.scss */
+.profile-picture-modal-exit {
+  display: inherit;
+}
+/* line 42, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/profile_picture_form.scss */
+.profile-picture-modal-exit:hover {
+  cursor: pointer;
+  color: #ccc;
+}
+
+/* line 49, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/profile_picture_form.scss */
+.profile-pic-update {
+  display: none;
+}
+
+/* line 53, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/profile_picture_form.scss */
+#update-picture-container {
+  width: 192px;
+  height: 192px;
+  background-color: #000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+/* line 63, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/profile_picture_form.scss */
+#update-picture-container span {
+  display: none;
+}
+/* line 67, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/profile_picture_form.scss */
+#update-picture-container i {
+  display: none;
+}
+/* line 71, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/profile_picture_form.scss */
+#update-picture-container label {
+  width: 100%;
+  height: 100%;
+}
+/* line 76, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/profile_picture_form.scss */
+#update-picture-container:hover {
+  border: 3px solid #38A2E0;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+/* line 82, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/profile_picture_form.scss */
+#update-picture-container:hover label {
+  cursor: pointer;
+  filter: opacity(0.5);
+}
+/* line 87, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/profile_picture_form.scss */
+#update-picture-container:hover span {
+  display: block;
+  position: absolute;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  z-index: 100;
+  margin: 0 10px 0 10px;
+}
+/* line 97, /Users/brucewang/Desktop/Lacks/app/assets/stylesheets/popout/profile_picture_form.scss */
+#update-picture-container:hover i {
+  display: block;
+  position: absolute;
+  color: #fff;
+  z-index: 100;
+  top: 45px;
+}
