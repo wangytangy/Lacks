@@ -7,9 +7,9 @@ class Splash extends React.Component {
   constructor(props) {
     super(props);
     this.imgArray = [
-      "https://s3.amazonaws.com/lacks-pro/messages/images/000/000/085/original/designer_bg.jpg",
-      "https://s3.amazonaws.com/lacks-pro/messages/images/000/000/085/original/desktop2_bg.jpg",
-      "https://s3.amazonaws.com/lacks-pro/messages/images/000/000/085/original/desktop_bg.jpg",
+      "https://s3.amazonaws.com/lacks-pro/messages/images/000/000/085/original/splash1.jpg",
+      "https://s3.amazonaws.com/lacks-pro/messages/images/000/000/085/original/splash2.jpg",
+      "https://s3.amazonaws.com/lacks-pro/messages/images/000/000/085/original/splash3.jpg",
       "https://s3.amazonaws.com/lacks-pro/messages/images/000/000/085/original/wood1_bg.jpg",
       "https://s3.amazonaws.com/lacks-pro/messages/images/000/000/085/original/wood2_bg.jpg"
     ];
