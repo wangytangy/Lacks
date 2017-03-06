@@ -18,7 +18,7 @@ const Root = ({ store }) => {
       store.dispatch(clearErrors());
     }
   }
-  
+  window.store = store;
   return(
     <Provider store={ store }>
 

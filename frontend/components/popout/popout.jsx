@@ -8,10 +8,13 @@ class Popout extends React.Component {
     this.exitProfilePicUpdate = this.exitProfilePicUpdate.bind(this);
     this.openUpdateProfileModal = this.openUpdateProfileModal.bind(this);
     this.closeUpdateProfileModal = this.closeUpdateProfileModal.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleUpload = this.handleUpload.bind(this);
+    this.handleImageSubmit = this.handleImageSubmit.bind(this);
     this.state = {
       modalContainerClass: "modal-background-close",
-      modalClass: "profile-picture-modal-close"
+      modalClass: "profile-picture-modal-close",
+      imageUrl: props.currentUser.profile_pic_url,
+      imageFile: null
     };
   }
   exitProfilePicUpdate() {
@@ -36,14 +39,35 @@ class Popout extends React.Component {
     });
   }
 
-  handleSubmit() {
-    alert("You're ugly");
+  handleUpload(e) {
+    let file = e.currentTarget.files[0];
+    let fileReader = new FileReader();
+    fileReader.onloadend = function () {
+      this.setState({
+        imageFile: file,
+        imageUrl: fileReader.result
+      });
+    }.bind(this);
+
+    fileReader.readAsDataURL(file);
+  }
+
+  handleImageSubmit() {
+    let imageData = {
+      userID: parseInt(this.props.currentUser.id),
+      image: this.state.imageFile
+    };
+
+    // this.props.createMessage(messageData);
+
+    //clear input fields
+    this.setState({body: "", imageFile: null, imageUrl: null});
   }
 
   render() {
 
     let style = {
-      backgroundImage: 'url(' + this.props.currentUser.profile_pic_url + ')',
+      backgroundImage: 'url(' + this.state.imageUrl + ')',
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover'
     };
@@ -59,8 +83,7 @@ class Popout extends React.Component {
           </i>
         </div>
 
-        <img src={this.props.currentUser.profile_pic_url}>
-        </img>
+        <img src={this.state.imageUrl} />
 
         <div id="popout-intro">
           <span>{this.props.currentUser.username}</span>
@@ -87,15 +110,16 @@ class Popout extends React.Component {
                   className="profile-pic-update"
                   multiple accept='image/*'
                   id="Attach an image"
-                  onChange={this.handleSubmit}
+                  onChange={this.handleUpload}
                   >
                 </input>
               </label>
-
               <i className="material-icons">photo_camera</i>
               <span>Change your profile photo</span>
-
             </div>
+
+            <button id="image-submit" type="button" onClick={this.handleImageSubmit}>Upload</button>
+            <button id="image-submit" type="button" onClick={this.closeUpdateProfileModal}>Cancel</button>
 
           </div>
         </div>

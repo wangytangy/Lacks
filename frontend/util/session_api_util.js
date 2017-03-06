@@ -20,3 +20,14 @@ export function logout() {
     url: "/api/session"
   });
 }
+
+export function updateProfilePic(imageData) {
+  console.log(imageData)
+  return $.ajax({
+    method: "PATCH",
+    url: `/api/users/${userID}`,
+    data: {
+      user:
+    }
+  });
+};
