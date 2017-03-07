@@ -29,20 +29,22 @@ class MessageIndex extends React.Component {
   }
 
   mapMessages() {
-    let path = hashHistory.getCurrentLocation().pathname;
-    if (path.indexOf("popout") === -1) {
-      path += "/popout";
-    }
 
     let messagesArr = [];
     Object.values(this.props.messages).forEach((message, i) => {
 
       let liElement;
+
       let authorAvatar;
       if (message.avatar === "/avatars/original/missing.png") {
         authorAvatar = message.profilePicUrl;
       } else {
         authorAvatar = message.avatar;
+      }
+
+      let path = hashHistory.getCurrentLocation().pathname;
+      if (path.indexOf("popout") === -1) {
+        path += `/popout/${message.author}`;
       }
 
       if ((message.imageUrl || message.giphyUrl) && message.body === "") {

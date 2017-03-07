@@ -31,7 +31,7 @@ const Root = ({ store }) => {
 
         <Route path="messages" component={ HomeContainer }>
           <Route path=":id" component={ CurrentChannelContainer }>
-            <Route path="popout" component={ PopoutContainer } />
+            <Route path="popout/:userId" component={ PopoutContainer } />
           </Route>
         </Route>
       </Router>
