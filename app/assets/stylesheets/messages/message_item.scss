@@ -12,6 +12,7 @@ li.message-item-container {
 
     img {
       align-self: flex-start;
+      height: inherit;
     }
   }
 }
@@ -32,7 +33,7 @@ li.message-item-container {
   }
 }
 
-img.message-detail-profile-picture {
+.message-detail-profile-picture {
   height: 40px;
   width: 40px;
 

@@ -7,3 +7,4 @@ json.set! :createdAt, format_date(@message.created_at)
 json.set! :imageUrl, asset_path(@message.image.url)
 json.set! :giphyUrl, @message.giphy_url
 json.set! :profilePicUrl, @message.author.profile_pic_url
+json.set! :avatar, asset_path(@message.author.avatar.url)

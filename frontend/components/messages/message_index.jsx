@@ -1,6 +1,6 @@
 import React from 'react';
 import MessageFormContainer from './message_form_container';
-import { Link } from 'react-router';
+import { Link, hashHistory} from 'react-router';
 import MDSpinner from 'react-md-spinner';
 
 class MessageIndex extends React.Component {
@@ -29,10 +29,21 @@ class MessageIndex extends React.Component {
   }
 
   mapMessages() {
+    let path = hashHistory.getCurrentLocation().pathname;
+    if (path.indexOf("popout") === -1) {
+      path += "/popout";
+    }
+
     let messagesArr = [];
     Object.values(this.props.messages).forEach((message, i) => {
 
       let liElement;
+      let authorAvatar;
+      if (message.avatar === "/avatars/original/missing.png") {
+        authorAvatar = message.profilePicUrl;
+      } else {
+        authorAvatar = message.avatar;
+      }
 
       if ((message.imageUrl || message.giphyUrl) && message.body === "") {
         let imgSrc;
@@ -46,7 +57,9 @@ class MessageIndex extends React.Component {
         liElement = (
           <li key={i} className="message-item-container">
             <div className="message-detail">
-              <img src={this.props.avatar} className="message-detail-profile-picture"></img>
+              <Link to={ path } className="message-detail-profile-picture">
+                <img src={authorAvatar} />
+              </Link>
               <div className="message-detail-content">
                 <div className="message-detail-top">
                   <p>{message.author}</p>
@@ -79,7 +92,9 @@ class MessageIndex extends React.Component {
         liElement = (
           <li key={i} className="message-item-container">
             <div className="message-detail">
-              <img src={this.props.avatar} className="message-detail-profile-picture"></img>
+              <Link to={ path }>
+                <img src={authorAvatar} className="message-detail-profile-picture" />
+              </Link>
               <div className="message-detail-content">
                 <div className="message-detail-top">
                   <p>{message.author}</p>

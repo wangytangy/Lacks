@@ -9,5 +9,6 @@
     json.imageUrl asset_path(message.image.url)
     json.giphyUrl message.giphy_url
     json.profilePicUrl message.author.profile_pic_url
+    json.avatar asset_path(message.author.avatar.url)
   end
 end

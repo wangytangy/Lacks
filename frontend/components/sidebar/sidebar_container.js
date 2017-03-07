@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import Sidebar from './sidebar';
 import { logout } from '../../actions/sessions_actions';
 import { fetchAllChannels } from '../../actions/channels_actions';
-import { Router, Route, IndexRoute, hashHistory, withRouter } from 'react-router';
+import { withRouter } from 'react-router';
 import { getAvatar } from '../../reducers/avatar_selector';
 
 const mapStateToProps = (state) => ({
