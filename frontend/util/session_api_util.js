@@ -22,6 +22,7 @@ export function logout() {
 }
 
 export function updateProfilePic(imageData) {
+  debugger
   let userID = parseInt(imageData.get("user[id]"));
   return $.ajax({
     method: "PATCH",

@@ -13,7 +13,7 @@ class Popout extends React.Component {
     this.state = {
       modalContainerClass: "modal-background-close",
       modalClass: "profile-picture-modal-close",
-      imageUrl: props.currentUser.profile_pic_url,
+      imageUrl: props.avatar,
       imageFile: null
     };
   }
@@ -55,18 +55,19 @@ class Popout extends React.Component {
   handleImageSubmit() {
 
     let imageData = new FormData();
-    imageData.set("user[profile_pic_url]", this.state.imageFile);
+    imageData.set("user[avatar]", this.state.imageFile);
     imageData.set("user[id]", this.props.currentUser.id);
 
-    this.props.updateProfilePic(imageData);
+    this.props.updateProfilePic(imageData).then(() => {
+      this.setState({
+        modalContainerClass: "modal-background-close",
+        modalClass: "profile-picture-modal-close",
+        imageFile: null,
+        imageUrl: this.props.avatar
+      });
+    });
 
     //clear input fields and close modal
-    this.setState({
-      modalContainerClass: "modal-background-close",
-      modalClass: "profile-picture-modal-close",
-      imageFile: null,
-      imageUrl: null
-    });
   }
 
   render() {
@@ -88,7 +89,7 @@ class Popout extends React.Component {
           </i>
         </div>
 
-        <img src={this.state.imageUrl} />
+        <img src={this.props.avatar} />
 
         <div id="popout-intro">
           <span>{this.props.currentUser.username}</span>

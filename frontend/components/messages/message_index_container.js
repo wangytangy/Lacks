@@ -1,12 +1,12 @@
 import { connect } from 'react-redux';
 import MessageIndex from './message_index';
 import { fetchMessages } from '../../actions/messages_actions';
-
+import { getAvatar } from '../../reducers/avatar_selector';
 
 const mapStateToProps = (state) => ({
   currentChannel: state.currentChannel,
-  // currentUser: state.session.currentUser,
-  messages: state.messages
+  messages: state.messages,
+  avatar: getAvatar(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({

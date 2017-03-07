@@ -2,15 +2,12 @@ import { connect } from 'react-redux';
 import Popout from './popout';
 import { Router, Route, IndexRoute, hashHistory, withRouter } from 'react-router';
 import { submitProfilePic } from '../../actions/sessions_actions';
-
-// import 'update' ajax call for users
-// import 'change profile picture' action;
-
+import { getAvatar } from '../../reducers/avatar_selector';
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
-  currentChannel: state.currentChannel
-
+  currentChannel: state.currentChannel,
+  avatar: getAvatar(state),
 });
 
 const mapDispatchToProps = (dispatch) => ({

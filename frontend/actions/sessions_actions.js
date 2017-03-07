@@ -61,7 +61,7 @@ export const submitProfilePic = (imageData) => {
     return APIUtil.updateProfilePic(imageData).then((user) => {
       dispatch(receiveProfilePic(user));
     }, (errors) => {
-      debugger
+      console.log(errors);
     });
   }
 }

@@ -46,7 +46,7 @@ class MessageIndex extends React.Component {
         liElement = (
           <li key={i} className="message-item-container">
             <div className="message-detail">
-              <img src={message.profilePicUrl} className="message-detail-profile-picture"></img>
+              <img src={this.props.avatar} className="message-detail-profile-picture"></img>
               <div className="message-detail-content">
                 <div className="message-detail-top">
                   <p>{message.author}</p>
@@ -79,7 +79,7 @@ class MessageIndex extends React.Component {
         liElement = (
           <li key={i} className="message-item-container">
             <div className="message-detail">
-              <img src={message.profilePicUrl} className="message-detail-profile-picture"></img>
+              <img src={this.props.avatar} className="message-detail-profile-picture"></img>
               <div className="message-detail-content">
                 <div className="message-detail-top">
                   <p>{message.author}</p>
