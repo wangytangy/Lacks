@@ -3,10 +3,12 @@ import Sidebar from './sidebar';
 import { logout } from '../../actions/sessions_actions';
 import { fetchAllChannels } from '../../actions/channels_actions';
 import { Router, Route, IndexRoute, hashHistory, withRouter } from 'react-router';
+import { getAvatar } from '../../reducers/avatar_selector';
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser,
   channels: state.channels,
+  avatar: getAvatar(state)
 });
 
 const mapDispatchToProps = (dispatch) => ({

@@ -57,7 +57,7 @@ class Sidebar extends React.Component {
             <li>
               <div className="profile-options-header">
                 <Link to={ path }>
-                  <img src={this.props.currentUser.profile_pic_url} />
+                  <img src={this.props.avatar} />
                 </Link>
 
                 <div className="usernames">
