@@ -3,6 +3,7 @@ import * as APIUtil from '../util/session_api_util';
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const CLEAR_ERRORS = "CLEAR_ERRORS";
+export const UPDATE_PROFILE_PIC = "UPDATE_PROFILE_PIC";
 
 export const receiveCurrentUser = (currentUser) => ({
   type: RECEIVE_CURRENT_USER,
@@ -16,6 +17,11 @@ export const receiveErrors = (errors) => ({
 
 export const clearErrors = () => ({
   type: CLEAR_ERRORS
+});
+
+export const receiveProfilePic = (user) => ({
+  type: UPDATE_PROFILE_PIC,
+  user,
 });
 
 export const login = (user) => {
@@ -49,3 +55,13 @@ export const signup = (user) => {
    });
  };
 };
+
+export const submitProfilePic = (imageData) => {
+  return (dispatch) => {
+    return APIUtil.updateProfilePic(imageData).then((user) => {
+      dispatch(receiveProfilePic(user));
+    }, (errors) => {
+      debugger
+    });
+  }
+}

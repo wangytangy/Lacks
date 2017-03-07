@@ -2,20 +2,27 @@
 #
 # Table name: users
 #
-#  id              :integer          not null, primary key
-#  username        :string           not null
-#  email           :string
-#  password_digest :string           not null
-#  session_token   :string           not null
-#  created_at      :datetime
-#  updated_at      :datetime
-#  profile_pic_url :string
+#  id                  :integer          not null, primary key
+#  username            :string           not null
+#  email               :string
+#  password_digest     :string           not null
+#  session_token       :string           not null
+#  created_at          :datetime
+#  updated_at          :datetime
+#  profile_pic_url     :string
+#  avatar_file_name    :string
+#  avatar_content_type :string
+#  avatar_file_size    :integer
+#  avatar_updated_at   :datetime
 #
 
 class User < ActiveRecord::Base
   validates :username, :password_digest, :session_token, presence: true
   validates :username, uniqueness: true
   validates :password, length: { minimum: 6, allow_nil: true }
+
+  has_attached_file :avatar, :s3_protocol => :https
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
 
   attr_reader :password
 

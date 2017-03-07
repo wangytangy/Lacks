@@ -53,15 +53,20 @@ class Popout extends React.Component {
   }
 
   handleImageSubmit() {
-    let imageData = {
-      userID: parseInt(this.props.currentUser.id),
-      image: this.state.imageFile
-    };
 
-    // this.props.createMessage(messageData);
+    let imageData = new FormData();
+    imageData.set("user[profile_pic_url]", this.state.imageFile);
+    imageData.set("user[id]", this.props.currentUser.id);
 
-    //clear input fields
-    this.setState({body: "", imageFile: null, imageUrl: null});
+    this.props.updateProfilePic(imageData);
+
+    //clear input fields and close modal
+    this.setState({
+      modalContainerClass: "modal-background-close",
+      modalClass: "profile-picture-modal-close",
+      imageFile: null,
+      imageUrl: null
+    });
   }
 
   render() {

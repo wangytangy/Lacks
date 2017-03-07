@@ -22,12 +22,13 @@ export function logout() {
 }
 
 export function updateProfilePic(imageData) {
-  console.log(imageData)
+  let userID = parseInt(imageData.get("user[id]"));
   return $.ajax({
     method: "PATCH",
     url: `/api/users/${userID}`,
-    data: {
-      user:
-    }
+    processData: false,
+    contentType: false,
+    dataType: 'json',
+    data: imageData
   });
 };

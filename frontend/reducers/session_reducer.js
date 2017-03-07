@@ -1,5 +1,16 @@
-import { receiveCurrentUser, receiveErrors, clearErrors } from '../actions/sessions_actions';
-import { RECEIVE_CURRENT_USER, RECEIVE_ERRORS, CLEAR_ERRORS } from '../actions/sessions_actions';
+import {
+  receiveCurrentUser,
+  receiveErrors,
+  clearErrors,
+  receiveProfilePic,
+} from '../actions/sessions_actions';
+
+import {
+  RECEIVE_CURRENT_USER,
+  RECEIVE_ERRORS,
+  CLEAR_ERRORS,
+  UPDATE_PROFILE_PIC,
+} from '../actions/sessions_actions';
 
 
 const defaultState = {
@@ -26,6 +37,11 @@ function SessionReducer(state = defaultState, action) {
         currentUser: null,
         errors: []
       };
+    case UPDATE_PROFILE_PIC:
+      return {
+        currentUser: action.user,
+        errors: []
+      }
     default:
       return state;
   }
