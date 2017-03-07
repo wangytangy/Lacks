@@ -1,6 +1,8 @@
 @import "modules/_variables.scss";
 @import "modules/reset.css";
 
+@import "mixins/mixin.scss";
+
 // SIGNIN PAGE
 @import "welcome/header.scss";
 @import "welcome/sessions.scss";

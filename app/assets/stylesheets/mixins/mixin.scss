@@ -1,0 +1,27 @@
+@mixin slide_in($duration, $x) {
+  animation: slide_in $duration;
+
+  @keyframes slide_in {
+    0% {
+      transform: translateX($x);
+    }
+
+    100% {
+      transform: translateX(0px);
+    }
+  }
+}
+
+@mixin fade_in($duration: 2s) {
+  animation: fade_in $duration;
+
+  @keyframes fade_in {
+    0% {
+      opacity: 0;
+    }
+
+    100% {
+      opacity: 1;
+    }
+  }
+}

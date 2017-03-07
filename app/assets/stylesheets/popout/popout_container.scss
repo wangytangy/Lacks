@@ -4,7 +4,9 @@
   display: flex;
   flex-direction: column;
 
+  @include slide_in(300ms, 500px);
 }
+
 
 #popout-header {
   display: flex;
