@@ -7,6 +7,8 @@
   padding: 30px;
   box-sizing: border-box;
 
+  @include slide_up(1s, 500px);
+
   h1 {
     font-size: 36px;
     text-align: center;

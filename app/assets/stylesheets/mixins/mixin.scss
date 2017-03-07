@@ -12,6 +12,21 @@
   }
 }
 
+@mixin slide_up($duration, $y) {
+  animation: slide_up $duration;
+
+  @keyframes slide_up {
+    0% {
+      transform: translateY($y);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
+  }
+}
+
+
 @mixin fade_in($duration: 2s) {
   animation: fade_in $duration;
 

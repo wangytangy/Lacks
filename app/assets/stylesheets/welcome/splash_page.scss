@@ -8,6 +8,8 @@
   justify-content: center;
   align-items: center;
 
+
+
   .signup-bg {
     height: 200px;
     width: 700px;
@@ -24,6 +26,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    @include fade_in(2s);
 
     //transparent div as pseudo-content
     &:before {
