@@ -40,3 +40,20 @@
     }
   }
 }
+
+@mixin roll_down($duration) {
+  overflow: hidden;
+  animation: roll_down $duration;
+
+  @keyframes roll_down {
+    0% {
+      max-height: 0px;
+      opacity: 0;
+    }
+
+    100% {
+      max-height: 500px;
+      opacity: 1;
+    }
+  }
+}

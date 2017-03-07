@@ -7,8 +7,9 @@
   padding: 30px;
   box-sizing: border-box;
 
-  @include slide_up(1s, 500px);
-
+  animation-delay: 2s;
+  @include roll_down(2s);
+  
   h1 {
     font-size: 36px;
     text-align: center;

@@ -83,6 +83,8 @@ i.bell {
   background-color: #fff;
 
   padding: 15px;
+  @include roll_down(1s);
+
 }
 
 .popover-mask {
