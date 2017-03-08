@@ -1,6 +1,6 @@
 import React from 'react';
 import MessageFormContainer from './message_form_container';
-import { Link, hashHistory} from 'react-router';
+import { Link, hashHistory, Router} from 'react-router';
 import MDSpinner from 'react-md-spinner';
 
 class MessageIndex extends React.Component {
@@ -8,6 +8,7 @@ class MessageIndex extends React.Component {
     super(props);
     this.mapMessages = this.mapMessages.bind(this);
     this.updateScroll = this.updateScroll.bind(this);
+    this.redirectPopout = this.redirectPopout.bind(this);
     this.state = ({ loading: true });
   }
 
@@ -28,6 +29,15 @@ class MessageIndex extends React.Component {
     }
   }
 
+  redirectPopout(author) {
+    let path = hashHistory.getCurrentLocation().pathname;
+    if (path.indexOf("popout") === -1) {
+      path += `/popout/${author}`;
+    }
+    this.props.router.push(`${path}`);
+
+  }
+
   mapMessages() {
 
     let messagesArr = [];
@@ -42,11 +52,6 @@ class MessageIndex extends React.Component {
         authorAvatar = message.avatar;
       }
 
-      let path = hashHistory.getCurrentLocation().pathname;
-      if (path.indexOf("popout") === -1) {
-        path += `/popout/${message.author}`;
-      }
-
       if ((message.imageUrl || message.giphyUrl) && message.body === "") {
         let imgSrc;
         if (message.imageUrl.indexOf("missing") === 17 && message.giphyUrl === null) {
@@ -59,7 +64,8 @@ class MessageIndex extends React.Component {
         liElement = (
           <li key={i} className="message-item-container">
             <div className="message-detail">
-              <Link to={ path } className="message-detail-profile-picture">
+              <Link onClick={() => this.redirectPopout(message.author)}
+                className="message-detail-profile-picture">
                 <img src={authorAvatar} />
               </Link>
               <div className="message-detail-content">
@@ -94,8 +100,9 @@ class MessageIndex extends React.Component {
         liElement = (
           <li key={i} className="message-item-container">
             <div className="message-detail">
-              <Link to={ path }>
-                <img src={authorAvatar} className="message-detail-profile-picture" />
+              <Link onClick={() => this.redirectPopout(message.author)}
+                className="message-detail-profile-picture">
+                <img src={authorAvatar} />
               </Link>
               <div className="message-detail-content">
                 <div className="message-detail-top">

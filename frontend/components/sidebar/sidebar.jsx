@@ -33,9 +33,7 @@ class Sidebar extends React.Component {
   render() {
     let path = hashHistory.getCurrentLocation().pathname;
     if (path.indexOf("popout") === -1) {
-      path += "/popout";
-      path += "/"
-      path += this.props.currentUser.username;
+      path += `/popout/${this.props.currentUser.username}`;
     }
 
     return(

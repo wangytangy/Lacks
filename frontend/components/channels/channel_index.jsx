@@ -21,7 +21,11 @@ class ChannelIndex extends React.Component {
     this.boundFetchAllChannels = this.boundFetchAllChannels.bind(this);
     this.boundRedirectToGeneral = this.boundRedirectToGeneral.bind(this);
 
-    this.state = { modalOpen: false, browseModalOpen: false, selected: this.props.params.id };
+    this.state = {
+      modalOpen: false,
+      browseModalOpen: false,
+      selected: this.props.params.id
+    };
   }
 
   boundFetchAllChannels() {

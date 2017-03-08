@@ -36,9 +36,17 @@ li.message-item-container {
 .message-detail-profile-picture {
   height: 40px;
   width: 40px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   border-radius: 5px;
   background-size: contain;
+
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 div.message-detail-content {
