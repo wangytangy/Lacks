@@ -104,29 +104,32 @@ class Popout extends React.Component {
 
         <div className={this.state.modalContainerClass}>
           <div className={this.state.modalClass}>
-            <i className="material-icons profile-picture-modal-exit"
-              onClick={this.closeUpdateProfileModal}>
-              clear
-            </i>
+            <div className="profile-picture-update-menu">
+              <div id="update-picture-container">
+                <label style={style}>
+                  <input
+                    type="file"
+                    className="profile-pic-update"
+                    multiple accept='image/*'
+                    id="Attach an image"
+                    onChange={this.handleUpload}
+                    >
+                  </input>
+                </label>
+                <i className="material-icons">photo_camera</i>
+                <span>Change your profile photo</span>
+              </div>
 
-            <div id="update-picture-container">
-              <label style={style}>
-                <input
-                  type="file"
-                  className="profile-pic-update"
-                  multiple accept='image/*'
-                  id="Attach an image"
-                  onChange={this.handleUpload}
-                  >
-                </input>
-              </label>
-              <i className="material-icons">photo_camera</i>
-              <span>Change your profile photo</span>
+              <div className="profile-picture-modal-open-buttons">
+                <button id="image-submit" type="button" onClick={this.handleImageSubmit}>Upload</button>
+                <button id="image-submit" type="button" onClick={this.closeUpdateProfileModal}>Cancel</button>
+              </div>
             </div>
 
-            <button id="image-submit" type="button" onClick={this.handleImageSubmit}>Upload</button>
-            <button id="image-submit" type="button" onClick={this.closeUpdateProfileModal}>Cancel</button>
-
+            <i className="material-icons popout-exit-icon"
+              onClick={this.closeUpdateProfileModal}>
+              highlight_off
+            </i>
           </div>
         </div>
 
