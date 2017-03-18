@@ -49,7 +49,7 @@ li.message-item-container {
   }
 }
 
-div.message-detail-content {
+.message-detail-content {
   margin: 0 0 0 10px;
 
   span {
@@ -72,16 +72,16 @@ div.message-detail-content {
       color: $lightgray-small-text;
       margin-left: 10px;
     }
+  }
 
-    .message-image-container {
-      margin-top: 5px;
-      min-width: 220px;
-      max-width: 100%;
+  .message-image-container {
+    margin-top: 5px;
+    height: 250px;
+    max-height: 250px;
 
-      img {
-        width: 360px;
-        border-radius: 5px;
-      }
+    img {
+      border-radius: 5px;
     }
   }
+
 }

@@ -14,7 +14,6 @@ class MessageIndex extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.currentChannel.id !== nextProps.currentChannel.id) {
-      console.log("channel switched!", nextProps.currentChannel.title);
       this.props.fetchMessages(nextProps.currentChannel.id);
     }
   }
