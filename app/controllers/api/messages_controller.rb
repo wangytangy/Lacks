@@ -15,7 +15,6 @@ class Api::MessagesController < ApplicationController
     @message.channel_id = params[:channel_id]
     @channel = Channel.find(params[:channel_id])
 
-
     if @message.save
       # if channel is a DM
       if @channel.direct_message_status

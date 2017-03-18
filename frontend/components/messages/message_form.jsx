@@ -38,6 +38,7 @@ class MessageForm extends React.Component {
   }
 
   handleSubmit(e) {
+    e.preventDefault();
     if (this.state.body.slice(0, 6) === "/giphy") {
       let tag = this.state.body.slice(6);
       let tagName = tag.split(' ').join('+');
@@ -63,11 +64,9 @@ class MessageForm extends React.Component {
         body: this.state.body,
         image: this.state.imageFile
       };
-
       this.props.createMessage(messageData);
       this.setState({body: "", imageFile: null, imageUrl: null});
     }
-
   }
 
   handleImageSubmit() {

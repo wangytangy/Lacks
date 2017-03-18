@@ -42,14 +42,12 @@ class ChannelIndex extends React.Component {
         this.redirect(Object.keys(channels)[0]);
       });
     } else {
-
       this.props.fetchAllChannels();
     }
+
     this.pusher = new Pusher('6229f47cce1a7e390f4e', {
       encrypted: true
     });
-
-
     let channelA = this.pusher.subscribe('channelIndex');
     channelA.bind('leave_channel', (data) => {
       this.boundRedirectToGeneral();

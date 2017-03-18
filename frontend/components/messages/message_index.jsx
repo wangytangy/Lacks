@@ -1,7 +1,7 @@
 import React from 'react';
 import MessageFormContainer from './message_form_container';
 import { Link, hashHistory, Router} from 'react-router';
-import MDSpinner from 'react-md-spinner';
+// import MDSpinner from 'react-md-spinner';
 
 class MessageIndex extends React.Component {
   constructor(props) {
@@ -14,6 +14,7 @@ class MessageIndex extends React.Component {
 
   componentWillReceiveProps(nextProps) {
     if (this.props.currentChannel.id !== nextProps.currentChannel.id) {
+      console.log("channel switched!", nextProps.currentChannel.title);
       this.props.fetchMessages(nextProps.currentChannel.id);
     }
   }

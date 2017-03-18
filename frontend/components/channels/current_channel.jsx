@@ -33,8 +33,8 @@ class CurrentChannel extends React.Component {
 
 
     var channel = this.pusher.subscribe('channel');
-    channel.bind('message_published', (data) => {
 
+    channel.bind('message_published', (data) => {
       this.boundFetchMessages();
       this.boundFetchDirectMessages();
     });
