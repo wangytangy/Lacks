@@ -59,7 +59,9 @@ export const signup = (user) => {
 export const submitProfilePic = (imageData) => {
   return (dispatch) => {
     return APIUtil.updateProfilePic(imageData).then((user) => {
-      dispatch(receiveProfilePic(user));
+      dispatch(receiveProfilePic(user)); //changes current users' profile pic
+      // need to change current user's pic in message index
+      // write a case switch in messages reducer to handle that action?
     }, (errors) => {
       console.log(errors);
     });
